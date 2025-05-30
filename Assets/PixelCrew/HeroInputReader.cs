@@ -13,6 +13,18 @@ public class HeroInputReader : MonoBehaviour
         _hero.SetDirection(direction);
     }
 
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            _hero.SetIsJumping(true);
+        }
+        if (context.canceled)
+        {
+            _hero.SetIsJumping(false);
+        }
+    }
+
     public void OnSay(InputAction.CallbackContext context)
     {
         if (context.canceled)
