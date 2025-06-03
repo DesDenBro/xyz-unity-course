@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -42,12 +43,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: sky
+  - name: sky 1
     uniqueID: 1824418269
     locked: 0
-  - name: ground
+  - name: sky 2
+    uniqueID: 4024363117
+    locked: 0
+  - name: ground 1
     uniqueID: 635838689
     locked: 0
-  - name: objects
+  - name: ground 2
     uniqueID: 3690465017
+    locked: 0
+  - name: object 2
+    uniqueID: 3675964853
+    locked: 0
+  - name: object 1
+    uniqueID: 2974172557
+    locked: 0
+  - name: after object 1
+    uniqueID: 745538161
+    locked: 0
+  - name: after object 2
+    uniqueID: 476788589
     locked: 0

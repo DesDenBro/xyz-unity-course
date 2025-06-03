@@ -6,6 +6,7 @@ public class Hero : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpSpeed;
+    [SerializeField] private int _money;
 
     [SerializeField] private LayerCheck _groundCheck;
 
@@ -28,11 +29,19 @@ public class Hero : MonoBehaviour
         _isJumping = val;
     }
 
+    public void AddMoney(GameObject obj)
+    {
+        var val = obj.GetComponent<ThingSpecification>()?.GetCost() ?? 0;
+        if (val == 0) return;
+
+        _money += val;
+        Debug.Log("+" + val + ", всего денег: " + _money);
+    }
+
     public void FixedUpdate()
     {
         _rigidbody.velocity = new Vector2(_direction.x * _speed, _rigidbody.velocity.y);
 
-        //var isJumping = _direction.y > 0;
         if (_isJumping)
         {
             if (IsGrounded())
@@ -54,7 +63,7 @@ public class Hero : MonoBehaviour
     {
         //Debug.DrawRay(transform.position, Vector2.down, IsGrounded() ? Color.green : Color.red);
         Gizmos.color = IsGrounded() ? Color.green : Color.red;
-        Gizmos.DrawSphere(transform.position + new Vector3(0, -0.15f), 0.3f);
+        Gizmos.DrawSphere(transform.position + new Vector3(0, -0.15f), 0.29f);
     }
 
     /*
