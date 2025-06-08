@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,17 +7,26 @@ public class Hero : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpSpeed;
-    [SerializeField] private int _money;
+    [NonSerialized] private int _money;
 
     [SerializeField] private LayerCheck _groundCheck;
 
-    private Vector2 _direction;
+    private Animator _animatior;
+    private SpriteRenderer _spriteRender;
     private Rigidbody2D _rigidbody;
+
+    private Vector2 _direction;
     private bool _isJumping;
+
+    private static readonly int _anim_isGrounded = Animator.StringToHash("is-grounded");
+    private static readonly int _anim_isRunning = Animator.StringToHash("is-running");
+    private static readonly int _anim_verticalVelocity = Animator.StringToHash("vertical-velocity");
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _animatior = GetComponent<Animator>();
+        _spriteRender = GetComponent<SpriteRenderer>();
     }
 
     public void SetDirection(Vector2 direction)
@@ -33,7 +43,7 @@ public class Hero : MonoBehaviour
     {
         var val = obj.GetComponent<ThingSpecification>()?.GetCost() ?? 0;
         if (val == 0) return;
-
+        
         _money += val;
         Debug.Log("+" + val + ", всего денег: " + _money);
     }
@@ -52,6 +62,24 @@ public class Hero : MonoBehaviour
         {
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _rigidbody.velocity.y * 0.5f);
         }
+
+        UpdateSpriteDirection();
+        UpdateAnimatorParamsState();
+    }
+
+    private void UpdateSpriteDirection()
+    {
+        if (_direction.x != 0)
+        {
+            _spriteRender.flipX = _direction.x < 0;
+        }
+    }
+
+    private void UpdateAnimatorParamsState()
+    {
+        _animatior.SetFloat(_anim_verticalVelocity, _rigidbody.velocity.y);
+        _animatior.SetBool(_anim_isRunning, _direction.x != 0);
+        _animatior.SetBool(_anim_isGrounded, IsGrounded());
     }
 
     private bool IsGrounded()
