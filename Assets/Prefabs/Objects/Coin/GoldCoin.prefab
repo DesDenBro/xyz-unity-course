@@ -32,7 +32,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -13.39, y: 3.15, z: 3.1606445}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 8443565114404070486}
+  - {fileID: 7329514573842128599}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -131,15 +133,15 @@ MonoBehaviour:
           m_StringArgument: asd
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2305994271400546942}
-        m_MethodName: DestroyObj
-        m_Mode: 1
+      - m_Target: {fileID: 2305994271400546912}
+        m_MethodName: SetClip
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2305994271400546942
@@ -181,12 +183,125 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
+  _states:
+  - {fileID: 8679323524803154672}
+  - {fileID: 5762754871333147692}
+--- !u!1 &6887489444030137703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8443565114404070486}
+  - component: {fileID: 8679323524803154672}
+  m_Layer: 0
+  m_Name: sas-idle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &8443565114404070486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6887489444030137703}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2305994270672979439}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8679323524803154672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6887489444030137703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbcb7e66682ec6946a0e9f1664d02520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: idle
   _isLoop: 1
   _sprites:
   - {fileID: 6582046967323461550, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
   - {fileID: 1942777921290549423, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
   - {fileID: 8793606821965667882, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
   - {fileID: 3444832735345940322, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  _allowNext: 1
   _onComplete:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &6931447978192399148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7329514573842128599}
+  - component: {fileID: 5762754871333147692}
+  m_Layer: 0
+  m_Name: sas-destroy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &7329514573842128599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6931447978192399148}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2305994270672979439}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5762754871333147692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6931447978192399148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbcb7e66682ec6946a0e9f1664d02520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: destroy
+  _isLoop: 0
+  _sprites:
+  - {fileID: -4986890610287934012, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  - {fileID: 6143208460787649835, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  - {fileID: 7609282858266732271, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  - {fileID: -6288512792030432889, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  _allowNext: 0
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2305994271400546942}
+        m_MethodName: DestroyObj
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

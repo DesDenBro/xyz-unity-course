@@ -94,16 +94,8 @@ public class Hero : MonoBehaviour
         Gizmos.DrawSphere(transform.position + new Vector3(0, -0.15f), 0.29f);
     }
 
-    /*
-    private float _calcNextPos(float startPos, float change)
-    {
-        if (change == 0) return startPos;
-        return startPos + change * _speed * Time.deltaTime;
-    }
-    */
-
     public void Say()
     {
-        //Debug.Log("hiiiii");
+
     }
 }

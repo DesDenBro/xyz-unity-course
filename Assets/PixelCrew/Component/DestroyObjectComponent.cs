@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace PixleCrew.Components
+namespace PixelCrew.Components
 {
     public class DestroyObjectComponent : MonoBehaviour
     {

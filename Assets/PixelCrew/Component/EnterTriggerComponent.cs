@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixleCrew.Components
+namespace PixelCrew.Components
 {
     public class EnterTriggerComponent : MonoBehaviour
     {

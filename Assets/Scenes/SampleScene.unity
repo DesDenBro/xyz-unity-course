@@ -875,6 +875,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SilverCoin (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8100952931469951261, guid: 93613e77aa39d0c42b6cca7e646adcec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8100952931991301639, guid: 93613e77aa39d0c42b6cca7e646adcec,
         type: 3}
       propertyPath: m_RootOrder
@@ -2148,6 +2153,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SilverCoin (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8100952931469951261, guid: 93613e77aa39d0c42b6cca7e646adcec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8100952931991301639, guid: 93613e77aa39d0c42b6cca7e646adcec,
         type: 3}
       propertyPath: m_RootOrder
@@ -2511,6 +2521,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 832936124}
     m_Modifications:
+    - target: {fileID: 6548545789688284676, guid: 93613e77aa39d0c42b6cca7e646adcec,
+        type: 3}
+      propertyPath: _allowNext
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8100952931469951261, guid: 93613e77aa39d0c42b6cca7e646adcec,
         type: 3}
       propertyPath: m_Name
@@ -6578,6 +6593,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SilverCoin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8100952931469951261, guid: 93613e77aa39d0c42b6cca7e646adcec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8100952931991301639, guid: 93613e77aa39d0c42b6cca7e646adcec,
         type: 3}
       propertyPath: m_RootOrder
@@ -6727,6 +6747,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SilverCoin (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100952931469951261, guid: 93613e77aa39d0c42b6cca7e646adcec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8100952931991301639, guid: 93613e77aa39d0c42b6cca7e646adcec,
         type: 3}

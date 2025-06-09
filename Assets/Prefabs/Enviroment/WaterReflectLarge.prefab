@@ -28,7 +28,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.318, y: -0.736, z: 0}
   m_LocalScale: {x: 0.087023936, y: 0.12116256, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4555725508806324608}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -96,12 +97,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
+  _states:
+  - {fileID: 7265983270231775047}
+--- !u!1 &5481676988592102952
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4555725508806324608}
+  - component: {fileID: 7265983270231775047}
+  m_Layer: 0
+  m_Name: sas-idle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &4555725508806324608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481676988592102952}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1486211179751469439}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7265983270231775047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481676988592102952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbcb7e66682ec6946a0e9f1664d02520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: idle
   _isLoop: 1
   _sprites:
   - {fileID: -6018279857378552221, guid: 29ebbfc3e4a5e2a4699c460795e092cd, type: 3}
   - {fileID: -6505298659582443948, guid: 29ebbfc3e4a5e2a4699c460795e092cd, type: 3}
   - {fileID: -7718236803453008505, guid: 29ebbfc3e4a5e2a4699c460795e092cd, type: 3}
   - {fileID: -2749089684739404911, guid: 29ebbfc3e4a5e2a4699c460795e092cd, type: 3}
+  _allowNext: 0
   _onComplete:
     m_PersistentCalls:
       m_Calls: []

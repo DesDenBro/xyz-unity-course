@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &398506549263477032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4069281775622351839}
+  - component: {fileID: 3005687766715867583}
+  m_Layer: 0
+  m_Name: sas-idle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &4069281775622351839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398506549263477032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8343869430890957672}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3005687766715867583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398506549263477032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbcb7e66682ec6946a0e9f1664d02520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: idle
+  _isLoop: 1
+  _sprites:
+  - {fileID: -1898659343009958212, guid: aa715f095b9677e41a42621c78f52c52, type: 3}
+  - {fileID: -8843944345914528079, guid: aa715f095b9677e41a42621c78f52c52, type: 3}
+  - {fileID: -3808486951342339979, guid: aa715f095b9677e41a42621c78f52c52, type: 3}
+  - {fileID: -5088061633143109107, guid: aa715f095b9677e41a42621c78f52c52, type: 3}
+  _allowNext: 0
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8343869430890957675
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,7 +82,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.869, y: -0.742, z: 0}
   m_LocalScale: {x: 0.087023936, y: 0.12116258, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4069281775622351839}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -96,12 +151,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
-  _isLoop: 1
-  _sprites:
-  - {fileID: -5528557573366522457, guid: 18a0f2e84cde38746a8da933177e64ab, type: 3}
-  - {fileID: 8506211366736525064, guid: 18a0f2e84cde38746a8da933177e64ab, type: 3}
-  - {fileID: 759440405009013545, guid: 18a0f2e84cde38746a8da933177e64ab, type: 3}
-  - {fileID: 3538689430123128980, guid: 18a0f2e84cde38746a8da933177e64ab, type: 3}
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls: []
+  _states:
+  - {fileID: 3005687766715867583}

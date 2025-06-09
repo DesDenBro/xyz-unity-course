@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace PixleCrew.Components
+namespace PixelCrew.Components
 {
     public class RestartLevelComponent : MonoBehaviour
     {
