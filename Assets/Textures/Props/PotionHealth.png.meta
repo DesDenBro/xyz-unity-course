@@ -1,34 +1,28 @@
 fileFormatVersion: 2
-guid: 98b0be298a4eb4a6aab424e9edc993cc
+guid: cc7cffc80fbc11647b1cce7459c9597b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5213229242370633579
-    second: Door_0
+      213: -1488306459812375167
+    second: PotionHealth_0
   - first:
-      213: 436563815456543028
-    second: Door_1
+      213: -2634392875612161611
+    second: PotionHealth_1
   - first:
-      213: -8689009931745917929
-    second: Door_2
+      213: -6088654392157646421
+    second: PotionHealth_2
   - first:
-      213: 289144848352645085
-    second: Door_3
+      213: 4114337651131966267
+    second: PotionHealth_3
   - first:
-      213: 6936692723106717497
-    second: Door_4
+      213: 8111584947651845295
+    second: PotionHealth_4
   - first:
-      213: 8808929173557640368
-    second: Door_5
+      213: 5513913267817745096
+    second: PotionHealth_5
   - first:
-      213: -118703559905284274
-    second: Door_6
-  - first:
-      213: 1360838911650288969
-    second: Door_7
-  - first:
-      213: 8477961935573085179
-    second: Door_8
+      213: -69887381781576766
+    second: PotionHealth_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -110,41 +104,101 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Door_0
+      name: PotionHealth_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 185d6f10929785be0800000000000000
+      internalID: -1488306459812375167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotionHealth_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b9315223a1c07bd0800000000000000
+      internalID: -2634392875612161611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotionHealth_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba15253e611c08ba0800000000000000
+      internalID: -6088654392157646421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotionHealth_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b336cb58b40191930800000000000000
+      internalID: 4114337651131966267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotionHealth_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +206,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6f2e24006c195840800000000000000
-      internalID: 5213229242370633579
+      spriteID: fac913a6883229070800000000000000
+      internalID: 8111584947651845295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Door_1
+      name: PotionHealth_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ca079237ea558c40800000000000000
+      internalID: 5513913267817745096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotionHealth_6
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,155 +248,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43193162a7cfe0600800000000000000
-      internalID: 436563815456543028
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Door_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7148170e08f6a6780800000000000000
-      internalID: -8689009931745917929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Door_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ddf81b625bf330400800000000000000
-      internalID: 289144848352645085
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Door_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93f10dc8745144060800000000000000
-      internalID: 6936692723106717497
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Door_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0bc7a71696a9f3a70800000000000000
-      internalID: 8808929173557640368
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Door_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e4f654ebdb74a5ef0800000000000000
-      internalID: -118703559905284274
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Door_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 945d175b7cba2e210800000000000000
-      internalID: 1360838911650288969
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Door_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bfbed155675c7a570800000000000000
-      internalID: 8477961935573085179
+      spriteID: 2c380aaebc5b70ff0800000000000000
+      internalID: -69887381781576766
       vertices: []
       indices: 
       edges: []

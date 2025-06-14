@@ -16,8 +16,8 @@ TagManager:
   - 
   - 
   - Ground
-  - 
-  - 
+  - Interactables
+  - Collectables
   - 
   - 
   - 
@@ -55,11 +55,11 @@ TagManager:
   - name: ground 2
     uniqueID: 3690465017
     locked: 0
-  - name: object 2
-    uniqueID: 3675964853
-    locked: 0
   - name: object 1
     uniqueID: 2974172557
+    locked: 0
+  - name: object 2
+    uniqueID: 3675964853
     locked: 0
   - name: after object 1
     uniqueID: 745538161

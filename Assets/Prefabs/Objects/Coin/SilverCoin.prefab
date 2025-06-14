@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9078075960929488369}
   - component: {fileID: 2216263236575472617}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sas-destroy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,22 +44,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: destroy
-  _isLoop: 0
   _sprites:
   - {fileID: -4986890610287934012, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
   - {fileID: 6143208460787649835, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
   - {fileID: 7609282858266732271, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
   - {fileID: -6288512792030432889, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  _isLoop: 0
   _allowNext: 0
   _onComplete:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8100952931469951248}
         m_MethodName: DestroyObj
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8100952931469951261}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -75,7 +75,7 @@ GameObject:
   m_Component:
   - component: {fileID: 182265673538985257}
   - component: {fileID: 6548545789688284676}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sas-idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,12 +109,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: idle
-  _isLoop: 1
   _sprites:
   - {fileID: -2322180950842035098, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
   - {fileID: -4893972260818282012, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
   - {fileID: -6323751108524238166, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
   - {fileID: 2722280177590742205, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  _isLoop: 1
   _allowNext: 1
   _onComplete:
     m_PersistentCalls:
@@ -130,11 +130,13 @@ GameObject:
   - component: {fileID: 8100952931991301639}
   - component: {fileID: 8100952931469951251}
   - component: {fileID: 8100952931469951250}
-  - component: {fileID: 8100952931469951249}
-  - component: {fileID: 8100952931469951248}
-  - component: {fileID: 8100952931469951263}
   - component: {fileID: 8100952931469951262}
-  m_Layer: 0
+  - component: {fileID: 8100952931469951263}
+  - component: {fileID: 8977334924166680610}
+  - component: {fileID: 2432721708351927162}
+  - component: {fileID: 8100952931469951248}
+  - component: {fileID: 7918273373926413638}
+  m_Layer: 10
   m_Name: SilverCoin
   m_TagString: Coin
   m_Icon: {fileID: 0}
@@ -224,71 +226,6 @@ CircleCollider2D:
   m_Offset: {x: 0.0219149, y: 0.023741215}
   serializedVersion: 2
   m_Radius: 0.16565612
---- !u!114 &8100952931469951249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8100952931469951261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19d1e10dd2667e945a2a47f6fefcf0af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tag: Player
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5784780335098992499, guid: 30dc5b4137e9eaf40b9674cd4cd06356,
-          type: 3}
-        m_MethodName: AddMoney
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8100952931469951261}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: asd
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8100952931469951262}
-        m_MethodName: SetClip
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: destroy
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &8100952931469951248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8100952931469951261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objToDestroy: {fileID: 8100952931469951261}
---- !u!114 &8100952931469951263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8100952931469951261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57470ff69c1fc264a8470778f9d7f3e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cost: 1
 --- !u!114 &8100952931469951262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,3 +242,110 @@ MonoBehaviour:
   _states:
   - {fileID: 6548545789688284676}
   - {fileID: 2216263236575472617}
+--- !u!114 &8100952931469951263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100952931469951261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57470ff69c1fc264a8470778f9d7f3e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _amount: 1
+  _damage: 0
+  _recovery: 0
+--- !u!114 &8977334924166680610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100952931469951261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5980c6201e440bb49b07cb3f91030a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isActiveToCollect: 1
+  _collectActions:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7918273373926413638}
+        m_MethodName: MoneyChange
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5784780335098992503, guid: 30dc5b4137e9eaf40b9674cd4cd06356,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8100952931469951262}
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: destroy
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2432721708351927162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100952931469951261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d1e10dd2667e945a2a47f6fefcf0af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: Player
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8977334924166680610}
+        m_MethodName: Collect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8100952931469951248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100952931469951261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7918273373926413638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100952931469951261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aaad0e352942074181e79925021491b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

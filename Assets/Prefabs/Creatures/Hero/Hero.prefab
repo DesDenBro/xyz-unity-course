@@ -74,12 +74,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5784780335098992501}
   - component: {fileID: 5784780335098992500}
-  - component: {fileID: 5784780335098992498}
-  - component: {fileID: 5784780335098992499}
-  - component: {fileID: 5784780335098992496}
   - component: {fileID: 5784780335098992494}
   - component: {fileID: 5784780335098992497}
   - component: {fileID: 5784780335098992495}
+  - component: {fileID: 5784780335098992496}
+  - component: {fileID: 5784780335098992498}
+  - component: {fileID: 5784780335098992499}
+  - component: {fileID: 717764824}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -139,7 +140,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1320794739
-  m_SortingLayer: 6
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -6146700129834819302, guid: 72bd3e15965ef08409e20f7d5a5062fc,
     type: 3}
@@ -153,35 +154,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5784780335098992498
-MonoBehaviour:
+--- !u!50 &5784780335098992494
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5784780335098992503}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 3
+  m_Material: {fileID: 6200000, guid: c7c96d786da7de549a97398a37f20433, type: 2}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &5784780335098992497
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5784780335098992503}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db8eeee55b3ba1f46a11c15e6d6ccada, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hero: {fileID: 5784780335098992499}
---- !u!114 &5784780335098992499
-MonoBehaviour:
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00091439486, y: 0.02671951}
+  m_Size: {x: 0.69629824, y: 0.771274}
+  m_Direction: 0
+--- !u!95 &5784780335098992495
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5784780335098992503}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8d56bf2d5b062346aa6e4f34bed630b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 3
-  _jumpSpeed: 20
-  _money: 0
-  _groundCheck: {fileID: 5784780334059268827}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08c3e2f09d4204c41bb02fe456dd4cbb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &5784780335098992496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,64 +281,101 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 951d56c2-d515-496f-8c46-10b52872a356
     m_ActionName: Hero/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5784780335098992498}
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dba0dbea-39e1-4496-9f73-1e3db04da80a
+    m_ActionName: Hero/Interact[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!50 &5784780335098992494
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5784780335098992503}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 2
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 3
-  m_Material: {fileID: 6200000, guid: c7c96d786da7de549a97398a37f20433, type: 2}
-  m_Interpolate: 1
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!70 &5784780335098992497
-CapsuleCollider2D:
+--- !u!114 &5784780335098992498
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5784780335098992503}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00091439486, y: 0.02671951}
-  m_Size: {x: 0.69629824, y: 0.771274}
-  m_Direction: 0
---- !u!95 &5784780335098992495
-Animator:
-  serializedVersion: 3
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8eeee55b3ba1f46a11c15e6d6ccada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hero: {fileID: 5784780335098992499}
+--- !u!114 &5784780335098992499
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5784780335098992503}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 08c3e2f09d4204c41bb02fe456dd4cbb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d56bf2d5b062346aa6e4f34bed630b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 3
+  _jumpSpeed: 10
+  _damageJumpSpeed: 50
+  _groundCheck: {fileID: 5784780334059268827}
+  _interactionRadius: 1
+  _interactionLayer:
+    serializedVersion: 2
+    m_Bits: 512
+--- !u!114 &717764824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5784780335098992503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b105adb82f922f84d94bcffd793ed2d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 40
+  _currentHealth: 10
+  _onDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5784780335098992499}
+        m_MethodName: TakeDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onHealth:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5784780335098992499}
+        m_MethodName: TakeHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onDie:
+    m_PersistentCalls:
+      m_Calls: []
