@@ -11,5 +11,9 @@ namespace PixelCrew.Components
         {
             Destroy(target);
         }
+        public void SelfDestroy()
+        {
+            DestroyObj(this.gameObject);
+        }
     }
 }

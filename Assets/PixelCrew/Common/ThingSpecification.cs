@@ -7,12 +7,12 @@ namespace PixelCrew.Common
 {
     public class ThingSpecification : MonoBehaviour
     {
-        [SerializeField] private int _amount;
-        [SerializeField] private int _damage;
-        [SerializeField] private int _recovery;
+        [SerializeField] private int _costAmount;
+        [SerializeField] private int _damagePoints;
+        [SerializeField] private int _healthPoints;
 
-        public int Amount => _amount;
-        public int Damage => _damage;
-        public int Recovery => _recovery;
+        public int CostAmount => _costAmount;
+        public int DamagePoints => _damagePoints;
+        public int HealthPoints => _healthPoints;
     }
 }

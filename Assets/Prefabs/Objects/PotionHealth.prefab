@@ -45,10 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: idle
   _sprites:
-  - {fileID: -1488306459812375167, guid: cc7cffc80fbc11647b1cce7459c9597b, type: 3}
-  - {fileID: -2634392875612161611, guid: cc7cffc80fbc11647b1cce7459c9597b, type: 3}
-  - {fileID: -6088654392157646421, guid: cc7cffc80fbc11647b1cce7459c9597b, type: 3}
-  - {fileID: 4114337651131966267, guid: cc7cffc80fbc11647b1cce7459c9597b, type: 3}
+  - {fileID: 5157532246178476789, guid: 34f51f1154a656240b3ceb7ffa13b036, type: 3}
+  - {fileID: 5510555249298919911, guid: 34f51f1154a656240b3ceb7ffa13b036, type: 3}
+  - {fileID: 4271890613703953127, guid: 34f51f1154a656240b3ceb7ffa13b036, type: 3}
+  - {fileID: -3752891259387205172, guid: 34f51f1154a656240b3ceb7ffa13b036, type: 3}
   _isLoop: 1
   _allowNext: 1
   _onComplete:
@@ -85,7 +85,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5917678488986685111}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.613, y: 1.969, z: 3.1606445}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -133,7 +133,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1488306459812375167, guid: cc7cffc80fbc11647b1cce7459c9597b,
+  m_Sprite: {fileID: 5157532246178476789, guid: 34f51f1154a656240b3ceb7ffa13b036,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -189,9 +189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57470ff69c1fc264a8470778f9d7f3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _amount: 0
-  _damage: 0
-  _recovery: 5
+  _costAmount: 0
+  _damagePoints: 0
+  _healthPoints: 5
 --- !u!114 &7278927614637551315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,11 +210,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7714878294690034105}
         m_MethodName: HealthChange
-        m_Mode: 2
+        m_Mode: 0
         m_Arguments:
-          m_ObjectArgument: {fileID: 5784780335098992503, guid: 30dc5b4137e9eaf40b9674cd4cd06356,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -329,20 +328,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: destroy
   _sprites:
-  - {fileID: 8111584947651845295, guid: cc7cffc80fbc11647b1cce7459c9597b, type: 3}
-  - {fileID: 5513913267817745096, guid: cc7cffc80fbc11647b1cce7459c9597b, type: 3}
-  - {fileID: -69887381781576766, guid: cc7cffc80fbc11647b1cce7459c9597b, type: 3}
+  - {fileID: -2857218490874526426, guid: 34f51f1154a656240b3ceb7ffa13b036, type: 3}
+  - {fileID: 9123918902331096532, guid: 34f51f1154a656240b3ceb7ffa13b036, type: 3}
+  - {fileID: 7842686494162467282, guid: 34f51f1154a656240b3ceb7ffa13b036, type: 3}
   _isLoop: 0
   _allowNext: 0
   _onComplete:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8504690389024939555}
-        m_MethodName: DestroyObj
-        m_Mode: 2
+        m_MethodName: SelfDestroy
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 5917678488986685111}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

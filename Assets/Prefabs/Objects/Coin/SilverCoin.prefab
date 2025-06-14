@@ -55,11 +55,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8100952931469951248}
-        m_MethodName: DestroyObj
-        m_Mode: 2
+        m_MethodName: SelfDestroy
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 8100952931469951261}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -254,9 +254,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57470ff69c1fc264a8470778f9d7f3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _amount: 1
-  _damage: 0
-  _recovery: 0
+  _costAmount: 1
+  _damagePoints: 0
+  _healthPoints: 0
 --- !u!114 &8977334924166680610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,11 +275,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7918273373926413638}
         m_MethodName: MoneyChange
-        m_Mode: 2
+        m_Mode: 0
         m_Arguments:
-          m_ObjectArgument: {fileID: 5784780335098992503, guid: 30dc5b4137e9eaf40b9674cd4cd06356,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

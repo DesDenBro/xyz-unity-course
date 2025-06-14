@@ -17,26 +17,25 @@ namespace PixelCrew.Components
         {
             if (_thingSpecification == null) return;
 
-            var damage = _thingSpecification.Damage;
-            var recover = _thingSpecification.Recovery;
-
             var healtComponent = target?.GetComponent<HealthComponent>();
             if (healtComponent == null) return;
 
-            if (damage > 0) healtComponent.ApplyDamage(damage);
-            if (recover > 0) healtComponent.RecoverHealth(recover);
+            var damagePoints = _thingSpecification.DamagePoints;
+            if (damagePoints > 0) healtComponent.ApplyDamage(damagePoints);
+
+            var healthPoints = _thingSpecification.HealthPoints;
+            if (healthPoints > 0) healtComponent.RecoverHealth(healthPoints);
         }
 
         public void MoneyChange(GameObject target)
         {
             if (_thingSpecification == null) return;
 
-            var amount = _thingSpecification.Amount;
+            var inventory = target.GetComponent<InventoryComponent>();
+            if (inventory == null) return;
 
-            var hero = target.GetComponent<Hero>();
-            if (hero == null) return;
-
-            hero.AddMoney(amount);
+            var amount = _thingSpecification.CostAmount;
+            inventory.ChangeMoneyAmount(amount);
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using PixelCrew.Common;
 using PixelCrew.Components;
-using System;
 using UnityEngine;
 
 public class Hero : MonoBehaviour
@@ -17,8 +16,6 @@ public class Hero : MonoBehaviour
     [SerializeField] private LayerCheck _groundCheck;
     [SerializeField] private float _interactionRadius;
     [SerializeField] private LayerMask _interactionLayer;
-
-    [NonSerialized] private int _money;
 
     private Animator _animator;
     private SpriteRenderer _spriteRender;
@@ -84,7 +81,6 @@ public class Hero : MonoBehaviour
 
         return yVel;
     }
-
     private void UpdateSpriteDirection()
     {
         if (_direction.x != 0)
@@ -92,7 +88,6 @@ public class Hero : MonoBehaviour
             _spriteRender.flipX = _direction.x < 0;
         }
     }
-
     private void UpdateAnimatorParamsState()
     {
         _animator.SetFloat(_anim_verticalVelocity, _rigidbody.velocity.y);
@@ -105,21 +100,11 @@ public class Hero : MonoBehaviour
     public void SetDirection(Vector2 direction)
     {
         _direction = direction;
-    }
-    
+    }    
     public void SetIsJumping(bool val)
     {
         _isJumpingPressed = val;
     }
-
-    public void AddMoney(int val)
-    {
-        if (val == 0) return;
-        
-        _money += val;
-        Debug.Log("+" + val + ", всего денег: " + _money);
-    }
-
     public void TakeDamage()
     {
         _animator.SetTrigger(_anim_triggerHit);
