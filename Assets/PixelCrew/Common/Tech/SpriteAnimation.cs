@@ -8,6 +8,7 @@ namespace PixelCrew.Common.Tech
     public class SpriteAnimation : MonoBehaviour
     {
         [SerializeField] private int _frameRate = 10;
+        [SerializeField] private string _startSasName;
         [SerializeField] private SpriteAnimationState[] _states;
 
         private SpriteRenderer _spriteRenderer;
@@ -24,7 +25,8 @@ namespace PixelCrew.Common.Tech
 
             if (_statesDict.Count > 0)
             {
-                SetClip(_states[0]?.Name);
+                var sasName = string.IsNullOrWhiteSpace(_startSasName) || !_statesDict.ContainsKey(_startSasName) ? _states[0]?.Name : _startSasName;
+                SetClip(sasName);
             }
         }
 
@@ -67,6 +69,17 @@ namespace PixelCrew.Common.Tech
             _spriteRenderer.sprite = _currentState.Sprites[_currentSpriteIndex];
             _nextFrameTime += _secondsPerFrame;
             _currentSpriteIndex++;
+        }
+
+        public void SetStartSasName(string sasName)
+        {
+            _startSasName = sasName;
+        }
+
+        public Transform GetSasTransform(string sasName)
+        {
+            if (!_statesDict.TryGetValue(sasName, out SpriteAnimationState sas)) return null;
+            return sas?.transform;
         }
     }
 }

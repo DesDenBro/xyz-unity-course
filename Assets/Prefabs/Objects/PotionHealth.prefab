@@ -45,10 +45,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: idle
   _sprites:
-  - {fileID: 5157532246178476789, guid: 34f51f1154a656240b3ceb7ffa13b036, type: 3}
-  - {fileID: 5510555249298919911, guid: 34f51f1154a656240b3ceb7ffa13b036, type: 3}
-  - {fileID: 4271890613703953127, guid: 34f51f1154a656240b3ceb7ffa13b036, type: 3}
-  - {fileID: -3752891259387205172, guid: 34f51f1154a656240b3ceb7ffa13b036, type: 3}
+  - {fileID: -7587008787810219046, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 950379908824699032, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: -512142692958456438, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 8745225756722806956, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: -7481350877133238684, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 2011574832808370117, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: -8438763151253471919, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
   _isLoop: 1
   _allowNext: 1
   _onComplete:
@@ -133,13 +136,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5157532246178476789, guid: 34f51f1154a656240b3ceb7ffa13b036,
+  m_Sprite: {fileID: -7587008787810219046, guid: 8216d46ceb4276c4985f1ff3373c53c9,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 1, y: 1.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -328,9 +331,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: destroy
   _sprites:
-  - {fileID: -2857218490874526426, guid: 34f51f1154a656240b3ceb7ffa13b036, type: 3}
-  - {fileID: 9123918902331096532, guid: 34f51f1154a656240b3ceb7ffa13b036, type: 3}
-  - {fileID: 7842686494162467282, guid: 34f51f1154a656240b3ceb7ffa13b036, type: 3}
+  - {fileID: 6040734443530017722, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 8167133005111728920, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 2014349484240403859, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
   _isLoop: 0
   _allowNext: 0
   _onComplete:

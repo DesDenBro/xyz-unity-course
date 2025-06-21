@@ -6,6 +6,8 @@ namespace PixelCrew.Components
     {
         [SerializeField] private int _money;
 
+        public int MoneyCount => _money;
+
         public void ChangeMoneyAmount(int val)
         {
             if (val == 0) return;
