@@ -49,11 +49,17 @@ TagManager:
   - name: sky 2
     uniqueID: 4024363117
     locked: 0
+  - name: sky 3
+    uniqueID: 3196829297
+    locked: 0
   - name: ground 1
     uniqueID: 635838689
     locked: 0
   - name: ground 2
     uniqueID: 3690465017
+    locked: 0
+  - name: ground 3
+    uniqueID: 363985371
     locked: 0
   - name: object 1
     uniqueID: 2974172557
@@ -61,9 +67,15 @@ TagManager:
   - name: object 2
     uniqueID: 3675964853
     locked: 0
+  - name: object 3
+    uniqueID: 1509567825
+    locked: 0
   - name: after object 1
     uniqueID: 745538161
     locked: 0
   - name: after object 2
     uniqueID: 476788589
+    locked: 0
+  - name: after object 3
+    uniqueID: 867383871
     locked: 0

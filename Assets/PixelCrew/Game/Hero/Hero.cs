@@ -197,8 +197,9 @@ public class Hero : MonoBehaviour
         {
             var interactable = _interactionResult[i].GetComponent<InteractableComponent>();
             if (interactable == null) continue;
-            interactable.Interact();
-        }    
+
+            interactable.Interact(this.gameObject);
+        }
     }
 
 

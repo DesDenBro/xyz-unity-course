@@ -37,5 +37,15 @@ namespace PixelCrew.Components
             var amount = _thingSpecification.CostAmount;
             inventory.ChangeMoneyAmount(amount);
         }
+
+        public void KeysChange(GameObject target)
+        {
+            if (_thingSpecification == null) return;
+
+            var inventory = target.GetComponent<InventoryComponent>();
+            if (inventory == null) return;
+
+            inventory.ChangeKeyAmount(1);
+        }
     }
 }

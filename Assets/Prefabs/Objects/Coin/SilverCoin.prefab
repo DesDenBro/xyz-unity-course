@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
+  _startSasName: 
   _states:
   - {fileID: 6548545789688284676}
   - {fileID: 2216263236575472617}
@@ -255,6 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _costAmount: 1
+  _keysAmount: 0
   _damagePoints: 0
   _healthPoints: 0
 --- !u!114 &8977334924166680610
@@ -310,8 +312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
-  _action:
-    m_PersistentCalls:
+  _actions:
+  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8977334924166680610}
         m_MethodName: Collect
