@@ -16,6 +16,7 @@ public class Hero : MonoBehaviour
     [SerializeField] private float _damageJumpSpeed;
     [SerializeField] private LayerCheck _groundCheck;
     [SerializeField] private float _interactionRadius;
+    [SerializeField] private bool _isDoubleJumpEnable;
     [SerializeField] private LayerMask _interactionLayer;
     [SerializeField] private SpawnComponent _footActionParticles;
     [SerializeField] private ParticleSystem _hitParticles;
@@ -29,7 +30,7 @@ public class Hero : MonoBehaviour
     private bool _needPlayJumpSas;
     private bool _needPlayHardFallSas;
     private bool _isGrounded;
-    private bool _isAllowedDoubleJump;
+    private bool _isDoubleJumpActive;
     private float? _maxYInJump = null;
     private Collider2D[] _interactionResult = new Collider2D[1];
 
@@ -47,23 +48,40 @@ public class Hero : MonoBehaviour
 
     public void FixedUpdate()
     {
-        _isGrounded = _groundCheck.IsTouchingLayer;
+        StartUpdateOperations();
+        UpdateOperations();
+        EndUpdateOperations();
+    }
 
+    private void StartUpdateOperations()
+    {
+        _isGrounded = _groundCheck.IsTouchingLayer;
+        HigthlightInteractble();
+    }
+    private void UpdateOperations()
+    {
+        CalcPosition();
+    }
+    private void EndUpdateOperations()
+    {
+        UpdateSpriteDirection();
+        UpdateAnimatorParamsState();
+        PlayStateAnimationsByState();
+    }
+
+
+    private void CalcPosition()
+    {
         var xVel = _direction.x * _speed;
         var yVel = CalcYVelocity();
         _rigidbody.velocity = new Vector2(xVel, yVel);
-
-        UpdateSpriteDirection();
-        UpdateAnimatorParamsState();
-
-        PlayStateAnimationsByState();
     }
 
     private float CalcYVelocity()
     {
         var yVel = _rigidbody.velocity.y;
 
-        if (_isGrounded) _isAllowedDoubleJump = true;
+        if (_isGrounded && _isDoubleJumpEnable) _isDoubleJumpActive = true;
         if (_isJumpingPressed)
         {
             yVel = CalJumpVelocity(yVel);        
@@ -103,10 +121,10 @@ public class Hero : MonoBehaviour
         {
             yVel += _jumpSpeed;
         }
-        else if (_isAllowedDoubleJump)
+        else if (_isDoubleJumpActive)
         {
             yVel = _jumpSpeed;
-            _isAllowedDoubleJump = false;
+            _isDoubleJumpActive = false;
             _needPlayJumpSas = true;
         }
 
@@ -189,16 +207,26 @@ public class Hero : MonoBehaviour
         _animator.SetTrigger(_anim_triggerHealing);
     }
 
-    public void Interact()
+    private void HigthlightInteractble() => OperationWithInteractable(InteractableOperation.Higthlight, false);
+    public void Interact(bool isPressed) => OperationWithInteractable(InteractableOperation.Activate, isPressed);
+
+    private void OperationWithInteractable(InteractableOperation operationType, bool isPressed)
     {
         var size = Physics2D.OverlapCircleNonAlloc(transform.position, _interactionRadius, _interactionResult, _interactionLayer);
-        
         for (int i = 0; i < size; i++)
         {
             var interactable = _interactionResult[i].GetComponent<InteractableComponent>();
             if (interactable == null) continue;
 
-            interactable.Interact(this.gameObject);
+            switch (operationType)
+            {
+                case InteractableOperation.Higthlight:
+                    interactable.Highlight();
+                    break;
+                case InteractableOperation.Activate:
+                    interactable.Interact(this.gameObject, isPressed);
+                    break;
+            }
         }
     }
 

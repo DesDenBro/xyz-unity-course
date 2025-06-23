@@ -61,6 +61,15 @@ TagManager:
   - name: ground 3
     uniqueID: 363985371
     locked: 0
+  - name: before object 1
+    uniqueID: 248237793
+    locked: 0
+  - name: before object 2
+    uniqueID: 2953845653
+    locked: 0
+  - name: before object 3
+    uniqueID: 2574475793
+    locked: 0
   - name: object 1
     uniqueID: 2974172557
     locked: 0
@@ -69,6 +78,15 @@ TagManager:
     locked: 0
   - name: object 3
     uniqueID: 1509567825
+    locked: 0
+  - name: under object 1
+    uniqueID: 1276412047
+    locked: 0
+  - name: under object 2
+    uniqueID: 3239227041
+    locked: 0
+  - name: under object 3
+    uniqueID: 3600777063
     locked: 0
   - name: after object 1
     uniqueID: 745538161
