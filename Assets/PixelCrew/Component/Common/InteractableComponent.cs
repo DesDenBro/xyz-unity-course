@@ -99,6 +99,8 @@ namespace PixelCrew.Components
                     ClickInteraction(activator, isPressed); break;
                 case InteractableMode.Hold:
                     HoldInteraction(activator, isPressed); break;
+                case InteractableMode.OnOffClick:
+                    OnOffClickInteraction(activator, isPressed); break;
             }
         }
         private void ClickInteraction(GameObject activator, bool isPressed)
@@ -136,6 +138,24 @@ namespace PixelCrew.Components
             if (_isInInteract && !isPressed) _isInInteract = false;
         }
 
+        private void OnOffClickInteraction(GameObject activator, bool isPressed)
+        {
+            if (!_isActive) return;
+
+            if (!_isInInteract && isPressed)
+            {
+                foreach (var beforeAction in _beforeActions)
+                {
+                    beforeAction?.Invoke(_lastActivator);
+                }
+                _isInInteract = true;
+                _triggerAfterActions = true;
+            } else if (_isInInteract && isPressed)
+            {
+                _isInInteract = false;
+            }
+        }
+
         private void CheckActive()
         {
             if (_isActive || !_checksToActivate || _lastActivator == null) return;
@@ -167,6 +187,7 @@ namespace PixelCrew.Components
     public enum InteractableMode : byte
     {
         Click = 0,
-        Hold = 1
+        Hold = 1,
+        OnOffClick = 2 // как Hold, только держать все время не надо кнопку
     }
 }

@@ -41,7 +41,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3662353593528055972}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -97,7 +97,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000010430813, y: 0.0317612}
+  m_Offset: {x: -0.07657014, y: 0.0317612}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -108,7 +108,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.30703917, y: 0.34768218}
+  m_Size: {x: 0.7821307, y: 0.34768218}
   m_EdgeRadius: 0
 --- !u!114 &4656928447231782935
 MonoBehaviour:
@@ -142,6 +142,7 @@ MonoBehaviour:
   _checksToActivate: 0
   _isInInteract: 0
   _mode: 0
+  _iterations: 0
   _beforeActions: []
   _actions: []
   _afterActions: []

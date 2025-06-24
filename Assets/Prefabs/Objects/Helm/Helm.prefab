@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4048963155149963437}
   - component: {fileID: 4048963155149963436}
   - component: {fileID: 3939809967336341458}
-  - component: {fileID: 6704786591172801730}
   m_Layer: 9
   m_Name: Helm
   m_TagString: Untagged
@@ -104,22 +103,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &6704786591172801730
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4048963155149963438}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.515625
 --- !u!1001 &6944133378218273237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,13 +117,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 909568508128479482, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8334723
+      objectReference: {fileID: 0}
+    - target: {fileID: 909568508128479482, guid: 109153313607fa1438355867c4f6cd17,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8160455
+      objectReference: {fileID: 0}
+    - target: {fileID: 909568508128479482, guid: 109153313607fa1438355867c4f6cd17,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.017
       objectReference: {fileID: 0}
     - target: {fileID: 909568508128479482, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.007
       objectReference: {fileID: 0}
     - target: {fileID: 909568508128479482, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
@@ -247,6 +240,11 @@ PrefabInstance:
       propertyPath: _beforeActions.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3137395369277788286, guid: 109153313607fa1438355867c4f6cd17,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3662353593528055972, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: m_Name
@@ -255,22 +253,22 @@ PrefabInstance:
     - target: {fileID: 9047536408257778908, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.0196209
+      value: 1.4006336
       objectReference: {fileID: 0}
     - target: {fileID: 9047536408257778908, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.8027277
+      value: 0.6793388
       objectReference: {fileID: 0}
     - target: {fileID: 9047536408257778908, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.027109146
+      value: -0.017815828
       objectReference: {fileID: 0}
     - target: {fileID: 9047536408257778908, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.06602514
+      value: 0.0051606894
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 109153313607fa1438355867c4f6cd17, type: 3}

@@ -26,12 +26,15 @@ public class HeroInputReader : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context)
     {
+        //Debug.Log("started: " + context.started + ", performed: " + context.performed + ", canceled: " + context.canceled);
         if (context.started)
         {
+            //Debug.Log("started");
             _hero.Interact(true);
         }
         if (context.canceled)
         {
+            //Debug.Log("canceled");
             _hero.Interact(false);
         }
     }
