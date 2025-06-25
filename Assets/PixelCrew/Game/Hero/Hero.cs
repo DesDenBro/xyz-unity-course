@@ -21,11 +21,14 @@ public class Hero : MonoBehaviour
     [SerializeField] private SpawnComponent _footActionParticles;
     [SerializeField] private ParticleSystem _hitParticles;
 
+    private MovementStateComponent _movementState;
     private InventoryComponent _inventory;
     private HealthComponent _health;
     private Animator _animator;
     private Rigidbody2D _rigidbody;
     private Vector2 _direction;
+
+    private MovementStateType _currentMovement;
     private bool _isJumpingPressed;
     private bool _needPlayJumpSas;
     private bool _needPlayHardFallSas;
@@ -34,17 +37,20 @@ public class Hero : MonoBehaviour
     private float? _maxYInJump = null;
     private Collider2D[] _interactionResult = new Collider2D[1];
 
-    private bool _IsFalling => _rigidbody.velocity.y < 0.001f;
+    private bool _IsFalling => _rigidbody.velocity.y < 0.001f && !_IsHangingMove;
+    private bool _IsNormalMove => _currentMovement == MovementStateType.Default;
+    private bool _IsGrabMove => _currentMovement == MovementStateType.Grab;
+    private bool _IsHangingMove => _currentMovement == MovementStateType.Hanging;
+
 
     private void Awake()
     {
+        _movementState = GetComponent<MovementStateComponent>();
         _health = GetComponent<HealthComponent>();
         _inventory = GetComponent<InventoryComponent>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
     }
-
-    private void Update() { }
 
     public void FixedUpdate()
     {
@@ -55,7 +61,8 @@ public class Hero : MonoBehaviour
 
     private void StartUpdateOperations()
     {
-        _isGrounded = _groundCheck.IsTouchingLayer;
+        _currentMovement = _movementState.SelectedState;
+        _isGrounded = _groundCheck.IsTouchingLayer || _IsHangingMove;
         HigthlightInteractble();
     }
     private void UpdateOperations()
@@ -72,19 +79,26 @@ public class Hero : MonoBehaviour
 
     private void CalcPosition()
     {
-        var xVel = _direction.x * _speed;
+        var xVel = CalcXVelocity();
         var yVel = CalcYVelocity();
         _rigidbody.velocity = new Vector2(xVel, yVel);
     }
+    private float CalcXVelocity()
+    {
+        if (_IsHangingMove) return 0f;
 
+        return _direction.x * _speed;
+    }
     private float CalcYVelocity()
     {
+        if (_IsHangingMove && !_isJumpingPressed) return _direction.y * 3f; // ползем наверх
+
         var yVel = _rigidbody.velocity.y;
 
         if (_isGrounded && _isDoubleJumpEnable) _isDoubleJumpActive = true;
         if (_isJumpingPressed)
         {
-            yVel = CalJumpVelocity(yVel);        
+            yVel = CalJumpVelocity(yVel);
         }
         else if (_rigidbody.velocity.y > 0)
         {
@@ -119,7 +133,7 @@ public class Hero : MonoBehaviour
 
         if (_isGrounded)
         {
-            yVel += _jumpSpeed;
+            yVel = _jumpSpeed;
         }
         else if (_isDoubleJumpActive)
         {
@@ -130,13 +144,13 @@ public class Hero : MonoBehaviour
 
         return yVel;
     }
+
     private void UpdateSpriteDirection()
     {
         if (_direction.x != 0)
         {
             var isToLeft = _direction.x < 0;
             transform.localScale = new Vector3(isToLeft ? -1 : 1, 1, 1);
-            //_spriteRender.flipX = isToLeft;
         }
     }
     private void UpdateAnimatorParamsState()
@@ -145,6 +159,21 @@ public class Hero : MonoBehaviour
         _animator.SetBool(_anim_isRunning, _direction.x != 0);
         _animator.SetBool(_anim_isGrounded, _isGrounded);
     }
+
+
+    public void MovementDefaultAction()
+    {
+
+    }
+    public void MovementHangAction()
+    {
+        _isJumpingPressed = false;
+    }
+    public void MovementGrabAction()
+    {
+        _isJumpingPressed = false;
+    }
+
 
     private void PlayStateAnimationsByState()
     {
@@ -170,6 +199,9 @@ public class Hero : MonoBehaviour
     }    
     public void SetIsJumping(bool val)
     {
+        if (_IsGrabMove) return; // пока что-то тащим не можем прыгать
+        if (_IsHangingMove) { Interact(val); _isDoubleJumpActive = true; }
+
         if (!_isJumpingPressed && val && _isGrounded)
         {
             _needPlayJumpSas = true;

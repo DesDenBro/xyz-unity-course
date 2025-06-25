@@ -16,7 +16,10 @@ namespace PixelCrew.Components
             var _targetRigidBody = _target.GetComponent<Rigidbody2D>();
             if (_targetRigidBody == null) return;
 
-            _rigidBody.velocity = _targetRigidBody.velocity;
+            _rigidBody.velocity = new Vector2(
+                _targetRigidBody.velocity.x + (_targetRigidBody.velocity.x > 0 ? 0.2f : -0.2f),
+                _targetRigidBody.velocity.y + (_targetRigidBody.velocity.y > 0 ? 0.2f : -0.2f)
+            );
         }
     }
 }
