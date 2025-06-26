@@ -73,11 +73,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TeleportNoTexture
       objectReference: {fileID: 0}
-    - target: {fileID: 1452401033180118216, guid: 273bf64e6ea41a647880d95b9915f5a5,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1452401033180118222, guid: 273bf64e6ea41a647880d95b9915f5a5,
         type: 3}
       propertyPath: m_Sprite
@@ -93,27 +88,12 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1452401033180118223, guid: 273bf64e6ea41a647880d95b9915f5a5,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 1452401033180118226, guid: 273bf64e6ea41a647880d95b9915f5a5,
         type: 3}
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000,
         type: 0}
-    - target: {fileID: 1452401033328431200, guid: 273bf64e6ea41a647880d95b9915f5a5,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.002
-      objectReference: {fileID: 0}
-    - target: {fileID: 1452401033328431200, guid: 273bf64e6ea41a647880d95b9915f5a5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.084
-      objectReference: {fileID: 0}
     - target: {fileID: 1452401033441449404, guid: 273bf64e6ea41a647880d95b9915f5a5,
         type: 3}
       propertyPath: m_Icon

@@ -2,98 +2,101 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class HeroInputReader : MonoBehaviour
+namespace PixelCrew.GameObjects
 {
-    [SerializeField] private Hero _hero;
-
-    public void OnMovement(InputAction.CallbackContext context)
+    public class HeroInputReader : MonoBehaviour
     {
-        var direction = context.ReadValue<Vector2>();
-        _hero.SetDirection(direction);
-    }
+        [SerializeField] private Hero _hero;
 
-    public void OnJump(InputAction.CallbackContext context)
-    {
-        if (context.started)
+        public void OnMovement(InputAction.CallbackContext context)
         {
-            _hero.SetIsJumping(true);
+            var direction = context.ReadValue<Vector2>();
+            _hero.SetDirection(direction);
         }
-        if (context.canceled)
+
+        public void OnJump(InputAction.CallbackContext context)
         {
-            _hero.SetIsJumping(false);
+            if (context.started)
+            {
+                _hero.SetIsJumping(true);
+            }
+            if (context.canceled)
+            {
+                _hero.SetIsJumping(false);
+            }
         }
-    }
 
-    public void OnInteract(InputAction.CallbackContext context)
-    {
-        //Debug.Log("started: " + context.started + ", performed: " + context.performed + ", canceled: " + context.canceled);
-        if (context.started)
+        public void OnInteract(InputAction.CallbackContext context)
         {
-            //Debug.Log("started");
-            _hero.Interact(true);
+            //Debug.Log("started: " + context.started + ", performed: " + context.performed + ", canceled: " + context.canceled);
+            if (context.started)
+            {
+                //Debug.Log("started");
+                _hero.Interact(true);
+            }
+            if (context.canceled)
+            {
+                //Debug.Log("canceled");
+                _hero.Interact(false);
+            }
         }
-        if (context.canceled)
+
+        public void OnSay(InputAction.CallbackContext context)
         {
-            //Debug.Log("canceled");
-            _hero.Interact(false);
+            if (context.canceled)
+            {
+                _hero.Say();
+            }
         }
-    }
 
-    public void OnSay(InputAction.CallbackContext context)
-    {
-        if (context.canceled)
+        /*
+        private void Awake()
         {
-            _hero.Say();
+            Debug.Log("Awake");
+            _hero = GetComponent<Hero>();
         }
-    }
 
-    /*
-    private void Awake()
-    {
-        Debug.Log("Awake");
-        _hero = GetComponent<Hero>();
-    }
-
-    private void OnEnable()
-    {
-        Debug.Log("OnEnable");
-    }
-
-    private void Start()
-    {
-        Debug.Log("Start");
-    }
-
-    private void FixedUpdate()
-    {
-        Debug.Log("FixedUpdate");
-    } 
-
-    private void Update()
-    {
-        //Debug.Log("Update");
-        var horizontal = Input.GetAxis("Horizontal");
-        _hero.SetDirection(horizontal);
-
-        if (Input.GetButtonUp("Fire1"))
+        private void OnEnable()
         {
-            _hero.Say();
+            Debug.Log("OnEnable");
         }
-    }
 
-    private void LateUpdate()
-    {
-        Debug.Log("LateUpdate");
-    }
+        private void Start()
+        {
+            Debug.Log("Start");
+        }
 
-    private void OnDisable()
-    { 
-        Debug.Log("OnDisable");
+        private void FixedUpdate()
+        {
+            Debug.Log("FixedUpdate");
+        } 
+
+        private void Update()
+        {
+            //Debug.Log("Update");
+            var horizontal = Input.GetAxis("Horizontal");
+            _hero.SetDirection(horizontal);
+
+            if (Input.GetButtonUp("Fire1"))
+            {
+                _hero.Say();
+            }
+        }
+
+        private void LateUpdate()
+        {
+            Debug.Log("LateUpdate");
+        }
+
+        private void OnDisable()
+        { 
+            Debug.Log("OnDisable");
+        }
+
+        private void OnDestroy()
+        {
+            Debug.Log("OnDestroy");
+        }
+        */
     }
-    
-    private void OnDestroy()
-    {
-        Debug.Log("OnDestroy");
-    }
-    */
 }

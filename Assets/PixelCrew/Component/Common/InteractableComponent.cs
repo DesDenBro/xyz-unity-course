@@ -105,6 +105,8 @@ namespace PixelCrew.Components
         }
         private void ClickInteraction(GameObject activator, bool isPressed)
         {
+            if (!_isActive) return;
+
             if (_isInInteract || (!_isInInteract && isPressed)) return;
             if (!_isInInteract && !isPressed) _isInInteract = true;
 
@@ -169,7 +171,7 @@ namespace PixelCrew.Components
 
             if (checksDone)
             {
-                _isActive = inventoryComp.ChangeKeyAmount(-_thingSpecification.KeysAmount) && inventoryComp.ChangeMoneyAmount(-_thingSpecification.CostAmount);
+                _isActive = inventoryComp.ChangeKeyAmount(_thingSpecification.KeysAmount) && inventoryComp.ChangeMoneyAmount(_thingSpecification.CostAmount);
             }
         }
     }

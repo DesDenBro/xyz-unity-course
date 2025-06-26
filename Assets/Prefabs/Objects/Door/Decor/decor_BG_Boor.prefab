@@ -77,10 +77,20 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.5882353
       objectReference: {fileID: 0}
+    - target: {fileID: 6722559029704629957, guid: 1053cf58de28bd54d9d6cc1f618212a6,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722559029704629957, guid: 1053cf58de28bd54d9d6cc1f618212a6,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 248237793
+      objectReference: {fileID: 0}
     - target: {fileID: 6722559029704629959, guid: 1053cf58de28bd54d9d6cc1f618212a6,
         type: 3}
       propertyPath: m_Name
-      value: decor_Boor
+      value: decor_BG_Boor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1053cf58de28bd54d9d6cc1f618212a6, type: 3}

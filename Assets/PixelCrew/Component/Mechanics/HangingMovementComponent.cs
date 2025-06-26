@@ -14,7 +14,7 @@ namespace PixelCrew.Components
         {
             if (!_yPos.HasValue) return;
 
-            var yVel = _rigidbody.velocity.y < -0.05f ? -0.05f : _rigidbody.velocity.y - 0.1f;
+            var yVel = _rigidbody.velocity.y < -0.1f ? -0.1f : _rigidbody.velocity.y - 0.1f;
             _rigidbody.velocity = new Vector2(0, yVel);
         }
 
