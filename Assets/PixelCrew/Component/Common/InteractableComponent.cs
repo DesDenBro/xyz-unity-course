@@ -18,8 +18,10 @@ namespace PixelCrew.Components
         [SerializeField] private UnityEventGameObject[] _actions;
         [SerializeField] private UnityEventGameObject[] _afterActions;
 
+        private OutlineSettings outline;
+        private OutlineCollection outlineCollection;
+
         private ThingSpecification _thingSpecification;
-        private SpriteRenderer _spriteRender;
         private GameObject _lastActivator;
 
         private bool _interactionDone = false;
@@ -27,23 +29,27 @@ namespace PixelCrew.Components
         private bool _isInHighlight;
 
         public bool InteractIsPossible => _iterations == InteractableIteration.Multi || !_interactionDone;
+        private bool _IsOutlineEnabled => outline?.IsEnabled ?? outlineCollection?.IsEnabled ?? false;
+
+
+        private void OutlineEnable() { if (outline != null) outline?.Enable(); else if (outlineCollection != null) outlineCollection?.Enable(); }
+        private void OutlineDisable() { if (outline != null) outline?.Disable(); else if (outlineCollection != null) outlineCollection?.Disable(); }
+
 
         private void Start()
         {
             _thingSpecification = GetComponent<ThingSpecification>();
-            _spriteRender = this.GetComponent<SpriteRenderer>();
+            outline = GetComponentInParent<OutlineSettings>();
+            if (outline == null) outlineCollection = GetComponentInParent<OutlineCollection>();
 
-            if (_spriteRender != null)
-            {
-                _spriteRender.enabled = false;
-            }
+            OutlineDisable();
         }
 
         private void FixedUpdate()
         {
             if (!_isInHighlight)
             {
-                if (_spriteRender.enabled) _spriteRender.enabled = false;
+                if (_IsOutlineEnabled) OutlineDisable();
                 if (_isInInteract) _isInInteract = false;
             }
             _isInHighlight = false;
@@ -74,13 +80,13 @@ namespace PixelCrew.Components
             if (!InteractIsPossible) return;
 
             _isInHighlight = true;
-            if (!_isInInteract && !_spriteRender.enabled)
+            if (!_isInInteract && !_IsOutlineEnabled)
             {
-                _spriteRender.enabled = true;
+                OutlineEnable();
             }
             if (_isInInteract)
             {
-                _spriteRender.enabled = false;
+                OutlineDisable();
             }
         }
 

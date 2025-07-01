@@ -111,12 +111,12 @@ TextureImporter:
       name: Barrel_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 2
-        width: 23
-        height: 25
+        x: 4
+        y: 1
+        width: 25
+        height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,12 +132,12 @@ TextureImporter:
       name: Barrel_1
       rect:
         serializedVersion: 2
-        x: 37
-        y: 3
-        width: 23
-        height: 25
+        x: 36
+        y: 2
+        width: 25
+        height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Barrel_2
       rect:
         serializedVersion: 2
-        x: 71
+        x: 70
         y: 0
-        width: 19
-        height: 29
+        width: 21
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,12 +174,12 @@ TextureImporter:
       name: Barrel_3
       rect:
         serializedVersion: 2
-        x: 100
-        y: 3
-        width: 25
-        height: 23
+        x: 99
+        y: 2
+        width: 27
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,12 +195,12 @@ TextureImporter:
       name: Barrel_4
       rect:
         serializedVersion: 2
-        x: 133
-        y: 2
-        width: 23
-        height: 25
+        x: 132
+        y: 1
+        width: 25
+        height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -216,12 +216,12 @@ TextureImporter:
       name: Barrel_5
       rect:
         serializedVersion: 2
-        x: 166
-        y: 2
-        width: 23
-        height: 25
+        x: 165
+        y: 1
+        width: 25
+        height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -237,12 +237,12 @@ TextureImporter:
       name: Barrel_6
       rect:
         serializedVersion: 2
-        x: 195
-        y: 2
-        width: 37
-        height: 31
+        x: 194
+        y: 1
+        width: 38
+        height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

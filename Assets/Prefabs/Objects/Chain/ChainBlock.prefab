@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 460680534818185773}
   - component: {fileID: 3315260636748896936}
   - component: {fileID: 5913593791150548702}
+  - component: {fileID: 9034290186900418163}
   m_Layer: 8
   m_Name: ChainBlock
   m_TagString: Untagged
@@ -162,7 +163,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6b05aeb9a7d20a549ba67eea938ef48b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -238,3 +239,18 @@ MonoBehaviour:
   _states:
   - {fileID: 4253802941919510816}
   - {fileID: 6890929898358971938}
+--- !u!114 &9034290186900418163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8224738826721454638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8136a1d6c0c8aac44b97c147af4f1bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  _outlineWidth: 1
+  _isEnabled: 1
