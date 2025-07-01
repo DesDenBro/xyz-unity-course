@@ -10,6 +10,8 @@ namespace PixelCrew.Components
         [SerializeField] private GameObject _prefab;
 
         [ContextMenu("Spawn")]
+        public void SpawnIt() => Spawn();
+
         public GameObject Spawn()
         {
             var instanse = Instantiate(_prefab, _target.position, Quaternion.identity);

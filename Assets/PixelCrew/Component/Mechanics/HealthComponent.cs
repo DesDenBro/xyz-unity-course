@@ -21,6 +21,9 @@ namespace PixelCrew.Components
             }
             Debug.Log("damage " + damagePoints + ", health " + _currentHealth);
         }
+        [ContextMenu("Hit")]
+        public void HitIt() => ApplyDamage(100);
+
 
         public void RecoverHealth(int healthPoints)
         {
@@ -35,6 +38,8 @@ namespace PixelCrew.Components
                 _onHealth?.Invoke();
                 Debug.Log("recover " + healthPoints + ", health " + _currentHealth);
             }
-        } 
+        }
+        [ContextMenu("Health")]
+        public void HealthIt() => RecoverHealth(100);
     }
 }

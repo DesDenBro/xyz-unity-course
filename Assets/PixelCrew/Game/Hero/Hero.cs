@@ -12,6 +12,7 @@ namespace PixelCrew.GameObjects
         private static readonly int _anim_verticalVelocity = Animator.StringToHash("vertical-velocity");
         private static readonly int _anim_triggerHit = Animator.StringToHash("trigger-hit");
         private static readonly int _anim_triggerHealing = Animator.StringToHash("trigger-healing");
+        private static readonly int _anim_triggerAttack = Animator.StringToHash("trigger-attack");
 
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
@@ -272,9 +273,9 @@ namespace PixelCrew.GameObjects
             Gizmos.DrawSphere(transform.position + new Vector3(0, -0.15f), 0.29f);
         }
 
-        public void Say()
+        public void Attack()
         {
-
+            _animator.SetTrigger(_anim_triggerAttack);
         }
 
         public void SpawnFootAction(string sasName)

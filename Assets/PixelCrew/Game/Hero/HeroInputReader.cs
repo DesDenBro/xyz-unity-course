@@ -41,11 +41,11 @@ namespace PixelCrew.GameObjects
             }
         }
 
-        public void OnSay(InputAction.CallbackContext context)
+        public void OnLeftMouseClick(InputAction.CallbackContext context)
         {
             if (context.canceled)
             {
-                _hero.Say();
+                _hero.Attack();
             }
         }
 
