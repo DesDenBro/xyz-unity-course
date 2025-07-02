@@ -1,6 +1,9 @@
 ﻿using PixelCrew.Common;
 using PixelCrew.Common.Tech;
 using PixelCrew.Components;
+using PixelCrew.Utils;
+using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace PixelCrew.GameObjects
@@ -17,12 +20,17 @@ namespace PixelCrew.GameObjects
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
         [SerializeField] private float _damageJumpSpeed;
+        [SerializeField] private int _baseDamage;
         [SerializeField] private LayerCheck _groundCheck;
         [SerializeField] private float _interactionRadius;
         [SerializeField] private bool _isDoubleJumpEnable;
         [SerializeField] private LayerMask _interactionLayer;
-        [SerializeField] private SpawnComponent _footActionParticles;
+        [SerializeField] private SpawnComponent _actionParticles;
         [SerializeField] private ParticleSystem _hitParticles;
+        [SerializeField] private CheckCircleOverlap _attackRange;
+        [SerializeField] private Weapon _weapon;
+        [SerializeField] private AnimatorController _armed;
+        [SerializeField] private AnimatorController _disarmed;
 
         private MovementStateComponent _movementState;
         private InventoryComponent _inventory;
@@ -44,6 +52,8 @@ namespace PixelCrew.GameObjects
         private bool _IsNormalMove => _currentMovement == MovementStateType.Default;
         private bool _IsGrabMove => _currentMovement == MovementStateType.Grab;
         private bool _IsHangingMove => _currentMovement == MovementStateType.Hanging;
+        private int _Damage => _baseDamage * _weapon?.Damage ?? 1;
+        private bool _IsArmed => _weapon != null;
 
 
         private void Awake()
@@ -183,14 +193,14 @@ namespace PixelCrew.GameObjects
             // Анимация партиклов тяжелого падения
             if (_needPlayHardFallSas)
             {
-                SpawnFootAction("fall");
+                SpawnAction("fall");
                 _needPlayHardFallSas = false;
             }
 
             // Анимация партиклов прыжка
             if (_needPlayJumpSas)
             {
-                SpawnFootAction("jump");
+                SpawnAction("jump");
                 _needPlayJumpSas = false;
             }
         }
@@ -265,22 +275,43 @@ namespace PixelCrew.GameObjects
             }
         }
 
-
-        private void OnDrawGizmos()
+        public void ArmWeapon(Weapon newWeapon)
         {
-            //Debug.DrawRay(transform.position, Vector2.down, IsGrounded() ? Color.green : Color.red);
-            Gizmos.color = _isGrounded ? Color.green : Color.red;
-            Gizmos.DrawSphere(transform.position + new Vector3(0, -0.15f), 0.29f);
+            if (newWeapon != null)
+            {
+                _weapon = newWeapon;
+                _animator.runtimeAnimatorController = _armed;
+            }
+            else
+            {
+                _weapon = null;
+                _animator.runtimeAnimatorController = _disarmed;
+            }
         }
-
         public void Attack()
         {
+            if (!_IsArmed) return;
+
             _animator.SetTrigger(_anim_triggerAttack);
         }
-
-        public void SpawnFootAction(string sasName)
+        public void OnAttack()
         {
-            var obj = _footActionParticles.Spawn();
+            var gos = _attackRange.GetObjectsInRange();
+            foreach (var go in gos)
+            {
+                if (!go.CompareTag("Enemy")) continue;
+
+                var hp = go.GetComponent<HealthComponent>();
+                if (hp != null)
+                {
+                    hp.ApplyDamage(_Damage);
+                }
+            }
+        }
+
+        public void SpawnAction(string sasName)
+        {
+            var obj = _actionParticles.Spawn();
 
             var saComp = obj?.GetComponent<SpriteAnimation>();
             if (saComp == null) return;
@@ -298,6 +329,13 @@ namespace PixelCrew.GameObjects
                 );
             }
         }
-    }
+#if UNITY_EDITOR
+        private void OnDrawGizmos()
+        {
+            Handles.color = _isGrounded ? HandlesUtils.TransparentGreen : HandlesUtils.TransparentRed;
+            Handles.DrawSolidDisc(transform.position + new Vector3(0, -0.15f), Vector3.forward, 0.29f);
+        }
+#endif
 
+    }
 }

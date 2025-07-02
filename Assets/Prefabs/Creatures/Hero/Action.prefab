@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 3513381182742660212}
   - component: {fileID: 2050713159055817033}
   m_Layer: 0
-  m_Name: FootAction
+  m_Name: Action
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -166,6 +166,7 @@ Transform:
   - {fileID: 6179660349627986122}
   - {fileID: 1201699009956755570}
   - {fileID: 5997064494142320202}
+  - {fileID: 4410790522325240893}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -206,7 +207,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -619002443
-  m_SortingLayer: 6
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -237,6 +238,7 @@ MonoBehaviour:
   - {fileID: 3182556386036929369}
   - {fileID: 6658372873018522282}
   - {fileID: 2704611461903962484}
+  - {fileID: 5710945266609071766}
 --- !u!114 &2050713159055817033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +301,70 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 265eeb72d43bc7c43ace2bd41d4a2638, type: 3}
   - {fileID: 21300000, guid: d9e047d245b70a04da42e9a768345f44, type: 3}
   - {fileID: 21300000, guid: 9230ae71946963842be4a3a51acf155e, type: 3}
+  _isLoop: 0
+  _allowNext: 1
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2050713159055817033}
+        m_MethodName: SelfDestroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &7015126837505727640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4410790522325240893}
+  - component: {fileID: 5710945266609071766}
+  m_Layer: 0
+  m_Name: sas-sword-attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &4410790522325240893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015126837505727640}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.731, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8497151579401214312}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5710945266609071766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015126837505727640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbcb7e66682ec6946a0e9f1664d02520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: sword-attack
+  _sprites:
+  - {fileID: 21300000, guid: 13e22940f477a664093589e658361955, type: 3}
+  - {fileID: 21300000, guid: 742b4167f22d4ef4d97a52bf14d84e65, type: 3}
+  - {fileID: 21300000, guid: b398ba0b2eeb2bf4c8a2866a4d6dced8, type: 3}
   _isLoop: 0
   _allowNext: 1
   _onComplete:

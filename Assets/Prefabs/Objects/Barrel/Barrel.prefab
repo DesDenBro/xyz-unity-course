@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  _outlineWidth: 0.67
+  _outlineWidth: 1
   _isEnabled: 1
 --- !u!1001 &980067171893201846
 PrefabInstance:

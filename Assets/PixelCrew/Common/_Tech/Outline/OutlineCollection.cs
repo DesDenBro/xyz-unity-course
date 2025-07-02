@@ -21,12 +21,12 @@ namespace PixelCrew.Components
         public void Enable()
         {
             _isEnabled = true;
-            foreach (var outline in outlines) outline.Enable();
+            foreach (var outline in outlines) outline?.Enable();
         }
         public void Disable()
         {
             _isEnabled = false;
-            foreach (var outline in outlines) outline.Disable();
+            foreach (var outline in outlines) outline?.Disable();
         }
     }
 }
