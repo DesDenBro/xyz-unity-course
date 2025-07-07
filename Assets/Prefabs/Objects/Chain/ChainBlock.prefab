@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 3315260636748896936}
   - component: {fileID: 5913593791150548702}
   - component: {fileID: 9034290186900418163}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: ChainBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.25, y: 0.96875}
+    oldSize: {x: 0.3125, y: 1}
     newSize: {x: 0.25, y: 0.96875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -236,9 +236,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: idle
-  _states:
-  - {fileID: 4253802941919510816}
-  - {fileID: 6890929898358971938}
 --- !u!114 &9034290186900418163
 MonoBehaviour:
   m_ObjectHideFlags: 0

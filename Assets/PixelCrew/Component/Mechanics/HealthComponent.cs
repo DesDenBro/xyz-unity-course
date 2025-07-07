@@ -11,6 +11,14 @@ namespace PixelCrew.Components
         [SerializeField] private UnityEvent _onHealth;
         [SerializeField] private UnityEvent _onDie;
 
+        public int Health => _currentHealth;
+        public int MaxHealth => _maxHealth;
+
+
+        public void SetHealth(int health) { _currentHealth = health; }
+        public void SetMaxHealth(int maxHealth) { _maxHealth = maxHealth; }
+
+
         public void ApplyDamage(int damagePoints)
         {
             _currentHealth -= damagePoints;

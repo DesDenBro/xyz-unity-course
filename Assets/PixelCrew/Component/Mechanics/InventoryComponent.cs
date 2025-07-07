@@ -10,6 +10,11 @@ namespace PixelCrew.Components
         public int MoneyCount => _money;
         public int KeysCount => _keys;
 
+
+        public void SetMoney(int money) { _money = money; }
+        public void SetKeys(int keys) { _keys = keys; }
+
+
         public bool ChangeMoneyAmount(int count) => ChangeInventoryObjectCount(InventoryObjectType.Money, count);
         public bool ChangeKeyAmount(int count) => ChangeInventoryObjectCount(InventoryObjectType.Key, count);
         public bool ChangeInventoryObjectCount(InventoryObjectType type, int count)

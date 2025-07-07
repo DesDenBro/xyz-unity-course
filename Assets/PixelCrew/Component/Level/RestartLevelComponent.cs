@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PixelCrew.Model;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace PixelCrew.Components
@@ -7,6 +8,9 @@ namespace PixelCrew.Components
     {
         public void Restart()
         {
+            var session = FindObjectOfType<GameSession>();
+            Destroy(session.gameObject);
+
             var scene = SceneManager.GetActiveScene();
             if (scene != null)
             {
@@ -17,7 +21,5 @@ namespace PixelCrew.Components
                 Debug.LogWarning("Scene not found to restart");
             }
         }
-
-
     }
 }

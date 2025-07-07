@@ -1,10 +1,12 @@
 ﻿using PixelCrew.Common;
 using PixelCrew.Common.Tech;
 using PixelCrew.Components;
+using PixelCrew.Model;
 using PixelCrew.Utils;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 namespace PixelCrew.GameObjects
 {
@@ -47,6 +49,7 @@ namespace PixelCrew.GameObjects
         private bool _isDoubleJumpActive;
         private float? _maxYInJump = null;
         private Collider2D[] _interactionResult = new Collider2D[1];
+        private GameSession _session;
 
         private bool _IsFalling => _rigidbody.velocity.y < 0.001f && !_IsHangingMove;
         private bool _IsNormalMove => _currentMovement == MovementStateType.Default;
@@ -63,6 +66,26 @@ namespace PixelCrew.GameObjects
             _inventory = GetComponent<InventoryComponent>();
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+        }
+
+        private void Start()
+        { 
+            _session = FindObjectOfType<GameSession>();
+            SetSessionData();
+        }
+
+        private void SetSessionData()
+        {
+            _health.SetMaxHealth(_session.Data.MaxHealth);
+            _health.SetHealth(_session.Data.Health);
+            _inventory.SetMoney(_session.Data.Coins);
+            _inventory.SetKeys(_session.Data.Keys);
+            if (_session.Data.IsArmed) { ArmWeapon(_session.Data.Weapon); }
+        }
+
+        private void OnDestroy()
+        {
+            UpdateSessionData();
         }
 
         public void FixedUpdate()
@@ -205,6 +228,15 @@ namespace PixelCrew.GameObjects
             }
         }
 
+        public void UpdateSessionData()
+        {
+            _session.Data.MaxHealth = _health.MaxHealth;
+            _session.Data.Health = _health.Health;
+            _session.Data.Coins = _inventory.MoneyCount;
+            _session.Data.Keys = _inventory.KeysCount;
+            _session.Data.IsArmed = _IsArmed;
+            _session.Data.Weapon = _weapon;
+        }
 
         public void SetDirection(Vector2 direction)
         {

@@ -9,8 +9,8 @@ namespace PixelCrew.Common.Tech
     {
         [SerializeField] private int _frameRate = 10;
         [SerializeField] private string _startSasName;
-        [SerializeField] private SpriteAnimationState[] _states;
 
+        private SpriteAnimationState[] _states;
         private SpriteRenderer _spriteRenderer;
         private SpriteAnimationState _currentState;
         private float _secondsPerFrame;
@@ -22,6 +22,7 @@ namespace PixelCrew.Common.Tech
         private void Start()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _states = GetComponentsInChildren<SpriteAnimationState>();
 
             if (_statesDict.Count > 0)
             {
