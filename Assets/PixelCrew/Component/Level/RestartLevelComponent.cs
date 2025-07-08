@@ -8,9 +8,6 @@ namespace PixelCrew.Components
     {
         public void Restart()
         {
-            var session = FindObjectOfType<GameSession>();
-            Destroy(session.gameObject);
-
             var scene = SceneManager.GetActiveScene();
             if (scene != null)
             {

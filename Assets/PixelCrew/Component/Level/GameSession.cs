@@ -7,7 +7,10 @@ namespace PixelCrew.Model
     {
         [SerializeField] private PlayerData _data;
 
+        private bool _disposed = false;
+
         public PlayerData Data => _data;
+        public bool Disposed => _disposed;
 
 
         private void Awake()
@@ -15,6 +18,7 @@ namespace PixelCrew.Model
             if (IsSessionExist())
             {
                 Destroy(gameObject);
+                _disposed = true;
             }
             else
             {
