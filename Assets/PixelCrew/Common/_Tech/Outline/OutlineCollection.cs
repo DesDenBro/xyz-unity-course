@@ -20,6 +20,8 @@ namespace PixelCrew.Components
 
         public void Enable()
         {
+            if (outlines == null) return;
+
             _isEnabled = true;
             foreach (var outline in outlines)
             {
@@ -29,6 +31,8 @@ namespace PixelCrew.Components
         }
         public void Disable()
         {
+            if (outlines == null) return;
+
             _isEnabled = false;
             foreach (var outline in outlines)
             {

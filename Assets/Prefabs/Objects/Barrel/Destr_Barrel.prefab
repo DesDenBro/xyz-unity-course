@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 1873178648753431777}
   m_Layer: 8
   m_Name: Destr_Barrel
-  m_TagString: Enemy
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -294,10 +294,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: idle
-  _states:
-  - {fileID: 7148389315946886229}
-  - {fileID: 7148389316330090884}
-  - {fileID: 7148389316137728106}
 --- !u!50 &7148389317178416241
 Rigidbody2D:
   serializedVersion: 4

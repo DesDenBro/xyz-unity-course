@@ -182,11 +182,6 @@ namespace PixelCrew.Components
         }
     }
 
-    public enum InteractableOperation : byte
-    {
-        Higthlight = 0,
-        Activate = 1
-    }
     public enum InteractableIteration : byte
     {
         Once = 0,

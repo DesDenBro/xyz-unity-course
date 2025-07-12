@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Coin
+  - Destructable
+  - Interactable
   layers:
   - Default
   - TransparentFX
@@ -19,8 +20,8 @@ TagManager:
   - Interactables
   - Collectables
   - Trash
-  - 
-  - 
+  - Hero
+  - Enemy
   - 
   - 
   - 

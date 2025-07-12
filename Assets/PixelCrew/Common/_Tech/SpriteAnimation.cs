@@ -18,12 +18,15 @@ namespace PixelCrew.Common.Tech
         private float _nextFrameTime;
 
         private IReadOnlyDictionary<string, SpriteAnimationState> _statesDict => _states?.ToDictionary(x => x.Name, y => y) ?? new Dictionary<string, SpriteAnimationState>(0);
-
-        private void Start()
+        
+        private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _states = GetComponentsInChildren<SpriteAnimationState>();
+        }
 
+        private void Start()
+        {
             if (_statesDict.Count > 0)
             {
                 var sasName = string.IsNullOrWhiteSpace(_startSasName) || !_statesDict.ContainsKey(_startSasName) ? _states[0]?.Name : _startSasName;
