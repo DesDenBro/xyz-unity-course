@@ -1,5 +1,6 @@
 ﻿using PixelCrew.GameObjects;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace PixelCrew.Model
@@ -7,7 +8,7 @@ namespace PixelCrew.Model
     [Serializable]
     public class PlayerData
     {
-        public Vector3 Position;
+        public Dictionary<string, Vector3> PositionOnLevel;
         public int Coins;
         public int Keys;
         public int MaxHealth;

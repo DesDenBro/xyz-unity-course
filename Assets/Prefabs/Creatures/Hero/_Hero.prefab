@@ -4855,13 +4855,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c749b9474ac1b3c4cb99d99af74ab243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0.5
-  _mask:
+  mask:
     serializedVersion: 2
     m_Bits: 512
-  _tags:
+  tags:
   - Interactable
-  _onOverlap:
+  onOverlap:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6595804528849134846}
@@ -4875,6 +4874,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  checkOnlyForward: 0
+  _radius: 0.7
 --- !u!1 &3886535996343965495
 GameObject:
   m_ObjectHideFlags: 0
@@ -4918,14 +4919,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c749b9474ac1b3c4cb99d99af74ab243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0.2
-  _mask:
+  mask:
     serializedVersion: 2
-    m_Bits: 12087
-  _tags:
+    m_Bits: 11063
+  tags:
   - Enemy
   - Destructable
-  _onOverlap:
+  onOverlap:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5784780335098992499}
@@ -4939,6 +4939,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  checkOnlyForward: 0
+  _radius: 0.2
 --- !u!1 &4343286018677879401
 GameObject:
   m_ObjectHideFlags: 0
@@ -4983,13 +4985,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c749b9474ac1b3c4cb99d99af74ab243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0.5
-  _mask:
+  mask:
     serializedVersion: 2
     m_Bits: 512
-  _tags:
+  tags:
   - Interactable
-  _onOverlap:
+  onOverlap:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8520550683088350880}
@@ -5003,6 +5004,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  checkOnlyForward: 0
+  _radius: 0.7
 --- !u!114 &8520550683088350880
 MonoBehaviour:
   m_ObjectHideFlags: 0

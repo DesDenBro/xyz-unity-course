@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Destructable
   - Interactable
+  - Coin
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -22,8 +24,8 @@ TagManager:
   - Trash
   - Hero
   - Enemy
-  - 
-  - 
+  - Parameters
+  - Object
   - 
   - 
   - 

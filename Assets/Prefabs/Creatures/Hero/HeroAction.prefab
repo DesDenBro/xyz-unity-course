@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 3513381182742660212}
   - component: {fileID: 2050713159055817033}
   m_Layer: 0
-  m_Name: Action
+  m_Name: HeroAction
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

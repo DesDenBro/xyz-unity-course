@@ -3,11 +3,13 @@ using PixelCrew.Common.Tech;
 using PixelCrew.Components;
 using PixelCrew.Model;
 using PixelCrew.Utils;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 namespace PixelCrew.GameObjects.Creatures
 {
@@ -48,6 +50,7 @@ namespace PixelCrew.GameObjects.Creatures
         protected override void Start()
         {
             base.Start();
+            SetSessionData();
         }
         protected override void FixedUpdate()
         {
@@ -170,16 +173,33 @@ namespace PixelCrew.GameObjects.Creatures
             if (!_IsArmed) return;
             base.InitAttack();
         }
-        
-        public override void SetSessionData()
+
+
+        public virtual void SetSessionData()
         {
-            base.SetSessionData();
+            if (_session.Data.PositionOnLevel != null
+                && _session.Data.PositionOnLevel.TryGetValue(SceneManager.GetActiveScene().name, out Vector3 position)
+                && position != Vector3.zero)
+            {
+                transform.position = position;
+            }
+            _health.SetMaxHealth(_session.Data.MaxHealth);
+            _health.SetHealth(_session.Data.Health);
+            _inventory.SetMoney(_session.Data.Coins);
+            _inventory.SetKeys(_session.Data.Keys);
             ArmWeapon(_session.Data.Weapon);
         }
-
-        public override void UpdateSessionData()
+        public virtual void UpdateSessionData()
         {
-            base.UpdateSessionData();
+            var sceneName = SceneManager.GetActiveScene().name;
+            if (_session.Data.PositionOnLevel == null) _session.Data.PositionOnLevel = new Dictionary<string, Vector3>();
+            if (!_session.Data.PositionOnLevel.ContainsKey(sceneName)) { _session.Data.PositionOnLevel.Add(sceneName, transform.position); }
+            else { _session.Data.PositionOnLevel[sceneName] = transform.position; }
+
+            _session.Data.MaxHealth = _health.MaxHealth;
+            _session.Data.Health = _health.Health;
+            _session.Data.Coins = _inventory.MoneyCount;
+            _session.Data.Keys = _inventory.KeysCount;
             _session.Data.IsArmed = _IsArmed;
             _session.Data.Weapon = _weapon;
         }

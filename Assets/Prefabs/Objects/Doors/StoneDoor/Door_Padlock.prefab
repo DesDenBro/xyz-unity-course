@@ -125,6 +125,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door_Padlock
       objectReference: {fileID: 0}
+    - target: {fileID: 6343062374609128620, guid: 6ccfc2ad3a99b6449a8f849831fad4f3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6343062374609128620, guid: 6ccfc2ad3a99b6449a8f849831fad4f3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     - target: {fileID: 6343062374609128623, guid: 6ccfc2ad3a99b6449a8f849831fad4f3,
         type: 3}
       propertyPath: m_RootOrder
@@ -133,12 +143,12 @@ PrefabInstance:
     - target: {fileID: 6343062374609128623, guid: 6ccfc2ad3a99b6449a8f849831fad4f3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.38
+      value: -3.377
       objectReference: {fileID: 0}
     - target: {fileID: 6343062374609128623, guid: 6ccfc2ad3a99b6449a8f849831fad4f3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25.867
+      value: -25.868
       objectReference: {fileID: 0}
     - target: {fileID: 6343062374609128623, guid: 6ccfc2ad3a99b6449a8f849831fad4f3,
         type: 3}

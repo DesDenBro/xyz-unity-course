@@ -3,9 +3,11 @@ using PixelCrew.Common.Tech;
 using PixelCrew.Components;
 using PixelCrew.Model;
 using PixelCrew.Utils;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PixelCrew.GameObjects.Creatures
 {
@@ -25,15 +27,18 @@ namespace PixelCrew.GameObjects.Creatures
         [SerializeField] protected float jumpSpeed;
         [SerializeField] private float _damageJumpSpeed;
         [SerializeField] private int _baseDamage;
+        [SerializeField] private CreatureState _creatureStateInfo = CreatureState.Alive;
 
         [Header("Base checks")]
         [SerializeField] private LayerCheck _groundCheck;
         [SerializeField] private CheckCircleOverlap _attackRange;
-                
+        
+        
         private float? _maxYInJump = null;
         protected bool _isJumpingPressed;
         protected bool _needPlayJumpSas;
         protected bool _needPlayHardFallSas;
+        private DeadParamsComponent _deadParams;
         protected SpawnActionComponent _actionParticles;
         protected MovementStateComponent _movementState;
         protected InventoryComponent _inventory;
@@ -52,6 +57,7 @@ namespace PixelCrew.GameObjects.Creatures
 
         protected virtual void Awake()
         {
+            _deadParams = GetComponent<DeadParamsComponent>();
             _actionParticles = GetComponent<SpawnActionComponent>();
             _movementState = GetComponent<MovementStateComponent>();
             _health = GetComponent<HealthComponent>();
@@ -64,7 +70,6 @@ namespace PixelCrew.GameObjects.Creatures
         protected virtual void Start()
         {
             _session = FindObjectsOfType<GameSession>().Where(x => !x.Disposed).FirstOrDefault();
-            SetSessionData();
         }
 
         protected virtual void FixedUpdate()
@@ -230,29 +235,16 @@ namespace PixelCrew.GameObjects.Creatures
 
         public void InitDie()
         {
+            if (_creatureStateInfo == CreatureState.Dead) return;
+
+            _creatureStateInfo = CreatureState.Dead;
             _animator.SetBool(_anim_isDead, true);
         }
-
-        public virtual void SetSessionData()
+        public void OnDie()
         {
-            if (_session.Data.Position != Vector3.zero)
-            {
-                //transform.position = _session.Data.Position;
-            }
-            _health.SetMaxHealth(_session.Data.MaxHealth);
-            _health.SetHealth(_session.Data.Health);
-            _inventory.SetMoney(_session.Data.Coins);
-            _inventory.SetKeys(_session.Data.Keys);
+            _deadParams.SetParams();
         }
-        public virtual void UpdateSessionData()
-        {
-            _session.Data.Position = transform.position;
-            _session.Data.MaxHealth = _health.MaxHealth;
-            _session.Data.Health = _health.Health;
-            _session.Data.Coins = _inventory.MoneyCount;
-            _session.Data.Keys = _inventory.KeysCount;
-        }
-
+        
 
 #if UNITY_EDITOR
         private void OnDrawGizmos()
@@ -261,5 +253,11 @@ namespace PixelCrew.GameObjects.Creatures
             Handles.DrawSolidDisc(transform.position + new Vector3(0, -0.15f), Vector3.forward, 0.29f);
         }
 #endif
+    }
+
+    public enum CreatureState : byte
+    {
+        Alive = 0,
+        Dead = 1
     }
 }
