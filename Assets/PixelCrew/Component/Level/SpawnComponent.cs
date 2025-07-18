@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using PixelCrew.Common.Tech;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 namespace PixelCrew.Components
 {
@@ -9,6 +12,11 @@ namespace PixelCrew.Components
 
         [ContextMenu("Spawn")]
         public void SpawnIt() => Spawn();
+
+        public IReadOnlyCollection<string> GetPrefabChildrenObjNames<T>() where T : MonoBehaviour
+        {
+            return _prefab.GetComponentsInChildren<T>(true).Select(x => x.name).ToList();
+        }
 
         public GameObject Spawn()
         {

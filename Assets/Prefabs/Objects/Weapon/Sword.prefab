@@ -45,14 +45,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: idle
   _sprites:
-  - {fileID: 21300000, guid: 816dd23a3b19a01479458eeee6362fe3, type: 3}
-  - {fileID: 21300000, guid: 6dc5c963224454c41ae496a2af4b91a5, type: 3}
-  - {fileID: 21300000, guid: 169ba985a2bfab74cba8efeb28cbd03c, type: 3}
-  - {fileID: 21300000, guid: 2284308770c63f6458c76bcdcb51bef3, type: 3}
-  - {fileID: 21300000, guid: be1f3fd5acaed3f46a77a98c5c8903a5, type: 3}
-  - {fileID: 21300000, guid: 5f429a702509ca449af89ec11c358a27, type: 3}
-  - {fileID: 21300000, guid: 162ef85029108fb48b7b6f11727e16aa, type: 3}
-  - {fileID: 21300000, guid: 28d64781cc5259848b34264a3d10ccf5, type: 3}
+  - {fileID: 21300000, guid: 3c10727a655eb7f4fa90f818458797ec, type: 3}
+  - {fileID: 21300000, guid: 5e063c01819d74447a7d442843fe5893, type: 3}
+  - {fileID: 21300000, guid: b4882e5f643e3254fb2566ac5b3f4a3a, type: 3}
+  - {fileID: 21300000, guid: e20283ef9de88974c9c855019d07f62c, type: 3}
+  - {fileID: 21300000, guid: f713e3b1087b91f44a47febdc9fa5b3f, type: 3}
+  - {fileID: 21300000, guid: 15ce6e4d026359e4cb75d77bf140784d, type: 3}
+  - {fileID: 21300000, guid: cd94a3e6211efe748a5934ffc7c8ed25, type: 3}
+  - {fileID: 21300000, guid: 661af627f83f38449a59ee964ae96e03, type: 3}
+  _flipX: 0
+  _isFixedFlip: 0
   _isLoop: 1
   _allowNext: 0
   _onComplete:
@@ -159,8 +161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: idle
-  _states:
-  - {fileID: 656326814798127804}
 --- !u!114 &3001892985122815327
 MonoBehaviour:
   m_ObjectHideFlags: 0

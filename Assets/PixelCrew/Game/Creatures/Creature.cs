@@ -19,6 +19,7 @@ namespace PixelCrew.GameObjects.Creatures
         private static readonly int _anim_triggerHit = Animator.StringToHash("trigger-hit");
         private static readonly int _anim_triggerHealing = Animator.StringToHash("trigger-healing");
         private static readonly int _anim_triggerAttack = Animator.StringToHash("trigger-attack");
+        private static readonly int _anim_triggerThrow = Animator.StringToHash("trigger-throw");
         private static readonly int _anim_isDead = Animator.StringToHash("is-dead");
 
         [Header("Base params")]
@@ -226,6 +227,18 @@ namespace PixelCrew.GameObjects.Creatures
         {
             _attackRange.Check();
         }
+
+
+        public virtual void InitThrow()
+        {
+            _animator.SetTrigger(_anim_triggerThrow);
+        }
+        public virtual void OnThrow()
+        {
+
+        }
+
+
         public void DealDamage(GameObject go)
         {
             var hp = go.GetComponent<HealthComponent>();

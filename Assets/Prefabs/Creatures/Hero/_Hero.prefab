@@ -4812,6 +4812,51 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1 &2194204173503978722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7597641014839724719}
+  - component: {fileID: 4146504373416663389}
+  m_Layer: 12
+  m_Name: SwordProjectilePosition
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7597641014839724719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2194204173503978722}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.33, y: -0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5784780335098992501}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4146504373416663389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2194204173503978722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d265bd1088192e4d8650d1a233d8c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 7597641014839724719}
+  _prefab: {fileID: 1296803784847218045, guid: c8ee350aafde92c4098981005c5542f9, type: 3}
 --- !u!1 &3410809008185862997
 GameObject:
   m_ObjectHideFlags: 0
@@ -5173,6 +5218,7 @@ Transform:
   - {fileID: 6145192665312451434}
   - {fileID: 5921559453270244895}
   - {fileID: 4627714006679604376}
+  - {fileID: 7597641014839724719}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5273,7 +5319,7 @@ Animator:
   m_GameObject: {fileID: 5784780335098992503}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 08c3e2f09d4204c41bb02fe456dd4cbb, type: 2}
+  m_Controller: {fileID: 9100000, guid: ba815a7b4b2a06b4984288a5b04ff566, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5311,7 +5357,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5784780335098992498}
-        m_MethodName: OnMovement
+        m_MethodName: PressMovement
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5326,7 +5372,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5784780335098992498}
-        m_MethodName: OnLeftMouseClick
+        m_MethodName: PressAttack
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5341,7 +5387,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5784780335098992498}
-        m_MethodName: OnJump
+        m_MethodName: PressJump
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5356,7 +5402,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5784780335098992498}
-        m_MethodName: OnInteract
+        m_MethodName: PressInteract
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5368,6 +5414,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: dba0dbea-39e1-4496-9f73-1e3db04da80a
     m_ActionName: Hero/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5784780335098992498}
+        m_MethodName: PressThrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5efb0a92-6a64-4b21-86b8-cb37ed23a205
+    m_ActionName: Hero/Throw[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -5458,6 +5519,7 @@ MonoBehaviour:
   jumpSpeed: 10
   _damageJumpSpeed: 50
   _baseDamage: 1
+  _creatureStateInfo: 0
   _groundCheck: {fileID: 5784780334059268827}
   _attackRange: {fileID: 4681518861892597388}
   _isDoubleJumpEnable: 0
@@ -5479,7 +5541,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e46121c76909b64bb865c30d84eb163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawner: {fileID: 4442222044551421054}
+  _spawners:
+  - {fileID: 4442222044551421054}
+  - {fileID: 4146504373416663389}
 --- !u!114 &713820545780215522
 MonoBehaviour:
   m_ObjectHideFlags: 0

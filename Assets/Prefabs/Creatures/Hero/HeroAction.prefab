@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5997064494142320202
 Transform:
   m_ObjectHideFlags: 0
@@ -50,6 +50,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6173024186e8c184faf0d766e87bf714, type: 3}
   - {fileID: 21300000, guid: a08d6033aeb9b3245bed0c9c0bcc9f69, type: 3}
   - {fileID: 21300000, guid: c883f189065241046b92364627114819, type: 3}
+  _flipX: 0
+  _isFixedFlip: 0
   _isLoop: 0
   _allowNext: 1
   _onComplete:
@@ -82,7 +84,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1201699009956755570
 Transform:
   m_ObjectHideFlags: 0
@@ -117,6 +119,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 23287f71347985144bea72400aba5009, type: 3}
   - {fileID: 21300000, guid: 61ec6161c0ddb4945aba18277b1381e3, type: 3}
   - {fileID: 21300000, guid: 929bfc035b9908c43bb7a8f5d6a17dcd, type: 3}
+  _flipX: 0
+  _isFixedFlip: 0
   _isLoop: 0
   _allowNext: 1
   _onComplete:
@@ -262,7 +266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6179660349627986122
 Transform:
   m_ObjectHideFlags: 0
@@ -296,6 +300,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 265eeb72d43bc7c43ace2bd41d4a2638, type: 3}
   - {fileID: 21300000, guid: d9e047d245b70a04da42e9a768345f44, type: 3}
   - {fileID: 21300000, guid: 9230ae71946963842be4a3a51acf155e, type: 3}
+  _flipX: 0
+  _isFixedFlip: 0
   _isLoop: 0
   _allowNext: 1
   _onComplete:
@@ -328,7 +334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4410790522325240893
 Transform:
   m_ObjectHideFlags: 0
@@ -360,6 +366,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 13e22940f477a664093589e658361955, type: 3}
   - {fileID: 21300000, guid: 742b4167f22d4ef4d97a52bf14d84e65, type: 3}
   - {fileID: 21300000, guid: b398ba0b2eeb2bf4c8a2866a4d6dced8, type: 3}
+  _flipX: 0
+  _isFixedFlip: 0
   _isLoop: 0
   _allowNext: 1
   _onComplete:

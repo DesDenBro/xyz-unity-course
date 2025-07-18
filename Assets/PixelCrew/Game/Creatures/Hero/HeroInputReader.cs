@@ -9,13 +9,13 @@ namespace PixelCrew.GameObjects
     {
         [SerializeField] private Hero _hero;
 
-        public void OnMovement(InputAction.CallbackContext context)
+        public void PressMovement(InputAction.CallbackContext context)
         {
             var direction = context.ReadValue<Vector2>();
             _hero.SetDirection(direction);
         }
 
-        public void OnJump(InputAction.CallbackContext context)
+        public void PressJump(InputAction.CallbackContext context)
         {
             if (context.started)
             {
@@ -27,26 +27,31 @@ namespace PixelCrew.GameObjects
             }
         }
 
-        public void OnInteract(InputAction.CallbackContext context)
+        public void PressInteract(InputAction.CallbackContext context)
         {
-            //Debug.Log("started: " + context.started + ", performed: " + context.performed + ", canceled: " + context.canceled);
             if (context.started)
             {
-                //Debug.Log("started");
                 _hero.OnInteract(true);
             }
             if (context.canceled)
             {
-                //Debug.Log("canceled");
                 _hero.OnInteract(false);
             }
         }
 
-        public void OnLeftMouseClick(InputAction.CallbackContext context)
+        public void PressAttack(InputAction.CallbackContext context)
         {
-            if (context.canceled)
+            if (context.performed)
             {
                 _hero.InitAttack();
+            }
+        }
+
+        public void PressThrow(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _hero.InitThrow();
             }
         }
 

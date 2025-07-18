@@ -17,6 +17,7 @@ namespace PixelCrew.GameObjects.Creatures
     {
         [Header("Hero params")]
         [SerializeField] private bool _isDoubleJumpEnable;
+        [SerializeField] private Cooldown _throwCoolsdown;
 
         [Header("Hero checks")]
         [SerializeField] protected CheckCircleOverlap _possibleInteractionCheck;
@@ -172,6 +173,19 @@ namespace PixelCrew.GameObjects.Creatures
         {
             if (!_IsArmed) return;
             base.InitAttack();
+        }
+
+
+        public override void InitThrow()
+        {
+            if (!_throwCoolsdown.IsReady || !_IsArmed) return;
+            base.InitThrow();
+        }
+        public override void OnThrow()
+        {
+            SpawnAction("sword-throw");
+            base.OnThrow();
+            ArmWeapon(null);
         }
 
 

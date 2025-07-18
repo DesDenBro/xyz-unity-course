@@ -26,6 +26,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: decor_Boor
       objectReference: {fileID: 0}
+    - target: {fileID: 6343062374609128620, guid: 6ccfc2ad3a99b6449a8f849831fad4f3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6343062374609128622, guid: 6ccfc2ad3a99b6449a8f849831fad4f3,
         type: 3}
       propertyPath: m_FlipX

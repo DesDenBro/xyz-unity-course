@@ -22,7 +22,7 @@ namespace PixelCrew.Common.Tech
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
-            _states = GetComponentsInChildren<SpriteAnimationState>();
+            _states = GetComponentsInChildren<SpriteAnimationState>(true);
         }
 
         private void Start()
@@ -47,8 +47,17 @@ namespace PixelCrew.Common.Tech
             _currentSpriteIndex = 0;
             _secondsPerFrame = 1f / _frameRate;
             _nextFrameTime = Time.time + _secondsPerFrame;
-            
+
             _currentState = stateVal;
+            _spriteRenderer.flipX = _currentState.FlipX;
+            if (_currentState.IsFixedFlip)
+            {
+                transform.localScale = new Vector3(
+                    transform.localScale.x > 0 ? transform.localScale.x : -transform.localScale.x, 
+                    transform.localScale.y > 0 ? transform.localScale.y : -transform.localScale.y,
+                    transform.localScale.z > 0 ? transform.localScale.z : -transform.localScale.z
+                );
+            }
             _currentState.TogglePlay(true);
         }
 
@@ -80,10 +89,10 @@ namespace PixelCrew.Common.Tech
             _startSasName = sasName;
         }
 
-        public Transform GetSasTransform(string sasName)
+        public SpriteAnimationState GetSas(string sasName)
         {
-            if (!_statesDict.TryGetValue(sasName, out SpriteAnimationState sas)) return null;
-            return sas?.transform;
+            if (!_statesDict.TryGetValue(sasName, out SpriteAnimationState sas) || sas == null) return null;
+            return sas;
         }
     }
 }
