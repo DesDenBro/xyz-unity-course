@@ -40,8 +40,8 @@ namespace PixelCrew.GameObjects.Creatures
         public void OnDie()
         {
             _isDead = true;
-            _creature.InitDie();
             if (_current != null) StopCoroutine(_current);
+            _creature.InitDie();
         }
 
 

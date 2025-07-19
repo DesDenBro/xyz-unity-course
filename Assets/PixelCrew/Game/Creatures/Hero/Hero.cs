@@ -3,6 +3,7 @@ using PixelCrew.Common.Tech;
 using PixelCrew.Components;
 using PixelCrew.Model;
 using PixelCrew.Utils;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -17,7 +18,6 @@ namespace PixelCrew.GameObjects.Creatures
     {
         [Header("Hero params")]
         [SerializeField] private bool _isDoubleJumpEnable;
-        [SerializeField] private Cooldown _throwCoolsdown;
 
         [Header("Hero checks")]
         [SerializeField] protected CheckCircleOverlap _possibleInteractionCheck;
@@ -156,12 +156,20 @@ namespace PixelCrew.GameObjects.Creatures
             _doInteractionCheck.Check();
         }
 
-        public void ArmWeapon(Weapon newWeapon)
+        public void ArmWeapon(Weapon newWeapon, bool woAddThrows = false)
         {
             if (newWeapon != null)
             {
-                _weapon = newWeapon;
-                _animator.runtimeAnimatorController = _armed;
+                if (_weapon == null)
+                {
+                    _weapon = newWeapon;
+                    _animator.runtimeAnimatorController = _armed;
+                    if (!woAddThrows) _inventory.ChangeThrowsAmount(5);
+                }
+                else
+                {
+                    if (!woAddThrows) _inventory.ChangeThrowsAmount(1);
+                }
             }
             else
             {
@@ -176,16 +184,28 @@ namespace PixelCrew.GameObjects.Creatures
         }
 
 
-        public override void InitThrow()
+        public override void InitThrow(ThrowType type = ThrowType.Once)
         {
-            if (!_throwCoolsdown.IsReady || !_IsArmed) return;
-            base.InitThrow();
+            if (!_IsArmed) return;
+            base.InitThrow(type);
         }
         public override void OnThrow()
         {
-            SpawnAction("sword-throw");
             base.OnThrow();
-            ArmWeapon(null);
+            //ArmWeapon(null);
+        }
+        protected override IEnumerator Throw(int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                if (!_inventory.CheckThrowsCountToEvent(-1)) break;
+                if (!_inventory.ChangeThrowsAmount(-1)) break;
+
+                SpawnAction("sword-throw");
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            yield return null;
         }
 
 
@@ -201,7 +221,8 @@ namespace PixelCrew.GameObjects.Creatures
             _health.SetHealth(_session.Data.Health);
             _inventory.SetMoney(_session.Data.Coins);
             _inventory.SetKeys(_session.Data.Keys);
-            ArmWeapon(_session.Data.Weapon);
+            _inventory.SetThrows(_session.Data.Throws);
+            ArmWeapon(_session.Data.Weapon, true);
         }
         public virtual void UpdateSessionData()
         {
@@ -214,6 +235,7 @@ namespace PixelCrew.GameObjects.Creatures
             _session.Data.Health = _health.Health;
             _session.Data.Coins = _inventory.MoneyCount;
             _session.Data.Keys = _inventory.KeysCount;
+            _session.Data.Throws = _inventory.ThrowsCount;
             _session.Data.IsArmed = _IsArmed;
             _session.Data.Weapon = _weapon;
         }

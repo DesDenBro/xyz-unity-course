@@ -21,6 +21,8 @@ namespace PixelCrew.Components
 
         public void ApplyDamage(int damagePoints)
         {
+            if (_currentHealth <= 0) return;
+
             _currentHealth -= damagePoints;
             _onDamage?.Invoke();
             if (_currentHealth <= 0)
@@ -35,6 +37,8 @@ namespace PixelCrew.Components
 
         public void RecoverHealth(int healthPoints)
         {
+            if (_currentHealth <= 0) return;
+
             if (_currentHealth + healthPoints >= _maxHealth)
             {
                 _currentHealth = _maxHealth;

@@ -3,11 +3,10 @@ using PixelCrew.Common.Tech;
 using PixelCrew.Components;
 using PixelCrew.Model;
 using PixelCrew.Utils;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace PixelCrew.GameObjects.Creatures
 {
@@ -22,13 +21,17 @@ namespace PixelCrew.GameObjects.Creatures
         private static readonly int _anim_triggerThrow = Animator.StringToHash("trigger-throw");
         private static readonly int _anim_isDead = Animator.StringToHash("is-dead");
 
-        [Header("Base params")]
+        [Header("Base tech params")]
         [SerializeField] private bool _invertScale;
+
+        [Header("Base params")]
+        [SerializeField] private CreatureState _creatureStateInfo = CreatureState.Alive;
         [SerializeField] private float _speed;
         [SerializeField] protected float jumpSpeed;
         [SerializeField] private float _damageJumpSpeed;
         [SerializeField] private int _baseDamage;
-        [SerializeField] private CreatureState _creatureStateInfo = CreatureState.Alive;
+        [SerializeField] private Cooldown _throwCooldown;
+        [SerializeField] private Cooldown _hitCooldown;
 
         [Header("Base checks")]
         [SerializeField] private LayerCheck _groundCheck;
@@ -50,6 +53,8 @@ namespace PixelCrew.GameObjects.Creatures
         protected MovementStateType _currentMovement;
         protected bool _isGrounded;
         protected GameSession _session;
+        private ThrowType _lastThrowType;
+        private Coroutine _throwCoroutine;
 
         protected virtual bool _IsFalling => _rigidbody.velocity.y < 0f;
         protected bool _IsNormalMove => _currentMovement == MovementStateType.Default;
@@ -211,6 +216,8 @@ namespace PixelCrew.GameObjects.Creatures
 
         public virtual void TakeDamage()
         {
+            if (!_hitCooldown.IsReady) return;
+            _hitCooldown.Reset();
             _animator.SetTrigger(_anim_triggerHit);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _rigidbody.velocity.y + _damageJumpSpeed);
         }
@@ -229,13 +236,36 @@ namespace PixelCrew.GameObjects.Creatures
         }
 
 
-        public virtual void InitThrow()
+        public virtual void InitThrow(ThrowType type = ThrowType.Once)
         {
+            if (!_throwCooldown.IsReady || _inventory.ThrowsCount <= 0) return;
+            _throwCooldown.Reset();
+
+            _lastThrowType = type;
             _animator.SetTrigger(_anim_triggerThrow);
         }
         public virtual void OnThrow()
         {
+            if (_throwCoroutine != null) 
+                StopCoroutine(_throwCoroutine);
 
+            var countToThrow = 0;
+            switch (_lastThrowType)
+            {
+                case ThrowType.Once:
+                    countToThrow = 1;
+                    break;
+                case ThrowType.Multi:
+                    countToThrow = 3;
+                    break;
+            }
+            if (countToThrow == 0) return;
+
+            _throwCoroutine = StartCoroutine(Throw(countToThrow));
+        }
+        protected virtual IEnumerator Throw(int count)
+        {
+            yield return null;
         }
 
 
@@ -251,6 +281,7 @@ namespace PixelCrew.GameObjects.Creatures
             if (_creatureStateInfo == CreatureState.Dead) return;
 
             _creatureStateInfo = CreatureState.Dead;
+            SetDirection(Vector3.zero);
             _animator.SetBool(_anim_isDead, true);
         }
         public void OnDie()
@@ -272,5 +303,11 @@ namespace PixelCrew.GameObjects.Creatures
     {
         Alive = 0,
         Dead = 1
+    }
+
+    public enum ThrowType : byte
+    {
+        Once = 0,
+        Multi = 1
     }
 }

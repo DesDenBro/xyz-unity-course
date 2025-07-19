@@ -5515,11 +5515,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _invertScale: 0
+  _creatureStateInfo: 0
   _speed: 3
   jumpSpeed: 10
   _damageJumpSpeed: 50
   _baseDamage: 1
-  _creatureStateInfo: 0
+  _throwCooldown:
+    _value: 1
+  _hitCooldown:
+    _value: 1
   _groundCheck: {fileID: 5784780334059268827}
   _attackRange: {fileID: 4681518861892597388}
   _isDoubleJumpEnable: 0
@@ -5558,6 +5562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _money: 0
   _keys: 0
+  _throws: 2
 --- !u!114 &717764824
 MonoBehaviour:
   m_ObjectHideFlags: 0

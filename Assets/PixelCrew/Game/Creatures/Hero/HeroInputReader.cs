@@ -2,6 +2,7 @@
 using PixelCrew.GameObjects.Creatures;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 namespace PixelCrew.GameObjects
 {
@@ -51,7 +52,14 @@ namespace PixelCrew.GameObjects
         {
             if (context.performed)
             {
-                _hero.InitThrow();
+                if (context.interaction is HoldInteraction)
+                {
+                    _hero.InitThrow(ThrowType.Multi);
+                }
+                else
+                {
+                    _hero.InitThrow(ThrowType.Once);
+                }
             }
         }
 

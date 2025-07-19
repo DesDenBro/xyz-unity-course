@@ -11,6 +11,7 @@ namespace PixelCrew.Model
         public Dictionary<string, Vector3> PositionOnLevel;
         public int Coins;
         public int Keys;
+        public int Throws;
         public int MaxHealth;
         public int Health;
         public bool IsArmed;
