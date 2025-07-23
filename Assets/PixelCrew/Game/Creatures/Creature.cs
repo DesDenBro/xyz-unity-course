@@ -1,4 +1,5 @@
-﻿using PixelCrew.Common;
+﻿using Packages.Rider.Editor;
+using PixelCrew.Common;
 using PixelCrew.Common.Tech;
 using PixelCrew.Components;
 using PixelCrew.Model;
@@ -20,6 +21,7 @@ namespace PixelCrew.GameObjects.Creatures
         private static readonly int _anim_triggerAttack = Animator.StringToHash("trigger-attack");
         private static readonly int _anim_triggerThrow = Animator.StringToHash("trigger-throw");
         private static readonly int _anim_isDead = Animator.StringToHash("is-dead");
+        private static readonly int _anim_isClimb = Animator.StringToHash("is-climb");
 
         [Header("Base tech params")]
         [SerializeField] private bool _invertScale;
@@ -31,7 +33,6 @@ namespace PixelCrew.GameObjects.Creatures
         [SerializeField] private float _damageJumpSpeed;
         [SerializeField] private int _baseDamage;
         [SerializeField] private Cooldown _throwCooldown;
-        [SerializeField] private Cooldown _hitCooldown;
 
         [Header("Base checks")]
         [SerializeField] private LayerCheck _groundCheck;
@@ -58,6 +59,7 @@ namespace PixelCrew.GameObjects.Creatures
 
         protected virtual bool _IsFalling => _rigidbody.velocity.y < 0f;
         protected bool _IsNormalMove => _currentMovement == MovementStateType.Default;
+        protected bool _IsAlive => _creatureStateInfo == CreatureState.Alive;
         protected virtual int _Damage => _baseDamage;
 
 
@@ -150,10 +152,13 @@ namespace PixelCrew.GameObjects.Creatures
                 var fallDistance = _maxYInJump.Value - _rigidbody.position.y;
                 if (fallDistance > 2.5f)
                 {
-                    _needPlayHardFallSas = true;
+                    if (_IsNormalMove)
+                    {
+                        _needPlayHardFallSas = true;
+                    }
                     _maxYInJump = null;
                 }
-                if (fallDistance > 7.5f)
+                if (fallDistance > 7.5f && _IsNormalMove)
                 {
                     _health.ApplyDamage(5);
                 }
@@ -209,25 +214,35 @@ namespace PixelCrew.GameObjects.Creatures
 
         public void SpawnAction(string sasName) => _actionParticles.SpawnAction(sasName);
 
-        public virtual void MovementDefaultAction() { }
-        public virtual void MovementHangAction() { }
+        public virtual void MovementDefaultAction()
+        {
+            _animator.SetBool(_anim_isClimb, false);
+        }
+        public virtual void MovementHangAction() 
+        {
+            _animator.SetBool(_anim_isClimb, true);
+        }
         public virtual void MovementGrabAction() { }
 
 
         public virtual void TakeDamage()
         {
-            if (!_hitCooldown.IsReady) return;
-            _hitCooldown.Reset();
+            if (!_IsAlive) return;
+
             _animator.SetTrigger(_anim_triggerHit);
-            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _rigidbody.velocity.y + _damageJumpSpeed);
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
         }
         public virtual void TakeHealth()
         {
+            if (!_IsAlive) return;
+
             _animator.SetTrigger(_anim_triggerHealing);
         }
 
         public virtual void InitAttack()
         {
+            if (!_IsAlive) return;
+
             _animator.SetTrigger(_anim_triggerAttack);
         }
         public virtual void OnAttack()
@@ -238,6 +253,8 @@ namespace PixelCrew.GameObjects.Creatures
 
         public virtual void InitThrow(ThrowType type = ThrowType.Once)
         {
+            if (!_IsAlive) return;
+
             if (!_throwCooldown.IsReady || _inventory.ThrowsCount <= 0) return;
             _throwCooldown.Reset();
 
@@ -281,8 +298,8 @@ namespace PixelCrew.GameObjects.Creatures
             if (_creatureStateInfo == CreatureState.Dead) return;
 
             _creatureStateInfo = CreatureState.Dead;
-            SetDirection(Vector3.zero);
             _animator.SetBool(_anim_isDead, true);
+            SetDirection(Vector3.zero);
         }
         public void OnDie()
         {

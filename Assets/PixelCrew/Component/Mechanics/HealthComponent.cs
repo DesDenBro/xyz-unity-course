@@ -7,6 +7,7 @@ namespace PixelCrew.Components
     {
         [SerializeField] private int _maxHealth;
         [SerializeField] private int _currentHealth;
+        [SerializeField] private Cooldown _damageCooldown;
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onHealth;
         [SerializeField] private UnityEvent _onDie;
@@ -22,6 +23,9 @@ namespace PixelCrew.Components
         public void ApplyDamage(int damagePoints)
         {
             if (_currentHealth <= 0) return;
+
+            if (!_damageCooldown.IsReady) return;
+            _damageCooldown.Reset();
 
             _currentHealth -= damagePoints;
             _onDamage?.Invoke();

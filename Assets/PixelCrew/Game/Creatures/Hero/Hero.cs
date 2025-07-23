@@ -1,15 +1,9 @@
-﻿using PixelCrew.Common;
-using PixelCrew.Common.Tech;
+﻿using PixelCrew.Common.Tech;
 using PixelCrew.Components;
-using PixelCrew.Model;
-using PixelCrew.Utils;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 
 namespace PixelCrew.GameObjects.Creatures

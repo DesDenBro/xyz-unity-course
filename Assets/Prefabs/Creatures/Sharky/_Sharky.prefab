@@ -187,7 +187,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0652552, y: -0.1339424}
+  m_Offset: {x: 0.0652552, y: -0.28895566}
   m_Size: {x: 0.17884834, y: 0.17884834}
   m_Direction: 0
 --- !u!1 &5450684873955538641
@@ -631,8 +631,6 @@ MonoBehaviour:
   _baseDamage: 3
   _throwCooldown:
     _value: 1
-  _hitCooldown:
-    _value: 1
   _groundCheck: {fileID: 5784780334059268827}
   _attackRange: {fileID: 4681518861892597388}
 --- !u!114 &7868960150264152829
@@ -678,6 +676,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 40
   _currentHealth: 10
+  _damageCooldown:
+    _value: 0
   _onDamage:
     m_PersistentCalls:
       m_Calls:

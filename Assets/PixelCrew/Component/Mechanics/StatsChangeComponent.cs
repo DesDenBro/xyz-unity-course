@@ -1,5 +1,4 @@
-﻿
-using PixelCrew.Common;
+﻿using PixelCrew.Common;
 using UnityEngine;
 
 namespace PixelCrew.Components
