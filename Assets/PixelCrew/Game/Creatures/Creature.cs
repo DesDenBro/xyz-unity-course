@@ -57,9 +57,9 @@ namespace PixelCrew.GameObjects.Creatures
         private ThrowType _lastThrowType;
         private Coroutine _throwCoroutine;
 
-        protected virtual bool _IsFalling => _rigidbody.velocity.y < 0f;
+        protected virtual bool _IsFalling => _rigidbody.velocity.y < -1f && _IsNormalMove;
         protected bool _IsNormalMove => _currentMovement == MovementStateType.Default;
-        protected bool _IsAlive => _creatureStateInfo == CreatureState.Alive;
+        protected bool _IsAlive => _creatureStateInfo != CreatureState.Dead;
         protected virtual int _Damage => _baseDamage;
 
 
@@ -130,12 +130,21 @@ namespace PixelCrew.GameObjects.Creatures
                 yVel *= 0.5f;
             }
 
+            if (yVel > 10)
+            {
+                yVel = 10;
+            }
+
             return yVel;
         }
         protected virtual float CalJumpVelocity(float inputYVel)
         {
             float yVel = inputYVel;
-            if (!_IsFalling && _isGrounded) yVel = jumpSpeed;
+            if (!_IsFalling && _isGrounded && _IsNormalMove)
+            {
+                yVel = jumpSpeed;
+                _needPlayJumpSas = true;
+            }
 
             return yVel;
         }
@@ -168,10 +177,6 @@ namespace PixelCrew.GameObjects.Creatures
 
         public virtual void SetIsJumping(bool val)
         {
-            if (!_isJumpingPressed && val && _isGrounded)
-            {
-                _needPlayJumpSas = true;
-            }
             _isJumpingPressed = val;
         }
 
@@ -263,8 +268,10 @@ namespace PixelCrew.GameObjects.Creatures
         }
         public virtual void OnThrow()
         {
-            if (_throwCoroutine != null) 
+            if (_throwCoroutine != null)
+            {
                 StopCoroutine(_throwCoroutine);
+            }
 
             var countToThrow = 0;
             switch (_lastThrowType)
@@ -295,7 +302,7 @@ namespace PixelCrew.GameObjects.Creatures
 
         public void InitDie()
         {
-            if (_creatureStateInfo == CreatureState.Dead) return;
+            if (!_IsAlive) return;
 
             _creatureStateInfo = CreatureState.Dead;
             _animator.SetBool(_anim_isDead, true);
@@ -303,7 +310,10 @@ namespace PixelCrew.GameObjects.Creatures
         }
         public void OnDie()
         {
-            _deadParams.SetParams();
+            if (_deadParams != null)
+            {
+                _deadParams.SetParams();
+            }
         }
         
 

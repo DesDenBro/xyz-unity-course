@@ -1,8 +1,4 @@
-﻿using PixelCrew.Components;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace PixelCrew.Components
 {
@@ -14,6 +10,7 @@ namespace PixelCrew.Components
         private void Start()
         {
             outlines = GetComponentsInChildren<OutlineSettings>();
+            Disable();
         }
 
         public bool IsEnabled => _isEnabled;

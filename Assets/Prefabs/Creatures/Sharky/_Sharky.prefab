@@ -333,7 +333,7 @@ MonoBehaviour:
         m_CallState: 2
   checkOnlyForward: 1
   _toLeftLength: 7
-  _toLeftRight: 0.5
+  _toLeftRight: 1.2
 --- !u!1 &5784780334059268829
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +677,7 @@ MonoBehaviour:
   _maxHealth: 40
   _currentHealth: 10
   _damageCooldown:
-    _value: 0
+    _value: 0.2
   _onDamage:
     m_PersistentCalls:
       m_Calls:

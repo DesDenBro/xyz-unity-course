@@ -75,13 +75,18 @@ namespace PixelCrew.GameObjects.Creatures
                 _isDoubleJumpActive = false;
                 _needPlayJumpSas = true;
             }
+
             return yVel;
         }
 
         public override void SetIsJumping(bool val)
         {
             if (_IsGrabMove) return; // пока что-то тащим не можем прыгать
-            if (_IsHangingMove) { OnInteract(val); _isDoubleJumpActive = true; }
+            if (_IsHangingMove && val)
+            {
+                OnInteract(val);
+                _isDoubleJumpActive = true;
+            }
 
             base.SetIsJumping(val);
         }
@@ -93,11 +98,11 @@ namespace PixelCrew.GameObjects.Creatures
             _isGrounded = _isGrounded || _IsHangingMove;
             HigthlightInteractble();
         }
-        protected override void UpdateOperations() // переопрелено на будущее
+        protected override void UpdateOperations() // переопределено на будущее
         {
             base.UpdateOperations();
         }
-        protected override void EndUpdateOperations() // переопрелено на будущее
+        protected override void EndUpdateOperations() // переопределено на будущее
         {
             base.EndUpdateOperations();
         }
