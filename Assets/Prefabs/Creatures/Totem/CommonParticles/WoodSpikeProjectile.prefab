@@ -12,15 +12,15 @@ GameObject:
   - component: {fileID: 1062714290874070730}
   - component: {fileID: 3513381182742660212}
   - component: {fileID: 4595084897455724781}
-  - component: {fileID: 6690749598055657145}
+  - component: {fileID: 1791024792289452894}
   - component: {fileID: 7766249070160085339}
+  - component: {fileID: 5033505078372994070}
   - component: {fileID: 1800467598247096852}
-  - component: {fileID: 7679032630822316541}
   - component: {fileID: 1481140581020775992}
   - component: {fileID: 2050713159055817033}
   - component: {fileID: 3360342107204920497}
   m_Layer: 13
-  m_Name: PearlSinProjectile
+  m_Name: WoodSpikeProjectile
   m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: -619002443
   m_SortingLayer: 11
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0e6dfd1db82e442b292fe749ae4464d7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c6b083e7a1934172b6a1e6a998452e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,8 +127,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!58 &6690749598055657145
-CircleCollider2D:
+--- !u!61 &1791024792289452894
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -140,9 +140,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.015066862, y: 0.017711937}
+  m_Offset: {x: -0.0050795972, y: -0.00084650517}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.10192451
+  m_Size: {x: 0.2764982, y: 0.16305411}
+  m_EdgeRadius: 0
 --- !u!114 &7766249070160085339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +169,20 @@ MonoBehaviour:
   _keysAmount: 0
   _damagePoints: 3
   _healthPoints: 0
+--- !u!114 &5033505078372994070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296803784847218045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4997438326187b6438f8c09e6d62676d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  _invertX: 1
 --- !u!114 &1800467598247096852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +203,7 @@ MonoBehaviour:
   _actions:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7679032630822316541}
+      - m_Target: {fileID: 5033505078372994070}
         m_MethodName: Stop
         m_Mode: 1
         m_Arguments:
@@ -212,22 +236,6 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7679032630822316541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296803784847218045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3abfb4e8453cc4842b32b639bc1a4d5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.1
-  _invertX: 1
-  _frequency: 20
-  _amplitude: 0.1
 --- !u!114 &1481140581020775992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,7 +285,7 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7679032630822316541}
+      - m_Target: {fileID: 5033505078372994070}
         m_MethodName: Stop
         m_Mode: 1
         m_Arguments:
@@ -344,7 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: pearl-throw
   _sprites:
-  - {fileID: 21300000, guid: 0e6dfd1db82e442b292fe749ae4464d7, type: 3}
+  - {fileID: 21300000, guid: 0c6b083e7a1934172b6a1e6a998452e3, type: 3}
   _flipX: 0
   _isFixedFlip: 0
   _isLoop: 1
@@ -397,9 +405,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: destroy
   _sprites:
-  - {fileID: 21300000, guid: f3a6ea9a6da47490a83c5481ae529e52, type: 3}
-  - {fileID: 21300000, guid: c62969750953c468f80f1894dc392d16, type: 3}
-  - {fileID: 21300000, guid: 226c874551def41f8a69511ab6a5f9d1, type: 3}
+  - {fileID: 21300000, guid: 4a8539014932e434394a5403e7e8a754, type: 3}
+  - {fileID: 21300000, guid: df44625958c5b4dd0bfe9d145b6ca962, type: 3}
+  - {fileID: 21300000, guid: 9f0e3d5687df14550ab523ce4c0fcd63, type: 3}
   _flipX: 0
   _isFixedFlip: 0
   _isLoop: 0

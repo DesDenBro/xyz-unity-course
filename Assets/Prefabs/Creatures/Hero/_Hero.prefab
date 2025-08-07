@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 791006959}
   - component: {fileID: 791006958}
   - component: {fileID: 791006957}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: CoinsThrows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4822,7 +4822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7597641014839724719}
   - component: {fileID: 4146504373416663389}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: SwordProjectilePosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -4867,7 +4867,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4627714006679604376}
   - component: {fileID: 3926177964129831508}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: DoInteractableRange
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -4931,7 +4931,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6145192665312451434}
   - component: {fileID: 4681518861892597388}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -4997,7 +4997,7 @@ GameObject:
   - component: {fileID: 5921559453270244895}
   - component: {fileID: 9174449383125741794}
   - component: {fileID: 8520550683088350880}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: HighlightInteractableRange
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -5073,7 +5073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492327702742443999}
   - component: {fileID: 4442222044551421054}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: ActionPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -5119,7 +5119,7 @@ GameObject:
   - component: {fileID: 5784780334059268826}
   - component: {fileID: 5784780334059268824}
   - component: {fileID: 5784780334059268827}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}

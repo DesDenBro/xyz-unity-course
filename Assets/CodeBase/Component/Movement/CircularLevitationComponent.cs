@@ -11,10 +11,16 @@ namespace PixelCrew.Components
         private Rigidbody2D[] _rigidBodies;
         private float _time;
 
-        private void Awake()
+        private void Awake() => AwakeCall();
+        private void AwakeCall()
         {
             _rigidBodies = GetComponentsInChildren<Rigidbody2D>();
-            for (var i = 0; i < _rigidBodies.Length; i++) { _rigidBodies[i].MovePosition(transform.position); }
+            for (var i = 0; i < _rigidBodies.Length; i++) 
+            {
+                _rigidBodies[i].MovePosition(transform.position);
+                var vert = _rigidBodies[i].gameObject.GetComponent<VerticalLevitationComponent>();
+                if (vert != null) vert.enabled = false;
+            }
         }
 
         private void FixedUpdate() => FixedUpdateCall(false);
@@ -47,7 +53,7 @@ namespace PixelCrew.Components
 #if UNITY_EDITOR
         private void OnValidate()
         {
-            Awake();
+            AwakeCall();
             FixedUpdateCall(true);
         }
 #endif

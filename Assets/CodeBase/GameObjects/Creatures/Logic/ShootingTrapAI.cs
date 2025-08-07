@@ -14,12 +14,18 @@ namespace PixelCrew.GameObjects.Creatures
         [SerializeField] private CheckCircleOverlap _meleeAttack;
 
         [Header("Range")]
+        [SerializeField] private Cooldown _rangeCallerCooldown;
+        [SerializeField] private GameObject _rangeCaller;
         [SerializeField] private Cooldown _rangeCooldown;
         [SerializeField] private LayerCheck _rangeCanAttack;
 
-
         private Animator _animator;
         private SpawnActionComponent _sac;
+        private bool _attackAfterCallerCooldown = false;
+
+        public bool InRangeCallerCooldown => !_rangeCallerCooldown.IsReady;
+        public bool InRangeCooldown => !_rangeCooldown.IsReady;
+        public bool InMeleeCooldown => !_meleeCooldown.IsReady;
 
         private void Awake()
         {
@@ -27,24 +33,46 @@ namespace PixelCrew.GameObjects.Creatures
             _sac = GetComponent<SpawnActionComponent>();
         }
 
-
         private void FixedUpdate()
         {
-            if(_meleeCanAttack.IsTouchingLayer)
+            if (_meleeCanAttack != null && _meleeCanAttack.IsTouchingLayer)
             {
-                if (!_meleeCooldown.IsReady) return;
-                _meleeCooldown.Reset();
+                if (InMeleeCooldown) return;
 
+                _meleeCooldown.Reset();
                 InitMeleeAttack();
+
                 return;
             }
 
-            if (_rangeCanAttack.IsTouchingLayer)
+            if (_rangeCaller != null)
             {
-                if (!_rangeCooldown.IsReady) return;
-                _rangeCooldown.Reset();
+                var trapAI = _rangeCaller.GetComponent<ShootingTrapAI>();
+                if (trapAI != null)
+                {
+                    if (trapAI.InRangeCooldown && !_attackAfterCallerCooldown)
+                    {
+                        _attackAfterCallerCooldown = true;
+                        _rangeCallerCooldown.Reset();
+                    }
+                    if (!InRangeCallerCooldown && !InRangeCooldown && _attackAfterCallerCooldown)
+                    {
+                        _attackAfterCallerCooldown = false;
+                        _rangeCooldown.Reset();
+                        InitRangeAttack();
+                    }
+                }
 
+                return;
+            }
+
+            if (_rangeCanAttack != null && _rangeCanAttack.IsTouchingLayer)
+            {
+                if (InRangeCooldown) return;
+
+                _rangeCooldown.Reset();
                 InitRangeAttack();
+
                 return;
             }
         }
@@ -55,7 +83,10 @@ namespace PixelCrew.GameObjects.Creatures
         }
         public void OnMeleeAttack()
         {
-            _meleeAttack.Check();
+            if (_meleeAttack != null)
+            {
+                _meleeAttack.Check();
+            }
         }
 
         private void InitRangeAttack()
@@ -64,7 +95,7 @@ namespace PixelCrew.GameObjects.Creatures
         }
         public void OnRangeAttack()
         {
-            _sac.SpawnAction("pearl-throw");
+            _sac.SpawnAction("throw");
         }
     }
 }
