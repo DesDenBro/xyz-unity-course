@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 5997064494142320202}
   - component: {fileID: 2704611461903962484}
   m_Layer: 0
-  m_Name: sas-fall
+  m_Name: sas-a-fall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 0
 --- !u!4 &5997064494142320202
 Transform:
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93765383473771756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.017, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8497151579401214312}
@@ -50,7 +50,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6173024186e8c184faf0d766e87bf714, type: 3}
   - {fileID: 21300000, guid: a08d6033aeb9b3245bed0c9c0bcc9f69, type: 3}
   - {fileID: 21300000, guid: c883f189065241046b92364627114819, type: 3}
-  _flipX: 1
+  _flipX: 0
   _isFixedFlip: 0
   _isLoop: 0
   _allowNext: 1
@@ -79,11 +79,11 @@ GameObject:
   - component: {fileID: 1201699009956755570}
   - component: {fileID: 6658372873018522282}
   m_Layer: 0
-  m_Name: sas-jump
+  m_Name: sas-a-jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 0
 --- !u!4 &1201699009956755570
 Transform:
@@ -93,7 +93,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254277394139081328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8497151579401214312}
@@ -119,7 +119,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 23287f71347985144bea72400aba5009, type: 3}
   - {fileID: 21300000, guid: 61ec6161c0ddb4945aba18277b1381e3, type: 3}
   - {fileID: 21300000, guid: 929bfc035b9908c43bb7a8f5d6a17dcd, type: 3}
-  _flipX: 1
+  _flipX: 0
   _isFixedFlip: 0
   _isLoop: 0
   _allowNext: 1
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 3513381182742660212}
   - component: {fileID: 2050713159055817033}
   m_Layer: 0
-  m_Name: SharkyAction
+  m_Name: HeroAction
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -170,8 +170,7 @@ Transform:
   - {fileID: 6179660349627986122}
   - {fileID: 1201699009956755570}
   - {fileID: 5997064494142320202}
-  - {fileID: 4572200842545495528}
-  - {fileID: 7695719828869715613}
+  - {fileID: 4410790522325240893}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -211,8 +210,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1509567825
-  m_SortingLayer: 12
+  m_SortingLayerID: -619002443
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -262,11 +261,11 @@ GameObject:
   - component: {fileID: 6179660349627986122}
   - component: {fileID: 3182556386036929369}
   m_Layer: 0
-  m_Name: sas-run
+  m_Name: sas-a-run
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 0
 --- !u!4 &6179660349627986122
 Transform:
@@ -276,8 +275,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3682779277414433245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -0.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: -11}
+  m_LocalPosition: {x: -0.2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8497151579401214312}
   m_RootOrder: 0
@@ -301,7 +300,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 265eeb72d43bc7c43ace2bd41d4a2638, type: 3}
   - {fileID: 21300000, guid: d9e047d245b70a04da42e9a768345f44, type: 3}
   - {fileID: 21300000, guid: 9230ae71946963842be4a3a51acf155e, type: 3}
-  _flipX: 1
+  _flipX: 0
   _isFixedFlip: 0
   _isLoop: 0
   _allowNext: 1
@@ -319,7 +318,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &5883139843174094293
+--- !u!1 &7015126837505727640
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -327,118 +326,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4572200842545495528}
-  - component: {fileID: 2907466952983504218}
+  - component: {fileID: 4410790522325240893}
+  - component: {fileID: 5710945266609071766}
   m_Layer: 0
-  m_Name: sas-question
+  m_Name: sas-a-sword-attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 0
---- !u!4 &4572200842545495528
+--- !u!4 &4410790522325240893
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5883139843174094293}
+  m_GameObject: {fileID: 7015126837505727640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8497151579401214312}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2907466952983504218
+--- !u!114 &5710945266609071766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5883139843174094293}
+  m_GameObject: {fileID: 7015126837505727640}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbcb7e66682ec6946a0e9f1664d02520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: question
+  _name: sword-attack
   _sprites:
-  - {fileID: 21300000, guid: 9675cc15d4ba8a848ab9f0659d94bc4f, type: 3}
-  - {fileID: 21300000, guid: db85ef23e1b72334287acba23e031926, type: 3}
-  - {fileID: 21300000, guid: 5ab434875a30eb34eb41e14f7499cb28, type: 3}
-  - {fileID: 21300000, guid: b1a00e36536e6a54790050804bbc5687, type: 3}
-  - {fileID: 21300000, guid: 0db03b98092273c45888ed5e3cc7d1bb, type: 3}
+  - {fileID: 21300000, guid: 13e22940f477a664093589e658361955, type: 3}
+  - {fileID: 21300000, guid: 742b4167f22d4ef4d97a52bf14d84e65, type: 3}
+  - {fileID: 21300000, guid: b398ba0b2eeb2bf4c8a2866a4d6dced8, type: 3}
   _flipX: 0
-  _isFixedFlip: 1
-  _isLoop: 0
-  _allowNext: 1
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2050713159055817033}
-        m_MethodName: SelfDestroy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!1 &6433398499157052404
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7695719828869715613}
-  - component: {fileID: 7314265947690362575}
-  m_Layer: 0
-  m_Name: sas-alarm
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
---- !u!4 &7695719828869715613
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6433398499157052404}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8497151579401214312}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7314265947690362575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6433398499157052404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbcb7e66682ec6946a0e9f1664d02520, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: alarm
-  _sprites:
-  - {fileID: 21300000, guid: aa15da1ec8aa2104995368d6e959444e, type: 3}
-  - {fileID: 21300000, guid: c228a0ea2880a49469e3e65c52b416d8, type: 3}
-  - {fileID: 21300000, guid: 75d826ad633cff34ea320e336b61e8c9, type: 3}
-  - {fileID: 21300000, guid: 83b7cc2b61dec9948a1b92b03e2b7629, type: 3}
-  - {fileID: 21300000, guid: 028e4f85853dc534e9cc523fa5d6bb7b, type: 3}
-  _flipX: 0
-  _isFixedFlip: 1
+  _isFixedFlip: 0
   _isLoop: 0
   _allowNext: 1
   _onComplete:

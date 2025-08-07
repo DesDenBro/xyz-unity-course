@@ -1,6 +1,5 @@
 ﻿using PixelCrew.Common.Tech;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace PixelCrew.Components
@@ -26,7 +25,7 @@ namespace PixelCrew.Components
                 {
                     if (tmpDict.ContainsKey(name))
                     {
-                        Debug.LogWarning("sas obj with same name " + name + " already in dict!!!");
+                        Debug.LogWarning("sas-a obj with same name " + name + " already in dict!!!");
                         continue;
                     }
                     tmpDict.Add(name, spawner);
@@ -37,7 +36,7 @@ namespace PixelCrew.Components
 
         public void SpawnAction(string sasName)
         {
-            var fullName = "sas-" + sasName;
+            var fullName = "sas-a-" + sasName;
             if (!_spawnComponentsByNameSas.ContainsKey(fullName)) return;
 
             var spawner = _spawnComponentsByNameSas[fullName];

@@ -210,6 +210,8 @@ namespace PixelCrew.GameObjects.Creatures
 
         public virtual void SetSessionData()
         {
+            if (_session == null) return;
+
             if (_session.Data.PositionOnLevel != null
                 && _session.Data.PositionOnLevel.TryGetValue(SceneManager.GetActiveScene().name, out Vector3 position)
                 && position != Vector3.zero)
@@ -225,6 +227,8 @@ namespace PixelCrew.GameObjects.Creatures
         }
         public virtual void UpdateSessionData()
         {
+            if (_session == null) return;
+
             var sceneName = SceneManager.GetActiveScene().name;
             if (_session.Data.PositionOnLevel == null) _session.Data.PositionOnLevel = new Dictionary<string, Vector3>();
             if (!_session.Data.PositionOnLevel.ContainsKey(sceneName)) { _session.Data.PositionOnLevel.Add(sceneName, transform.position); }

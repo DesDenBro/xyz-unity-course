@@ -1,9 +1,9 @@
-﻿using Packages.Rider.Editor;
-using PixelCrew.Common;
+﻿using PixelCrew.Common;
 using PixelCrew.Common.Tech;
 using PixelCrew.Components;
 using PixelCrew.Model;
 using PixelCrew.Utils;
+using PixelCrew.GameObjects;
 using System.Collections;
 using System.Linq;
 using UnityEditor;
@@ -13,16 +13,6 @@ namespace PixelCrew.GameObjects.Creatures
 {
     public class Creature : MonoBehaviour
     {
-        private static readonly int _anim_isGrounded = Animator.StringToHash("is-grounded");
-        private static readonly int _anim_isRunning = Animator.StringToHash("is-running");
-        private static readonly int _anim_verticalVelocity = Animator.StringToHash("vertical-velocity");
-        private static readonly int _anim_triggerHit = Animator.StringToHash("trigger-hit");
-        private static readonly int _anim_triggerHealing = Animator.StringToHash("trigger-healing");
-        private static readonly int _anim_triggerAttack = Animator.StringToHash("trigger-attack");
-        private static readonly int _anim_triggerThrow = Animator.StringToHash("trigger-throw");
-        private static readonly int _anim_isDead = Animator.StringToHash("is-dead");
-        private static readonly int _anim_isClimb = Animator.StringToHash("is-climb");
-
         [Header("Base tech params")]
         [SerializeField] private bool _invertScale;
 
@@ -196,9 +186,9 @@ namespace PixelCrew.GameObjects.Creatures
         }
         private void UpdateAnimatorParamsState()
         {
-            _animator.SetFloat(_anim_verticalVelocity, _rigidbody.velocity.y);
-            _animator.SetBool(_anim_isRunning, _direction.x != 0);
-            _animator.SetBool(_anim_isGrounded, _isGrounded);
+            _animator.SetKeyVal(AnimationKey.Creature.VerticalVelocity, _rigidbody.velocity.y);
+            _animator.SetKeyVal(AnimationKey.Creature.IsRunning, _direction.x != 0);
+            _animator.SetKeyVal(AnimationKey.Creature.IsGrounded, _isGrounded);
         }
         private void PlayStateAnimationsByState()
         {
@@ -221,11 +211,11 @@ namespace PixelCrew.GameObjects.Creatures
 
         public virtual void MovementDefaultAction()
         {
-            _animator.SetBool(_anim_isClimb, false);
+            _animator.SetKeyVal(AnimationKey.Creature.IsClimb, false);
         }
         public virtual void MovementHangAction() 
         {
-            _animator.SetBool(_anim_isClimb, true);
+            _animator.SetKeyVal(AnimationKey.Creature.IsClimb, true);
         }
         public virtual void MovementGrabAction() { }
 
@@ -234,21 +224,21 @@ namespace PixelCrew.GameObjects.Creatures
         {
             if (!_IsAlive) return;
 
-            _animator.SetTrigger(_anim_triggerHit);
+            _animator.SetKeyVal(AnimationKey.Creature.TriggerHit);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
         }
         public virtual void TakeHealth()
         {
             if (!_IsAlive) return;
 
-            _animator.SetTrigger(_anim_triggerHealing);
+            _animator.SetKeyVal(AnimationKey.Creature.TriggerHealing);
         }
 
         public virtual void InitAttack()
         {
             if (!_IsAlive) return;
 
-            _animator.SetTrigger(_anim_triggerAttack);
+            _animator.SetKeyVal(AnimationKey.Creature.TriggerAttack);
         }
         public virtual void OnAttack()
         {
@@ -264,7 +254,7 @@ namespace PixelCrew.GameObjects.Creatures
             _throwCooldown.Reset();
 
             _lastThrowType = type;
-            _animator.SetTrigger(_anim_triggerThrow);
+            _animator.SetKeyVal(AnimationKey.Creature.TriggerThrow);
         }
         public virtual void OnThrow()
         {
@@ -305,7 +295,7 @@ namespace PixelCrew.GameObjects.Creatures
             if (!_IsAlive) return;
 
             _creatureStateInfo = CreatureState.Dead;
-            _animator.SetBool(_anim_isDead, true);
+            _animator.SetKeyVal(AnimationKey.Creature.IsDead, true);
             SetDirection(Vector3.zero);
         }
         public void OnDie()

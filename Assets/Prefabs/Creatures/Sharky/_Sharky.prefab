@@ -299,7 +299,7 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -6.9859343, y: 0}
-  - {x: 0.5, y: 0}
+  - {x: 1.0120157, y: 0}
 --- !u!114 &1003350400807443571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 36864
+    m_Bits: 37120
   tags:
   - Player
   onOverlap:
@@ -333,7 +333,7 @@ MonoBehaviour:
         m_CallState: 2
   checkOnlyForward: 1
   _toLeftLength: 7
-  _toLeftRight: 1.2
+  _toLeftRight: 1
 --- !u!1 &5784780334059268829
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,14 +620,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5784780335098992503}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4223ec8b3a5f36c42b0cd0ae62c97cbb, type: 3}
+  m_Script: {fileID: 11500000, guid: efa63b785179748e4a87c474e3355149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _invertScale: 1
   _creatureStateInfo: 0
   _speed: 2
   jumpSpeed: 10
-  _damageJumpSpeed: 5
+  _damageJumpSpeed: 50
   _baseDamage: 3
   _throwCooldown:
     _value: 1
