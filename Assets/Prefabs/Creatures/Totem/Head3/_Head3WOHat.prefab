@@ -32,8 +32,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9190667161189937202, guid: 8246c5e37ca8a5646866d6ad4f7c73d7,
         type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: -0.19298306
+      objectReference: {fileID: 0}
+    - target: {fileID: 9190667161189937202, guid: 8246c5e37ca8a5646866d6ad4f7c73d7,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: 0.13555804
+      objectReference: {fileID: 0}
+    - target: {fileID: 9190667161189937202, guid: 8246c5e37ca8a5646866d6ad4f7c73d7,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
+      value: 0.38351193
+      objectReference: {fileID: 0}
+    - target: {fileID: 9190667161189937202, guid: 8246c5e37ca8a5646866d6ad4f7c73d7,
+        type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: 0.16619264
+      value: 0.1374663
       objectReference: {fileID: 0}
     - target: {fileID: 9190667161189937203, guid: 8246c5e37ca8a5646866d6ad4f7c73d7,
         type: 3}

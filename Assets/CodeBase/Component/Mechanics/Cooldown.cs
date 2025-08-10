@@ -6,6 +6,9 @@ namespace PixelCrew.Components
     [Serializable]
     public class Cooldown
     {
+        public Cooldown() { }
+        public Cooldown(float value) : base() { _value = value; } 
+
         [SerializeField] private float _value;
 
         private float _timesUp;

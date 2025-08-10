@@ -14,7 +14,6 @@ namespace PixelCrew.GameObjects.Creatures
         [SerializeField] private CheckCircleOverlap _meleeAttack;
 
         [Header("Range")]
-        [SerializeField] private Cooldown _rangeCallerCooldown;
         [SerializeField] private GameObject _rangeCaller;
         [SerializeField] private Cooldown _rangeCooldown;
         [SerializeField] private LayerCheck _rangeCanAttack;
@@ -22,10 +21,13 @@ namespace PixelCrew.GameObjects.Creatures
         private Animator _animator;
         private SpawnActionComponent _sac;
         private bool _attackAfterCallerCooldown = false;
+        private Cooldown _isRangeDoneCooldown = new Cooldown(0.2f);
+        private Cooldown _rangeCallerCooldown = new Cooldown(0.3f);
+        private bool _isRangeDone = false;
 
-        public bool InRangeCallerCooldown => !_rangeCallerCooldown.IsReady;
         public bool InRangeCooldown => !_rangeCooldown.IsReady;
         public bool InMeleeCooldown => !_meleeCooldown.IsReady;
+        public bool IsRangeDone => _isRangeDone;
 
         private void Awake()
         {
@@ -35,6 +37,9 @@ namespace PixelCrew.GameObjects.Creatures
 
         private void FixedUpdate()
         {
+            // нужно, чтобы зависимые успели увидеть факт выстрела
+            if (_isRangeDoneCooldown.IsReady) _isRangeDone = false;
+
             if (_meleeCanAttack != null && _meleeCanAttack.IsTouchingLayer)
             {
                 if (InMeleeCooldown) return;
@@ -50,12 +55,12 @@ namespace PixelCrew.GameObjects.Creatures
                 var trapAI = _rangeCaller.GetComponent<ShootingTrapAI>();
                 if (trapAI != null)
                 {
-                    if (trapAI.InRangeCooldown && !_attackAfterCallerCooldown)
+                    if (trapAI.IsRangeDone && !_attackAfterCallerCooldown)
                     {
                         _attackAfterCallerCooldown = true;
                         _rangeCallerCooldown.Reset();
                     }
-                    if (!InRangeCallerCooldown && !InRangeCooldown && _attackAfterCallerCooldown)
+                    if (_rangeCallerCooldown.IsReady && !InRangeCooldown && _attackAfterCallerCooldown)
                     {
                         _attackAfterCallerCooldown = false;
                         _rangeCooldown.Reset();
@@ -95,6 +100,9 @@ namespace PixelCrew.GameObjects.Creatures
         }
         public void OnRangeAttack()
         {
+            _isRangeDone = true;
+            _isRangeDoneCooldown.Reset();
+
             _sac.SpawnAction("throw");
         }
     }
