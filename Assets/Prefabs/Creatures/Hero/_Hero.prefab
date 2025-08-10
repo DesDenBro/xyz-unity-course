@@ -4985,7 +4985,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   checkOnlyForward: 0
-  _radius: 0.2
+  _radius: 0.3
 --- !u!1 &4343286018677879401
 GameObject:
   m_ObjectHideFlags: 0

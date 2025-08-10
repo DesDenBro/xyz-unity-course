@@ -418,9 +418,9 @@ GameObject:
   - component: {fileID: 717764824}
   - component: {fileID: 6595804528849134846}
   - component: {fileID: 8090484961226968093}
-  - component: {fileID: 1764026974709802594}
-  - component: {fileID: 7120634041716839835}
   - component: {fileID: 1907194009}
+  - component: {fileID: 7120634041716839835}
+  - component: {fileID: 1764026974709802594}
   m_Layer: 13
   m_Name: _Sharky
   m_TagString: Enemy
@@ -731,6 +731,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7120634041716839835}
+        m_MethodName: ActivateTimerSelfDestroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6595804528849134846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,32 +773,6 @@ MonoBehaviour:
   _alarmDelay: 0.2
   _attackCooldown: 1
   _confuseCooldown: 0.5
---- !u!114 &1764026974709802594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5784780335098992503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1af9ae6f3589bef419cfa56c56a9eb58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _layerMask: Trash
-  _capsuleColliderConfig: {fileID: 9125864621466612705}
---- !u!114 &7120634041716839835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5784780335098992503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1907194009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,6 +788,35 @@ MonoBehaviour:
   _underLegsChecker: {fileID: 5138210213093833994}
   _wallChecker: {fileID: 2660459275671129817}
   _visionChecker: {fileID: 1003350400807443571}
+--- !u!114 &7120634041716839835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5784780335098992503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selfDestroyAfterTime: 0
+  _selfDestroyTime:
+    _value: 10
+--- !u!114 &1764026974709802594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5784780335098992503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1af9ae6f3589bef419cfa56c56a9eb58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask: Trash
+  _capsuleColliderConfig: {fileID: 9125864621466612705}
 --- !u!1 &6528847853330358512
 GameObject:
   m_ObjectHideFlags: 0

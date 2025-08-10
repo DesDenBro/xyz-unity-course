@@ -23,6 +23,12 @@ namespace PixelCrew.Components
             }
         }
 
+        public void ActivateTimerSelfDestroy()
+        {
+            _selfDestroyAfterTime = true;
+            _selfDestroyTime.Reset();
+        }
+
         public void DestroyObj(GameObject target)
         {
             Destroy(target);
