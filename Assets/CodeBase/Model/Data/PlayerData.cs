@@ -16,5 +16,7 @@ namespace PixelCrew.Model
         public int Health;
         public bool IsArmed;
         public Weapon Weapon;
+
+        public InventoryData Inventory;
     }
 }

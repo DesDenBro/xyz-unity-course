@@ -68,14 +68,19 @@ namespace PixelCrew.GameObjects.Creatures
         protected virtual void Start()
         {
             _session = FindObjectsOfType<GameSession>().Where(x => !x.Disposed).FirstOrDefault();
+            _session.Data.Inventory.onInventoryChanged += OnInventoryChanged;
         }
-
         protected virtual void FixedUpdate()
         {
             StartUpdateOperations();
             UpdateOperations();
             EndUpdateOperations();
         }
+        protected virtual void OnDestroy()
+        {
+            _session.Data.Inventory.onInventoryChanged -= OnInventoryChanged;
+        }
+
 
         protected virtual void StartUpdateOperations()
         {
@@ -92,6 +97,11 @@ namespace PixelCrew.GameObjects.Creatures
             UpdateSpriteDirection();
             UpdateAnimatorParamsState();
             PlayStateAnimationsByState();
+        }
+
+        protected virtual void OnInventoryChanged(string id, int value)
+        {
+
         }
 
 

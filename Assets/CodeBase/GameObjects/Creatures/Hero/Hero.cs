@@ -52,6 +52,15 @@ namespace PixelCrew.GameObjects.Creatures
             base.FixedUpdate();
         }
 
+        protected override void OnInventoryChanged(string id, int value)
+        {
+            base.OnInventoryChanged(id, value);
+            if (id == "Sword")
+            {
+                
+            }
+        }
+
 
         protected override float CalcXVelocity()
         {
@@ -207,6 +216,10 @@ namespace PixelCrew.GameObjects.Creatures
             yield return null;
         }
 
+        public void AddInInventory(string id, int count)
+        {
+            // todo add
+        }
 
         public virtual void SetSessionData()
         {
