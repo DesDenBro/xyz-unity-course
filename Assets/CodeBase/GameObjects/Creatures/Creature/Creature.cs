@@ -36,14 +36,12 @@ namespace PixelCrew.GameObjects.Creatures
         private DeadParamsComponent _deadParams;
         protected SpawnActionComponent _actionParticles;
         protected MovementStateComponent _movementState;
-        protected InventoryComponent _inventory;
         protected HealthComponent _health;
         protected Animator _animator;
         protected Rigidbody2D _rigidbody;
         protected Vector2 _direction;
         protected MovementStateType _currentMovement;
         protected bool _isGrounded;
-        protected GameSession _session;
         private ThrowType _lastThrowType;
         private Coroutine _throwCoroutine;
 
@@ -59,7 +57,6 @@ namespace PixelCrew.GameObjects.Creatures
             _actionParticles = GetComponent<SpawnActionComponent>();
             _movementState = GetComponent<MovementStateComponent>();
             _health = GetComponent<HealthComponent>();
-            _inventory = GetComponent<InventoryComponent>();
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
         }
@@ -67,8 +64,6 @@ namespace PixelCrew.GameObjects.Creatures
 
         protected virtual void Start()
         {
-            _session = FindObjectsOfType<GameSession>().Where(x => !x.Disposed).FirstOrDefault();
-            _session.Data.Inventory.onInventoryChanged += OnInventoryChanged;
         }
         protected virtual void FixedUpdate()
         {
@@ -78,7 +73,7 @@ namespace PixelCrew.GameObjects.Creatures
         }
         protected virtual void OnDestroy()
         {
-            _session.Data.Inventory.onInventoryChanged -= OnInventoryChanged;
+
         }
 
 
@@ -97,11 +92,6 @@ namespace PixelCrew.GameObjects.Creatures
             UpdateSpriteDirection();
             UpdateAnimatorParamsState();
             PlayStateAnimationsByState();
-        }
-
-        protected virtual void OnInventoryChanged(string id, int value)
-        {
-
         }
 
 
@@ -260,7 +250,7 @@ namespace PixelCrew.GameObjects.Creatures
         {
             if (!_IsAlive) return;
 
-            if (!_throwCooldown.IsReady || _inventory.ThrowsCount <= 0) return;
+            if (!_throwCooldown.IsReady) return;
             _throwCooldown.Reset();
 
             _lastThrowType = type;

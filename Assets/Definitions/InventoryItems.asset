@@ -12,4 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602d90edb3cafe842ba3f7b035ce1f4b, type: 3}
   m_Name: InventoryItems
   m_EditorClassIdentifier: 
-  _items: []
+  _items:
+  - _id: Money
+    _isStackLimit: 0
+    _stackLimitSize: 0
+    _prefab: {fileID: 0}
+  - _id: Key
+    _isStackLimit: 0
+    _stackLimitSize: 0
+    _prefab: {fileID: 0}
+  - _id: Throw
+    _isStackLimit: 0
+    _stackLimitSize: 0
+    _prefab: {fileID: 0}
+  - _id: Sword
+    _isStackLimit: 1
+    _stackLimitSize: 1
+    _prefab: {fileID: 959510849168114158, guid: 33dd0073f6bc82f4eb4df534186ac893,
+      type: 3}
+  - _id: HealhPotion
+    _isStackLimit: 1
+    _stackLimitSize: 1
+    _prefab: {fileID: 0}

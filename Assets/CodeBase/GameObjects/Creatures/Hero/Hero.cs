@@ -1,7 +1,10 @@
 ﻿using PixelCrew.Common.Tech;
 using PixelCrew.Components;
+using PixelCrew.Model;
+using PixelCrew.Utils;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -29,6 +32,8 @@ namespace PixelCrew.GameObjects.Creatures
         private bool _isDoubleJumpActive;
         private ActionInteractComponent _actionInteract;
         private Collider2D[] _interactionResult = new Collider2D[1];
+        private GameSession _session;
+        private InventoryComponent _inventory;
 
         private bool _IsGrabMove => _currentMovement == MovementStateType.Grab;
         private bool _IsHangingMove => _currentMovement == MovementStateType.Hanging;
@@ -41,6 +46,7 @@ namespace PixelCrew.GameObjects.Creatures
         {
             base.Awake();
             _actionInteract = GetComponent<ActionInteractComponent>();
+            _inventory = GetComponent<InventoryComponent>();
         }
         protected override void Start()
         {
@@ -51,10 +57,14 @@ namespace PixelCrew.GameObjects.Creatures
         {
             base.FixedUpdate();
         }
-
-        protected override void OnInventoryChanged(string id, int value)
+        protected override void OnDestroy()
         {
-            base.OnInventoryChanged(id, value);
+            base.OnDestroy();
+            _session.PlayerData.Inventory.onInventoryChanged -= OnInventoryChanged;
+        }
+
+        private void OnInventoryChanged(string id, int value)
+        {
             if (id == "Sword")
             {
                 
@@ -145,7 +155,7 @@ namespace PixelCrew.GameObjects.Creatures
             var coinsToDrop = Mathf.Min(_inventory.MoneyCount, 5);
             if (coinsToDrop == 0) return;
 
-            _inventory.ChangeMoneyAmount(-coinsToDrop);
+            _inventory.ChangeInventoryItemCount(InventoryItemName.Money, -coinsToDrop);
 
             var defaultBurst = _hitParticles.emission.GetBurst(0);
             defaultBurst.count = coinsToDrop;
@@ -164,19 +174,22 @@ namespace PixelCrew.GameObjects.Creatures
             _doInteractionCheck.Check();
         }
 
-        public void ArmWeapon(Weapon newWeapon, bool woAddThrows = false)
+        public void ArmWeapon(GameObject prefab, bool woAddThrows = false)
         {
+            Weapon newWeapon = null;
+            if (prefab != null) newWeapon = prefab.GetComponent<Weapon>();
+            
             if (newWeapon != null)
             {
                 if (_weapon == null)
                 {
                     _weapon = newWeapon;
                     _animator.runtimeAnimatorController = _armed;
-                    if (!woAddThrows) _inventory.ChangeThrowsAmount(5);
+                    if (!woAddThrows) _inventory.ChangeInventoryItemCount(InventoryItemName.Throw, 5);
                 }
                 else
                 {
-                    if (!woAddThrows) _inventory.ChangeThrowsAmount(1);
+                    if (!woAddThrows) _inventory.ChangeInventoryItemCount(InventoryItemName.Throw, 1);
                 }
             }
             else
@@ -194,7 +207,7 @@ namespace PixelCrew.GameObjects.Creatures
 
         public override void InitThrow(ThrowType type = ThrowType.Once)
         {
-            if (!_IsArmed) return;
+            if (!_IsArmed || _inventory.ThrowsCount <= 0) return;
             base.InitThrow(type);
         }
         public override void OnThrow()
@@ -206,8 +219,8 @@ namespace PixelCrew.GameObjects.Creatures
         {
             for (int i = 0; i < count; i++)
             {
-                if (!_inventory.CheckThrowsCountToEvent(-1)) break;
-                if (!_inventory.ChangeThrowsAmount(-1)) break;
+                if (!_inventory.CheckItemCountToEvent(InventoryItemName.Throw, -1)) break;
+                if (!_inventory.ChangeInventoryItemCount(InventoryItemName.Throw, -1)) break;
 
                 SpawnAction("sword-throw");
                 yield return new WaitForSeconds(0.1f);
@@ -223,37 +236,30 @@ namespace PixelCrew.GameObjects.Creatures
 
         public virtual void SetSessionData()
         {
+            _session = FindObjectsOfType<GameSession>().Where(x => !x.Disposed).FirstOrDefault();
             if (_session == null) return;
 
-            if (_session.Data.PositionOnLevel != null
-                && _session.Data.PositionOnLevel.TryGetValue(SceneManager.GetActiveScene().name, out Vector3 position)
-                && position != Vector3.zero)
-            {
-                transform.position = position;
-            }
-            _health.SetMaxHealth(_session.Data.MaxHealth);
-            _health.SetHealth(_session.Data.Health);
-            _inventory.SetMoney(_session.Data.Coins);
-            _inventory.SetKeys(_session.Data.Keys);
-            _inventory.SetThrows(_session.Data.Throws);
-            ArmWeapon(_session.Data.Weapon, true);
+            _session.PlayerData.Inventory.onInventoryChanged += OnInventoryChanged;
+
+            var levelData = _session.LevelsData.Get(SceneManager.GetActiveScene().name);
+            if (levelData != null && levelData.HeroPosition != Vector3.zero) transform.position = levelData.HeroPosition;
+
+            _health.SetMaxHealth(_session.PlayerData.MaxHealth);
+            _health.SetHealth(_session.PlayerData.Health);
+
+            _inventory.SetInventory(_session.PlayerData.Inventory.Clone());
+
+            ArmWeapon(_inventory.InventoryData.GetItem(InventoryItemName.Sword)?.Prefab, true);
         }
         public virtual void UpdateSessionData()
         {
             if (_session == null) return;
 
-            var sceneName = SceneManager.GetActiveScene().name;
-            if (_session.Data.PositionOnLevel == null) _session.Data.PositionOnLevel = new Dictionary<string, Vector3>();
-            if (!_session.Data.PositionOnLevel.ContainsKey(sceneName)) { _session.Data.PositionOnLevel.Add(sceneName, transform.position); }
-            else { _session.Data.PositionOnLevel[sceneName] = transform.position; }
+            _session.LevelsData.SaveHeroPosition(SceneManager.GetActiveScene().name, transform.position);
 
-            _session.Data.MaxHealth = _health.MaxHealth;
-            _session.Data.Health = _health.Health;
-            _session.Data.Coins = _inventory.MoneyCount;
-            _session.Data.Keys = _inventory.KeysCount;
-            _session.Data.Throws = _inventory.ThrowsCount;
-            _session.Data.IsArmed = _IsArmed;
-            _session.Data.Weapon = _weapon;
+            _session.PlayerData.MaxHealth = _health.MaxHealth;
+            _session.PlayerData.Health = _health.Health;
+            _session.PlayerData.Inventory = _inventory.InventoryData.Clone();
         }
     }
 }

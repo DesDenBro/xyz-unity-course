@@ -25,7 +25,7 @@ namespace PixelCrew.Model
             var item = GetItem(id);
             if (item == null)
             {
-                item = new InventoryDataItem(id, value);
+                item = new InventoryDataItem(id, value, itemDef);
                 _inventory.Add(item);
             }
             else
@@ -56,7 +56,7 @@ namespace PixelCrew.Model
             onInventoryChanged?.Invoke(id, Count(id));
         }
 
-        private InventoryDataItem GetItem(string id)
+        public InventoryDataItem GetItem(string id)
         {
             return _inventory.FirstOrDefault(x => x.Id == id);
         }
@@ -65,18 +65,35 @@ namespace PixelCrew.Model
         {
             return _inventory.Where(x => x.Id == id).Sum(x => x.Value);
         }
+
+        public InventoryData Clone()
+        {
+            var json = JsonUtility.ToJson(this);
+            return JsonUtility.FromJson<InventoryData>(json);
+        }
     }
 
     [Serializable]
     public class InventoryDataItem
     {
-        public string Id;
+        [InventoryIdAttr] public string Id;
         public int Value;
+        public GameObject Prefab;
 
-        public InventoryDataItem(string id, int value) 
+        public InventoryDataItem(string id, int value, ItemDef itemDef) 
         {
             Id = id;
             Value = value;
+            Prefab = itemDef.Prefab;
         }
+    }
+
+    public static class InventoryItemName
+    {
+        public const string Money = "Money";
+        public const string Key = "Key";
+        public const string Throw = "Throw";
+        public const string Sword = "Sword";
+        public const string HealhPotion = "HealhPotion";
     }
 }

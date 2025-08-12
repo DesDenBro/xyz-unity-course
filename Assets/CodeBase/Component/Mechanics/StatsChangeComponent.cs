@@ -1,4 +1,5 @@
 ﻿using PixelCrew.Common;
+using PixelCrew.Model;
 using UnityEngine;
 
 namespace PixelCrew.Components
@@ -34,7 +35,7 @@ namespace PixelCrew.Components
             if (inventory == null) return;
 
             var amount = _thingSpecification.CostAmount;
-            inventory.ChangeMoneyAmount(amount);
+            inventory.ChangeInventoryItemCount(InventoryItemName.Money, amount);
         }
 
         public void KeysChange(GameObject target)
@@ -44,7 +45,7 @@ namespace PixelCrew.Components
             var inventory = target.GetComponent<InventoryComponent>();
             if (inventory == null) return;
 
-            inventory.ChangeKeyAmount(1);
+            inventory.ChangeInventoryItemCount(InventoryItemName.Key, 1);
         }
     }
 }

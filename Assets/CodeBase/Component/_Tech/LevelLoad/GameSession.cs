@@ -1,15 +1,17 @@
-﻿using System;
+﻿using PixelCrew.Model.Data;
 using UnityEngine;
 
 namespace PixelCrew.Model
 {
     public class GameSession : MonoBehaviour
     {
-        [SerializeField] private PlayerData _data;
+        [SerializeField] private PlayerData _playerData;
+        [SerializeField] private LevelsData _levelsData;
 
         private bool _disposed = false;
 
-        public PlayerData Data => _data;
+        public PlayerData PlayerData => _playerData;
+        public LevelsData LevelsData => _levelsData;
         public bool Disposed => _disposed;
 
 
@@ -33,7 +35,6 @@ namespace PixelCrew.Model
             {
                 if (session != this) return true;
             }
-
             return false;
         }
     }

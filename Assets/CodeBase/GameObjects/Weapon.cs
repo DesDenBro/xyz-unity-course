@@ -15,7 +15,7 @@ namespace PixelCrew.GameObjects
             var hero = go.GetComponent<Hero>();
             if (hero == null) return;
 
-            hero.ArmWeapon(_prefab.GetComponent<Weapon>());
+            hero.ArmWeapon(_prefab);
         }
     }
 }

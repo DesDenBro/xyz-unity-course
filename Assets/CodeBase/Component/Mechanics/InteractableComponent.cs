@@ -1,5 +1,6 @@
 ﻿using PixelCrew.Common;
 using PixelCrew.Common.Tech;
+using PixelCrew.Model;
 using System;
 using UnityEditor.U2D;
 using UnityEngine;
@@ -172,12 +173,12 @@ namespace PixelCrew.Components
             var inventoryComp = _lastActivator.GetComponent<InventoryComponent>();
             if (inventoryComp == null || _thingSpecification == null) return;
 
-            checksDone = checksDone && inventoryComp.CheckKeyCountToEvent(_thingSpecification.KeysAmount);
-            checksDone = checksDone && inventoryComp.CheckMoneyCountToEvent(_thingSpecification.CostAmount);
+            checksDone = checksDone && inventoryComp.CheckItemCountToEvent(InventoryItemName.Key, _thingSpecification.KeysAmount);
+            checksDone = checksDone && inventoryComp.CheckItemCountToEvent(InventoryItemName.Money, _thingSpecification.CostAmount);
 
             if (checksDone)
             {
-                _isActive = inventoryComp.ChangeKeyAmount(_thingSpecification.KeysAmount) && inventoryComp.ChangeMoneyAmount(_thingSpecification.CostAmount);
+                _isActive = inventoryComp.ChangeInventoryItemCount(InventoryItemName.Key, _thingSpecification.KeysAmount) && inventoryComp.ChangeInventoryItemCount(InventoryItemName.Money, _thingSpecification.CostAmount);
             }
         }
     }
