@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -14,7 +13,7 @@ namespace PixelCrew.Model.Definitions.Editor
             var ids = defs.Select(i => i.Id).ToList();
 
             var index = Mathf.Max(ids.IndexOf(property.stringValue), 0);
-            EditorGUI.Popup(position, property.displayName, index, ids.ToArray());
+            index = EditorGUI.Popup(position, property.displayName, index, ids.ToArray());
             property.stringValue = ids[index];
         }
     }

@@ -62,6 +62,14 @@ namespace PixelCrew.GameObjects
                 }
             }
         }
+        
+        public void PressHeal(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _hero.InitHeal();
+            }
+        }
 
         /*
         private void Awake()

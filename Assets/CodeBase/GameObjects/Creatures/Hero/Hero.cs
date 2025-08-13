@@ -1,4 +1,5 @@
-﻿using PixelCrew.Common.Tech;
+﻿using PixelCrew.Common;
+using PixelCrew.Common.Tech;
 using PixelCrew.Components;
 using PixelCrew.Model;
 using PixelCrew.Utils;
@@ -31,7 +32,7 @@ namespace PixelCrew.GameObjects.Creatures
 
         private bool _isDoubleJumpActive;
         private ActionInteractComponent _actionInteract;
-        private Collider2D[] _interactionResult = new Collider2D[1];
+        //private Collider2D[] _interactionResult = new Collider2D[1];
         private GameSession _session;
         private InventoryComponent _inventory;
 
@@ -52,6 +53,7 @@ namespace PixelCrew.GameObjects.Creatures
         {
             base.Start();
             SetSessionData();
+            _inventory.InventoryData.onInventoryChanged += OnInventoryChanged;
         }
         protected override void FixedUpdate()
         {
@@ -60,15 +62,21 @@ namespace PixelCrew.GameObjects.Creatures
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            _session.PlayerData.Inventory.onInventoryChanged -= OnInventoryChanged;
+            _inventory.InventoryData.onInventoryChanged -= OnInventoryChanged;
         }
 
         private void OnInventoryChanged(string id, int value)
         {
-            if (id == "Sword")
+            if (id == InventoryItemName.Sword)
             {
-                
+                ArmWeapon(_inventory.GetItem(InventoryItemName.Sword)?.Prefab);
             }
+        }
+        public void AddInInventory(string id, int count)
+        {
+            if (_inventory == null) return;
+
+            _inventory.ChangeInventoryItemCount(id, count);
         }
 
 
@@ -97,7 +105,6 @@ namespace PixelCrew.GameObjects.Creatures
 
             return yVel;
         }
-
         public override void SetIsJumping(bool val)
         {
             if (_IsGrabMove) return; // пока что-то тащим не можем прыгать
@@ -164,15 +171,12 @@ namespace PixelCrew.GameObjects.Creatures
             _hitParticles.gameObject.SetActive(true);
             _hitParticles.Play();
         }
-
-
-
-        private void HigthlightInteractble() => _possibleInteractionCheck.Check();
         public void OnInteract(bool isPressed)
         {
             _actionInteract.SetIsPressed(isPressed);
             _doInteractionCheck.Check();
         }
+
 
         public void ArmWeapon(GameObject prefab, bool woAddThrows = false)
         {
@@ -181,7 +185,7 @@ namespace PixelCrew.GameObjects.Creatures
             
             if (newWeapon != null)
             {
-                if (_weapon == null)
+                if (!_IsArmed)
                 {
                     _weapon = newWeapon;
                     _animator.runtimeAnimatorController = _armed;
@@ -202,6 +206,18 @@ namespace PixelCrew.GameObjects.Creatures
         {
             if (!_IsArmed) return;
             base.InitAttack();
+        }
+
+
+        public override void OnHeal()
+        {
+            var healPotion = _inventory.GetItem(InventoryItemName.HealhPotion);
+            if (healPotion == null || healPotion.Prefab == null) return;
+
+            var ts = healPotion.Prefab.GetComponent<ThingSpecification>();
+            _health.RecoverHealth(ts.HealthPoints);
+
+            _inventory.ChangeInventoryItemCount(InventoryItemName.HealhPotion, -1);
         }
 
 
@@ -229,27 +245,24 @@ namespace PixelCrew.GameObjects.Creatures
             yield return null;
         }
 
-        public void AddInInventory(string id, int count)
-        {
-            // todo add
-        }
+
+        private void HigthlightInteractble() => _possibleInteractionCheck.Check();
 
         public virtual void SetSessionData()
         {
             _session = FindObjectsOfType<GameSession>().Where(x => !x.Disposed).FirstOrDefault();
-            if (_session == null) return;
 
-            _session.PlayerData.Inventory.onInventoryChanged += OnInventoryChanged;
+            if (_session == null) return;
 
             var levelData = _session.LevelsData.Get(SceneManager.GetActiveScene().name);
             if (levelData != null && levelData.HeroPosition != Vector3.zero) transform.position = levelData.HeroPosition;
 
-            _health.SetMaxHealth(_session.PlayerData.MaxHealth);
-            _health.SetHealth(_session.PlayerData.Health);
+            if (_session.PlayerData.MaxHealth > 0) _health.SetMaxHealth(_session.PlayerData.MaxHealth);
+            if (_session.PlayerData.Health > 0) _health.SetHealth(_session.PlayerData.Health);
 
             _inventory.SetInventory(_session.PlayerData.Inventory.Clone());
-
-            ArmWeapon(_inventory.InventoryData.GetItem(InventoryItemName.Sword)?.Prefab, true);
+            
+            ArmWeapon(_inventory.GetItem(InventoryItemName.Sword)?.Prefab, true);
         }
         public virtual void UpdateSessionData()
         {
@@ -259,6 +272,7 @@ namespace PixelCrew.GameObjects.Creatures
 
             _session.PlayerData.MaxHealth = _health.MaxHealth;
             _session.PlayerData.Health = _health.Health;
+
             _session.PlayerData.Inventory = _inventory.InventoryData.Clone();
         }
     }

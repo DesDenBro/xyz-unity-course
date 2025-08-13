@@ -25,11 +25,13 @@ namespace PixelCrew.Model.Definitions
     public struct ItemDef
     {
         [SerializeField] private string _id;
+        [SerializeField] private bool _isStackOnlyOne;
         [SerializeField] private bool _isStackLimit;
         [SerializeField] private int _stackLimitSize;
         [SerializeField] GameObject _prefab;
 
         public string Id => _id;
+        public bool IsStackOnlyOne => _isStackOnlyOne;
         public bool IsStackLimit => _isStackLimit;
         public int StackLimitSize => _stackLimitSize;
         public GameObject Prefab => _prefab;

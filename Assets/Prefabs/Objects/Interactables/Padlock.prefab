@@ -118,9 +118,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: closed
-  _states:
-  - {fileID: 6545000426401111227}
-  - {fileID: 617982798934823263}
 --- !u!114 &1612441724492914312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _selfDestroyAfterTime: 0
+  _selfDestroyTime:
+    _value: 10
 --- !u!114 &2845153050303978671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +200,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5e2f41755ccf34a4da2d70b85bda9ad9, type: 3}
   - {fileID: 21300000, guid: ab9d2f033413bc64daf4cee4abda1e87, type: 3}
   - {fileID: 21300000, guid: 00ea02cb60e522840b34c1c5fcc6eb95, type: 3}
+  _flipX: 0
+  _isFixedFlip: 0
   _isLoop: 0
   _allowNext: 0
   _onComplete:
@@ -262,6 +264,8 @@ MonoBehaviour:
   _name: closed
   _sprites:
   - {fileID: 21300000, guid: 6605f3d91dcf8fa44935b1261db55210, type: 3}
+  _flipX: 0
+  _isFixedFlip: 0
   _isLoop: 0
   _allowNext: 1
   _onComplete:
@@ -467,6 +471,21 @@ PrefabInstance:
     - target: {fileID: 4656928447231782935, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: _keysAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656928447231782935, guid: 109153313607fa1438355867c4f6cd17,
+        type: 3}
+      propertyPath: items.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656928447231782935, guid: 109153313607fa1438355867c4f6cd17,
+        type: 3}
+      propertyPath: items.Array.data[0].Id
+      value: Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656928447231782935, guid: 109153313607fa1438355867c4f6cd17,
+        type: 3}
+      propertyPath: items.Array.data[0].Value
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9047536408257778908, guid: 109153313607fa1438355867c4f6cd17,

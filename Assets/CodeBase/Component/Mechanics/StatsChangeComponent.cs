@@ -45,7 +45,8 @@ namespace PixelCrew.Components
             var inventory = target.GetComponent<InventoryComponent>();
             if (inventory == null) return;
 
-            inventory.ChangeInventoryItemCount(InventoryItemName.Key, 1);
+            var amount = _thingSpecification.KeysAmount;
+            inventory.ChangeInventoryItemCount(InventoryItemName.Key, amount);
         }
     }
 }

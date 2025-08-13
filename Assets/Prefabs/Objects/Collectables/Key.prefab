@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 3815632925683052289}
   - component: {fileID: 8109420407771956625}
   - component: {fileID: 2701338252690746798}
-  - component: {fileID: 9121073323782278738}
   - component: {fileID: 3828865571793753617}
   - component: {fileID: 4523621335502006119}
+  - component: {fileID: 8072342997126119699}
   - component: {fileID: 1828859359150527390}
-  - component: {fileID: 4528229271458403245}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -120,22 +119,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: idle
---- !u!114 &9121073323782278738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 688025032841000961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57470ff69c1fc264a8470778f9d7f3e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _costAmount: 0
-  _keysAmount: 1
-  _damagePoints: 0
-  _healthPoints: 0
 --- !u!114 &3828865571793753617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,8 +135,8 @@ MonoBehaviour:
   _collectActions:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4528229271458403245}
-        m_MethodName: KeysChange
+      - m_Target: {fileID: 8072342997126119699}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -192,7 +175,7 @@ MonoBehaviour:
   _ignoreTag: 
   _layer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4096
   _actions:
   - m_PersistentCalls:
       m_Calls:
@@ -207,6 +190,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8072342997126119699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688025032841000961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2749c7b55be2e545b01b38a4cf0e1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Key
+  _count: 1
 --- !u!114 &1828859359150527390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,18 +216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4528229271458403245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 688025032841000961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6aaad0e352942074181e79925021491b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _selfDestroyAfterTime: 0
+  _selfDestroyTime:
+    _value: 10
 --- !u!1 &2683877234755363815
 GameObject:
   m_ObjectHideFlags: 0

@@ -5429,6 +5429,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 5efb0a92-6a64-4b21-86b8-cb37ed23a205
     m_ActionName: Hero/Throw[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5784780335098992498}
+        m_MethodName: PressHeal
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: deb329c6-6d69-49c2-9c39-a89d5e00b6da
+    m_ActionName: Hero/Heal[/Keyboard/h]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -5558,9 +5573,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ad586ae35212540b1ff954140c1034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _money: 0
-  _keys: 0
-  _throws: 0
+  _inventoryData:
+    _inventory: []
 --- !u!114 &717764824
 MonoBehaviour:
   m_ObjectHideFlags: 0

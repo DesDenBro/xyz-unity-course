@@ -171,6 +171,7 @@ Transform:
   - {fileID: 1201699009956755570}
   - {fileID: 5997064494142320202}
   - {fileID: 4410790522325240893}
+  - {fileID: 4366872985177496300}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -250,6 +251,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _selfDestroyAfterTime: 0
+  _selfDestroyTime:
+    _value: 10
 --- !u!1 &3682779277414433245
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +304,73 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 265eeb72d43bc7c43ace2bd41d4a2638, type: 3}
   - {fileID: 21300000, guid: d9e047d245b70a04da42e9a768345f44, type: 3}
   - {fileID: 21300000, guid: 9230ae71946963842be4a3a51acf155e, type: 3}
+  _flipX: 0
+  _isFixedFlip: 0
+  _isLoop: 0
+  _allowNext: 1
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2050713159055817033}
+        m_MethodName: SelfDestroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &6745898749781676805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4366872985177496300}
+  - component: {fileID: 5190968359426511111}
+  m_Layer: 0
+  m_Name: sas-a-heal-effect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
+--- !u!4 &4366872985177496300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6745898749781676805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8497151579401214312}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5190968359426511111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6745898749781676805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbcb7e66682ec6946a0e9f1664d02520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: heal-effect
+  _sprites:
+  - {fileID: 6040734443530017722, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 8167133005111728920, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 2014349484240403859, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 6326803469982491369, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
   _flipX: 0
   _isFixedFlip: 0
   _isLoop: 0

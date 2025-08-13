@@ -21,16 +21,29 @@ namespace PixelCrew.Model
 
             var itemDef = DefsFacade.I.Items.Get(id);
             if (itemDef.IsVoid) return;
+            
+            while (value > 0)
+            {
+                var countToAdd = !itemDef.IsStackLimit || value <= itemDef.StackLimitSize ? value : itemDef.StackLimitSize;
 
-            var item = GetItem(id);
-            if (item == null)
-            {
-                item = new InventoryDataItem(id, value, itemDef);
-                _inventory.Add(item);
-            }
-            else
-            {
-                item.Value += value;
+                var items = GetItems(id);
+                if (itemDef.IsStackOnlyOne && items.Count(x => x.IsFullStack) > 0) break;
+
+                var firstNotFullStackItem = items.FirstOrDefault(x => !x.IsFullStack);
+                if (firstNotFullStackItem == null)
+                {
+                    _inventory.Add(new InventoryDataItem(id, countToAdd, itemDef));
+                }
+                else
+                {
+                    if (itemDef.IsStackLimit)
+                    {
+                        countToAdd = firstNotFullStackItem.Value + countToAdd > itemDef.StackLimitSize ? itemDef.StackLimitSize - firstNotFullStackItem.Value : countToAdd;
+                    }
+                    firstNotFullStackItem.Value += countToAdd;
+                }
+
+                value -= countToAdd;
             }
 
             onInventoryChanged?.Invoke(id, Count(id));
@@ -39,18 +52,26 @@ namespace PixelCrew.Model
         public void Remove(string id, int value)
         {
             if (string.IsNullOrWhiteSpace(id) || value == 0) return;
+            if (value < 0) value = -value; // - стоит, чтобы перебить знак минуса на уменьшение
 
             var itemDef = DefsFacade.I.Items.Get(id);
             if (itemDef.IsVoid) return;
 
-            var item = GetItem(id);
-            if (item == null) return;
-
-            item.Value -= value;
-
-            if (item.Value <= 0)
+            var items = GetItems(id);
+            foreach (var invItem in items)
             {
-                _inventory.Remove(item);
+                if (value <= 0) break;
+
+                var countToRemove = value;
+                if (invItem.Value < countToRemove) countToRemove = invItem.Value;
+
+                invItem.Value -= countToRemove;
+                if (invItem.Value <= 0)
+                {
+                    _inventory.Remove(invItem);
+                }
+
+                value -= countToRemove;
             }
 
             onInventoryChanged?.Invoke(id, Count(id));
@@ -59,6 +80,10 @@ namespace PixelCrew.Model
         public InventoryDataItem GetItem(string id)
         {
             return _inventory.FirstOrDefault(x => x.Id == id);
+        }
+        public IReadOnlyCollection<InventoryDataItem> GetItems(string id)
+        {
+            return _inventory.Where(x => x.Id == id).ToList();
         }
 
         public int Count(string id) 
@@ -69,23 +94,38 @@ namespace PixelCrew.Model
         public InventoryData Clone()
         {
             var json = JsonUtility.ToJson(this);
-            return JsonUtility.FromJson<InventoryData>(json);
+            var clone = JsonUtility.FromJson<InventoryData>(json);
+            foreach (var item in clone._inventory)
+            {
+                item.SetLinks(DefsFacade.I.Items.Get(item.Id));
+            }
+            return clone;
         }
     }
 
     [Serializable]
     public class InventoryDataItem
     {
+        [SerializeField] private ItemDef _itemDef;
+
         [InventoryIdAttr] public string Id;
         public int Value;
-        public GameObject Prefab;
+
+        public GameObject Prefab => _itemDef.Prefab;
+        public bool IsStackLimit => _itemDef.IsStackLimit;
+        public int StackLimitSize => _itemDef.StackLimitSize;
+        public bool IsFullStack => IsStackLimit && Value == StackLimitSize;
+
 
         public InventoryDataItem(string id, int value, ItemDef itemDef) 
         {
             Id = id;
             Value = value;
-            Prefab = itemDef.Prefab;
+
+            SetLinks(itemDef);
         }
+
+        public void SetLinks(ItemDef itemDef) => _itemDef = itemDef;
     }
 
     public static class InventoryItemName

@@ -14,23 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - _id: Money
+    _isStackOnlyOne: 0
     _isStackLimit: 0
     _stackLimitSize: 0
     _prefab: {fileID: 0}
   - _id: Key
-    _isStackLimit: 0
-    _stackLimitSize: 0
+    _isStackOnlyOne: 0
+    _isStackLimit: 1
+    _stackLimitSize: 1
     _prefab: {fileID: 0}
   - _id: Throw
+    _isStackOnlyOne: 0
     _isStackLimit: 0
     _stackLimitSize: 0
     _prefab: {fileID: 0}
   - _id: Sword
+    _isStackOnlyOne: 1
     _isStackLimit: 1
     _stackLimitSize: 1
     _prefab: {fileID: 959510849168114158, guid: 33dd0073f6bc82f4eb4df534186ac893,
       type: 3}
   - _id: HealhPotion
+    _isStackOnlyOne: 0
     _isStackLimit: 1
     _stackLimitSize: 1
-    _prefab: {fileID: 0}
+    _prefab: {fileID: 5917678488986685111, guid: 9596f0d67a918804080a8d88a5abafc6,
+      type: 3}

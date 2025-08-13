@@ -52,6 +52,8 @@ MonoBehaviour:
   - {fileID: -7481350877133238684, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
   - {fileID: 2011574832808370117, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
   - {fileID: -8438763151253471919, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  _flipX: 0
+  _isFixedFlip: 0
   _isLoop: 1
   _allowNext: 1
   _onComplete:
@@ -72,8 +74,9 @@ GameObject:
   - component: {fileID: 4999464753183217749}
   - component: {fileID: 7278927614637551315}
   - component: {fileID: 2093024133632045921}
-  - component: {fileID: 7714878294690034105}
   - component: {fileID: 8504690389024939555}
+  - component: {fileID: 1148067353584270161}
+  - component: {fileID: 8772765558821907004}
   m_Layer: 10
   m_Name: PotionHealth
   m_TagString: Untagged
@@ -162,9 +165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: idle
-  _states:
-  - {fileID: 8260931646498329088}
-  - {fileID: 6456227629464575496}
 --- !u!70 &1256384673531363874
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -213,8 +213,8 @@ MonoBehaviour:
   _collectActions:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7714878294690034105}
-        m_MethodName: HealthChange
+      - m_Target: {fileID: 1148067353584270161}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -250,6 +250,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
+  _ignoreTag: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4096
   _actions:
   - m_PersistentCalls:
       m_Calls:
@@ -264,18 +268,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7714878294690034105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5917678488986685111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6aaad0e352942074181e79925021491b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8504690389024939555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +278,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selfDestroyAfterTime: 0
+  _selfDestroyTime:
+    _value: 10
+--- !u!114 &1148067353584270161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917678488986685111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2749c7b55be2e545b01b38a4cf0e1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: HealhPotion
+  _count: 1
+--- !u!114 &8772765558821907004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917678488986685111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aaad0e352942074181e79925021491b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6458466608006478027
@@ -333,9 +354,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: destroy
   _sprites:
-  - {fileID: 6040734443530017722, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
-  - {fileID: 8167133005111728920, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
-  - {fileID: 2014349484240403859, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 21300000, guid: c124bc61951fc5140a9e232a9505ff94, type: 3}
+  - {fileID: 21300000, guid: 5a92cdf207a8de94e9e34fd0c7acb5f4, type: 3}
+  - {fileID: 21300000, guid: ec7ca411977f70f4aa6eeceb67f9bfea, type: 3}
+  - {fileID: 21300000, guid: 78a60250639730f4d8313298f7312b08, type: 3}
+  _flipX: 0
+  _isFixedFlip: 0
   _isLoop: 0
   _allowNext: 0
   _onComplete:

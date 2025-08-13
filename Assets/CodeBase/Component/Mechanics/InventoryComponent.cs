@@ -9,6 +9,11 @@ namespace PixelCrew.Components
 
         public InventoryData InventoryData => _inventoryData;
 
+        public InventoryDataItem GetItem(string id)
+        {
+            return _inventoryData.GetItem(id);
+        }
+
         public void SetInventory(InventoryData inv)
         {
             _inventoryData = inv;
@@ -24,7 +29,7 @@ namespace PixelCrew.Components
             if (!CheckItemCountToEvent(itemName, count)) return false;
 
             if (count > 0) _inventoryData.Add(itemName, count);
-            else _inventoryData.Remove(itemName, -count); // - стоит, чтобы перебить знак минуса на уменьшение
+            else _inventoryData.Remove(itemName, count);
 
             Debug.Log((count > 0 ? "+" : string.Empty) + count + ", всего " + itemName + ": " + InventoryData.Count(itemName));
             return true;

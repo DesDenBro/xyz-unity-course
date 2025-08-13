@@ -1,11 +1,8 @@
 ﻿using PixelCrew.Common;
 using PixelCrew.Common.Tech;
 using PixelCrew.Components;
-using PixelCrew.Model;
 using PixelCrew.Utils;
-using PixelCrew.GameObjects;
 using System.Collections;
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -23,6 +20,7 @@ namespace PixelCrew.GameObjects.Creatures
         [SerializeField] private float _damageJumpSpeed;
         [SerializeField] private int _baseDamage;
         [SerializeField] private Cooldown _throwCooldown;
+        [SerializeField] private Cooldown _healCooldown = new Cooldown(0.5f);
 
         [Header("Base checks")]
         [SerializeField] private LayerCheck _groundCheck;
@@ -217,7 +215,10 @@ namespace PixelCrew.GameObjects.Creatures
         {
             _animator.SetKeyVal(AnimationKey.Creature.IsClimb, true);
         }
-        public virtual void MovementGrabAction() { }
+        public virtual void MovementGrabAction() 
+        { 
+        
+        }
 
 
         public virtual void TakeDamage()
@@ -227,12 +228,7 @@ namespace PixelCrew.GameObjects.Creatures
             _animator.SetKeyVal(AnimationKey.Creature.TriggerHit);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
         }
-        public virtual void TakeHealth()
-        {
-            if (!_IsAlive) return;
 
-            _animator.SetKeyVal(AnimationKey.Creature.TriggerHealing);
-        }
 
         public virtual void InitAttack()
         {
@@ -243,6 +239,26 @@ namespace PixelCrew.GameObjects.Creatures
         public virtual void OnAttack()
         {
             _attackRange.Check();
+        }
+
+
+        public virtual void InitHeal()
+        {
+            if (!_IsAlive || !_healCooldown.IsReady) return;
+            _healCooldown.Reset();
+
+            OnHeal();
+        }
+        public virtual void OnHeal()
+        {
+
+        }
+        public virtual void TakeHealth()
+        {
+            if (!_IsAlive) return;
+
+            _animator.SetKeyVal(AnimationKey.Creature.TriggerHealing);
+            SpawnAction("heal-effect");
         }
 
 

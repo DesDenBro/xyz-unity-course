@@ -135,11 +135,10 @@ GameObject:
   - component: {fileID: 8100952931469951251}
   - component: {fileID: 8100952931469951250}
   - component: {fileID: 8100952931469951262}
-  - component: {fileID: 8100952931469951263}
   - component: {fileID: 8977334924166680610}
   - component: {fileID: 2432721708351927162}
   - component: {fileID: 8100952931469951248}
-  - component: {fileID: 7918273373926413638}
+  - component: {fileID: 3710886899447501350}
   - component: {fileID: 7610541170164297670}
   - component: {fileID: 2093447620204707195}
   m_Layer: 10
@@ -246,22 +245,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: idle
---- !u!114 &8100952931469951263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8100952931469951261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57470ff69c1fc264a8470778f9d7f3e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _costAmount: 1
-  _keysAmount: 0
-  _damagePoints: 0
-  _healthPoints: 0
 --- !u!114 &8977334924166680610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,8 +261,8 @@ MonoBehaviour:
   _collectActions:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7918273373926413638}
-        m_MethodName: MoneyChange
+      - m_Target: {fileID: 3710886899447501350}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -318,7 +301,7 @@ MonoBehaviour:
   _ignoreTag: 
   _layer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4096
   _actions:
   - m_PersistentCalls:
       m_Calls:
@@ -345,7 +328,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7918273373926413638
+  _selfDestroyAfterTime: 0
+  _selfDestroyTime:
+    _value: 10
+--- !u!114 &3710886899447501350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -354,9 +340,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8100952931469951261}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6aaad0e352942074181e79925021491b, type: 3}
+  m_Script: {fileID: 11500000, guid: f2749c7b55be2e545b01b38a4cf0e1c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: Money
+  _count: 1
 --- !u!50 &7610541170164297670
 Rigidbody2D:
   serializedVersion: 4
@@ -392,3 +380,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frequency: 6
   _amplitude: 0.1
+  _randomize: 1

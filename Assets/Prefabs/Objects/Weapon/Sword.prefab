@@ -71,9 +71,9 @@ GameObject:
   - component: {fileID: 3001892985122815325}
   - component: {fileID: 3001892985122815326}
   - component: {fileID: 3001892985122815320}
-  - component: {fileID: 3001892985122815327}
   - component: {fileID: 39697352289262542}
   - component: {fileID: 6684227420167959076}
+  - component: {fileID: 519972526686716174}
   m_Layer: 10
   m_Name: Sword
   m_TagString: Untagged
@@ -161,20 +161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: idle
---- !u!114 &3001892985122815327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3001892985122815324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a1569efeb8042c43a5f92c22612596a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 5
-  _prefab: {fileID: 959510849168114158, guid: 33dd0073f6bc82f4eb4df534186ac893, type: 3}
 --- !u!114 &39697352289262542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _selfDestroyAfterTime: 0
+  _selfDestroyTime:
+    _value: 10
 --- !u!114 &6684227420167959076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +191,20 @@ MonoBehaviour:
   _outlineColor: {r: 1, g: 1, b: 1, a: 1}
   _outlineWidth: 1
   _isEnabled: 1
+--- !u!114 &519972526686716174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3001892985122815324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2749c7b55be2e545b01b38a4cf0e1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Sword
+  _count: 1
 --- !u!1001 &2391939062975381313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -293,7 +296,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _actions.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 3001892985122815327}
+      objectReference: {fileID: 519972526686716174}
     - target: {fileID: 2921700087545008389, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: _actions.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -307,7 +310,7 @@ PrefabInstance:
     - target: {fileID: 2921700087545008389, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: _actions.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ArmWeapon
+      value: Add
       objectReference: {fileID: 0}
     - target: {fileID: 2921700087545008389, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
