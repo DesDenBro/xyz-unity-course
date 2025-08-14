@@ -244,7 +244,7 @@ namespace PixelCrew.GameObjects.Creatures
 
         public virtual void InitHeal()
         {
-            if (!_IsAlive || !_healCooldown.IsReady) return;
+            if (!_IsAlive || !_IsNormalMove || !_healCooldown.IsReady) return;
             _healCooldown.Reset();
 
             OnHeal();

@@ -4825,7 +4825,7 @@ GameObject:
   m_Layer: 14
   m_Name: SwordProjectilePosition
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4870,7 +4870,7 @@ GameObject:
   m_Layer: 16
   m_Name: DoInteractableRange
   m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4934,7 +4934,7 @@ GameObject:
   m_Layer: 16
   m_Name: AttackRange
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4946,7 +4946,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3886535996343965495}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.581, y: 0.03, z: 0}
+  m_LocalPosition: {x: 0.7, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5784780335098992501}
@@ -4985,7 +4985,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   checkOnlyForward: 0
-  _radius: 0.3
+  _radius: 0.2
 --- !u!1 &4343286018677879401
 GameObject:
   m_ObjectHideFlags: 0
@@ -5000,7 +5000,7 @@ GameObject:
   m_Layer: 16
   m_Name: HighlightInteractableRange
   m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5076,7 +5076,7 @@ GameObject:
   m_Layer: 14
   m_Name: ActionPosition
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5122,7 +5122,7 @@ GameObject:
   m_Layer: 16
   m_Name: GroundCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5537,6 +5537,8 @@ MonoBehaviour:
   _baseDamage: 1
   _throwCooldown:
     _value: 1
+  _healCooldown:
+    _value: 0.5
   _groundCheck: {fileID: 5784780334059268827}
   _attackRange: {fileID: 4681518861892597388}
   _isDoubleJumpEnable: 0
