@@ -214,6 +214,8 @@ namespace PixelCrew.GameObjects.Creatures
             var healPotion = _inventory.GetItem(InventoryItemName.HealhPotion);
             if (healPotion == null || healPotion.Prefab == null) return;
 
+            base.OnHeal();
+
             var ts = healPotion.Prefab.GetComponent<ThingSpecification>();
             _health.RecoverHealth(ts.HealthPoints);
 

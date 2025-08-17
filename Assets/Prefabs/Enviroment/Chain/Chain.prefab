@@ -186,7 +186,7 @@ PrefabInstance:
     - target: {fileID: 2921700087545008389, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: _beforeActions.Array.data[1].m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2921700087545008389, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
@@ -252,7 +252,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _beforeActions.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1908714070865062692}
     - target: {fileID: 2921700087545008389, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: _afterActions.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -301,7 +301,7 @@ PrefabInstance:
     - target: {fileID: 2921700087545008389, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: _beforeActions.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FixObjectY
+      value: HangObject
       objectReference: {fileID: 0}
     - target: {fileID: 2921700087545008389, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}

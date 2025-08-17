@@ -35,6 +35,7 @@ namespace PixelCrew.GameObjects.Creatures
         protected SpawnActionComponent _actionParticles;
         protected MovementStateComponent _movementState;
         protected HealthComponent _health;
+        protected PlaySoundsComponent _playSounds;
         protected Animator _animator;
         protected Rigidbody2D _rigidbody;
         protected Vector2 _direction;
@@ -57,6 +58,7 @@ namespace PixelCrew.GameObjects.Creatures
             _health = GetComponent<HealthComponent>();
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+            _playSounds = GetComponentInChildren<PlaySoundsComponent>();
         }
 
 
@@ -220,11 +222,19 @@ namespace PixelCrew.GameObjects.Creatures
         
         }
 
+        
+        public void OnRun()
+        {
+            _playSounds.Play("Run");
+            SpawnAction("run");
+        }
+
 
         public virtual void TakeDamage()
         {
             if (!_IsAlive) return;
 
+            _playSounds.Play("Hurt");
             _animator.SetKeyVal(AnimationKey.Creature.TriggerHit);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
         }
@@ -251,7 +261,7 @@ namespace PixelCrew.GameObjects.Creatures
         }
         public virtual void OnHeal()
         {
-
+            _playSounds.Play("Heal");
         }
         public virtual void TakeHealth()
         {
@@ -316,6 +326,7 @@ namespace PixelCrew.GameObjects.Creatures
         }
         public void OnDie()
         {
+            _playSounds.Play("Die");
             if (_deadParams != null)
             {
                 _deadParams.SetParams();

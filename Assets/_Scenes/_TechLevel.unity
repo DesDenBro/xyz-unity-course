@@ -914,6 +914,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 461217663}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &477163171 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3263532649707581288, guid: 30dc5b4137e9eaf40b9674cd4cd06356,
+    type: 3}
+  m_PrefabInstance: {fileID: 403837623}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &514298722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1149,13 +1155,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputTimeToLive: 1.5
   _cheats:
-  - _name: money
+  - _name: mute
     _action:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1494923812}
-          m_MethodName: ChangeMoneyAmount
-          m_Mode: 3
+        - m_Target: {fileID: 477163171}
+          m_MethodName: Stop
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2914,18 +2920,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b105adb82f922f84d94bcffd793ed2d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1494923812 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 713820545780215522, guid: 30dc5b4137e9eaf40b9674cd4cd06356,
-    type: 3}
-  m_PrefabInstance: {fileID: 403837623}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56ad586ae35212540b1ff954140c1034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1498518011

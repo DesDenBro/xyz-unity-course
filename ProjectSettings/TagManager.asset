@@ -9,6 +9,7 @@ TagManager:
   - Interactable
   - Coin
   - Door
+  - Sound
   layers:
   - Default
   - TransparentFX

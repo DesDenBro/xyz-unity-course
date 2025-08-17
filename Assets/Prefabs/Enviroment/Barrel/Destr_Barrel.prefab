@@ -46,6 +46,8 @@ MonoBehaviour:
   _name: idle
   _sprites:
   - {fileID: 21300000, guid: 7f486d9bfef98ac4a8040ea23bebd9b7, type: 3}
+  _flipX: 0
+  _isFixedFlip: 0
   _isLoop: 0
   _allowNext: 1
   _onComplete:
@@ -97,6 +99,8 @@ MonoBehaviour:
   _name: destroy
   _sprites:
   - {fileID: 21300000, guid: d70ef0ee6b04cda4fb5bc300e7e252d4, type: 3}
+  _flipX: 0
+  _isFixedFlip: 0
   _isLoop: 0
   _allowNext: 0
   _onComplete:
@@ -173,6 +177,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 656631f20ff5c7949ae5bd8324d36118, type: 3}
   - {fileID: 21300000, guid: d092d377ed6c66047bb3a1fee9b9cd72, type: 3}
   - {fileID: 21300000, guid: 00957cb4b33cd434b901d6bd596d6978, type: 3}
+  _flipX: 0
+  _isFixedFlip: 0
   _isLoop: 0
   _allowNext: 1
   _onComplete:
@@ -362,6 +368,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 10
   _currentHealth: 10
+  _damageCooldown:
+    _value: 0
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -416,6 +424,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _selfDestroyAfterTime: 0
+  _selfDestroyTime:
+    _value: 10
 --- !u!114 &1873178648753431777
 MonoBehaviour:
   m_ObjectHideFlags: 0

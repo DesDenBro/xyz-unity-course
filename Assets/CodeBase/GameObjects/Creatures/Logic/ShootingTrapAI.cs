@@ -20,6 +20,7 @@ namespace PixelCrew.GameObjects.Creatures
 
         private Animator _animator;
         private SpawnActionComponent _sac;
+        private PlaySoundsComponent _playSounds;
         private bool _attackAfterCallerCooldown = false;
         private Cooldown _isRangeDoneCooldown = new Cooldown(0.2f);
         private Cooldown _rangeCallerCooldown = new Cooldown(0.3f);
@@ -33,6 +34,7 @@ namespace PixelCrew.GameObjects.Creatures
         {
             _animator = GetComponent<Animator>();
             _sac = GetComponent<SpawnActionComponent>();
+            _playSounds = GetComponentInChildren<PlaySoundsComponent>();
         }
 
         private void FixedUpdate()
@@ -91,6 +93,7 @@ namespace PixelCrew.GameObjects.Creatures
             if (_meleeAttack != null)
             {
                 _meleeAttack.Check();
+                _playSounds.Play("MeleeAttack");
             }
         }
 
