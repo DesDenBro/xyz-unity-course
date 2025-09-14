@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 323260938}
   - component: {fileID: 323260939}
   m_Layer: 0
-  m_Name: Key
+  m_Name: key_1_100%
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: 688025032841000961, guid: c504e51233071bf4ab51ebe0247c4743, type: 3}
-  _maximum: 2
+  _maximum: 1
   _percentChance: 100
 --- !u!1001 &403837623
 PrefabInstance:

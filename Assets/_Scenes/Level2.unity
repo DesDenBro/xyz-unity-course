@@ -5387,7 +5387,7 @@ PrefabInstance:
     - target: {fileID: 3928921763253391860, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
       propertyPath: _sceneName
-      value: Level1
+      value: Level3
       objectReference: {fileID: 0}
     - target: {fileID: 3991039096372236920, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
@@ -5412,7 +5412,7 @@ PrefabInstance:
     - target: {fileID: 9094616382402812128, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9132291359665964644, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
