@@ -181,7 +181,8 @@ namespace PixelCrew.GameObjects.Creatures
             {
                 var multiplier = _invertScale ? -1 : 1;
                 var isToLeft = _direction.x < 0;
-                transform.localScale = new Vector3((isToLeft ? -1 : 1) * multiplier, 1, 1);
+                var unsignedX = transform.localScale.x < 0 ? -transform.localScale.x : transform.localScale.x;
+                transform.localScale = new Vector3(unsignedX * (isToLeft ? -1 : 1) * multiplier, transform.localScale.y, transform.localScale.z);
             }
         }
         private void UpdateAnimatorParamsState()
