@@ -31,5 +31,14 @@ namespace PixelCrew.GameObjects
             public static readonly TriggerAnimationKey TriggerHit = new TriggerAnimationKey("trigger-hit");
 
         }
+
+        public static class UI
+        {
+            public static class MenuWindow
+            {
+                public static readonly TriggerAnimationKey TriggerShow = new TriggerAnimationKey("trigger-show");
+                public static readonly TriggerAnimationKey TriggerHide = new TriggerAnimationKey("trigger-hide");
+            }
+        }
     }
 }
