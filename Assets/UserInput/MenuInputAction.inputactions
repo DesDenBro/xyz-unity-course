@@ -1,0 +1,33 @@
+{
+    "name": "MenuInputAction",
+    "maps": [
+        {
+            "name": "Menu",
+            "id": "03dfd945-7a87-45b4-b311-8ea59cfdf313",
+            "actions": [
+                {
+                    "name": "CallMenu",
+                    "type": "Button",
+                    "id": "110575d4-3fe8-49d1-8f01-ddda85a3f1f2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2cdb4e05-c690-423d-8432-4d11b5426b22",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CallMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

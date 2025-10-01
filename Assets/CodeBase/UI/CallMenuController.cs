@@ -1,11 +1,12 @@
-﻿using PixelCrew.Model;
+﻿using PixelCrew.Components;
+using PixelCrew.Model;
 using UnityEngine;
 
 namespace PixelCrew.UI
 {
     public class CallMenuController : MonoBehaviour
     {
-        private GameObject _mainMenuWindow;
+        private Cooldown menuCallCooldown = new Cooldown(1);
         
         private void Awake()
         {
@@ -22,13 +23,19 @@ namespace PixelCrew.UI
 
         public void CallMenu()
         {
-            if (_mainMenuWindow == null)
+            if (!menuCallCooldown.IsReady) return;
+            menuCallCooldown.Reset();
+
+            MainMenuWindow mainMenuWindow = gameObject.GetComponentInChildren<MainMenuWindow>();
+            if (mainMenuWindow != null)
             {
-                _mainMenuWindow = Resources.Load<GameObject>("UI/MainMenuWindow");
+                mainMenuWindow.Close();
+                return;
             }
 
+            var mainMenuWindowGO = Resources.Load<GameObject>("UI/MainMenuWindow");
             var canvas = FindObjectOfType<Canvas>();
-            Instantiate(_mainMenuWindow, canvas.transform);
+            Instantiate(mainMenuWindowGO, canvas.transform);
         }
 
         private bool IsControllerExist()

@@ -302,6 +302,8 @@ GameObject:
   - component: {fileID: 2011138531}
   - component: {fileID: 2011138530}
   - component: {fileID: 2011138534}
+  - component: {fileID: 2011138535}
+  - component: {fileID: 2011138536}
   m_Layer: 5
   m_Name: MenuCanvas
   m_TagString: Untagged
@@ -400,3 +402,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810bfe2ab938cff4d90018950886fc47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2011138535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011138529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 2586d68b5280843cd8b0aa263dc03924,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2011138536}
+        m_MethodName: PressCallMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 110575d4-3fe8-49d1-8f01-ddda85a3f1f2
+    m_ActionName: Menu/CallMenu[/Keyboard/escape]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Menu
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &2011138536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011138529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a82fe1179beb54b55b5034caafc05a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _callMenuController: {fileID: 2011138534}
