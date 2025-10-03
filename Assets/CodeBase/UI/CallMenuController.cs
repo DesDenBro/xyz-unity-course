@@ -1,13 +1,16 @@
 ﻿using PixelCrew.Components;
-using PixelCrew.Model;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PixelCrew.UI
 {
     public class CallMenuController : MonoBehaviour
     {
-        private Cooldown menuCallCooldown = new Cooldown(1);
-        
+        private Cooldown menuCallCooldown = new Cooldown(1f);
+
+        public bool IsMainMenuLevel => SceneManager.GetActiveScene().name == "MainMenu";
+
         private void Awake()
         {
             if (IsControllerExist())
@@ -27,13 +30,30 @@ namespace PixelCrew.UI
             menuCallCooldown.Reset();
 
             MainMenuWindow mainMenuWindow = gameObject.GetComponentInChildren<MainMenuWindow>();
-            if (mainMenuWindow != null)
+            if (mainMenuWindow == null)
             {
-                mainMenuWindow.Close();
-                return;
+                ShowMenu();
             }
+            else
+            {
+                CloseMenu();
+            }
+        }
 
+        public void CloseMenu()
+        {
+            var menus = gameObject.GetComponentsInChildren<MenuOrder>().OrderByDescending(x => x.OrderPostion);
+            var openedMenu = menus.FirstOrDefault();
+            if (openedMenu == null) return;
+            if (IsMainMenuLevel && openedMenu.OrderPostion == 0) return; // главное меню, в нем нельзя закрыть меню полностью
+
+            openedMenu.gameObject.GetComponent<AnimatedWindow>().Close();
+        }
+
+        public void ShowMenu()
+        {
             var mainMenuWindowGO = Resources.Load<GameObject>("UI/MainMenuWindow");
+            mainMenuWindowGO.GetComponent<AnimatedWindow>().SetButtonsVisible(IsMainMenuLevel);
             var canvas = FindObjectOfType<Canvas>();
             Instantiate(mainMenuWindowGO, canvas.transform);
         }

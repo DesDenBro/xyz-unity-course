@@ -12,6 +12,7 @@ namespace PixelCrew.UI.Widgets
         {
             EditorGUILayout.PropertyField(serializedObject.FindProperty("_normal"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("_pressed"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("_visibleConstraint"));
             serializedObject.ApplyModifiedProperties();
             base.OnInspectorGUI();
         }

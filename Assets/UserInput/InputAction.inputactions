@@ -1,5 +1,5 @@
 {
-    "name": "HeroInputAction",
+    "name": "InputAction",
     "maps": [
         {
             "name": "Hero",
@@ -217,6 +217,33 @@
                     "processors": "",
                     "groups": "",
                     "action": "Heal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Menu",
+            "id": "21724c50-6d4f-4531-b26a-2357fda4f9b8",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "84107a23-ebc4-4c2b-889a-73a2437f6233",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "27150b74-c6b7-4617-9414-a3c9117bf846",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

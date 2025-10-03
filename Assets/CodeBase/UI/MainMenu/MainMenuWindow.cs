@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PixelCrew.Components;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,7 +22,17 @@ namespace PixelCrew.UI
             { 
                 SceneManager.LoadScene("Level1"); 
             };
-            Close();            
+            Close();
+        }
+
+        public void OnRestartLevel()
+        {
+            _closeAction = () =>
+            {
+                var restartLevel = FindObjectOfType<RestartLevelComponent>();
+                if (restartLevel != null) restartLevel.Restart();
+            };
+            Close();
         }
 
         public void OnExitGame()

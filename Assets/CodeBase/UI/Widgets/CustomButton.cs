@@ -7,6 +7,9 @@ namespace PixelCrew.UI.Widgets
     {
         [SerializeField] private GameObject _normal;
         [SerializeField] private GameObject _pressed;
+        [SerializeField] private ButtonMenuVisibleConstraint _visibleConstraint = ButtonMenuVisibleConstraint.None;
+
+        public ButtonMenuVisibleConstraint VisibleConstraint => _visibleConstraint;
 
         protected override void DoStateTransition(SelectionState state, bool instant)
         {
@@ -15,5 +18,12 @@ namespace PixelCrew.UI.Widgets
             _normal.SetActive(state != SelectionState.Pressed);
             _pressed.SetActive(state == SelectionState.Pressed);
         }
+    }
+
+    public enum ButtonMenuVisibleConstraint : byte
+    {
+        None = 0,
+        OnlyMainMenu = 1,
+        OnlyGame = 2
     }
 }
