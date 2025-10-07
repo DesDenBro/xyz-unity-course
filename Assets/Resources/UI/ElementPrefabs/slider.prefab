@@ -437,6 +437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8092161123996770961}
+  - component: {fileID: 1162088695601908086}
   m_Layer: 5
   m_Name: slider
   m_TagString: Untagged
@@ -466,3 +467,17 @@ RectTransform:
   m_AnchoredPosition: {x: -599, y: -337}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1162088695601908086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8092161123996770990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34e7e43102ca794eb2ee78818b89381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 596615940856057598}
+  _value: {fileID: 3677798466870751051}

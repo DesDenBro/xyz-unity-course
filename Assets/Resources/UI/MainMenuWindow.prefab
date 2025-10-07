@@ -652,6 +652,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: btn_restart
       objectReference: {fileID: 0}
+    - target: {fileID: 5713612570058515792, guid: 47e8a0a858adf09488492b35ea674c4d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5713612570058515793, guid: 47e8a0a858adf09488492b35ea674c4d,
         type: 3}
       propertyPath: m_Pivot.x

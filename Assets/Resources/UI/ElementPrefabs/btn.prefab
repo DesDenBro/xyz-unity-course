@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 5713612570058515788}
   - component: {fileID: 5713612570058515795}
   - component: {fileID: 5713612570058515794}
+  - component: {fileID: 2608078680297141080}
   m_Layer: 5
   m_Name: btn
   m_TagString: Untagged
@@ -291,3 +292,16 @@ MonoBehaviour:
   _normal: {fileID: 5713612569422149190}
   _pressed: {fileID: 5713612569655900404}
   _visibleConstraint: 1
+--- !u!114 &2608078680297141080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5713612570058515792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3890b1dbc788c848b7e6327a5b5e13c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 6b2e600f3dc81cd4d8b334fb08bd9472, type: 3}
