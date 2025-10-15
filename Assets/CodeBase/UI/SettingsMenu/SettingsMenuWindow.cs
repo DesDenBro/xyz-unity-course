@@ -13,8 +13,8 @@ namespace PixelCrew.UI
         {
             base.Start();
 
-            _musicASW.SetModel(GameSettings.I.MusicProp);
-            _sfxASW.SetModel(GameSettings.I.SFXProp);
+            if (_musicASW != null) _musicASW.SetModel(GameSettings.I.MusicProp);
+            if (_sfxASW != null) _sfxASW.SetModel(GameSettings.I.SFXProp);
         }        
     }
 }
