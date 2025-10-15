@@ -15,6 +15,8 @@ namespace PixelCrew.Components
         public int Health => _currentHealth;
         public int MaxHealth => _maxHealth;
 
+        public delegate void OnHealthChangedDel(int newValue, int oldValue);
+        public event OnHealthChangedDel OnHealthChanged;
 
         public void SetHealth(int health) { _currentHealth = health; }
         public void SetMaxHealth(int maxHealth) { _maxHealth = maxHealth; }
@@ -27,8 +29,11 @@ namespace PixelCrew.Components
             if (!_damageCooldown.IsReady) return;
             _damageCooldown.Reset();
 
+            var oldHealth = _currentHealth;
             _currentHealth -= damagePoints;
             _onDamage?.Invoke();
+            OnHealthChanged?.Invoke(_currentHealth, oldHealth);
+
             if (_currentHealth <= 0)
             {
                 _onDie?.Invoke();
@@ -41,8 +46,9 @@ namespace PixelCrew.Components
 
         public void RecoverHealth(int healthPoints)
         {
-            if (_currentHealth <= 0) return;
+            if (_currentHealth <= 0 || _currentHealth >= _maxHealth) return;
 
+            var oldHealth = _currentHealth;
             if (_currentHealth + healthPoints >= _maxHealth)
             {
                 _currentHealth = _maxHealth;
@@ -54,7 +60,10 @@ namespace PixelCrew.Components
                 _onHealth?.Invoke();
                 Debug.Log("recover " + healthPoints + ", health " + _currentHealth);
             }
+
+            OnHealthChanged?.Invoke(_currentHealth, oldHealth);
         }
+
         [ContextMenu("Health")]
         public void HealthIt() => RecoverHealth(100);
     }
