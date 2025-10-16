@@ -11,6 +11,7 @@ TagManager:
   - Door
   - Sound
   - SfxAudioSource
+  - MenuCanvas
   layers:
   - Default
   - TransparentFX

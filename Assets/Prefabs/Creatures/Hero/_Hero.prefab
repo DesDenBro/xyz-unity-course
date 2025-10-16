@@ -5634,7 +5634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 40
-  _currentHealth: 30
+  _currentHealth: 40
   _damageCooldown:
     _value: 0.2
   _onDamage:

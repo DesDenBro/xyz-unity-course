@@ -12,29 +12,31 @@ namespace PixelCrew.UI.Hud
     public class HudController : MonoBehaviour
     {
         [SerializeField] private ProgressBarWidget _progressBarWidget;
-
-        private HealthComponent _heroHealth;
+        [SerializeField] private HealthComponent _health;
 
         private void Start()
         {
-            var hero = FindObjectOfType<Hero>();
-            if (hero != null) _heroHealth = hero.GetComponent<HealthComponent>();
-            if (_heroHealth != null)
+            if (_health == null)
             {
-                _heroHealth.OnHealthChanged += OnHealhChanged;
-                OnHealhChanged(_heroHealth.Health, 0);
+                var hero = FindObjectOfType<Hero>();
+                if (hero != null) _health = hero.GetComponent<HealthComponent>();
+            }
+            if (_health != null)
+            {
+                _health.OnHealthChanged += OnHealhChanged;
+                OnHealhChanged(_health.Health, 0);
             }
         }
 
         private void OnHealhChanged(int newValue, int oldValue)
         {
-            var value = (float)newValue/_heroHealth.MaxHealth;
+            var value = (float)newValue/_health.MaxHealth;
             _progressBarWidget.SetProgress(value);
         }
 
         private void OnDestroy()
         {
-            _heroHealth.OnHealthChanged -= OnHealhChanged;
+            _health.OnHealthChanged -= OnHealhChanged;
         }
     }
 }

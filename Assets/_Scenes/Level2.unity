@@ -203,6 +203,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 505564309}
     m_Modifications:
+    - target: {fileID: 3664921897046519918, guid: b76e9ad1a3f9a834b8279f58168a7198,
+        type: 3}
+      propertyPath: m_FillOrigin
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5533523794292598460, guid: b76e9ad1a3f9a834b8279f58168a7198,
         type: 3}
       propertyPath: m_Layer
@@ -1246,7 +1251,7 @@ MonoBehaviour:
   _actions:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1541894696}
+      - m_Target: {fileID: 0}
         m_MethodName: set_outputAudioMixerGroup
         m_Mode: 2
         m_Arguments:
@@ -1937,7 +1942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.639321, y: -18.632256, z: -9.2}
+  m_LocalPosition: {x: 0.6393211, y: -18.632256, z: -9.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 760853357}
@@ -1996,7 +2001,7 @@ MonoBehaviour:
     _action:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1541894696}
+        - m_Target: {fileID: 0}
           m_MethodName: Stop
           m_Mode: 1
           m_Arguments:
@@ -3121,7 +3126,7 @@ MonoBehaviour:
   _actions:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1541894696}
+      - m_Target: {fileID: 0}
         m_MethodName: set_outputAudioMixerGroup
         m_Mode: 2
         m_Arguments:
@@ -7806,7 +7811,7 @@ MonoBehaviour:
   _actions:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1541894696}
+      - m_Target: {fileID: 0}
         m_MethodName: set_outputAudioMixerGroup
         m_Mode: 2
         m_Arguments:
@@ -8196,12 +8201,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 814cf538809788e4484fac4c4715df26, type: 3}
---- !u!82 &1541894696 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3263532649707581288, guid: 30dc5b4137e9eaf40b9674cd4cd06356,
-    type: 3}
-  m_PrefabInstance: {fileID: 403837623}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1557527808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8702,7 +8701,7 @@ MonoBehaviour:
   _actions:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1541894696}
+      - m_Target: {fileID: 0}
         m_MethodName: set_outputAudioMixerGroup
         m_Mode: 2
         m_Arguments:

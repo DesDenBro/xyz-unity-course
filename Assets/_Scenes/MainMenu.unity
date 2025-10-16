@@ -545,6 +545,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7012542498234339863, guid: 7156e2ff3afa8bf4592cf65eaa1a12a0,
+        type: 3}
+      propertyPath: m_TagString
+      value: MenuCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 8125813246175243707, guid: 7156e2ff3afa8bf4592cf65eaa1a12a0,
         type: 3}
       propertyPath: m_AnchorMax.y

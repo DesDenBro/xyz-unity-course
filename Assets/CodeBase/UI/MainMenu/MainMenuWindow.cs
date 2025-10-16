@@ -2,6 +2,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 namespace PixelCrew.UI
 {
@@ -12,7 +13,7 @@ namespace PixelCrew.UI
         public void OnShowSettings()
         {
             var settingsWindow = Resources.Load<GameObject>("UI/SettingsMenuWindow");
-            var canvas = FindObjectOfType<Canvas>();
+            var canvas = FindObjectsOfType<Canvas>().FirstOrDefault(x => x.tag == "MenuCanvas");
             Instantiate(settingsWindow, canvas.transform);
         }
 

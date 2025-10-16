@@ -54,7 +54,7 @@ namespace PixelCrew.UI
         {
             var mainMenuWindowGO = Resources.Load<GameObject>("UI/MainMenuWindow");
             mainMenuWindowGO.GetComponent<AnimatedWindow>().SetButtonsVisible(IsMainMenuLevel);
-            var canvas = FindObjectOfType<Canvas>();
+            var canvas = FindObjectsOfType<Canvas>().FirstOrDefault(x => x.tag == "MenuCanvas");
             Instantiate(mainMenuWindowGO, canvas.transform);
         }
 
