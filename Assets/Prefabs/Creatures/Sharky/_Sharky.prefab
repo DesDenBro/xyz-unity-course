@@ -677,8 +677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b105adb82f922f84d94bcffd793ed2d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 15
-  _currentHealth: 15
+  _maxHealth: 20
+  _currentHealth: 20
   _damageCooldown:
     _value: 0.2
   _onDamage:
@@ -988,6 +988,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4218708201158451119}
+  - component: {fileID: 8837744506594476757}
   m_Layer: 13
   m_Name: Hud
   m_TagString: Untagged
@@ -1010,6 +1011,18 @@ Transform:
   m_Father: {fileID: 5784780335098992501}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8837744506594476757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8019594648489632696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a58b2c20db7a834f89b10360bca988b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &214460308533742046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1030,7 +1043,7 @@ PrefabInstance:
     - target: {fileID: 3469321541682018736, guid: d07784e3e8e9a4931bf31252387cd77c,
         type: 3}
       propertyPath: m_FillOrigin
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4035347748451807373, guid: d07784e3e8e9a4931bf31252387cd77c,
         type: 3}

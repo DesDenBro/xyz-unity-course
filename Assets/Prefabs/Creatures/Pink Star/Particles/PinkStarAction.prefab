@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5997064494142320202}
   - component: {fileID: 2704611461903962484}
   - component: {fileID: 8305892370480504236}
+  - component: {fileID: 1800375442756118816}
   m_Layer: 0
   m_Name: sas-a-fall
   m_TagString: Untagged
@@ -166,6 +167,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1800375442756118816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93765383473771756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0443ed82523fb499d639e73d832933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 1
 --- !u!1 &1254277394139081328
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +191,7 @@ GameObject:
   - component: {fileID: 1201699009956755570}
   - component: {fileID: 6658372873018522282}
   - component: {fileID: 5013006398272150987}
+  - component: {fileID: 7542877480409867952}
   m_Layer: 0
   m_Name: sas-a-jump
   m_TagString: Untagged
@@ -333,6 +348,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7542877480409867952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254277394139081328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0443ed82523fb499d639e73d832933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 1
 --- !u!1 &1296803784847218045
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +374,7 @@ GameObject:
   - component: {fileID: 3513381182742660212}
   - component: {fileID: 2050713159055817033}
   m_Layer: 0
-  m_Name: SharkyAction
+  m_Name: PinkStarAction
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -529,6 +557,7 @@ GameObject:
   - component: {fileID: 4572200842545495528}
   - component: {fileID: 2907466952983504218}
   - component: {fileID: 379530121280501928}
+  - component: {fileID: 4087636103578158676}
   m_Layer: 0
   m_Name: sas-a-question
   m_TagString: Untagged
@@ -684,6 +713,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4087636103578158676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5883139843174094293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0443ed82523fb499d639e73d832933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 1
 --- !u!1 &6433398499157052404
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +737,7 @@ GameObject:
   - component: {fileID: 7695719828869715613}
   - component: {fileID: 7314265947690362575}
   - component: {fileID: 6431760466185426064}
+  - component: {fileID: 3609009909916338606}
   m_Layer: 0
   m_Name: sas-a-alarm
   m_TagString: Untagged
@@ -850,3 +893,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3609009909916338606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6433398499157052404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0443ed82523fb499d639e73d832933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 1

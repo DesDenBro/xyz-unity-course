@@ -486,6 +486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6932237721897233158}
+  - component: {fileID: 4583392551623102073}
   m_Layer: 13
   m_Name: Hud
   m_TagString: Untagged
@@ -508,6 +509,18 @@ Transform:
   m_Father: {fileID: 1163997473988085200}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4583392551623102073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7142088792721761586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a58b2c20db7a834f89b10360bca988b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9123577785849302407
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,12 +656,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc6eaf0246e97a746bc7d9ac9e604a08, type: 3}
---- !u!4 &3381217164254162433 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2679549305833095348, guid: fc6eaf0246e97a746bc7d9ac9e604a08,
-    type: 3}
-  m_PrefabInstance: {fileID: 847755338965921461}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7147941196210408633 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7561898198143443468, guid: fc6eaf0246e97a746bc7d9ac9e604a08,
@@ -661,6 +668,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152e759696092d4419c6ca88fdfad876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &3381217164254162433 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2679549305833095348, guid: fc6eaf0246e97a746bc7d9ac9e604a08,
+    type: 3}
+  m_PrefabInstance: {fileID: 847755338965921461}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2061261308208096615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -761,7 +774,7 @@ PrefabInstance:
     - target: {fileID: 8118487882751536090, guid: d07784e3e8e9a4931bf31252387cd77c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.101
+      value: -0.13
       objectReference: {fileID: 0}
     - target: {fileID: 8118487882751536090, guid: d07784e3e8e9a4931bf31252387cd77c,
         type: 3}

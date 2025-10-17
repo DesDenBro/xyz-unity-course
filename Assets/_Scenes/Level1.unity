@@ -675,7 +675,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2387094, y: -24.458405, z: -9.2}
+  m_LocalPosition: {x: -3.2387047, y: -24.458405, z: -9.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 760853357}
@@ -1086,7 +1086,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760853355}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0010304451, y: -1.1448517, z: 0}
+  m_LocalPosition: {x: 0.0010256767, y: -1.1448517, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 533005704}
@@ -4093,11 +4093,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sharky
-      objectReference: {fileID: 0}
-    - target: {fileID: 8414603022084473379, guid: b76e9ad1a3f9a834b8279f58168a7198,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.0000019073486
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b76e9ad1a3f9a834b8279f58168a7198, type: 3}

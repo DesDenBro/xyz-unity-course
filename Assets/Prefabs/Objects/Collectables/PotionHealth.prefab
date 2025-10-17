@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 1148067353584270161}
   - component: {fileID: 8772765558821907004}
   - component: {fileID: 732970289796424682}
+  - component: {fileID: -4822556646506161051}
   m_Layer: 10
   m_Name: PotionHealth
   m_TagString: Untagged
@@ -417,6 +418,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4822556646506161051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917678488986685111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0443ed82523fb499d639e73d832933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 1
 --- !u!1 &6458466608006478027
 GameObject:
   m_ObjectHideFlags: 0
