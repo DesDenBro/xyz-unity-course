@@ -77,6 +77,19 @@ namespace PixelCrew.Model
             onInventoryChanged?.Invoke(id, Count(id));
         }
 
+        public InventoryDataItem[] GetAll(params ItemTag[] tags)
+        {
+            var values = new List<InventoryDataItem>();
+            foreach (var item in _inventory)
+            {
+                var itemDef = DefsFacade.I.Items.Get(item.Id);
+                var isAllRequirementMet = tags.All(x => itemDef.HasTag(x));
+                if (isAllRequirementMet) values.Add(item);
+            }
+
+            return values.ToArray();
+        }
+
         public InventoryDataItem GetItem(string id)
         {
             return _inventory.FirstOrDefault(x => x.Id == id);
@@ -132,8 +145,11 @@ namespace PixelCrew.Model
     {
         public const string Money = "Money";
         public const string Key = "Key";
-        public const string Throw = "Throw";
         public const string Sword = "Sword";
-        public const string HealhPotion = "HealhPotion";
+        public const string PotionHealth = "PotionHealth";
+        public const string SmallPotionHealth = "SmallPotionHealth";
+
+        public const string SwordThrow = "SwordThrow";
+        public const string PearlThrow = "PearlThrow";
     }
 }

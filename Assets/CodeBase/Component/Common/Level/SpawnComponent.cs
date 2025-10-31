@@ -13,6 +13,11 @@ namespace PixelCrew.Components
         [ContextMenu("Spawn")]
         public void SpawnIt() => Spawn();
 
+        public void SetPrefab(GameObject prefab)
+        {
+            _prefab = prefab;
+        }
+
         public IReadOnlyCollection<string> GetPrefabChildrenObjNames<T>() where T : MonoBehaviour
         {
             return _prefab.GetComponentsInChildren<T>(true).Select(x => x.name).ToList();

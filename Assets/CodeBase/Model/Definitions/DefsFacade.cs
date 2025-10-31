@@ -6,6 +6,7 @@ namespace PixelCrew.Model.Definitions
     public class DefsFacade : ScriptableObject
     {
         [SerializeField] private InventoryItemsDef _items;
+        [SerializeField] private ThrowableItemsDef _throwableItems;
 
         private static DefsFacade _instance;
         private static DefsFacade LoadDefs()
@@ -16,5 +17,6 @@ namespace PixelCrew.Model.Definitions
         public static DefsFacade I => _instance == null ? LoadDefs() : _instance;
 
         public InventoryItemsDef Items => _items;
+        public ThrowableItemsDef ThrowableItems => _throwableItems;
     }
 }

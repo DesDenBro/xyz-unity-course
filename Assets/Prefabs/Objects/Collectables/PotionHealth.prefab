@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items: []
   _damagePoints: 0
-  _healthPoints: 5
+  _healthPoints: 15
 --- !u!114 &7278927614637551315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2749c7b55be2e545b01b38a4cf0e1c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: HealhPotion
+  _id: PotionHealth
   _count: 1
 --- !u!114 &8772765558821907004
 MonoBehaviour:

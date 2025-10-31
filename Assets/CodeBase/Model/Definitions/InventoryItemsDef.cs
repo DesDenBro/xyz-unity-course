@@ -25,17 +25,23 @@ namespace PixelCrew.Model.Definitions
     public struct ItemDef
     {
         [SerializeField] private string _id;
-        [SerializeField] private bool _isStackOnlyOne;
-        [SerializeField] private bool _isStackLimit;
         [SerializeField] private int _stackLimitSize;
+        [SerializeField] private ItemTag[] _tags;
         [SerializeField] GameObject _prefab;
+        [SerializeField] Sprite _icon;
 
         public string Id => _id;
-        public bool IsStackOnlyOne => _isStackOnlyOne;
-        public bool IsStackLimit => _isStackLimit;
+        public bool IsStackOnlyOne => HasTag(ItemTag.Stackable) && StackLimitSize == 1;
+        public bool IsStackLimit => HasTag(ItemTag.Stackable) && StackLimitSize > 0;
         public int StackLimitSize => _stackLimitSize;
         public GameObject Prefab => _prefab;
+        public Sprite Icon => _icon;
 
         public bool IsVoid => string.IsNullOrWhiteSpace(Id);
+
+        public bool HasTag(ItemTag tag)
+        {
+            return _tags?.Contains(tag) ?? false;
+        }
     }
 }
