@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 1
+  _multiplier: 1
 --- !u!1 &1254277394139081328
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,6 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 1
+  _multiplier: 1
 --- !u!1 &1296803784847218045
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 1
+  _multiplier: 1
 --- !u!1 &6433398499157052404
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,3 +909,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 1
+  _multiplier: 0.3

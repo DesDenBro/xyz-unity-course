@@ -19,9 +19,7 @@ namespace PixelCrew.Components
             _inventoryData = inv;
         }
 
-        public int MoneyCount => _inventoryData.Count(InventoryItemName.Money);
-        public int KeysCount => _inventoryData.Count(InventoryItemName.Key);
-        public int ThrowsCount => _inventoryData.Count(InventoryItemName.Throw);
+        public int Count(string inventoryId) => _inventoryData.Count(inventoryId);
 
         public bool ChangeInventoryItemCount(string itemName, int count)
         {

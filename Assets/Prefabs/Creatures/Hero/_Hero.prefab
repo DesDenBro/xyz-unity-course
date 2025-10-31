@@ -4862,7 +4862,7 @@ GameObject:
   - component: {fileID: 7597641014839724719}
   - component: {fileID: 4146504373416663389}
   m_Layer: 14
-  m_Name: SwordProjectilePosition
+  m_Name: ThrowSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5488,6 +5488,21 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 84107a23-ebc4-4c2b-889a-73a2437f6233
     m_ActionName: Menu/New action[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5784780335098992498}
+        m_MethodName: PressNextItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b765976d-d680-46ec-9ff1-e5c31f852794
+    m_ActionName: Hero/SelectItem[/Keyboard/i]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -5590,6 +5605,7 @@ MonoBehaviour:
   _doInteractionCheck: {fileID: 3926177964129831508}
   _weapon: {fileID: 0}
   _hitParticles: {fileID: 791006958}
+  _throwSpawn: {fileID: 4146504373416663389}
   _armed: {fileID: 9100000, guid: ba815a7b4b2a06b4984288a5b04ff566, type: 2}
   _disarmed: {fileID: 9100000, guid: 08c3e2f09d4204c41bb02fe456dd4cbb, type: 2}
 --- !u!114 &7191293113834155727

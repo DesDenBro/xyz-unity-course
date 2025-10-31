@@ -1,8 +1,5 @@
 ﻿using PixelCrew.Model.Data;
 using PixelCrew.Model.Data.Properties;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace PixelCrew.Components.Audio
@@ -11,6 +8,7 @@ namespace PixelCrew.Components.Audio
     public class AudioSettingComponent : MonoBehaviour
     {
         [SerializeField] private SoundSetting _mode;
+        [SerializeField] private float _multiplier = 1;
 
         private AudioSource _audioSource;
         private FloatPersistentProperty _model;
@@ -27,7 +25,7 @@ namespace PixelCrew.Components.Audio
 
         private void OnSoundSettingChanged(float newValue, float oldValue)
         {
-            _audioSource.volume = newValue;
+            _audioSource.volume = newValue * _multiplier;
         }
 
         private FloatPersistentProperty FindProperty()

@@ -2,7 +2,9 @@
 using PixelCrew.Common.Tech;
 using PixelCrew.Components;
 using PixelCrew.Model;
+using PixelCrew.Model.Definitions;
 using PixelCrew.Utils;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +26,7 @@ namespace PixelCrew.GameObjects.Creatures
         [Header("Hero object links")]
         [SerializeField] private Weapon _weapon;
         [SerializeField] private ParticleSystem _hitParticles;
+        [SerializeField] private SpawnComponent _throwSpawn;
 
         [Header("Hero animators")]
         [SerializeField] private AnimatorController _armed;
@@ -35,6 +38,7 @@ namespace PixelCrew.GameObjects.Creatures
         //private Collider2D[] _interactionResult = new Collider2D[1];
         private GameSession _session;
         private InventoryComponent _inventory;
+        private string _selectedThrow;
 
         private bool _IsGrabMove => _currentMovement == MovementStateType.Grab;
         private bool _IsHangingMove => _currentMovement == MovementStateType.Hanging;
@@ -157,9 +161,10 @@ namespace PixelCrew.GameObjects.Creatures
         }
         private void SpawnCoins()
         {
-            if (_inventory.MoneyCount <= 0) return;
+            var moneyCount = _inventory.Count(InventoryItemName.Money);
+            if (moneyCount <= 0) return;
 
-            var coinsToDrop = Mathf.Min(_inventory.MoneyCount, 5);
+            var coinsToDrop = Mathf.Min(moneyCount, 5);
             if (coinsToDrop == 0) return;
 
             _inventory.ChangeInventoryItemCount(InventoryItemName.Money, -coinsToDrop);
@@ -189,11 +194,11 @@ namespace PixelCrew.GameObjects.Creatures
                 {
                     _weapon = newWeapon;
                     _animator.runtimeAnimatorController = _armed;
-                    if (!woAddThrows) _inventory.ChangeInventoryItemCount(InventoryItemName.Throw, 5);
+                    if (!woAddThrows) _inventory.ChangeInventoryItemCount(InventoryItemName.SwordThrow, 5);
                 }
                 else
                 {
-                    if (!woAddThrows) _inventory.ChangeInventoryItemCount(InventoryItemName.Throw, 1);
+                    if (!woAddThrows) _inventory.ChangeInventoryItemCount(InventoryItemName.SwordThrow, 1);
                 }
             }
             else
@@ -211,21 +216,24 @@ namespace PixelCrew.GameObjects.Creatures
 
         public override void OnHeal()
         {
-            var healPotion = _inventory.GetItem(InventoryItemName.HealhPotion);
-            if (healPotion == null || healPotion.Prefab == null) return;
+            var selectedHeal = _session.QuickInventory?.SelectedItem?.Id;
+            var healPotion = _inventory.GetItem(selectedHeal);
+            if (healPotion == null || healPotion.Prefab == null || _inventory.Count(selectedHeal) == 0) return;
+
+            var healDef = DefsFacade.I.Items.Get(selectedHeal);
+            if (!healDef.HasTag(ItemTag.Heal)) return;
 
             base.OnHeal();
 
             var ts = healPotion.Prefab.GetComponent<ThingSpecification>();
             _health.RecoverHealth(ts.HealthPoints);
 
-            _inventory.ChangeInventoryItemCount(InventoryItemName.HealhPotion, -1);
+            _inventory.ChangeInventoryItemCount(selectedHeal, -1);
         }
-
 
         public override void InitThrow(ThrowType type = ThrowType.Once)
         {
-            if (!_IsArmed || _inventory.ThrowsCount <= 0) return;
+            if (!SelectedThrowAvailable(out _selectedThrow)) return;
             base.InitThrow(type);
         }
         public override void OnThrow()
@@ -235,16 +243,54 @@ namespace PixelCrew.GameObjects.Creatures
         }
         protected override IEnumerator Throw(int count)
         {
+            if (string.IsNullOrWhiteSpace(_selectedThrow)) yield return null;
+            var throwableDef = DefsFacade.I.ThrowableItems.Get(_selectedThrow);
+
             for (int i = 0; i < count; i++)
             {
-                if (!_inventory.CheckItemCountToEvent(InventoryItemName.Throw, -1)) break;
-                if (!_inventory.ChangeInventoryItemCount(InventoryItemName.Throw, -1)) break;
+                if (!_inventory.CheckItemCountToEvent(throwableDef.Id, -1)) break;
+                if (!_inventory.ChangeInventoryItemCount(throwableDef.Id, -1)) break;
 
-                SpawnAction("sword-throw");
+                _throwSpawn.SetPrefab(throwableDef.Projectile);
+                SpawnAction(throwableDef.ActionName);
                 yield return new WaitForSeconds(0.1f);
             }
 
             yield return null;
+        }
+        private bool SelectedThrowAvailable(out string selectedThrow)
+        {
+            selectedThrow = null;
+
+            var throwableId = _session.QuickInventory?.SelectedItem?.Id;
+            var throwableDef = DefsFacade.I.ThrowableItems.Get(throwableId);
+
+            switch (throwableDef.Id)
+            {
+                case InventoryItemName.SwordThrow:
+                    if (_IsArmed && _inventory.Count(InventoryItemName.SwordThrow) > 0)
+                    {
+                        selectedThrow = InventoryItemName.SwordThrow;
+                        return true;
+                    }
+                    break;
+                case InventoryItemName.PearlThrow:
+                    if (_inventory.Count(InventoryItemName.PearlThrow) > 0)
+                    {
+                        selectedThrow = InventoryItemName.PearlThrow;
+                        return true;
+                    }
+                    break;
+                default: break;
+            }
+
+            return false;
+        }
+
+
+        public void InitNextItem()
+        {
+            _session.QuickInventory.SetNextItem();
         }
 
 
@@ -252,7 +298,7 @@ namespace PixelCrew.GameObjects.Creatures
 
         public virtual void SetSessionData()
         {
-            _session = FindObjectsOfType<GameSession>().Where(x => !x.Disposed).FirstOrDefault();
+            _session = GameSessionSearch.Get(FindObjectsOfType<GameSession>);
 
             if (_session == null) return;
 
@@ -263,7 +309,8 @@ namespace PixelCrew.GameObjects.Creatures
             if (_session.PlayerData.Health > 0) _health.SetHealth(_session.PlayerData.Health);
 
             _inventory.SetInventory(_session.PlayerData.Inventory.Clone());
-            
+            _session.ReloadLinks();
+
             ArmWeapon(_inventory.GetItem(InventoryItemName.Sword)?.Prefab, true);
         }
         public virtual void UpdateSessionData()

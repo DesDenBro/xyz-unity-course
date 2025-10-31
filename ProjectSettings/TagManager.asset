@@ -103,3 +103,12 @@ TagManager:
   - name: after object 3
     uniqueID: 867383871
     locked: 0
+  - name: menu1
+    uniqueID: 1711080229
+    locked: 0
+  - name: menu2
+    uniqueID: 2564542155
+    locked: 0
+  - name: menu3
+    uniqueID: 4055600309
+    locked: 0
