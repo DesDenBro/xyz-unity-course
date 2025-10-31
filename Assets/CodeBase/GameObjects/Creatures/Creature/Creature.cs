@@ -188,9 +188,9 @@ namespace PixelCrew.GameObjects.Creatures
         }
         private void UpdateAnimatorParamsState()
         {
-            _animator.SetKeyVal(AnimationKey.Creature.VerticalVelocity, _rigidbody.velocity.y);
-            _animator.SetKeyVal(AnimationKey.Creature.IsRunning, _direction.x != 0);
-            _animator.SetKeyVal(AnimationKey.Creature.IsGrounded, _isGrounded);
+            _animator.SetKeyVal(AnimationKeys.Creature.VerticalVelocity, _rigidbody.velocity.y);
+            _animator.SetKeyVal(AnimationKeys.Creature.IsRunning, _direction.x != 0);
+            _animator.SetKeyVal(AnimationKeys.Creature.IsGrounded, _isGrounded);
         }
         private void PlayStateAnimationsByState()
         {
@@ -213,11 +213,11 @@ namespace PixelCrew.GameObjects.Creatures
 
         public virtual void MovementDefaultAction()
         {
-            _animator.SetKeyVal(AnimationKey.Creature.IsClimb, false);
+            _animator.SetKeyVal(AnimationKeys.Creature.IsClimb, false);
         }
         public virtual void MovementHangAction() 
         {
-            _animator.SetKeyVal(AnimationKey.Creature.IsClimb, true);
+            _animator.SetKeyVal(AnimationKeys.Creature.IsClimb, true);
         }
         public virtual void MovementGrabAction() 
         { 
@@ -237,7 +237,7 @@ namespace PixelCrew.GameObjects.Creatures
             if (!_IsAlive) return;
 
             _playSounds.Play("Hurt");
-            _animator.SetKeyVal(AnimationKey.Creature.TriggerHit);
+            _animator.SetKeyVal(AnimationKeys.Creature.TriggerHit);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
         }
 
@@ -246,7 +246,7 @@ namespace PixelCrew.GameObjects.Creatures
         {
             if (!_IsAlive) return;
 
-            _animator.SetKeyVal(AnimationKey.Creature.TriggerAttack);
+            _animator.SetKeyVal(AnimationKeys.Creature.TriggerAttack);
         }
         public virtual void OnAttack()
         {
@@ -269,7 +269,7 @@ namespace PixelCrew.GameObjects.Creatures
         {
             if (!_IsAlive) return;
 
-            _animator.SetKeyVal(AnimationKey.Creature.TriggerHealing);
+            _animator.SetKeyVal(AnimationKeys.Creature.TriggerHealing);
             SpawnAction("heal-effect");
         }
 
@@ -282,7 +282,7 @@ namespace PixelCrew.GameObjects.Creatures
             _throwCooldown.Reset();
 
             _lastThrowType = type;
-            _animator.SetKeyVal(AnimationKey.Creature.TriggerThrow);
+            _animator.SetKeyVal(AnimationKeys.Creature.TriggerThrow);
         }
         public virtual void OnThrow()
         {
@@ -322,7 +322,7 @@ namespace PixelCrew.GameObjects.Creatures
             if (!_IsAlive) return;
 
             _creatureStateInfo = CreatureState.Dead;
-            _animator.SetKeyVal(AnimationKey.Creature.IsDead, true);
+            _animator.SetKeyVal(AnimationKeys.Creature.IsDead, true);
             SetDirection(Vector3.zero);
         }
         public void OnDie()

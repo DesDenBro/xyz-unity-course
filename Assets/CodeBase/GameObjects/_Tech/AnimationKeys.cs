@@ -2,7 +2,7 @@
 
 namespace PixelCrew.GameObjects
 {
-    public static class AnimationKey
+    public static class AnimationKeys
     {
         public static class Creature
         {
@@ -38,6 +38,11 @@ namespace PixelCrew.GameObjects
             {
                 public static readonly TriggerAnimationKey TriggerShow = new TriggerAnimationKey("trigger-show");
                 public static readonly TriggerAnimationKey TriggerHide = new TriggerAnimationKey("trigger-hide");
+            }
+
+            public static class DialogBox
+            {
+                public static readonly BoolAnimationKey IsOpen = new BoolAnimationKey("is-open");
             }
         }
     }

@@ -46,5 +46,10 @@ namespace PixelCrew.Model.Data
         {
             SelectedIndex.Value = (int)Mathf.Repeat(SelectedIndex.Value + 1, Inventory.Length);
         }
+
+        public void OnDestroy()
+        {
+            _invComp.InventoryData.onInventoryChanged -= OnChangedInventory;
+        }
     }
 }
