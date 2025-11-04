@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using PixelCrew.Utils.Editor;
+﻿using PixelCrew.Utils.Editor;
 using UnityEditor;
-using UnityEngine;
 
 namespace PixelCrew.Component.Dialogs.Editor
 {
@@ -27,8 +24,6 @@ namespace PixelCrew.Component.Dialogs.Editor
                     case ShowDialogComponent.Mode.Bound:
                         EditorGUILayout.PropertyField(serializedObject.FindProperty("_bound"));
                         break;
-
-
                     case ShowDialogComponent.Mode.External:
                         EditorGUILayout.PropertyField(serializedObject.FindProperty("_external"));
                         break;

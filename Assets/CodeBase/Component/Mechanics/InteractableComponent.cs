@@ -1,10 +1,7 @@
 ﻿using PixelCrew.Common;
 using PixelCrew.Common.Tech;
 using PixelCrew.Model;
-using System;
-using UnityEditor.U2D;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace PixelCrew.Components
 {
@@ -12,6 +9,7 @@ namespace PixelCrew.Components
     {
         [SerializeField] private bool _isActive = true;
         [SerializeField] private bool _checksToActivate;
+        [SerializeField] private UnityEventGameObject[] _onChecksFailActions;
         [SerializeField] private bool _isInInteract;
         [SerializeField] private InteractableMode _mode = InteractableMode.Click;
         [SerializeField] private InteractableIteration _iterations = InteractableIteration.Once;
@@ -179,6 +177,13 @@ namespace PixelCrew.Components
             if (checksDone)
             {
                 _isActive = inventoryComp.ChangeInventoryItemCount(InventoryItemName.Key, _thingSpecification.KeysAmount) && inventoryComp.ChangeInventoryItemCount(InventoryItemName.Money, _thingSpecification.CostAmount);
+            }
+            else
+            {
+                foreach (var onChecksFailAction in _onChecksFailActions)
+                {
+                    onChecksFailAction?.Invoke(_lastActivator);
+                }
             }
         }
     }

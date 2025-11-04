@@ -3,7 +3,6 @@ using PixelCrew.Utils;
 using PixelCrew.GameObjects;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 using System.Collections;
 
 namespace PixelCrew.UI.Hud
@@ -22,6 +21,7 @@ namespace PixelCrew.UI.Hud
         [SerializeField] private AudioClip _open;
         [SerializeField] private AudioClip _close;
 
+        private bool _isShowing = false;
         private DialogData _dialogData;
         private int _currentSenteceIndex;
         private AudioSource _sfxSource;
@@ -34,6 +34,9 @@ namespace PixelCrew.UI.Hud
 
         public void ShowDialog(DialogData dialog)
         {
+            if (_isShowing) return;
+
+            _isShowing = true;
             _dialogData = dialog;
             _currentSenteceIndex = 0;
             _text.text = string.Empty;
@@ -41,6 +44,14 @@ namespace PixelCrew.UI.Hud
             _container.SetActive(true);
             _sfxSource.PlayOneShot(_open);
             _animator.SetKeyVal(AnimationKeys.UI.DialogBox.IsOpen, true);
+        }
+
+        public void OnSkip()
+        {
+            if (_typingCoroutine == null) return;
+
+            StopTypeAnimation();
+            _text.text = _dialogData.Sentences[_currentSenteceIndex];
         }
 
         private IEnumerator TypeDialogText()
@@ -53,13 +64,6 @@ namespace PixelCrew.UI.Hud
                 if (letter != ' ') _sfxSource.PlayOneShot(_typing);
                 yield return new WaitForSeconds(_textSpeed);
             }
-        }
-        public void OnSkip()
-        {
-            if (_typingCoroutine == null) return;
-
-            StopTypeAnimation();
-            _text.text = _dialogData.Sentences[_currentSenteceIndex];
         }
 
         private void StopTypeAnimation()
@@ -100,14 +104,12 @@ namespace PixelCrew.UI.Hud
 
         private void OnCloseDialogAnimation()
         {
+            _isShowing = false;
 
-        }
-
-
-        [SerializeField] private DialogData _testData;
-        public void Test()
-        {
-            ShowDialog(_testData);
+            if (_dialogData != null)
+            {
+                _dialogData.AfterDialogEvent?.Invoke();
+            }
         }
     }
 }
