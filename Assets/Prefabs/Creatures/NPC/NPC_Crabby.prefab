@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3672460148222510681}
   - component: {fileID: 3672460148222510683}
   - component: {fileID: 3672460148222510682}
+  - component: {fileID: 3740413729769220425}
+  - component: {fileID: 5832201166090712367}
   m_Layer: 0
   m_Name: NPC_Crabby
   m_TagString: Untagged
@@ -52,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6b05aeb9a7d20a549ba67eea938ef48b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,6 +101,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: idle
+--- !u!114 &3740413729769220425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3672460148222510680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selfDestroyAfterTime: 0
+  _selfDestroyTime:
+    _value: 10
+--- !u!114 &5832201166090712367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3672460148222510680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8136a1d6c0c8aac44b97c147af4f1bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  _outlineWidth: 1
+  _isEnabled: 1
 --- !u!1 &3672460149230882362
 GameObject:
   m_ObjectHideFlags: 0
