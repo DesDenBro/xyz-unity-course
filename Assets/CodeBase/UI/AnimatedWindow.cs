@@ -13,7 +13,7 @@ namespace PixelCrew.UI
         {
             _animator = GetComponent<Animator>();
 
-            _animator.SetKeyVal(PixelCrew.GameObjects.AnimationKey.UI.MenuWindow.TriggerShow);
+            _animator.SetKeyVal(PixelCrew.GameObjects.AnimationKeys.UI.MenuWindow.TriggerShow);
         }
 
         public void SetButtonsVisible(bool isMainMenu)
@@ -31,7 +31,7 @@ namespace PixelCrew.UI
 
         public void Close()
         {
-            _animator.SetKeyVal(PixelCrew.GameObjects.AnimationKey.UI.MenuWindow.TriggerHide);
+            _animator.SetKeyVal(PixelCrew.GameObjects.AnimationKeys.UI.MenuWindow.TriggerHide);
         }
 
         public virtual void OnCloseAnimationComplete()

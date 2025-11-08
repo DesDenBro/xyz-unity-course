@@ -86,7 +86,7 @@ namespace PixelCrew.GameObjects.Creatures
 
         private void InitMeleeAttack()
         {
-            _animator.SetKeyVal(AnimationKey.ShootingTrap.TriggerMelee);
+            _animator.SetKeyVal(AnimationKeys.ShootingTrap.TriggerMelee);
         }
         public void OnMeleeAttack()
         {
@@ -99,7 +99,7 @@ namespace PixelCrew.GameObjects.Creatures
 
         private void InitRangeAttack()
         {
-            _animator.SetKeyVal(AnimationKey.ShootingTrap.TriggerRange);
+            _animator.SetKeyVal(AnimationKeys.ShootingTrap.TriggerRange);
         }
         public void OnRangeAttack()
         {
