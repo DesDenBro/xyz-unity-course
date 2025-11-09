@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 namespace PixelCrew.Model.Definitions.Localization
@@ -9,6 +11,11 @@ namespace PixelCrew.Model.Definitions.Localization
     public class LocaleDef : ScriptableObject
     {
         [SerializeField] private List<LocaleItem> _localeItems;
+
+        public Dictionary<string, string> GetData()
+        {
+            return _localeItems.ToDictionary(x => x.Key, x => x.Value);
+        }
 
         [ContextMenu("Update locale")]
         public void UpdateLocale()

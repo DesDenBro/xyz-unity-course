@@ -12,4 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990f54f350ebbdd499b89193f2cc4362, type: 3}
   m_Name: en
   m_EditorClassIdentifier: 
-  _localeItems: []
+  _localeItems:
+  - Key: menu_title
+    Value: Main menu
+  - Key: btn_start
+    Value: START
+  - Key: btn_restart
+    Value: RESTART
+  - Key: btn_options
+    Value: OPTIONS
+  - Key: btn_exit
+    Value: EXIT
+  - Key: menu_locale_title
+    Value: Language
