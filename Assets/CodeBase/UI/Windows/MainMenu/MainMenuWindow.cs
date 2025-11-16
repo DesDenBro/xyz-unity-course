@@ -1,8 +1,9 @@
 ﻿using PixelCrew.Components;
+using PixelCrew.Utils;
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Linq;
 
 namespace PixelCrew.UI
 {
@@ -12,9 +13,7 @@ namespace PixelCrew.UI
 
         public void OnShowSettings()
         {
-            var settingsWindow = Resources.Load<GameObject>("UI/SettingsMenuWindow");
-            var canvas = FindObjectsOfType<Canvas>().FirstOrDefault(x => x.tag == "MenuCanvas");
-            Instantiate(settingsWindow, canvas.transform);
+            UIWindowUtils.InitWindow("UI/SettingsMenuWindow");
         }
 
         public void OnStartGame()
@@ -34,6 +33,11 @@ namespace PixelCrew.UI
                 if (restartLevel != null) restartLevel.Restart();
             };
             Close();
+        }
+
+        public void OnLanguages()
+        {
+            UIWindowUtils.InitWindow("UI/LocalizationWindow");
         }
 
         public void OnExitGame()

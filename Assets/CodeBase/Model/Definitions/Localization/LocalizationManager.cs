@@ -1,7 +1,7 @@
-﻿using PixelCrew.Model.Data.Properties;
+﻿using System.Collections.Generic;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
+using PixelCrew.Model.Data.Properties;
 
 namespace PixelCrew.Model.Definitions.Localization
 {
@@ -13,6 +13,7 @@ namespace PixelCrew.Model.Definitions.Localization
         private IReadOnlyDictionary<string, string> _localization;
 
         public event Action OnLocaleChanged;
+        public string LocaleKey => _localeKey.Value;
 
         static LocalizationManager()
         {
@@ -28,12 +29,18 @@ namespace PixelCrew.Model.Definitions.Localization
         {
             var def = Resources.Load<LocaleDef>($"Locales/{localeToLoad}");
             _localization = def.GetData();
+            _localeKey.Value = localeToLoad;
             OnLocaleChanged?.Invoke();
         }
 
         public string Localize(string key)
         {
             return _localization.TryGetValue(key, out var value) ? value : $"%%%{key}%%%";
+        }
+
+        public void SetLocale(string selectedLocale)
+        {
+            LoadLocale(selectedLocale);
         }
     }
 }

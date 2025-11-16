@@ -28,12 +28,12 @@ namespace PixelCrew.Model.Definitions.Localization
             if (!operation.isDone) return;
 
             var rows = "".Split('\t');
-            var items = new List<LocaleItem>();
+            _localeItems.Clear();
             foreach (var row in rows)
             {
                 if (TryParseLocaleItem(row, out LocaleItem parsedItem))
                 {
-                    items.Add(parsedItem);
+                    _localeItems.Add(parsedItem);
                 }
             }
         }
