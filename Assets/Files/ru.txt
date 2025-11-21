@@ -1,0 +1,27 @@
+menu_title;Меню
+btn_start;старт
+btn_restart;заново
+btn_options;настройки
+btn_exit;выход
+btn_languages;язык;
+btn_ok;ок
+menu_locale_title;Язык
+menu_settings_title;Настройки
+settings_music_volume;Громкость музыки
+settings_sfx_volume;Громкость SFX
+
+hud_dialogbox_continue;Далее...
+
+padlock_closed_door;Мне нужен ключ...
+
+level1_dialog_door;Похоже, что это дверь наружу...
+
+level2_dialog_crabby_1;За этой дверью таится опасность, но ты силен, если зашел так далеко.
+level2_dialog_crabby_2;Будь осторожен
+
+level3_dialog_crabby_failDialog1;Открыть эту дверь можно только моей рукой
+level3_dialog_crabby_failDialog2;Но без ключа никак...
+level3_dialog_crabby_successDialog1;О, ключ что надо!
+level3_dialog_crabby_successDialog2;Секундочку...
+level3_dialog_crabby_byeDialog1;Увидимся позже!
+

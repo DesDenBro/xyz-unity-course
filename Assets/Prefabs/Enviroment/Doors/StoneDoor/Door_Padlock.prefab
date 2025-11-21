@@ -72,6 +72,16 @@ PrefabInstance:
       propertyPath: _keysAmount
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 5083399383520446237, guid: 4cfca9d81b4d0964583e316b24fac915,
+        type: 3}
+      propertyPath: _bound._sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5083399383520446237, guid: 4cfca9d81b4d0964583e316b24fac915,
+        type: 3}
+      propertyPath: _bound._sentences.Array.data[0]
+      value: padlock_closed_door
+      objectReference: {fileID: 0}
     - target: {fileID: 6605974918090503679, guid: 4cfca9d81b4d0964583e316b24fac915,
         type: 3}
       propertyPath: _actions.Array.size

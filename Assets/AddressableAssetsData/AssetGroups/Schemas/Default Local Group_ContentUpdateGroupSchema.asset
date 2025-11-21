@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e39290181d3a48eb863b52596723d45, type: 3}
-  m_Name: KeyNeed
+  m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
+  m_Name: Default Local Group_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
-  _data:
-    _sentences:
-    - level3_dialog_crabby_failDialog1
-    - level3_dialog_crabby_failDialog2
-    _afterDialogEvent:
-      m_PersistentCalls:
-        m_Calls: []
+  m_Group: {fileID: 11400000, guid: dd2a338b2c52344cd8bcfc753ae6a6ef, type: 2}
+  m_StaticContent: 0

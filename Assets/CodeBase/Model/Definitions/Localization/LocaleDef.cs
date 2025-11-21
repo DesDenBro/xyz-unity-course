@@ -2,14 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace PixelCrew.Model.Definitions.Localization
 {
     [CreateAssetMenu(menuName = "Defs/LocaleDef", fileName = "LocaleDef")]
     public class LocaleDef : ScriptableObject
     {
+        [SerializeField] private string _fileName;
         [SerializeField] private List<LocaleItem> _localeItems;
 
         public Dictionary<string, string> GetData()
@@ -18,19 +21,27 @@ namespace PixelCrew.Model.Definitions.Localization
         }
 
         [ContextMenu("Update locale")]
-        public void UpdateLocale()
-        { 
-            
+        public async Task UpdateLocaleAsync()
+        {
+            var handle = Addressables.LoadAssetAsync<TextAsset>(_fileName);
+            TextAsset asset = await handle.Task;
+            OnDataLoaded(asset);
+            Addressables.Release(asset);
         }
 
-        private void OnDataLoaded(AsyncOperation operation)
+        private void OnDataLoaded(TextAsset asset)
         {
-            if (!operation.isDone) return;
+            if (asset == null || string.IsNullOrWhiteSpace(asset.text))
+            {
+                Debug.Log("Asset" + _fileName + "is empty");
+                return;
+            }
 
-            var rows = "".Split('\t');
+            var rows = asset.text.Split('\n');
             _localeItems.Clear();
             foreach (var row in rows)
             {
+                if (string.IsNullOrWhiteSpace(row)) continue;
                 if (TryParseLocaleItem(row, out LocaleItem parsedItem))
                 {
                     _localeItems.Add(parsedItem);
@@ -44,7 +55,7 @@ namespace PixelCrew.Model.Definitions.Localization
 
             try
             {
-                var parts = row.Split('\t');
+                var parts = row.Split(';');
                 parsedItem = new LocaleItem { Key = parts[0], Value = parts[1] };
             }
             catch (Exception ex)

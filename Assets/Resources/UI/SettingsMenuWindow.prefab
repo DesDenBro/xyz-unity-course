@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 2045475560777924912}
   - component: {fileID: 1134757716271044782}
   - component: {fileID: 8356456645185123973}
+  - component: {fileID: 3494453607283432395}
   m_Layer: 5
   m_Name: label_header
   m_TagString: Untagged
@@ -178,6 +179,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Settings
+--- !u!114 &3494453607283432395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2484061219481033129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d68d7da918307e4b9426137ac5a1526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: menu_settings_title
+  _capitalize: 0
 --- !u!1 &6238298065808384346
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,6 +518,26 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.7617604
       objectReference: {fileID: 0}
+    - target: {fileID: 7181000640027976558, guid: 47e8a0a858adf09488492b35ea674c4d,
+        type: 3}
+      propertyPath: _key
+      value: btn_ok
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181000640027976558, guid: 47e8a0a858adf09488492b35ea674c4d,
+        type: 3}
+      propertyPath: _capitalize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002371855497528205, guid: 47e8a0a858adf09488492b35ea674c4d,
+        type: 3}
+      propertyPath: _key
+      value: btn_ok
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002371855497528205, guid: 47e8a0a858adf09488492b35ea674c4d,
+        type: 3}
+      propertyPath: _capitalize
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47e8a0a858adf09488492b35ea674c4d, type: 3}
 --- !u!224 &5112920588015117649 stripped
@@ -532,6 +567,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: SFX volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679067680637211964, guid: 80aed75c305fb9a4b8aa3d66fc3cdc57,
+        type: 3}
+      propertyPath: _key
+      value: settings_sfx_volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679067680637211964, guid: 80aed75c305fb9a4b8aa3d66fc3cdc57,
+        type: 3}
+      propertyPath: _capitalize
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7266543730650678686, guid: 80aed75c305fb9a4b8aa3d66fc3cdc57,
         type: 3}
@@ -699,6 +744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Music volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679067680637211964, guid: 80aed75c305fb9a4b8aa3d66fc3cdc57,
+        type: 3}
+      propertyPath: _key
+      value: settings_music_volume
       objectReference: {fileID: 0}
     - target: {fileID: 4809906247968007103, guid: 80aed75c305fb9a4b8aa3d66fc3cdc57,
         type: 3}

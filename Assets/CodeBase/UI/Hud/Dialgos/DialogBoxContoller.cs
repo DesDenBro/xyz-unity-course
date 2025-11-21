@@ -4,6 +4,7 @@ using PixelCrew.GameObjects;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using PixelCrew.Model.Definitions.Localization;
 
 namespace PixelCrew.UI.Hud
 {
@@ -51,19 +52,25 @@ namespace PixelCrew.UI.Hud
             if (_typingCoroutine == null) return;
 
             StopTypeAnimation();
-            _text.text = _dialogData.Sentences[_currentSenteceIndex];
+            _text.text = GetText();
         }
 
         private IEnumerator TypeDialogText()
         {
             _text.text = string.Empty;
-            var sentence = _dialogData.Sentences[_currentSenteceIndex];
+            var sentence = GetText();
             foreach (var letter in sentence)
             {
                 _text.text += letter;
                 if (letter != ' ') _sfxSource.PlayOneShot(_typing);
                 yield return new WaitForSeconds(_textSpeed);
             }
+        }
+
+        private string GetText()
+        {
+            var key = _dialogData.Sentences[_currentSenteceIndex];
+            return LocalizationManager.I.Localize(key);
         }
 
         private void StopTypeAnimation()

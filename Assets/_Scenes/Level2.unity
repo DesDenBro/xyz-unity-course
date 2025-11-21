@@ -1864,13 +1864,12 @@ PrefabInstance:
     - target: {fileID: 7994502379518318321, guid: fc7781b2ebf09f34aba9b1e32180be2c,
         type: 3}
       propertyPath: _bound._sentences.Array.data[0]
-      value: "Beyond this door lies danger, but you\u2019re strong if you\u2019ve
-        made it this far"
+      value: level2_dialog_crabby_1
       objectReference: {fileID: 0}
     - target: {fileID: 7994502379518318321, guid: fc7781b2ebf09f34aba9b1e32180be2c,
         type: 3}
       propertyPath: _bound._sentences.Array.data[1]
-      value: Be careful
+      value: level2_dialog_crabby_2
       objectReference: {fileID: 0}
     - target: {fileID: 7994502379518318321, guid: fc7781b2ebf09f34aba9b1e32180be2c,
         type: 3}
@@ -2070,7 +2069,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.059321046, y: -18.642256, z: -9.2}
+  m_LocalPosition: {x: 0.059320986, y: -18.642256, z: -9.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 760853357}

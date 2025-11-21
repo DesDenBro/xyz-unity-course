@@ -1076,7 +1076,7 @@ PrefabInstance:
     - target: {fileID: 7181000640027976558, guid: 47e8a0a858adf09488492b35ea674c4d,
         type: 3}
       propertyPath: _key
-      value: btn_langauges
+      value: btn_languages
       objectReference: {fileID: 0}
     - target: {fileID: 7181000640027976558, guid: 47e8a0a858adf09488492b35ea674c4d,
         type: 3}
@@ -1086,7 +1086,7 @@ PrefabInstance:
     - target: {fileID: 8002371855497528205, guid: 47e8a0a858adf09488492b35ea674c4d,
         type: 3}
       propertyPath: _key
-      value: btn_langauges
+      value: btn_languages
       objectReference: {fileID: 0}
     - target: {fileID: 8002371855497528205, guid: 47e8a0a858adf09488492b35ea674c4d,
         type: 3}

@@ -3174,7 +3174,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.51067895, y: -18.612257, z: -9.2}
+  m_LocalPosition: {x: -0.510679, y: -18.612257, z: -9.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 760853357}
@@ -3879,7 +3879,7 @@ MonoBehaviour:
   _mode: 0
   _bound:
     _sentences:
-    - See later!
+    - level3_dialog_crabby_byeDialog1
     _afterDialogEvent:
       m_PersistentCalls:
         m_Calls:
@@ -9722,8 +9722,8 @@ MonoBehaviour:
   _mode: 0
   _bound:
     _sentences:
-    - Oh, this good key!
-    - Give me a second...
+    - level3_dialog_crabby_successDialog1
+    - level3_dialog_crabby_successDialog2
     _afterDialogEvent:
       m_PersistentCalls:
         m_Calls:

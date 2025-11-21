@@ -12,16 +12,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990f54f350ebbdd499b89193f2cc4362, type: 3}
   m_Name: en
   m_EditorClassIdentifier: 
+  _fileName: en_loc
   _localeItems:
   - Key: menu_title
     Value: Main menu
   - Key: btn_start
-    Value: START
+    Value: start
   - Key: btn_restart
-    Value: RESTART
+    Value: restart
   - Key: btn_options
-    Value: OPTIONS
+    Value: options
   - Key: btn_exit
-    Value: EXIT
+    Value: exit
+  - Key: btn_languages
+    Value: languages
+  - Key: btn_ok
+    Value: ok
   - Key: menu_locale_title
     Value: Language
+  - Key: menu_settings_title
+    Value: Settings
+  - Key: settings_music_volume
+    Value: Music volume
+  - Key: settings_sfx_volume
+    Value: SFX volume
+  - Key: hud_dialogbox_continue
+    Value: Continue...
+  - Key: padlock_closed_door
+    Value: I need a key...
+  - Key: level1_dialog_door
+    Value: Looks like its door to out...
+  - Key: level2_dialog_crabby_1
+    Value: "Beyond this door lies danger, but you\u2019re strong if you\u2019ve made
+      it this far"
+  - Key: level2_dialog_crabby_2
+    Value: Be careful
+  - Key: level3_dialog_crabby_failDialog1
+    Value: Only my hand can open this door
+  - Key: level3_dialog_crabby_failDialog2
+    Value: But without key i cant...
+  - Key: level3_dialog_crabby_successDialog1
+    Value: Oh, this good key!
+  - Key: level3_dialog_crabby_successDialog2
+    Value: Give me a second...
+  - Key: level3_dialog_crabby_byeDialog1
+    Value: See later!

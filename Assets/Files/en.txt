@@ -1,0 +1,26 @@
+menu_title;Main menu
+btn_start;start
+btn_restart;restart
+btn_options;options
+btn_exit;exit
+btn_languages;languages;
+btn_ok;ok
+menu_locale_title;Language
+menu_settings_title;Settings
+settings_music_volume;Music volume
+settings_sfx_volume;SFX volume
+
+hud_dialogbox_continue;Continue...
+
+padlock_closed_door;I need a key...
+
+level1_dialog_door;Looks like its door to out...
+
+level2_dialog_crabby_1;Beyond this door lies danger, but you’re strong if you’ve made it this far
+level2_dialog_crabby_2;Be careful
+
+level3_dialog_crabby_failDialog1;Only my hand can open this door
+level3_dialog_crabby_failDialog2;But without key i cant...
+level3_dialog_crabby_successDialog1;Oh, this good key!
+level3_dialog_crabby_successDialog2;Give me a second...
+level3_dialog_crabby_byeDialog1;See later!

@@ -371,7 +371,7 @@ PrefabInstance:
     - target: {fileID: 851178771416839639, guid: 658fc59269ee9ff49a39e7814405df47,
         type: 3}
       propertyPath: _bound._sentences.Array.data[0]
-      value: Looks like its door to out...
+      value: level1_dialog_door
       objectReference: {fileID: 0}
     - target: {fileID: 975009510378171513, guid: 658fc59269ee9ff49a39e7814405df47,
         type: 3}
@@ -769,7 +769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2387047, y: -24.458405, z: -9.2}
+  m_LocalPosition: {x: -3.2387066, y: -24.458405, z: -9.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 760853357}
@@ -1180,7 +1180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760853355}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0010256767, y: -1.1448517, z: 0}
+  m_LocalPosition: {x: 0.0010275841, y: -1.1448517, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 533005704}
@@ -4041,16 +4041,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7903225359054441380, guid: 44291197c04d7184a82e87bea1570c22,
-        type: 3}
-      propertyPath: _bound._sentences.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7903225359054441380, guid: 44291197c04d7184a82e87bea1570c22,
-        type: 3}
-      propertyPath: _bound._sentences.Array.data[0]
-      value: I need a key...
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44291197c04d7184a82e87bea1570c22, type: 3}

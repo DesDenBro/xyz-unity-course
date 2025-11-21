@@ -635,11 +635,6 @@ MonoBehaviour:
   _typing: {fileID: 8300000, guid: b75198421ba33814dade6d12ed2a3db9, type: 3}
   _open: {fileID: 8300000, guid: be2babdccf0ab584aae6bc34716ee7f5, type: 3}
   _close: {fileID: 8300000, guid: bcd9360698ba05749ae075c2ed5aa1ff, type: 3}
-  _testData:
-    _sentences:
-    - test one thing
-    - and another test thing
-    - yeeeeeeeeeeeea
 --- !u!95 &1314352954
 Animator:
   serializedVersion: 3
@@ -964,6 +959,7 @@ GameObject:
   - component: {fileID: 1593952020}
   - component: {fileID: 1593952019}
   - component: {fileID: 1593952021}
+  - component: {fileID: 1593952022}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -1085,6 +1081,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1593952022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593952017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d68d7da918307e4b9426137ac5a1526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: hud_dialogbox_continue
+  _capitalize: 0
 --- !u!1 &1801189335
 GameObject:
   m_ObjectHideFlags: 0
