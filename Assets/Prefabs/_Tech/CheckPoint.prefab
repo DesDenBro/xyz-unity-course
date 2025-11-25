@@ -74,6 +74,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
+  _ignoreTag: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4294967295
   _actions:
   - m_PersistentCalls:
       m_Calls:
@@ -100,6 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e661b95afe1f0c2448b6e76feaf90af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 
   _actionAfterCheckPoint:
     m_PersistentCalls:
       m_Calls:
@@ -114,9 +119,9 @@ MonoBehaviour:
           m_StringArgument: check point done
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6498923079577529644}
-        m_MethodName: SelfDestroy
-        m_Mode: 1
+      - m_Target: {fileID: 4732857728212843998}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -137,6 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _selfDestroyAfterTime: 0
+  _selfDestroyTime:
+    _value: 10
 --- !u!1001 &4750640911757760445
 PrefabInstance:
   m_ObjectHideFlags: 0

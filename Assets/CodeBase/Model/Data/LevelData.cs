@@ -12,18 +12,16 @@ namespace PixelCrew.Model.Data
 
         public IReadOnlyDictionary<string, LevelData> LevelDatasDict => _levelDatas?.Where(x => x != null && !string.IsNullOrWhiteSpace(x.Name)).ToDictionary(x => x.Name, y => y);
 
-        public void SaveHeroPosition(string name, Vector3 heroPosition)
+        public void SaveHeroPosition(string name, string checkPointName)
         {
             LevelData levelData;
 
             if (LevelDatasDict == null) _levelDatas = new List<LevelData>();
             if (!LevelDatasDict.TryGetValue(name, out levelData))
             {
-                levelData = new LevelData(name);
+                levelData = new LevelData(name, checkPointName);
                 _levelDatas.Add(levelData);
             }
-
-            levelData.HeroPosition = heroPosition;
         }
 
         public LevelData Get(string name)
@@ -36,11 +34,12 @@ namespace PixelCrew.Model.Data
     public class LevelData
     {
         public string Name;
-        public Vector3 HeroPosition;
+        public string CheckPointName;
 
-        public LevelData(string name)
+        public LevelData(string name, string checkPointName)
         {
             Name = name;
+            CheckPointName = string.IsNullOrWhiteSpace(checkPointName) ? name.ToLower() + "-checkpoint1" : checkPointName; // default
         }
     }
 }

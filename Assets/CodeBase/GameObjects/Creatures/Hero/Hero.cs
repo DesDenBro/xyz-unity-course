@@ -303,7 +303,11 @@ namespace PixelCrew.GameObjects.Creatures
             if (_session == null) return;
 
             var levelData = _session.LevelsData.Get(SceneManager.GetActiveScene().name);
-            if (levelData != null && levelData.HeroPosition != Vector3.zero) transform.position = levelData.HeroPosition;
+            if (levelData != null) 
+            {
+                var checkpoint = FindObjectsOfType<CheckPointUpdateComponent>().FirstOrDefault(x => x.Id == levelData.CheckPointName);
+                if (checkpoint != null) transform.position = checkpoint.gameObject.transform.position;
+            }
 
             if (_session.PlayerData.MaxHealth > 0) _health.SetMaxHealth(_session.PlayerData.MaxHealth);
             if (_session.PlayerData.Health > 0) _health.SetHealth(_session.PlayerData.Health);
@@ -313,11 +317,11 @@ namespace PixelCrew.GameObjects.Creatures
 
             ArmWeapon(_inventory.GetItem(InventoryItemName.Sword)?.Prefab, true);
         }
-        public virtual void UpdateSessionData()
+        public virtual void UpdateSessionData(string checkPointName)
         {
             if (_session == null) return;
 
-            _session.LevelsData.SaveHeroPosition(SceneManager.GetActiveScene().name, transform.position);
+            _session.LevelsData.SaveHeroPosition(SceneManager.GetActiveScene().name, checkPointName);
 
             _session.PlayerData.MaxHealth = _health.MaxHealth;
             _session.PlayerData.Health = _health.Health;

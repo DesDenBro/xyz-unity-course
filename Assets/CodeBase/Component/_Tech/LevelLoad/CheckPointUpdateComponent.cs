@@ -1,20 +1,22 @@
-﻿using UnityEngine;
+﻿using PixelCrew.GameObjects.Creatures;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace PixelCrew.Components
 {
     public class CheckPointUpdateComponent : MonoBehaviour
     {
+        [SerializeField] private string _id;
         [SerializeField] private UnityEvent _actionAfterCheckPoint;
+
+        public string Id => _id;
 
         public void UpdateSessionData()
         {
-            var gmuComps = FindObjectsOfType<GameStateUpdaterComponent>();
-            foreach (var gmu in gmuComps)
-            {
-                if (gmu == null) continue;
-                gmu.UpdateState();
-            }
+            var hero = FindObjectOfType<Hero>();
+            if (hero == null) return;
+
+            hero.UpdateSessionData(_id);
 
             _actionAfterCheckPoint?.Invoke();
         }

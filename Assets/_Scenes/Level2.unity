@@ -1446,58 +1446,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 456366991}
     m_Modifications:
     - target: {fileID: 717764824, guid: 30dc5b4137e9eaf40b9674cd4cd06356, type: 3}
-      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 717764824, guid: 30dc5b4137e9eaf40b9674cd4cd06356, type: 3}
-      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 717764824, guid: 30dc5b4137e9eaf40b9674cd4cd06356, type: 3}
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2058771943}
-    - target: {fileID: 717764824, guid: 30dc5b4137e9eaf40b9674cd4cd06356, type: 3}
-      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 717764824, guid: 30dc5b4137e9eaf40b9674cd4cd06356, type: 3}
-      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Restart
-      objectReference: {fileID: 0}
-    - target: {fileID: 717764824, guid: 30dc5b4137e9eaf40b9674cd4cd06356, type: 3}
-      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 791006956, guid: 30dc5b4137e9eaf40b9674cd4cd06356, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3410809008185862997, guid: 30dc5b4137e9eaf40b9674cd4cd06356,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3886535996343965495, guid: 30dc5b4137e9eaf40b9674cd4cd06356,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4343286018677879401, guid: 30dc5b4137e9eaf40b9674cd4cd06356,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4767700215320277592, guid: 30dc5b4137e9eaf40b9674cd4cd06356,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5784780334059268829, guid: 30dc5b4137e9eaf40b9674cd4cd06356,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5784780335098992501, guid: 30dc5b4137e9eaf40b9674cd4cd06356,
         type: 3}
       propertyPath: m_RootOrder
@@ -2547,6 +2498,7 @@ GameObject:
   - component: {fileID: 760853356}
   - component: {fileID: 760853358}
   - component: {fileID: 760853359}
+  - component: {fileID: 760853360}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -2631,6 +2583,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &760853360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760853355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b45aed31cb27e4ecbbdfa83e3878b8fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &789745512
@@ -5695,6 +5659,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheckPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 7801348282434768118, guid: 65081f2430819444cbdfb9659aa1e7af,
+        type: 3}
+      propertyPath: _id
+      value: level2-checkpoint2
+      objectReference: {fileID: 0}
     - target: {fileID: 8070630997031563887, guid: 65081f2430819444cbdfb9659aa1e7af,
         type: 3}
       propertyPath: m_Size.x
@@ -5809,6 +5778,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 979026567}
     m_Modifications:
+    - target: {fileID: 1775173615647373187, guid: cb4e33ba6f8d2d14790190573fb2ece4,
+        type: 3}
+      propertyPath: _id
+      value: level2-checkpoint3
+      objectReference: {fileID: 0}
     - target: {fileID: 3928921763253391860, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
       propertyPath: _sceneName
@@ -19305,6 +19279,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 979026567}
     m_Modifications:
+    - target: {fileID: 1775173615647373187, guid: cb4e33ba6f8d2d14790190573fb2ece4,
+        type: 3}
+      propertyPath: _id
+      value: level2-checkpoint1
+      objectReference: {fileID: 0}
     - target: {fileID: 3928921763253391860, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
       propertyPath: _sceneName
