@@ -14,13 +14,17 @@ namespace PixelCrew.Model.Data
 
         public void SaveHeroPosition(string name, string checkPointName)
         {
-            LevelData levelData;
-
             if (LevelDatasDict == null) _levelDatas = new List<LevelData>();
+
+            LevelData levelData;
             if (!LevelDatasDict.TryGetValue(name, out levelData))
             {
                 levelData = new LevelData(name, checkPointName);
                 _levelDatas.Add(levelData);
+            }
+            else
+            {
+                levelData.CheckPointName = checkPointName;
             }
         }
 

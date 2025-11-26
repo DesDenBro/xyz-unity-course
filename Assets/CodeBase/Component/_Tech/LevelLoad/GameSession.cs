@@ -1,6 +1,7 @@
 ﻿using PixelCrew.Components;
 using PixelCrew.GameObjects.Creatures;
 using PixelCrew.Model.Data;
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -35,15 +36,29 @@ namespace PixelCrew.Model
             {
                 Destroy(gameObject);
                 _disposed = true;
+
+                var existSession = GameSessionSearch.Get(FindObjectsOfType<GameSession>);
+                if (existSession != null) existSession.Spawn();
+
                 return;
             }
             else
             {
+                Spawn();
                 InitModels();
                 DontDestroyOnLoad(this);
             }
 
             ReloadLinks();
+        }
+
+        private void Spawn()
+        {
+            var spawnComp = GetComponent<SpawnComponent>();
+            var levelData = _levelsData.Get(SceneManager.GetActiveScene().name);
+            if (levelData == null) return;
+
+            spawnComp.Spawn();
         }
 
         private void InitModels() { }

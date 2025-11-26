@@ -321,7 +321,8 @@ namespace PixelCrew.GameObjects.Creatures
         {
             if (_session == null) return;
 
-            _session.LevelsData.SaveHeroPosition(SceneManager.GetActiveScene().name, checkPointName);
+            var levelName = checkPointName.Split('-')[0];
+            _session.LevelsData.SaveHeroPosition(levelName, checkPointName);
 
             _session.PlayerData.MaxHealth = _health.MaxHealth;
             _session.PlayerData.Health = _health.Health;

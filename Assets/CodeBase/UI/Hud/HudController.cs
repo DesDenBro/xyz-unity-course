@@ -36,6 +36,7 @@ namespace PixelCrew.UI.Hud
 
         private void OnDestroy()
         {
+            if (_health == null) return;
             _health.OnHealthChanged -= OnHealhChanged;
         }
     }
