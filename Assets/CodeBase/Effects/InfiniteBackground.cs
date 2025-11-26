@@ -18,14 +18,14 @@ namespace PixelCrew.Effects
         void Start()
         {
             var sprites = _container.GetComponentsInChildren<SpriteRenderer>();
-            for (var sprite in sprites)
+            foreach (var sprite in sprites)
             {
                 _containerBounds.Encapsulate(sprite.bounds);
             }
 
             _allBounds = _containerBounds;
 
-            _boundsToTransformDelta = transofrm.position - _allBounds.center;
+            _boundsToTransformDelta = transform.position - _allBounds.center;
             _containerDelta = _container.position - _allBounds.center;
         }
 
