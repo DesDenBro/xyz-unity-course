@@ -19,7 +19,6 @@ namespace PixelCrew.Components
         private void OnValidate()
         {
             return;
-
             try
             {
                 if (PrefabUtility.IsPartOfPrefabAsset(gameObject)) return;
@@ -32,7 +31,7 @@ namespace PixelCrew.Components
 #endif
 
         [ContextMenu("SetId")]
-        private void SetUniqueId()
+        public void SetUniqueId()
         {
             if (string.IsNullOrWhiteSpace(_uniqueId))
             {
