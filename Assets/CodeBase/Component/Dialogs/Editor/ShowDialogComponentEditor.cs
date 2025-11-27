@@ -1,7 +1,7 @@
 ﻿using PixelCrew.Utils.Editor;
 using UnityEditor;
 
-namespace PixelCrew.Component.Dialogs.Editor
+namespace PixelCrew.Components.Dialogs.Editor
 {
     [CustomEditor(typeof(ShowDialogComponent))]
     public class ShowDialogComponentEditor : UnityEditor.Editor

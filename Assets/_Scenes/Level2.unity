@@ -1745,11 +1745,16 @@ PrefabInstance:
     - target: {fileID: 7994502379518318321, guid: fc7781b2ebf09f34aba9b1e32180be2c,
         type: 3}
       propertyPath: _bound._afterDialogEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7994502379518318321, guid: fc7781b2ebf09f34aba9b1e32180be2c,
         type: 3}
       propertyPath: _bound._afterDialogEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994502379518318321, guid: fc7781b2ebf09f34aba9b1e32180be2c,
+        type: 3}
+      propertyPath: _bound._afterDialogEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7994502379518318321, guid: fc7781b2ebf09f34aba9b1e32180be2c,
@@ -1759,7 +1764,17 @@ PrefabInstance:
       objectReference: {fileID: 849186725}
     - target: {fileID: 7994502379518318321, guid: fc7781b2ebf09f34aba9b1e32180be2c,
         type: 3}
+      propertyPath: _bound._afterDialogEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 849186726}
+    - target: {fileID: 7994502379518318321, guid: fc7781b2ebf09f34aba9b1e32180be2c,
+        type: 3}
       propertyPath: _bound._afterDialogEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994502379518318321, guid: fc7781b2ebf09f34aba9b1e32180be2c,
+        type: 3}
+      propertyPath: _bound._afterDialogEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7994502379518318321, guid: fc7781b2ebf09f34aba9b1e32180be2c,
@@ -1769,7 +1784,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7994502379518318321, guid: fc7781b2ebf09f34aba9b1e32180be2c,
         type: 3}
+      propertyPath: _bound._afterDialogEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SelfDestroy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994502379518318321, guid: fc7781b2ebf09f34aba9b1e32180be2c,
+        type: 3}
       propertyPath: _bound._afterDialogEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994502379518318321, guid: fc7781b2ebf09f34aba9b1e32180be2c,
+        type: 3}
+      propertyPath: _bound._afterDialogEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8346527392180069395, guid: fc7781b2ebf09f34aba9b1e32180be2c,
@@ -2602,6 +2627,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5129631128608782931, guid: 6ccfc2ad3a99b6449a8f849831fad4f3,
+        type: 3}
+      propertyPath: _uniqueId
+      value: 4667a39d-f60c-470f-bb36-345f07c367f0
+      objectReference: {fileID: 0}
     - target: {fileID: 6343062374609128620, guid: 6ccfc2ad3a99b6449a8f849831fad4f3,
         type: 3}
       propertyPath: m_Name
@@ -2680,6 +2710,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8155c996254f45745b9a6f8f32263e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &849186726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3951337654240519849, guid: 6ccfc2ad3a99b6449a8f849831fad4f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 849186723}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &877983561
@@ -5713,15 +5755,10 @@ PrefabInstance:
       propertyPath: _sceneName
       value: Level3
       objectReference: {fileID: 0}
-    - target: {fileID: 3991039096372236920, guid: cb4e33ba6f8d2d14790190573fb2ece4,
+    - target: {fileID: 4873751693596109936, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
-      propertyPath: _isEnabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3991039096372236920, guid: cb4e33ba6f8d2d14790190573fb2ece4,
-        type: 3}
-      propertyPath: _outlineWidth
-      value: 1
+      propertyPath: _uniqueId
+      value: 29ebe81f-c6f5-4e63-b9d4-5b535935b54d
       objectReference: {fileID: 0}
     - target: {fileID: 5250778563320450385, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
@@ -5732,6 +5769,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WoodDoor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662167366580014459, guid: cb4e33ba6f8d2d14790190573fb2ece4,
+        type: 3}
+      propertyPath: _uniqueId
+      value: 94e68861-985d-4713-b397-856169cd4403
       objectReference: {fileID: 0}
     - target: {fileID: 9132291359665964644, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
@@ -19196,15 +19238,10 @@ PrefabInstance:
       propertyPath: _sceneName
       value: Level1
       objectReference: {fileID: 0}
-    - target: {fileID: 3991039096372236920, guid: cb4e33ba6f8d2d14790190573fb2ece4,
+    - target: {fileID: 4873751693596109936, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
-      propertyPath: _isEnabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3991039096372236920, guid: cb4e33ba6f8d2d14790190573fb2ece4,
-        type: 3}
-      propertyPath: _outlineWidth
-      value: 0
+      propertyPath: _uniqueId
+      value: 4a9c0c96-e180-4eb2-8e2f-df4933fb8fe0
       objectReference: {fileID: 0}
     - target: {fileID: 5250778563320450385, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
@@ -19215,6 +19252,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WoodDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662167366580014459, guid: cb4e33ba6f8d2d14790190573fb2ece4,
+        type: 3}
+      propertyPath: _uniqueId
+      value: 68664247-a4e7-4f81-a365-df1ae5936897
       objectReference: {fileID: 0}
     - target: {fileID: 9094616382402812128, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}

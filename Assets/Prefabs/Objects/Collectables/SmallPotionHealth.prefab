@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 8772765558821907004}
   - component: {fileID: 732970289796424682}
   - component: {fileID: -4822556646506161051}
+  - component: {fileID: 2330408239675816031}
   m_Layer: 10
   m_Name: SmallPotionHealth
   m_TagString: Untagged
@@ -431,6 +432,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 1
+  _multiplier: 1
+--- !u!114 &2330408239675816031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917678488986685111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad9884310f65447bacde2580c7155e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 
 --- !u!1 &6458466608006478027
 GameObject:
   m_ObjectHideFlags: 0

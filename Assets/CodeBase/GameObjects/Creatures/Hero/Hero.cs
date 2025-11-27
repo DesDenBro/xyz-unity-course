@@ -302,8 +302,8 @@ namespace PixelCrew.GameObjects.Creatures
 
             if (_session == null) return;
 
-            var levelData = _session.LevelsData.Get(SceneManager.GetActiveScene().name);
-            if (levelData != null) 
+            var levelData = _session.ActiveLevelData;
+            if (_session.ActiveLevelData != null) 
             {
                 var checkpoint = FindObjectsOfType<CheckPointUpdateComponent>().FirstOrDefault(x => x.Id == levelData.CheckPointName);
                 if (checkpoint != null) transform.position = checkpoint.gameObject.transform.position;

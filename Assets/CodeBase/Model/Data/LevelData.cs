@@ -19,13 +19,31 @@ namespace PixelCrew.Model.Data
             LevelData levelData;
             if (!LevelDatasDict.TryGetValue(name, out levelData))
             {
-                levelData = new LevelData(name, checkPointName);
+                levelData = new LevelData(name, checkPointName, new List<string>());
                 _levelDatas.Add(levelData);
             }
             else
             {
                 levelData.CheckPointName = checkPointName;
+                var copyList = new string[levelData.DestroyedObjectsIds.Count];
+                levelData.DestroyedObjectsIds.CopyTo(copyList);
+                levelData.CheckpointDestroyedObjIds = copyList.ToList();
             }
+        }
+
+        public void AddObjectToDelete(string name, string objectId)
+        {
+            LevelData levelData;
+            if (!LevelDatasDict.TryGetValue(name, out levelData))
+            {
+                levelData = new LevelData(name, LevelData.GetDefaultCheckpointName(name), new List<string>());    
+            }
+            else
+            {
+                if (levelData.DestroyedObjectsIds.Contains(objectId)) return;
+            }
+
+            levelData.DestroyedObjectsIds.Add(objectId);
         }
 
         public LevelData Get(string name)
@@ -39,11 +57,21 @@ namespace PixelCrew.Model.Data
     {
         public string Name;
         public string CheckPointName;
+        public List<string> CheckpointDestroyedObjIds;
+        public List<string> DestroyedObjectsIds;
 
-        public LevelData(string name, string checkPointName)
+        public LevelData(string name, string checkPointName, List<string> destroyedObjectsIds)
         {
             Name = name;
-            CheckPointName = string.IsNullOrWhiteSpace(checkPointName) ? name.ToLower() + "-checkpoint1" : checkPointName; // default
+            CheckPointName = string.IsNullOrWhiteSpace(checkPointName) ? GetDefaultCheckpointName(name) : checkPointName; // default
+            DestroyedObjectsIds = destroyedObjectsIds;
+        }
+
+        public static string GetDefaultCheckpointName(string levelName)
+        {
+            if (string.IsNullOrWhiteSpace(levelName)) return "LEVELNOTFOUND";
+
+            return levelName.ToLower() + "-checkpoint1";
         }
     }
 }

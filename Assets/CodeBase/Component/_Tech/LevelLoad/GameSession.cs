@@ -26,6 +26,7 @@ namespace PixelCrew.Model
         public LevelsData LevelsData => _levelsData;
         public bool Disposed => _disposed;
 
+        public LevelData ActiveLevelData => _levelsData == null ? null : _levelsData.Get(SceneManager.GetActiveScene().name.ToLower());
         public QuickInventoryModel QuickInventory {  get; private set; }
 
         private void Awake()
@@ -38,14 +39,13 @@ namespace PixelCrew.Model
                 _disposed = true;
 
                 var existSession = GameSessionSearch.Get(FindObjectsOfType<GameSession>);
-                if (existSession != null) existSession.Spawn();
+                if (existSession != null) existSession.DefaultFuncs();
 
                 return;
             }
             else
             {
-                Spawn();
-                InitModels();
+                DefaultFuncs();
                 DontDestroyOnLoad(this);
             }
 
@@ -54,14 +54,33 @@ namespace PixelCrew.Model
 
         private void Spawn()
         {
-            var spawnComp = GetComponent<SpawnComponent>();
-            var levelData = _levelsData.Get(SceneManager.GetActiveScene().name);
-            if (levelData == null) return;
+            GetComponent<SpawnComponent>().Spawn();
+        }
+        private void DeleteObjectsById()
+        {
+            var objIds = ActiveLevelData.CheckpointDestroyedObjIds;
+            if (objIds == null || objIds.Count == 0) return;
 
-            spawnComp.Spawn();
+            var allGOWithUID = FindObjectsOfType<ObjectId>();
+            if (allGOWithUID == null || allGOWithUID.Length == 0) return;
+
+            var dict = allGOWithUID.ToDictionary(x => x.UniqueId, y => y);
+            foreach (var uid in objIds)
+            {
+                if (dict.ContainsKey(uid))
+                {
+                    Destroy(dict[uid].gameObject);
+                }
+            }
         }
 
-        private void InitModels() { }
+        private void DefaultFuncs()
+        {
+            if (ActiveLevelData == null) return;
+
+            Spawn();
+            DeleteObjectsById();
+        }
 
         public void ReloadLinks()
         {

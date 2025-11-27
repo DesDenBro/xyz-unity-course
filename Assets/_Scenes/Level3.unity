@@ -9547,6 +9547,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1816601161}
+          m_MethodName: SelfDestroy
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   _external: {fileID: 11400000, guid: 855ba21d5f4d2467998b588b6cfb1ca6, type: 2}
 --- !u!1001 &1186284772
 PrefabInstance:
@@ -14104,6 +14115,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8155c996254f45745b9a6f8f32263e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1816601161 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3951337654240519849, guid: 6ccfc2ad3a99b6449a8f849831fad4f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1816601158}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1819976418
@@ -25760,20 +25783,25 @@ PrefabInstance:
       propertyPath: _id
       value: level2-checkpoint3
       objectReference: {fileID: 0}
-    - target: {fileID: 3991039096372236920, guid: cb4e33ba6f8d2d14790190573fb2ece4,
+    - target: {fileID: 3928921763253391860, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
-      propertyPath: _isEnabled
-      value: 1
+      propertyPath: _sceneName
+      value: Level2
       objectReference: {fileID: 0}
-    - target: {fileID: 3991039096372236920, guid: cb4e33ba6f8d2d14790190573fb2ece4,
+    - target: {fileID: 4873751693596109936, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
-      propertyPath: _outlineWidth
-      value: 0
+      propertyPath: _uniqueId
+      value: 3d66eb63-a536-4cde-aafd-f04df08f1ed5
       objectReference: {fileID: 0}
     - target: {fileID: 6690463362691836411, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
       propertyPath: m_Name
       value: WoodDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662167366580014459, guid: cb4e33ba6f8d2d14790190573fb2ece4,
+        type: 3}
+      propertyPath: _uniqueId
+      value: 7b1a0468-8cd4-4392-9b06-d3f3595b1a58
       objectReference: {fileID: 0}
     - target: {fileID: 9094616382402812128, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
