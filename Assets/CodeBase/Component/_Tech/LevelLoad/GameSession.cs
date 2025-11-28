@@ -64,7 +64,7 @@ namespace PixelCrew.Model
             var allGOWithUID = FindObjectsOfType<ObjectId>();
             if (allGOWithUID == null || allGOWithUID.Length == 0) return;
 
-            var dict = allGOWithUID.ToDictionary(x => x.UniqueId, y => y);
+            var dict = allGOWithUID.Where(x => !string.IsNullOrWhiteSpace(x.UniqueId)).ToDictionary(x => x.UniqueId, y => y);
             foreach (var uid in objIds)
             {
                 if (dict.ContainsKey(uid))

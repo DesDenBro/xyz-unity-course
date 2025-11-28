@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1163997473988085200}
+  - component: {fileID: -4403407823777704403}
   - component: {fileID: 1163997473988085203}
   - component: {fileID: 1163997473988085201}
   - component: {fileID: 2824878296710094668}
@@ -51,7 +52,6 @@ GameObject:
   - component: {fileID: 1306439649288507672}
   - component: {fileID: 7254621263878043098}
   - component: {fileID: 2943802034447497149}
-  - component: {fileID: -4403407823777704403}
   m_Layer: 13
   m_Name: _Head1
   m_TagString: Enemy
@@ -78,6 +78,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4403407823777704403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163997473988085202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad9884310f65447bacde2580c7155e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 
+  _isAddedToDestroy: 0
 --- !u!212 &1163997473988085203
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -356,19 +370,6 @@ MonoBehaviour:
   _selfDestroyAfterTime: 0
   _selfDestroyTime:
     _value: 10
---- !u!114 &-4403407823777704403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1163997473988085202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ad9884310f65447bacde2580c7155e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 
 --- !u!1 &4043318248172199975
 GameObject:
   m_ObjectHideFlags: 0

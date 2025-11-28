@@ -1,10 +1,6 @@
 ﻿using System;
 using PixelCrew.Model;
 using UnityEngine;
-using UnityEditor.Experimental.SceneManagement;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 namespace PixelCrew.Components
 {
@@ -14,29 +10,11 @@ namespace PixelCrew.Components
         [SerializeField] private bool _isAddedToDestroy = false;
 
         public string UniqueId => _uniqueId;
-
-#if UNITY_EDITOR
-        private void OnValidate()
+    
+        [ContextMenu("Set new UId")]
+        public void SetNewUniqueId()
         {
-            return;
-            try
-            {
-                if (PrefabUtility.IsPartOfPrefabAsset(gameObject)) return;
-                var stage = PrefabStageUtility.GetCurrentPrefabStage();
-                if (stage != null && stage.IsPartOfPrefabContents(gameObject)) return;
-
-                SetUniqueId(); 
-            } catch { }
-        }
-#endif
-
-        [ContextMenu("SetId")]
-        public void SetUniqueId()
-        {
-            if (string.IsNullOrWhiteSpace(_uniqueId))
-            {
-                _uniqueId = Guid.NewGuid().ToString();
-            }
+            _uniqueId = Guid.NewGuid().ToString();
         }
 
         public void AddToDestroyed()

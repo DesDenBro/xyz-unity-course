@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 975009510378171513}
+  - component: {fileID: 6459861528693041362}
   - component: {fileID: 8070630997031563887}
   - component: {fileID: 3398896472830138497}
   - component: {fileID: 851178771416839639}
   - component: {fileID: 6498923079577529644}
-  - component: {fileID: 6459861528693041362}
   m_Layer: 0
   m_Name: Dialog
   m_TagString: Untagged
@@ -35,6 +35,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6459861528693041362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4732857728212843998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad9884310f65447bacde2580c7155e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 
+  _isAddedToDestroy: 0
 --- !u!61 &8070630997031563887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -137,16 +151,3 @@ MonoBehaviour:
   _selfDestroyAfterTime: 0
   _selfDestroyTime:
     _value: 10
---- !u!114 &6459861528693041362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4732857728212843998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ad9884310f65447bacde2580c7155e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uniqueId: 

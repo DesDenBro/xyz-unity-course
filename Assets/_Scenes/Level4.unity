@@ -5931,7 +5931,7 @@ Transform:
   - {fileID: 425682503}
   - {fileID: 969437298}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &500547773
 GameObject:
@@ -6554,7 +6554,7 @@ Transform:
   - {fileID: 1989593339}
   - {fileID: 931665622}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &925050850
 PrefabInstance:
@@ -6588,20 +6588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodDoor
       objectReference: {fileID: 0}
-    - target: {fileID: 7236771015770321217, guid: cb4e33ba6f8d2d14790190573fb2ece4,
-        type: 3}
-      propertyPath: _isActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8662167366580014459, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
       propertyPath: _uniqueId
       value: 52ed86c9-9013-40ad-baee-9933114c0c11
-      objectReference: {fileID: 0}
-    - target: {fileID: 9094616382402812128, guid: cb4e33ba6f8d2d14790190573fb2ece4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9132291359665964644, guid: cb4e33ba6f8d2d14790190573fb2ece4,
         type: 3}
@@ -6882,7 +6872,7 @@ PrefabInstance:
     - target: {fileID: 6039322781069366147, guid: b0531eaa052180846a4ee53147f2ad13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6039322781069366147, guid: b0531eaa052180846a4ee53147f2ad13,
         type: 3}
@@ -10008,7 +9998,7 @@ Transform:
   m_Children:
   - {fileID: 1386518783}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &1521445251
 Grid:
@@ -10399,10 +10389,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -28.43273, y: 5.7474284}
-      - {x: -28.43273, y: -27.914627}
-      - {x: 29.780893, y: -27.862331}
-      - {x: 30.147, y: 5.7997293}
+    - - {x: -26.195345, y: 5.7474284}
+      - {x: -26.184202, y: -15.922478}
+      - {x: 29.031374, y: -15.870176}
+      - {x: 28.69928, y: 5.7997293}
 --- !u!4 &1745144658 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1486211179751469439, guid: 322c5bdf3783eda45ab178751409c804,
@@ -17052,7 +17042,7 @@ Transform:
   m_Children:
   - {fileID: 134567517}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1486211180218133545
 PrefabInstance:
