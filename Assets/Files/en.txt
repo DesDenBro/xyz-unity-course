@@ -16,6 +16,7 @@ padlock_closed_door;I need a key...
 
 perksstore_btn_buy;Buy
 perksstore_btn_use;Use
+perksstore_price_title;Price
 
 level1_dialog_door;Looks like its door to out...
 

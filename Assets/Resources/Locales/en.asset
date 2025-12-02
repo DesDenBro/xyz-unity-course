@@ -40,6 +40,12 @@ MonoBehaviour:
     Value: Continue...
   - Key: padlock_closed_door
     Value: I need a key...
+  - Key: perksstore_btn_buy
+    Value: Buy
+  - Key: perksstore_btn_use
+    Value: Use
+  - Key: perksstore_price_title
+    Value: Price
   - Key: level1_dialog_door
     Value: Looks like its door to out...
   - Key: level2_dialog_crabby_1

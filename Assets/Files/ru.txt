@@ -16,6 +16,7 @@ padlock_closed_door;Мне нужен ключ...
 
 perksstore_btn_buy;Купить
 perksstore_btn_use;Использовать
+perksstore_price_title;Цена
 
 level1_dialog_door;Похоже, что это дверь наружу...
 

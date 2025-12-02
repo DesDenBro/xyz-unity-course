@@ -40,6 +40,12 @@ MonoBehaviour:
     Value: "\u0414\u0430\u043B\u0435\u0435..."
   - Key: padlock_closed_door
     Value: "\u041C\u043D\u0435 \u043D\u0443\u0436\u0435\u043D \u043A\u043B\u044E\u0447..."
+  - Key: perksstore_btn_buy
+    Value: "\u041A\u0443\u043F\u0438\u0442\u044C"
+  - Key: perksstore_btn_use
+    Value: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C"
+  - Key: perksstore_price_title
+    Value: "\u0426\u0435\u043D\u0430"
   - Key: level1_dialog_door
     Value: "\u041F\u043E\u0445\u043E\u0436\u0435, \u0447\u0442\u043E \u044D\u0442\u043E
       \u0434\u0432\u0435\u0440\u044C \u043D\u0430\u0440\u0443\u0436\u0443..."
