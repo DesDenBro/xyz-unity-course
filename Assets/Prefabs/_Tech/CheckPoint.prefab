@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 975009510378171513}
+  - component: {fileID: 925323976695477774}
   - component: {fileID: 8070630997031563887}
   - component: {fileID: 5006331307388561214}
   - component: {fileID: 7801348282434768118}
@@ -35,6 +36,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &925323976695477774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4732857728212843998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad9884310f65447bacde2580c7155e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 
+  _isAddedToDestroy: 0
 --- !u!61 &8070630997031563887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -74,6 +89,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
+  _ignoreTag: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4294967295
   _actions:
   - m_PersistentCalls:
       m_Calls:
@@ -100,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e661b95afe1f0c2448b6e76feaf90af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 
   _actionAfterCheckPoint:
     m_PersistentCalls:
       m_Calls:
@@ -114,9 +134,9 @@ MonoBehaviour:
           m_StringArgument: check point done
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6498923079577529644}
-        m_MethodName: SelfDestroy
-        m_Mode: 1
+      - m_Target: {fileID: 4732857728212843998}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -137,6 +157,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _selfDestroyAfterTime: 0
+  _selfDestroyTime:
+    _value: 10
 --- !u!1001 &4750640911757760445
 PrefabInstance:
   m_ObjectHideFlags: 0

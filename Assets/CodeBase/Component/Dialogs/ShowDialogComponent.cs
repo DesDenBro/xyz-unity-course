@@ -3,7 +3,7 @@ using PixelCrew.Model.Definitions;
 using PixelCrew.UI.Hud;
 using UnityEngine;
 
-namespace PixelCrew.Component.Dialogs
+namespace PixelCrew.Components.Dialogs
 {
     public class ShowDialogComponent : MonoBehaviour
     {

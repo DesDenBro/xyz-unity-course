@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6039322781069366147}
   - component: {fileID: 6039322781069366146}
+  - component: {fileID: 1076284860}
   m_Layer: 0
   m_Name: Session
   m_TagString: Untagged
@@ -43,10 +44,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e63e91181bf33d4e9b5dce7c20e80da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data:
-    Coins: 0
-    Keys: 0
-    MaxHealth: 40
-    Health: 20
-    IsArmed: 0
-    Weapon: {fileID: 0}
+  _playerData:
+    MaxHealth: 0
+    Health: 0
+    Inventory:
+      _inventory:
+      - _itemDef:
+          _id: 
+          _stackLimitSize: 0
+          _tags: 
+          _prefab: {fileID: 0}
+          _icon: {fileID: 0}
+        Id: PearlThrow
+        Value: 5
+  _levelsData:
+    _levelDatas: []
+--- !u!114 &1076284860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6039322781069366172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d265bd1088192e4d8650d1a233d8c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 6039322781069366147}
+  _prefab: {fileID: 5784780335098992503, guid: 30dc5b4137e9eaf40b9674cd4cd06356, type: 3}

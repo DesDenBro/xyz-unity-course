@@ -41,6 +41,7 @@ namespace PixelCrew.Components.Audio
 
         private void OnDestroy()
         {
+            if (_model == null) return;
             _model.OnChanged -= OnSoundSettingChanged;
         }
     }

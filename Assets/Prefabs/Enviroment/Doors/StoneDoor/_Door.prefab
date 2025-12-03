@@ -91,10 +91,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6343062374609128623}
+  - component: {fileID: 5129631128608782931}
   - component: {fileID: 6343062374609128622}
   - component: {fileID: 1818775988}
   - component: {fileID: 1232855549096644645}
   - component: {fileID: 1818775987}
+  - component: {fileID: 3951337654240519849}
   m_Layer: 15
   m_Name: _Door
   m_TagString: Untagged
@@ -117,6 +119,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5129631128608782931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6343062374609128620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad9884310f65447bacde2580c7155e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uniqueId: 
+  _isAddedToDestroy: 0
 --- !u!212 &6343062374609128622
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -228,3 +244,18 @@ MonoBehaviour:
   _animator: {fileID: 1232855549096644645}
   _state: 1
   _animationKey: is-opened
+--- !u!114 &3951337654240519849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6343062374609128620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b5134cb2e5740408b49a84e33fd5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selfDestroyAfterTime: 0
+  _selfDestroyTime:
+    _value: 10

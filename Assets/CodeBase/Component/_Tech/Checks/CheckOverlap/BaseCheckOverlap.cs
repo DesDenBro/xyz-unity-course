@@ -17,19 +17,42 @@ namespace PixelCrew.Common.Tech
         {
             if (size == 0) return;
 
-            size = checkOnlyForward ? 1 : size;
+            float mindelta = -1;
+            Collider2D mildeltaCollider = null;
+
             for (int i = 0; i < size; i++)
             {
                 var overlapRes = interactionResult[i];
                 if (overlapRes == null) continue;
 
-                var isInTags = tags.Any(tag => overlapRes.CompareTag(tag));
-                if (isInTags)
+                if (checkOnlyForward)
                 {
-                    onOverlap?.Invoke(overlapRes.gameObject);
+                    var newmindelta = ((overlapRes.gameObject.transform.position.x < 0 ? -1 : 1) * overlapRes.gameObject.transform.position.x)
+                        - ((gameObject.transform.position.x < 0 ? -1 : 1) * gameObject.transform.position.x);
+                    newmindelta = (newmindelta < 0 ? -1 : 1) * newmindelta;
+                    if (mindelta > newmindelta || mindelta == -1)
+                    {
+                        mindelta = newmindelta;
+                        mildeltaCollider = overlapRes;
+                    }
+                }
+                else
+                {
+                    CheckTags(overlapRes);
                 }
             }
-        }
 
+            if (checkOnlyForward) CheckTags(mildeltaCollider);
+        }
+        private void CheckTags(Collider2D overlapRes)
+        {
+            if (overlapRes == null) return;
+
+            var isInTags = tags.Any(tag => overlapRes.CompareTag(tag));
+            if (isInTags)
+            {
+                onOverlap?.Invoke(overlapRes.gameObject);
+            }
+        }
     }
 }

@@ -324,6 +324,9 @@ namespace PixelCrew.GameObjects.Creatures
             _creatureStateInfo = CreatureState.Dead;
             _animator.SetKeyVal(AnimationKeys.Creature.IsDead, true);
             SetDirection(Vector3.zero);
+
+            var objId = GetComponent<ObjectId>();
+            if (objId != null) objId.AddToDestroyed();
         }
         public void OnDie()
         {
