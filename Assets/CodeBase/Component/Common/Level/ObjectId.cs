@@ -4,6 +4,11 @@ using UnityEngine;
 
 namespace PixelCrew.Components
 {
+    public interface IHaveId
+    {
+        string Id { get; }
+    }
+    
     public class ObjectId : MonoBehaviour
     {
         [SerializeField] private string _uniqueId;

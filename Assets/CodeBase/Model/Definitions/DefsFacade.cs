@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PixelCrew.Model.Definitions.Repositories;
+using UnityEngine;
 
 namespace PixelCrew.Model.Definitions
 {
@@ -7,6 +8,7 @@ namespace PixelCrew.Model.Definitions
     {
         [SerializeField] private InventoryItemsDef _items;
         [SerializeField] private ThrowableItemsDef _throwableItems;
+        [SerializeField] private PerkRepository _perks;
 
         private static DefsFacade _instance;
         private static DefsFacade LoadDefs()
@@ -18,5 +20,6 @@ namespace PixelCrew.Model.Definitions
 
         public InventoryItemsDef Items => _items;
         public ThrowableItemsDef ThrowableItems => _throwableItems;
+        public PerkRepository Perks => _perks;
     }
 }

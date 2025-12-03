@@ -46,6 +46,10 @@ MonoBehaviour:
     Value: Use
   - Key: perksstore_price_title
     Value: Price
+  - Key: perks_doubleJump_info
+    Value: Double jump
+  - Key: perks_superThrow_info
+    Value: Hold throw button for throw several items
   - Key: level1_dialog_door
     Value: Looks like its door to out...
   - Key: level2_dialog_crabby_1

@@ -1,4 +1,5 @@
 ﻿using System;
+using PixelCrew.Model.Data;
 using UnityEngine;
 
 namespace PixelCrew.Model
@@ -10,5 +11,6 @@ namespace PixelCrew.Model
         public int Health;
 
         public InventoryData Inventory;
+        public PerksData Perks;
     }
 }

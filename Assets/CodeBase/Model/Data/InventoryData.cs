@@ -1,4 +1,5 @@
 ﻿using PixelCrew.Model.Definitions;
+using PixelCrew.Model.Definitions.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -102,6 +103,31 @@ namespace PixelCrew.Model
         public int Count(string id) 
         {
             return _inventory.Where(x => x.Id == id).Sum(x => x.Value);
+        }
+
+
+        public bool IsEnough(params ItemWithCount[] items)
+        {
+            var joined = new Dictionary<string, int>();
+            foreach (var item in items)
+            {
+                var itemId = item.ItemId;
+                if (joined.ContainsKey(itemId))
+                {
+                    joined[itemId] += item.Count;
+                }
+                else
+                {
+                    joined.Add(itemId, item.Count);
+                }
+            }
+
+            foreach (var item in joined)
+            {
+                if (Count(item.Key) < item.Value) return false;
+            }
+
+            return true;
         }
 
         public InventoryData Clone()

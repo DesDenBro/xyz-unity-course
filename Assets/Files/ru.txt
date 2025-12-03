@@ -18,6 +18,9 @@ perksstore_btn_buy;Купить
 perksstore_btn_use;Использовать
 perksstore_price_title;Цена
 
+perks_doubleJump_info;Двойной прыжок
+perks_superThrow_info;Зажмите кнопку броска для броска нескольких предметов сразу
+
 level1_dialog_door;Похоже, что это дверь наружу...
 
 level2_dialog_crabby_1;За этой дверью таится опасность, но ты силен, если зашел так далеко.

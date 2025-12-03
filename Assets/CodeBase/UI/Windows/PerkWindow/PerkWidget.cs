@@ -1,23 +1,46 @@
+using PixelCrew.Model;
+using PixelCrew.Model.Definitions.Repositories;
 using PixelCrew.UI.Widgets;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace PixelCrew.UI.Perks
 {
-    public class PerkWidget : MonoBehaviour, IItemRenderer<string>
+    public class PerkWidget : MonoBehaviour, IItemRenderer<PerkDef>
     {
-        [SerializeField] private GameObject _icon;
+        [SerializeField] private Image _icon;
         [SerializeField] private GameObject _isLocked;
         [SerializeField] private GameObject _isUsed;
         [SerializeField] private GameObject _isSelected;
 
-        public void SetData(string data, int index)
+        private GameSession _session;
+        private PerkDef _data;
+
+        private void Start()
         {
-            throw new System.NotImplementedException();
+            _session = GameSessionSearch.Get(FindObjectsOfType<GameSession>);
+            UpdateView();
+        }
+
+        public void SetData(PerkDef data, int index)
+        {
+            _data = data;
+
+            if (_session != null) 
+                UpdateView();
         }
 
         public void OnSelect()
         {
             
+        }
+
+        public void UpdateView()
+        {
+            _icon.sprite = _data.Icon;
+            _isUsed.SetActive(_session.PerksModel.IsUsed(_data.Id));
+            _isSelected.SetActive(_session.PerksModel.InterfaceSelection.Value == _data.Id);
+            _isLocked.SetActive(!_session.PerksModel.IsUnlocked(_data.Id));
         }
     }
 }

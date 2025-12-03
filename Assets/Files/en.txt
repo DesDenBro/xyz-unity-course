@@ -18,6 +18,10 @@ perksstore_btn_buy;Buy
 perksstore_btn_use;Use
 perksstore_price_title;Price
 
+
+perks_doubleJump_info;Double jump
+perks_superThrow_info;Hold throw button for throw several items
+
 level1_dialog_door;Looks like its door to out...
 
 level2_dialog_crabby_1;Beyond this door lies danger, but you’re strong if you’ve made it this far

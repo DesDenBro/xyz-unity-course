@@ -28,6 +28,7 @@ namespace PixelCrew.Model
 
         public LevelData ActiveLevelData => _levelsData == null ? null : _levelsData.Get(SceneManager.GetActiveScene().name.ToLower());
         public QuickInventoryModel QuickInventory {  get; private set; }
+        public PerksModel PerksModel { get; private set; }
 
         private void Awake()
         {
@@ -85,6 +86,7 @@ namespace PixelCrew.Model
         public void ReloadLinks()
         {
             QuickInventory = new QuickInventoryModel(FindObjectOfType<Hero>().GetComponent<InventoryComponent>());
+            PerksModel = new PerksModel(_playerData);
         }
 
         private void LoadHud()
