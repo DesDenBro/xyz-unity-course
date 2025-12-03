@@ -14,6 +14,10 @@ hud_dialogbox_continue;Далее...
 
 padlock_closed_door;Мне нужен ключ...
 
+perksstore_btn_buy;Купить
+perksstore_btn_use;Использовать
+perksstore_price_title;Цена
+
 level1_dialog_door;Похоже, что это дверь наружу...
 
 level2_dialog_crabby_1;За этой дверью таится опасность, но ты силен, если зашел так далеко.

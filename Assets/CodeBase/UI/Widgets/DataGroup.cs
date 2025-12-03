@@ -1,9 +1,29 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 namespace PixelCrew.UI.Widgets
 {
+    public class PedefinedDataGroup<TDataType, TItemType> : DataGroup<TDataType, TItemType>
+        where TItemType : MonoBehaviour, IItemRenderer<TDataType>
+    {
+        public PedefinedDataGroup(Transform container) : base(null, container)
+        {
+            var items = container.GetComponentsInChildren<TItemType>();
+            CreatedItems.AddRange(items);
+        }
+
+        public override void SetData(IList<TDataType> data)
+        {
+            if (data.Count > CreatedItems.Count)
+                throw new IndexOutOfRangeException();
+
+            base.SetData(data);
+        }
+    }
+
+
     public class DataGroup<TDataType, TItemType> where TItemType : MonoBehaviour, IItemRenderer<TDataType>
     {
         protected readonly List<TItemType> CreatedItems = new List<TItemType>();
@@ -21,7 +41,7 @@ namespace PixelCrew.UI.Widgets
             // create required items
             for (var i = CreatedItems.Count; i < data.Count(); i++)
             {
-                var item = Object.Instantiate(_prefab, _container);
+                var item = UnityEngine.Object.Instantiate(_prefab, _container);
                 CreatedItems.Add(item);
             }
 
