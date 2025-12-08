@@ -25,8 +25,13 @@ namespace PixelCrew.Model.Data
         public bool IsUnlocked(string id)
         {
             if (string.IsNullOrWhiteSpace(id)) return false;
-
             return _unlocked.Contains(id);
+        }
+                
+        public bool IsUsed(string id)
+        {
+            if (string.IsNullOrWhiteSpace(id)) return false;
+            return IsUnlocked(id) && _used.Value == id;
         }
     }
 }

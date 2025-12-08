@@ -32,7 +32,7 @@ namespace PixelCrew.UI.Perks
 
         public void OnSelect()
         {
-            
+            _session.PerksModel.InterfaceSelection.Value = _data.Id;
         }
 
         public void UpdateView()

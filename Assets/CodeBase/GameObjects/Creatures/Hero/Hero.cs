@@ -45,6 +45,7 @@ namespace PixelCrew.GameObjects.Creatures
         protected override bool _IsFalling => base._IsFalling && !_IsHangingMove;
         protected override int _Damage => base._Damage * _weapon?.Damage ?? 1;
         private bool _IsArmed => _weapon != null;
+        private bool _IsDoubleJumpAvailable => _isDoubleJumpActive && _session.PerksModel.IsDoubleJumpUnlocked;
 
 
         protected override void Awake()
@@ -100,7 +101,7 @@ namespace PixelCrew.GameObjects.Creatures
         protected override float CalJumpVelocity(float inputYVel)
         {
             var yVel = base.CalJumpVelocity(inputYVel);
-            if (_IsFalling && !_isGrounded && _isDoubleJumpActive)
+            if (_IsFalling && !_isGrounded && _IsDoubleJumpAvailable)
             {
                 yVel = jumpSpeed;
                 _isDoubleJumpActive = false;
@@ -233,7 +234,7 @@ namespace PixelCrew.GameObjects.Creatures
 
         public override void InitThrow(ThrowType type = ThrowType.Once)
         {
-            if (!SelectedThrowAvailable(out _selectedThrow)) return;
+            if (!SelectedThrowAvailable(type, out _selectedThrow)) return;
             base.InitThrow(type);
         }
         public override void OnThrow()
@@ -258,9 +259,10 @@ namespace PixelCrew.GameObjects.Creatures
 
             yield return null;
         }
-        private bool SelectedThrowAvailable(out string selectedThrow)
+        private bool SelectedThrowAvailable(ThrowType throwType, out string selectedThrow)
         {
             selectedThrow = null;
+            if (throwType == ThrowType.Multi && !_session.PerksModel.IsSuperThrowUnlocked) return false;
 
             var throwableId = _session.QuickInventory?.SelectedItem?.Id;
             var throwableDef = DefsFacade.I.ThrowableItems.Get(throwableId);
