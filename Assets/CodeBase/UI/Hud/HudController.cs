@@ -1,30 +1,41 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine;
+using PixelCrew.UI.Perks;
+using PixelCrew.UI.Widgets;
 using PixelCrew.Components;
 using PixelCrew.GameObjects.Creatures;
-using PixelCrew.Model;
-using PixelCrew.Model.Definitions;
-using PixelCrew.UI.Widgets;
-using UnityEngine;
+using PixelCrew.Utils.Disposables;
 
 namespace PixelCrew.UI.Hud
 {
     public class HudController : MonoBehaviour
     {
         [SerializeField] private ProgressBarWidget _progressBarWidget;
-        [SerializeField] private HealthComponent _health;
+        [SerializeField] private ActivePerkWidget _activePerkWidget;
+        [SerializeField] private HealthComponent _health; // может быть заранее задан у мобов
+
+        private readonly CompositeDisposable _trash = new CompositeDisposable();
+        
+        private PerksComponent _perks;
 
         private void Start()
         {
-            if (_health == null)
+            var hero = FindObjectOfType<Hero>();
+            if (hero != null) 
             {
-                var hero = FindObjectOfType<Hero>();
-                if (hero != null) _health = hero.GetComponent<HealthComponent>();
+                if (_health == null) _health = hero.GetComponent<HealthComponent>();
+                if (_perks == null) _perks = hero.GetComponent<PerksComponent>();
             }
+
             if (_health != null)
             {
                 _health.OnHealthChanged += OnHealhChanged;
                 OnHealhChanged(_health.Health, 0);
+            }
+
+            if (_perks != null)
+            {
+                _trash.Retain(_perks.PerksData.Used.Subscribe((x, y) => OnPerkChanged()));
+                OnPerkChanged();        
             }
         }
 
@@ -33,11 +44,18 @@ namespace PixelCrew.UI.Hud
             var value = (float)newValue/_health.MaxHealth;
             _progressBarWidget.SetProgress(value);
         }
+        
+        private void OnPerkChanged()
+        {
+            if (_activePerkWidget == null) return;
+            _activePerkWidget.UpdateView();
+        }
+
 
         private void OnDestroy()
         {
-            if (_health == null) return;
-            _health.OnHealthChanged -= OnHealhChanged;
+            if (_health != null)  _health.OnHealthChanged -= OnHealhChanged;;
+           _trash.Dispose();
         }
     }
 }

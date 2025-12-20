@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3740413729769220425}
   - component: {fileID: 5832201166090712367}
   m_Layer: 0
-  m_Name: NPC_Crabby
+  m_Name: NPC_Crabby_clear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

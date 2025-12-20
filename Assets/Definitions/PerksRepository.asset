@@ -19,9 +19,11 @@ MonoBehaviour:
     _price:
       _itemId: Money
       _count: 5
+    _isCooldownExist: 0
   - _id: super-throw
     _icon: {fileID: 21300000, guid: e4f25c0414bdb465c8e062abbe1128d1, type: 3}
     _info: perks_superThrow_info
     _price:
       _itemId: Money
       _count: 10
+    _isCooldownExist: 1

@@ -1,11 +1,10 @@
-﻿using PixelCrew.Common;
+﻿using System.Collections;
+using UnityEditor;
+using UnityEngine;
+using PixelCrew.Common;
 using PixelCrew.Common.Tech;
 using PixelCrew.Components;
 using PixelCrew.Utils;
-using System;
-using System.Collections;
-using UnityEditor;
-using UnityEngine;
 
 namespace PixelCrew.GameObjects.Creatures
 {
@@ -63,19 +62,14 @@ namespace PixelCrew.GameObjects.Creatures
         }
 
 
-        protected virtual void Start()
-        {
-        }
+        protected virtual void Start() { }
         protected virtual void FixedUpdate()
         {
             StartUpdateOperations();
             UpdateOperations();
             EndUpdateOperations();
         }
-        protected virtual void OnDestroy()
-        {
-
-        }
+        protected virtual void OnDestroy() { }
 
 
         protected virtual void StartUpdateOperations()
@@ -171,7 +165,6 @@ namespace PixelCrew.GameObjects.Creatures
             _isJumpingPressed = val;
         }
 
-
         public void SetDirection(Vector2 direction)
         {
             _direction = direction;
@@ -222,6 +215,16 @@ namespace PixelCrew.GameObjects.Creatures
         public virtual void MovementGrabAction() 
         { 
         
+        }
+
+        public float TimeToCooldownEnd(string perk)
+        {
+            switch (perk)
+            {
+                case "super-throw": return _throwCooldown.TimeToEnd;
+            }
+
+            return -1;
         }
 
         

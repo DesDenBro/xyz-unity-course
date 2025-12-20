@@ -15,55 +15,55 @@ MonoBehaviour:
   _fileName: en_loc
   _localeItems:
   - Key: menu_title
-    Value: Main menu
+    Value: "Main menu\r"
   - Key: btn_start
-    Value: start
+    Value: "start\r"
   - Key: btn_restart
-    Value: restart
+    Value: "restart\r"
   - Key: btn_options
-    Value: options
+    Value: "options\r"
   - Key: btn_exit
-    Value: exit
+    Value: "exit\r"
   - Key: btn_languages
     Value: languages
   - Key: btn_ok
-    Value: ok
+    Value: "ok\r"
   - Key: menu_locale_title
-    Value: Language
+    Value: "Language\r"
   - Key: menu_settings_title
-    Value: Settings
+    Value: "Settings\r"
   - Key: settings_music_volume
-    Value: Music volume
+    Value: "Music volume\r"
   - Key: settings_sfx_volume
-    Value: SFX volume
+    Value: "SFX volume\r"
   - Key: hud_dialogbox_continue
-    Value: Continue...
+    Value: "Continue...\r"
   - Key: padlock_closed_door
-    Value: I need a key...
+    Value: "I need a key...\r"
   - Key: perksstore_btn_buy
-    Value: Buy
+    Value: "Buy\r"
   - Key: perksstore_btn_use
-    Value: Use
+    Value: "Use\r"
   - Key: perksstore_price_title
-    Value: Price
+    Value: "Price\r"
   - Key: perks_doubleJump_info
-    Value: Double jump
+    Value: "Double jump\r"
   - Key: perks_superThrow_info
-    Value: Hold throw button for throw several items
+    Value: "Hold throw button for throw several items\r"
   - Key: level1_dialog_door
-    Value: Looks like its door to out...
+    Value: "Looks like its door to out...\r"
   - Key: level2_dialog_crabby_1
     Value: "Beyond this door lies danger, but you\u2019re strong if you\u2019ve made
-      it this far"
+      it this far\r"
   - Key: level2_dialog_crabby_2
-    Value: Be careful
+    Value: "Be careful\r"
   - Key: level3_dialog_crabby_failDialog1
-    Value: Only my hand can open this door
+    Value: "Only my hand can open this door\r"
   - Key: level3_dialog_crabby_failDialog2
-    Value: But without key i cant...
+    Value: "But without key i cant...\r"
   - Key: level3_dialog_crabby_successDialog1
-    Value: Oh, this good key!
+    Value: "Oh, this good key!\r"
   - Key: level3_dialog_crabby_successDialog2
-    Value: Give me a second...
+    Value: "Give me a second...\r"
   - Key: level3_dialog_crabby_byeDialog1
     Value: See later!

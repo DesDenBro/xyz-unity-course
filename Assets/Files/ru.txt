@@ -15,7 +15,7 @@ hud_dialogbox_continue;Далее...
 padlock_closed_door;Мне нужен ключ...
 
 perksstore_btn_buy;Купить
-perksstore_btn_use;Использовать
+perksstore_btn_use;Применить
 perksstore_price_title;Цена
 
 perks_doubleJump_info;Двойной прыжок

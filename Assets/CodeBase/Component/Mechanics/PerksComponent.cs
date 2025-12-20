@@ -13,7 +13,5 @@ namespace PixelCrew.Components
         {
             _perksData = pd;
         }
-
-        
     }   
 }

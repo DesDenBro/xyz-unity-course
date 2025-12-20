@@ -19,5 +19,6 @@ namespace PixelCrew.Components
         }
 
         public bool IsReady => _timesUp <= Time.time;
+        public float TimeToEnd => _timesUp - Time.time;
     }
 }

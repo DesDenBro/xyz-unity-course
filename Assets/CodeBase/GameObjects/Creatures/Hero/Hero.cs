@@ -1,23 +1,18 @@
-﻿using PixelCrew.Common;
+﻿using System.Collections;
+using System.Linq;
+using UnityEditor.Animations;
+using UnityEngine;
+using PixelCrew.Common;
 using PixelCrew.Common.Tech;
 using PixelCrew.Components;
 using PixelCrew.Model;
 using PixelCrew.Model.Definitions;
-using PixelCrew.Utils;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEditor.Animations;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace PixelCrew.GameObjects.Creatures
 {
     public class Hero : Creature
     {
         [Header("Hero params")]
-        [SerializeField] private bool _isDoubleJumpEnable;
 
         [Header("Hero checks")]
         [SerializeField] protected CheckCircleOverlap _possibleInteractionCheck;
@@ -34,8 +29,8 @@ namespace PixelCrew.GameObjects.Creatures
 
 
         private bool _isDoubleJumpActive;
+        private bool _forceDoubleJumpActive;
         private ActionInteractComponent _actionInteract;
-        //private Collider2D[] _interactionResult = new Collider2D[1];
         private GameSession _session;
         private InventoryComponent _inventory;
         private PerksComponent _perks;
@@ -46,7 +41,7 @@ namespace PixelCrew.GameObjects.Creatures
         protected override bool _IsFalling => base._IsFalling && !_IsHangingMove;
         protected override int _Damage => base._Damage * _weapon?.Damage ?? 1;
         private bool _IsArmed => _weapon != null;
-        private bool _IsDoubleJumpAvailable => _isDoubleJumpActive && _session.PerksModel.IsDoubleJumpUnlocked;
+        private bool _IsDoubleJumpAvailable => (_isDoubleJumpActive && _session.PerksModel.IsDoubleJumpUnlocked) || _forceDoubleJumpActive;
 
 
         protected override void Awake()
@@ -58,6 +53,7 @@ namespace PixelCrew.GameObjects.Creatures
         }
         protected override void Start()
         {
+
             base.Start();
             SetSessionData();
             _inventory.InventoryData.onInventoryChanged += OnInventoryChanged;
@@ -95,8 +91,9 @@ namespace PixelCrew.GameObjects.Creatures
         }
         protected override float CalcYVelocity()
         {
+            if (_IsHangingMove) _forceDoubleJumpActive = true;
             if (_IsHangingMove && !_isJumpingPressed) return _direction.y * 3f; // ползем по вертикали
-            if (_isGrounded && _isDoubleJumpEnable) _isDoubleJumpActive = true;
+            if (_isGrounded) _isDoubleJumpActive = true;
 
             return base.CalcYVelocity();
         }
@@ -107,6 +104,7 @@ namespace PixelCrew.GameObjects.Creatures
             {
                 yVel = jumpSpeed;
                 _isDoubleJumpActive = false;
+                _forceDoubleJumpActive = false;
                 _needPlayJumpSas = true;
             }
 
@@ -242,7 +240,7 @@ namespace PixelCrew.GameObjects.Creatures
         public override void OnThrow()
         {
             base.OnThrow();
-            //ArmWeapon(null);
+            //ArmWeapon(null); // если хочу, чтобы при кидании оружия оно уходило из руки
         }
         protected override IEnumerator Throw(int count)
         {

@@ -14,11 +14,15 @@ namespace PixelCrew.Model.Definitions.Repositories
         [SerializeField] public Sprite _icon;
         [SerializeField] public string _info;
         [SerializeField] public ItemWithCount _price;
+        [SerializeField] public bool _isCooldownExist;
         
         public string Id => _id;
         public Sprite Icon => _icon;
         public string Info => _info;
         public ItemWithCount Price => _price;
+        public bool IsCooldownExist => _isCooldownExist;
+
+        public bool IsVoid => string.IsNullOrWhiteSpace(_id);
     }
 
     [Serializable]

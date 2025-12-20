@@ -5601,7 +5601,7 @@ MonoBehaviour:
     _value: 0.5
   _groundCheck: {fileID: 5784780334059268827}
   _attackRange: {fileID: 4681518861892597388}
-  _isDoubleJumpEnable: 0
+  _isDoubleJumpEnable: 1
   _possibleInteractionCheck: {fileID: 9174449383125741794}
   _doInteractionCheck: {fileID: 3926177964129831508}
   _weapon: {fileID: 0}
