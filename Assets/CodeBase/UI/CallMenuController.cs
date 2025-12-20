@@ -28,6 +28,16 @@ namespace PixelCrew.UI
         {
             if (!menuCallCooldown.IsReady) return;
             menuCallCooldown.Reset();
+            
+            if (!IsMainMenuLevel)
+            {
+                var animWindows = gameObject.GetComponentsInChildren<AnimatedWindow>(); // пока думаем, что есть один
+                if (animWindows.Length > 0) 
+                {
+                    animWindows.Last().Close();
+                    return;
+                }
+            }
 
             MainMenuWindow mainMenuWindow = gameObject.GetComponentInChildren<MainMenuWindow>();
             if (mainMenuWindow == null)

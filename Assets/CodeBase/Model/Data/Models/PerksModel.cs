@@ -1,5 +1,5 @@
 using System;
-using System.Net.Mime;
+using PixelCrew.Components;
 using PixelCrew.Model.Data.Properties;
 using PixelCrew.Model.Definitions;
 using PixelCrew.Utils.Disposables;
@@ -8,23 +8,25 @@ namespace PixelCrew.Model.Data
 {
     public class PerksModel : IDisposable
     {
-        private readonly PlayerData _data;
+        private readonly PerksComponent _perksComp;
+        private readonly InventoryComponent _invComp;
 
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 
         public event Action OnChanged;
         public readonly StringProperty InterfaceSelection = new StringProperty();
-        public string Used => _data.Perks.Used.Value;
+        public string Used => _perksComp.PerksData.Used.Value;
 
-        public bool IsDoubleJumpUnlocked => _data.Perks.IsUsed("double-jump");
-        public bool IsSuperThrowUnlocked => _data.Perks.IsUsed("super-throw");
+        public bool IsDoubleJumpUnlocked => _perksComp.PerksData.IsUsed("double-jump");
+        public bool IsSuperThrowUnlocked => _perksComp.PerksData.IsUsed("super-throw");
 
-        public PerksModel(PlayerData data)
+        public PerksModel(PerksComponent pc, InventoryComponent ic)
         {
-            _data = data;
+            _perksComp = pc;
+            _invComp = ic;
             InterfaceSelection.Value = DefsFacade.I.Perks.All[0].Id;
 
-            _trash.Retain(_data.Perks.Used.Subscribe((x, y) => OnChanged?.Invoke()));
+            _trash.Retain(_perksComp.PerksData.Used.Subscribe((x, y) => OnChanged?.Invoke()));
             _trash.Retain(InterfaceSelection.Subscribe((x, y) => OnChanged?.Invoke()));
         }
 
@@ -37,12 +39,12 @@ namespace PixelCrew.Model.Data
         public void Unlock(string id)
         {
             var def = DefsFacade.I.Perks.Get(id);
-            var isEnough = _data.Inventory.IsEnough(def.Price);
+            var isEnough = _invComp.InventoryData.IsEnough(def.Price);
 
             if (isEnough)
             {
-                _data.Inventory.Remove(def.Price.ItemId, def.Price.Count);
-                _data.Perks.AddPerk(id);
+                _invComp.InventoryData.Remove(def.Price.ItemId, def.Price.Count);
+                _perksComp.PerksData.AddPerk(id);
             }
 
             OnChanged?.Invoke();
@@ -50,7 +52,7 @@ namespace PixelCrew.Model.Data
 
         public void Use(string id)
         {
-            _data.Perks.Used.Value = id;
+            _perksComp.PerksData.Used.Value = id;
         }
 
         public void Dispose()
@@ -60,18 +62,18 @@ namespace PixelCrew.Model.Data
 
         public bool IsUsed(string id)
         {
-            return _data.Perks.Used.Value == id;
+            return _perksComp.PerksData.Used.Value == id;
         }
 
         public bool IsUnlocked(string id)
         {
-            return _data.Perks.IsUnlocked(id);
+            return _perksComp.PerksData.IsUnlocked(id);
         }
 
         internal bool CanBuy(string perkId)
         {
             var def = DefsFacade.I.Perks.Get(perkId);
-            return _data.Inventory.IsEnough(def.Price);
+            return _invComp.InventoryData.IsEnough(def.Price);
         }
     }
 }

@@ -253,7 +253,7 @@
             "id": "21724c50-6d4f-4531-b26a-2357fda4f9b8",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "UI Close",
                     "type": "Button",
                     "id": "84107a23-ebc4-4c2b-889a-73a2437f6233",
                     "expectedControlType": "Button",
@@ -270,7 +270,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "UI Close",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

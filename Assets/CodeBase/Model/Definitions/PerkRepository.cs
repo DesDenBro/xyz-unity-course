@@ -5,10 +5,7 @@ using PixelCrew.Components;
 namespace PixelCrew.Model.Definitions.Repositories
 {
     [CreateAssetMenu(menuName = "Defs/Repository/Perks", fileName = "Perks")]
-    public class PerkRepository : DefRepository<PerkDef>
-    {
-        
-    }
+    public class PerkRepository : DefRepository<PerkDef> { }
 
     [Serializable]
     public struct PerkDef : IHaveId

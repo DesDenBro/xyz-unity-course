@@ -33,5 +33,12 @@ namespace PixelCrew.Model.Data
             if (string.IsNullOrWhiteSpace(id)) return false;
             return IsUnlocked(id) && _used.Value == id;
         }
+
+        public PerksData Clone()
+        {
+            var json = JsonUtility.ToJson(this);
+            var clone = JsonUtility.FromJson<PerksData>(json);
+            return clone;
+        }
     }
 }

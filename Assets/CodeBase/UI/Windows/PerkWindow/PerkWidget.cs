@@ -25,9 +25,7 @@ namespace PixelCrew.UI.Perks
         public void SetData(PerkDef data, int index)
         {
             _data = data;
-
-            if (_session != null) 
-                UpdateView();
+            if (_session != null) UpdateView();
         }
 
         public void OnSelect()

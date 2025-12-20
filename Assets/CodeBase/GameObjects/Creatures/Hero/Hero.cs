@@ -38,6 +38,7 @@ namespace PixelCrew.GameObjects.Creatures
         //private Collider2D[] _interactionResult = new Collider2D[1];
         private GameSession _session;
         private InventoryComponent _inventory;
+        private PerksComponent _perks;
         private string _selectedThrow;
 
         private bool _IsGrabMove => _currentMovement == MovementStateType.Grab;
@@ -53,6 +54,7 @@ namespace PixelCrew.GameObjects.Creatures
             base.Awake();
             _actionInteract = GetComponent<ActionInteractComponent>();
             _inventory = GetComponent<InventoryComponent>();
+            _perks = GetComponent<PerksComponent>();
         }
         protected override void Start()
         {
@@ -315,6 +317,8 @@ namespace PixelCrew.GameObjects.Creatures
             if (_session.PlayerData.Health > 0) _health.SetHealth(_session.PlayerData.Health);
 
             _inventory.SetInventory(_session.PlayerData.Inventory.Clone());
+            _perks.SetPerks(_session.PlayerData.Perks.Clone());
+            
             _session.ReloadLinks();
 
             ArmWeapon(_inventory.GetItem(InventoryItemName.Sword)?.Prefab, true);
@@ -330,6 +334,7 @@ namespace PixelCrew.GameObjects.Creatures
             _session.PlayerData.Health = _health.Health;
 
             _session.PlayerData.Inventory = _inventory.InventoryData.Clone();
+            _session.PlayerData.Perks = _perks.PerksData.Clone();
         }
     }
 }

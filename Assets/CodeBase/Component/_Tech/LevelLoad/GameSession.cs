@@ -85,8 +85,11 @@ namespace PixelCrew.Model
 
         public void ReloadLinks()
         {
-            QuickInventory = new QuickInventoryModel(FindObjectOfType<Hero>().GetComponent<InventoryComponent>());
-            PerksModel = new PerksModel(_playerData);
+            var invComp = FindObjectOfType<Hero>().GetComponent<InventoryComponent>();
+            var perksComp = FindObjectOfType<Hero>().GetComponent<PerksComponent>();
+
+            QuickInventory = new QuickInventoryModel(invComp);
+            PerksModel = new PerksModel(perksComp, invComp);
         }
 
         private void LoadHud()
