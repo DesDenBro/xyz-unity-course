@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine;
 using PixelCrew.Utils;
-using UnityEngine;
 
 namespace PixelCrew.Effects
 {
@@ -20,6 +17,7 @@ namespace PixelCrew.Effects
         void Start()
         {
             var sprites = _container.GetComponentsInChildren<SpriteRenderer>();
+            _containerBounds = sprites[0].bounds;
             foreach (var sprite in sprites)
             {
                 _containerBounds.Encapsulate(sprite.bounds);
