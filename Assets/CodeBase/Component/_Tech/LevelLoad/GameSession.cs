@@ -29,6 +29,7 @@ namespace PixelCrew.Model
         public LevelData ActiveLevelData => _levelsData == null ? null : _levelsData.Get(SceneManager.GetActiveScene().name.ToLower());
         public QuickInventoryModel QuickInventory {  get; private set; }
         public PerksModel PerksModel { get; private set; }
+        public StatsModel StatsModel { get; private set; }
 
         private void Awake()
         {
@@ -85,11 +86,16 @@ namespace PixelCrew.Model
 
         public void ReloadLinks()
         {
-            var invComp = FindObjectOfType<Hero>().GetComponent<InventoryComponent>();
-            var perksComp = FindObjectOfType<Hero>().GetComponent<PerksComponent>();
+            var hero = FindObjectOfType<Hero>();
+            if (hero == null) { Debug.Log("Hero not found!!!"); return; }
+
+            var invComp = hero.GetComponent<InventoryComponent>();
+            var perksComp = hero.GetComponent<PerksComponent>();
+            var statsComp = hero.GetComponent<StatsComponent>();
 
             QuickInventory = new QuickInventoryModel(invComp);
             PerksModel = new PerksModel(perksComp, invComp);
+            StatsModel = new StatsModel(statsComp);
         }
 
         private void LoadHud()

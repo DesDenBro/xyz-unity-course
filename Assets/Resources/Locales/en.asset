@@ -15,55 +15,65 @@ MonoBehaviour:
   _fileName: en_loc
   _localeItems:
   - Key: menu_title
-    Value: "Main menu\r"
+    Value: Main menu
   - Key: btn_start
-    Value: "start\r"
+    Value: start
   - Key: btn_restart
-    Value: "restart\r"
+    Value: restart
   - Key: btn_options
-    Value: "options\r"
+    Value: options
   - Key: btn_exit
-    Value: "exit\r"
+    Value: exit
   - Key: btn_languages
     Value: languages
   - Key: btn_ok
-    Value: "ok\r"
+    Value: ok
   - Key: menu_locale_title
-    Value: "Language\r"
+    Value: Language
   - Key: menu_settings_title
-    Value: "Settings\r"
+    Value: Settings
   - Key: settings_music_volume
-    Value: "Music volume\r"
+    Value: Music volume
   - Key: settings_sfx_volume
-    Value: "SFX volume\r"
+    Value: SFX volume
   - Key: hud_dialogbox_continue
-    Value: "Continue...\r"
+    Value: Continue...
   - Key: padlock_closed_door
-    Value: "I need a key...\r"
+    Value: I need a key...
   - Key: perksstore_btn_buy
-    Value: "Buy\r"
+    Value: Buy
   - Key: perksstore_btn_use
-    Value: "Use\r"
+    Value: Use
   - Key: perksstore_price_title
-    Value: "Price\r"
+    Value: Price
+  - Key: stats_btn_upgrade
+    Value: Upgrade
+  - Key: stats_price_title
+    Value: Price
+  - Key: stats_type_health
+    Value: Health
+  - Key: stats_type_speed
+    Value: Speed
+  - Key: stats_type_damage
+    Value: Damage
   - Key: perks_doubleJump_info
-    Value: "Double jump\r"
+    Value: Double jump
   - Key: perks_superThrow_info
-    Value: "Hold throw button for throw several items\r"
+    Value: Hold throw button for throw several items
   - Key: level1_dialog_door
-    Value: "Looks like its door to out...\r"
+    Value: Looks like its door to out...
   - Key: level2_dialog_crabby_1
     Value: "Beyond this door lies danger, but you\u2019re strong if you\u2019ve made
-      it this far\r"
+      it this far"
   - Key: level2_dialog_crabby_2
-    Value: "Be careful\r"
+    Value: Be careful
   - Key: level3_dialog_crabby_failDialog1
-    Value: "Only my hand can open this door\r"
+    Value: Only my hand can open this door
   - Key: level3_dialog_crabby_failDialog2
-    Value: "But without key i cant...\r"
+    Value: But without key i cant...
   - Key: level3_dialog_crabby_successDialog1
-    Value: "Oh, this good key!\r"
+    Value: Oh, this good key!
   - Key: level3_dialog_crabby_successDialog2
-    Value: "Give me a second...\r"
+    Value: Give me a second...
   - Key: level3_dialog_crabby_byeDialog1
     Value: See later!

@@ -11,5 +11,6 @@ namespace PixelCrew.Model
 
         public InventoryData Inventory;
         public PerksData Perks;
+        public StatsData Stats;
     }
 }

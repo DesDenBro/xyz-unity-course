@@ -18,6 +18,12 @@ perksstore_btn_buy;Купить
 perksstore_btn_use;Применить
 perksstore_price_title;Цена
 
+stats_btn_upgrade;Прокачать
+stats_price_title;Цена
+stats_type_health;Здоровье
+stats_type_speed;Скорость
+stats_type_damage;Урон
+
 perks_doubleJump_info;Двойной прыжок
 perks_superThrow_info;Зажмите кнопку броска для броска нескольких предметов сразу
 
