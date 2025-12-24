@@ -12,6 +12,11 @@ TagManager:
   - Sound
   - SfxAudioSource
   - MenuCanvas
+  - MainMenuWindow
+  - SettingsMenuWindow
+  - LocalizationMenuWindow
+  - ManagePerksWindow
+  - StatsWindow
   layers:
   - Default
   - TransparentFX
