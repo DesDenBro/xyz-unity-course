@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 5132447877202791851}
   m_Layer: 5
   m_Name: StatsWindow
-  m_TagString: Untagged
+  m_TagString: StatsWindow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
