@@ -8,7 +8,7 @@ namespace PixelCrew.Components
         [SerializeField] private PerksData _perksData;
 
         public PerksData PerksData => _perksData;
-
+        
         public void SetPerks(PerksData pd)
         {
             _perksData = pd;

@@ -15,16 +15,16 @@ namespace PixelCrew.GameObjects.Creatures
 
         [Header("Base params")]
         [SerializeField] private CreatureState _creatureStateInfo = CreatureState.Alive;
-        [SerializeField] private float _speed;
+        [SerializeField] protected float _speed;
         [SerializeField] protected float jumpSpeed;
         [SerializeField] private float _damageJumpSpeed;
-        [SerializeField] private int _baseDamage;
+        [SerializeField] protected int _baseDamage;
         [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private Cooldown _healCooldown = new Cooldown(0.5f);
 
         [Header("Base checks")]
         [SerializeField] private LayerCheck _groundCheck;
-        [SerializeField] private CheckCircleOverlap _attackRange;
+        [SerializeField] protected CheckCircleOverlap _attackRange;
         
         
         private float? _maxYInJump = null;
@@ -48,6 +48,7 @@ namespace PixelCrew.GameObjects.Creatures
         protected bool _IsNormalMove => _currentMovement == MovementStateType.Default;
         protected bool _IsAlive => _creatureStateInfo != CreatureState.Dead;
         protected virtual int _Damage => _baseDamage;
+        public float AttackRangeRange => _attackRange.Radius;
 
 
         protected virtual void Awake()

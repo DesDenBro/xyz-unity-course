@@ -1,21 +1,25 @@
 using System;
 using UnityEngine;
 using PixelCrew.Model.Definitions.Repositories;
+using PixelCrew.Components;
 
 namespace PixelCrew.Model.Definitions
 {
-    [Serializable]
-    public struct StatDef
-    {
-        [SerializeField] private StatId _id;
+    [Serializable]     
+    public struct StatDef : IHaveId
+    { 
         [SerializeField] private string _name;
+        [SerializeField] private StatId _statId;
         [SerializeField] private Sprite _icon;
         [SerializeField] private StatLevel[] _levels;
+        [SerializeField] private string _localizationKey;
 
-        public StatId Id => _id;
         public string Name => _name;
+        public string Id => _statId.ToString();
+        public StatId StatId => _statId;
         public Sprite Icon => _icon;
         public StatLevel[] Levels => _levels;
+        public string LocalizationKey => _localizationKey;
     }
 
     [Serializable]
@@ -32,6 +36,7 @@ namespace PixelCrew.Model.Definitions
     {
         Health,
         Speed,
+        RangeDamage,
         Damage
     }
 }

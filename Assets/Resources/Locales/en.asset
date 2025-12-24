@@ -50,12 +50,16 @@ MonoBehaviour:
     Value: Upgrade
   - Key: stats_price_title
     Value: Price
+  - Key: stats_maximum_title
+    Value: Maximum level!
   - Key: stats_type_health
     Value: Health
   - Key: stats_type_speed
     Value: Speed
   - Key: stats_type_damage
     Value: Damage
+  - Key: stats_type_rangedamage
+    Value: RangeDamage
   - Key: perks_doubleJump_info
     Value: Double jump
   - Key: perks_superThrow_info

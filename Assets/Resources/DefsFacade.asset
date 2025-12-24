@@ -15,3 +15,4 @@ MonoBehaviour:
   _items: {fileID: 11400000, guid: ef169f7f64569664aa1f69050c82f701, type: 2}
   _throwableItems: {fileID: 11400000, guid: be95730eb559efc408a11c01afbff111, type: 2}
   _perks: {fileID: 11400000, guid: e316ed223da154a9eba6e5851b1fa36c, type: 2}
+  _stats: {fileID: 11400000, guid: 60657d1d174974c55b2509a4143ca81a, type: 2}

@@ -50,12 +50,17 @@ MonoBehaviour:
     Value: "\u041F\u0440\u043E\u043A\u0430\u0447\u0430\u0442\u044C"
   - Key: stats_price_title
     Value: "\u0426\u0435\u043D\u0430"
+  - Key: stats_maximum_title
+    Value: "\u041C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0439
+      \u0443\u0440\u043E\u0432\u0435\u043D\u044C!"
   - Key: stats_type_health
     Value: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435"
   - Key: stats_type_speed
     Value: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C"
   - Key: stats_type_damage
     Value: "\u0423\u0440\u043E\u043D"
+  - Key: stats_type_rangedamage
+    Value: "\u0414\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C"
   - Key: perks_doubleJump_info
     Value: "\u0414\u0432\u043E\u0439\u043D\u043E\u0439 \u043F\u0440\u044B\u0436\u043E\u043A"
   - Key: perks_superThrow_info

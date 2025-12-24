@@ -95,7 +95,7 @@ namespace PixelCrew.Model
 
             QuickInventory = new QuickInventoryModel(invComp);
             PerksModel = new PerksModel(perksComp, invComp);
-            StatsModel = new StatsModel(statsComp);
+            StatsModel = new StatsModel(statsComp, invComp);
         }
 
         private void LoadHud()

@@ -5232,6 +5232,7 @@ GameObject:
   - component: {fileID: 713820545780215522}
   - component: {fileID: 4661917564970688684}
   - component: {fileID: 717764824}
+  - component: {fileID: 3685580019937053046}
   - component: {fileID: 6595804528849134846}
   - component: {fileID: 6509753580829321230}
   m_Layer: 12
@@ -5601,7 +5602,6 @@ MonoBehaviour:
     _value: 0.5
   _groundCheck: {fileID: 5784780334059268827}
   _attackRange: {fileID: 4681518861892597388}
-  _isDoubleJumpEnable: 1
   _possibleInteractionCheck: {fileID: 9174449383125741794}
   _doInteractionCheck: {fileID: 3926177964129831508}
   _weapon: {fileID: 0}
@@ -5712,6 +5712,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3685580019937053046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5784780335098992503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f039450ae8740ebabbc55f5073c2e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _statsData:
+    _progress: []
 --- !u!114 &6595804528849134846
 MonoBehaviour:
   m_ObjectHideFlags: 0

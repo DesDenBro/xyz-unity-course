@@ -10,6 +10,8 @@ namespace PixelCrew.Model.Data
     public class StatsData
     {
         [SerializeField] private List<StatsProgress> _progress;
+
+        public IReadOnlyCollection<StatsProgress> Progress => _progress;
         
         public int GetLevel(StatId id)
         {
@@ -27,6 +29,13 @@ namespace PixelCrew.Model.Data
             }
             
             progress.Level++;
+        }
+
+        public StatsData Clone()
+        {
+            var json = JsonUtility.ToJson(this);
+            var clone = JsonUtility.FromJson<StatsData>(json);
+            return clone;
         }
     }
 
