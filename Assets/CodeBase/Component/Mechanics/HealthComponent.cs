@@ -18,8 +18,19 @@ namespace PixelCrew.Components
         public delegate void OnHealthChangedDel(int newValue, int oldValue);
         public event OnHealthChangedDel OnHealthChanged;
 
-        public void SetHealth(int health) { _currentHealth = health; }
-        public void SetMaxHealth(int maxHealth) { _maxHealth = maxHealth; }
+        public void SetHealth(int health) 
+        {
+            var oldHealth = _currentHealth;
+            _currentHealth = health;
+            OnHealthChanged?.Invoke(_currentHealth, oldHealth);
+            Debug.Log("current hp: " + _currentHealth);
+        }
+        public void SetMaxHealth(int maxHealth) 
+        {
+            _maxHealth = maxHealth; 
+            OnHealthChanged?.Invoke(_currentHealth, _currentHealth);
+            Debug.Log("new hp max: " + _maxHealth + ", current hp: " + _currentHealth);
+        }
 
 
         public void ApplyDamage(int damagePoints)

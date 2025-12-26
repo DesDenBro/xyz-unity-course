@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace PixelCrew.Components
 {
+    // компонент используется для объектов, изменяющих состояние героя (шипы, тотемы, двери с замками и т.д.)
     public class StatsChangeComponent : MonoBehaviour
     {
         private ThingSpecification _thingSpecification;
