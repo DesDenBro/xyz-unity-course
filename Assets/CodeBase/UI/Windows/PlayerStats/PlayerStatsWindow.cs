@@ -59,9 +59,11 @@ namespace PixelCrew.UI
             }
             else
             {
-                _price.SetData(def.Price);
+                _price.gameObject.SetActive(true);
                 _buyBtn.gameObject.SetActive(true);
                 _maxLevelInfo.gameObject.SetActive(false);
+                
+                _price.SetData(def.Price);
             }
         }
 
