@@ -9,12 +9,12 @@ namespace PixelCrew.UI.Hud
 {
     public class HudController : MonoBehaviour
     {
+        private readonly CompositeDisposable _trash = new CompositeDisposable();
+
         [SerializeField] private ProgressBarWidget _progressBarWidget;
         [SerializeField] private ActivePerkWidget _activePerkWidget;
-        [SerializeField] private HealthComponent _health; // может быть заранее задан у мобов
-
-        private readonly CompositeDisposable _trash = new CompositeDisposable();
         
+        private HealthComponent _health;
         private PerksComponent _perks;
 
         private void Start()
@@ -22,8 +22,8 @@ namespace PixelCrew.UI.Hud
             var hero = FindObjectOfType<Hero>();
             if (hero != null) 
             {
-                if (_health == null) _health = hero.GetComponent<HealthComponent>();
-                if (_perks == null) _perks = hero.GetComponent<PerksComponent>();
+                _health = hero.GetComponent<HealthComponent>();
+                _perks = hero.GetComponent<PerksComponent>();
             }
 
             if (_health != null)
@@ -54,7 +54,7 @@ namespace PixelCrew.UI.Hud
 
         private void OnDestroy()
         {
-            if (_health != null)  _health.OnHealthChanged -= OnHealhChanged;;
+            if (_health != null) _health.OnHealthChanged -= OnHealhChanged;;
            _trash.Dispose();
         }
     }

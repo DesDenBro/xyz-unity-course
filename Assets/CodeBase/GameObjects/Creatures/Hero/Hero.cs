@@ -34,6 +34,7 @@ namespace PixelCrew.GameObjects.Creatures
         private GameSession _session;
         private InventoryComponent _inventory;
         private PerksComponent _perks;
+        private StatsComponent _stats;
         private string _selectedThrow;
 
         private bool _IsGrabMove => _currentMovement == MovementStateType.Grab;
@@ -42,7 +43,7 @@ namespace PixelCrew.GameObjects.Creatures
         protected override int _Damage => base._Damage * _weapon?.Damage ?? 1;
         private bool _IsArmed => _weapon != null;
         private bool _IsDoubleJumpAvailable => (_isDoubleJumpActive && _session.PerksModel.IsDoubleJumpUnlocked) || _forceDoubleJumpActive;
-
+        
 
         protected override void Awake()
         {
@@ -50,14 +51,16 @@ namespace PixelCrew.GameObjects.Creatures
             _actionInteract = GetComponent<ActionInteractComponent>();
             _inventory = GetComponent<InventoryComponent>();
             _perks = GetComponent<PerksComponent>();
+            _stats = GetComponent<StatsComponent>();
         }
         protected override void Start()
         {
-
             base.Start();
             SetSessionData();
             _inventory.InventoryData.onInventoryChanged += OnInventoryChanged;
+            _session.StatsModel.OnUpgraded += OnHeroUpgraded;
         }
+
         protected override void FixedUpdate()
         {
             base.FixedUpdate();
@@ -66,6 +69,7 @@ namespace PixelCrew.GameObjects.Creatures
         {
             base.OnDestroy();
             _inventory.InventoryData.onInventoryChanged -= OnInventoryChanged;
+            _session.StatsModel.OnUpgraded -= OnHeroUpgraded;
         }
 
         private void OnInventoryChanged(string id, int value)
@@ -298,6 +302,37 @@ namespace PixelCrew.GameObjects.Creatures
 
         private void HigthlightInteractble() => _possibleInteractionCheck.Check();
 
+        private float GetStatValue(StatId id, bool fromSession = false)
+        {
+            var statsProgress = fromSession ? _session.PlayerData.Stats.Progress : _stats.StatsData.Progress;
+            var stat = statsProgress.FirstOrDefault(x => x.Id == id);
+            if (stat == null) stat = new Model.Data.StatsProgress(id, 0);
+            return DefsFacade.I.Stats.GetStat(stat.Id).Levels[stat.Level].Value;
+        }
+
+        private void OnHeroUpgraded(StatId id) => SetHeroStat(id);     
+        private void SetHeroStat(StatId id, bool fromSession = false)
+        {
+            switch (id)
+            {
+                case StatId.Health: 
+                    var hp = (int)GetStatValue(StatId.Health, fromSession);
+                    _health.SetMaxHealth(hp);
+                    _health.SetHealth(hp);
+                    break;
+                case StatId.Speed: 
+                    _speed = GetStatValue(StatId.Speed, fromSession);
+                    break;
+                case StatId.Damage: 
+                    _baseDamage = (int)GetStatValue(StatId.Damage, fromSession);
+                    break;
+                case StatId.RangeDamage: 
+                    _attackRange.SetRange(GetStatValue(StatId.RangeDamage, fromSession));
+                    break;
+            }
+        }
+
+
         public virtual void SetSessionData()
         {
             _session = GameSessionSearch.Get(FindObjectsOfType<GameSession>);
@@ -311,11 +346,16 @@ namespace PixelCrew.GameObjects.Creatures
                 if (checkpoint != null) transform.position = checkpoint.gameObject.transform.position;
             }
 
-            if (_session.PlayerData.MaxHealth > 0) _health.SetMaxHealth(_session.PlayerData.MaxHealth);
+            SetHeroStat(StatId.Health, true);
+            SetHeroStat(StatId.Speed, true);
+            SetHeroStat(StatId.Damage, true);
+            SetHeroStat(StatId.RangeDamage, true);
+
             if (_session.PlayerData.Health > 0) _health.SetHealth(_session.PlayerData.Health);
 
             _inventory.SetInventory(_session.PlayerData.Inventory.Clone());
             _perks.SetPerks(_session.PlayerData.Perks.Clone());
+            _stats.SetStats(_session.PlayerData.Stats.Clone());
             
             _session.ReloadLinks();
 
@@ -328,11 +368,11 @@ namespace PixelCrew.GameObjects.Creatures
             var levelName = checkPointName.Split('-')[0];
             _session.LevelsData.SaveHeroPosition(levelName, checkPointName);
 
-            _session.PlayerData.MaxHealth = _health.MaxHealth;
             _session.PlayerData.Health = _health.Health;
 
             _session.PlayerData.Inventory = _inventory.InventoryData.Clone();
             _session.PlayerData.Perks = _perks.PerksData.Clone();
+            _session.PlayerData.Stats = _stats.StatsData.Clone();
         }
     }
 }

@@ -8,6 +8,8 @@ namespace PixelCrew.Common.Tech
     {
         [SerializeField] private float _radius = 1f;
 
+        public float Radius => _radius;
+
         private void OnDrawGizmosSelected()
         {
             Handles.color = HandlesUtils.TransparentRed;
@@ -18,6 +20,11 @@ namespace PixelCrew.Common.Tech
         {
             var size = Physics2D.OverlapCircleNonAlloc(transform.position, _radius, interactionResult, mask);
             CheckOnSize(size);
+        }
+
+        public void SetRange(float radius)
+        {
+            _radius = radius;
         }
     }
 }

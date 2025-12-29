@@ -9,7 +9,13 @@ namespace PixelCrew.Model.Definitions
         [SerializeField] private InventoryItemsDef _items;
         [SerializeField] private ThrowableItemsDef _throwableItems;
         [SerializeField] private PerkRepository _perks;
+        [SerializeField] private StatsRepository _stats;
 
+        public InventoryItemsDef Items => _items;
+        public ThrowableItemsDef ThrowableItems => _throwableItems;
+        public PerkRepository Perks => _perks;
+        public StatsRepository Stats => _stats;
+        
         private static DefsFacade _instance;
         private static DefsFacade LoadDefs()
         {
@@ -17,9 +23,5 @@ namespace PixelCrew.Model.Definitions
             return _instance;
         }
         public static DefsFacade I => _instance == null ? LoadDefs() : _instance;
-
-        public InventoryItemsDef Items => _items;
-        public ThrowableItemsDef ThrowableItems => _throwableItems;
-        public PerkRepository Perks => _perks;
     }
 }

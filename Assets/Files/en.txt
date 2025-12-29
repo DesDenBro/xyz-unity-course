@@ -18,6 +18,13 @@ perksstore_btn_buy;Buy
 perksstore_btn_use;Use
 perksstore_price_title;Price
 
+stats_btn_upgrade;Upgrade
+stats_price_title;Price
+stats_maximum_title;Maximum level!
+stats_type_health;Health
+stats_type_speed;Speed
+stats_type_damage;Damage
+stats_type_rangedamage;RangeDamage
 
 perks_doubleJump_info;Double jump
 perks_superThrow_info;Hold throw button for throw several items
