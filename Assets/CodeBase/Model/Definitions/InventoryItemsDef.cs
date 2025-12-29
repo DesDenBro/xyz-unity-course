@@ -27,8 +27,9 @@ namespace PixelCrew.Model.Definitions
         [SerializeField] private string _id;
         [SerializeField] private int _stackLimitSize;
         [SerializeField] private ItemTag[] _tags;
-        [SerializeField] GameObject _prefab;
-        [SerializeField] Sprite _icon;
+        [SerializeField] private GameObject _prefab;
+        [SerializeField] private Sprite _icon;
+        [SerializeField] private string _descriptionLocaleKey;
 
         public string Id => _id;
         public bool IsStackOnlyOne => HasTag(ItemTag.Stackable) && StackLimitSize == 1;
@@ -36,6 +37,7 @@ namespace PixelCrew.Model.Definitions
         public int StackLimitSize => _stackLimitSize;
         public GameObject Prefab => _prefab;
         public Sprite Icon => _icon;
+        public string DescriptionLocaleKey => _descriptionLocaleKey;
 
         public bool IsVoid => string.IsNullOrWhiteSpace(Id);
 

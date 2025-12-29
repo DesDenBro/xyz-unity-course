@@ -1,7 +1,8 @@
-﻿using PixelCrew.Model;
-using PixelCrew.Utils.Disposables;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using PixelCrew.Model;
+using PixelCrew.UI.Inventory;
+using PixelCrew.Utils.Disposables;
 
 namespace PixelCrew.UI.Hud.QuickInventory
 {

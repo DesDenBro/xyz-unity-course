@@ -29,6 +29,16 @@ stats_type_rangedamage;RangeDamage
 perks_doubleJump_info;Double jump
 perks_superThrow_info;Hold throw button for throw several items
 
+inventory_btn_setthrowable;Set throwable
+inventory_btn_use;Use
+
+items_descr_money;Money, money, coins. That's why we do our pirating business
+items_descr_key;Vinnie "Old Eye" taught me how to turn every key into a universal one. It's a pity that he didn't tell me how to do the same thing with water when I need rum
+items_descr_swordThrow;The ability to use pieces of his sword as throwing objects has been useful to me more than once. It's a pity it's a pain to assemble it later
+items_descr_sword;An ordinary sword, of which there are many, but this sword is mine
+items_descr_potionHealth;Once you try it, you think that it could make a great business out of it. I would like to remove another side effect in the form of a hangover...
+items_descr_pearlThrow;When a pirate is bored, he does two things - drinks rum or opens shells. Since I have pearls in my pockets, I ran out of rum a long time ago
+
 level1_dialog_door;Looks like its door to out...
 
 level2_dialog_crabby_1;Beyond this door lies danger, but you’re strong if you’ve made it this far
