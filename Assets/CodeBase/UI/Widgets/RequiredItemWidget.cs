@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace PixelCrew.UI.Widgets
 {
-    public class ItemWidget : MonoBehaviour
+    public class RequiredItemWidget : MonoBehaviour
     {
         [SerializeField] private Image _icon;
         [SerializeField] private Text _value;

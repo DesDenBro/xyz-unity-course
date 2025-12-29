@@ -15,7 +15,7 @@ namespace PixelCrew.UI
         [SerializeField] private Transform _statsContainer;
         [SerializeField] private StatWidget _prefab;
         [SerializeField] private Button _buyBtn;
-        [SerializeField] private ItemWidget _price;
+        [SerializeField] private RequiredItemWidget _price;
         [SerializeField] private GameObject _maxLevelInfo;
 
         private DataGroup<StatDef, StatWidget> _dataGroup;
@@ -50,6 +50,7 @@ namespace PixelCrew.UI
             var selected = _session.StatsModel.InterfaceSelectedStat.Value;
             var nextLevel = _session.StatsModel.GetCurrentLevel(selected) + 1;
             var def = _session.StatsModel.GetLevelDef(selected, nextLevel);
+            _buyBtn.interactable = _session.StatsModel.CanUpgrade(selected);
             
             if (def.Price.Count == 0)
             {

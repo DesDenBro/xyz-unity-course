@@ -2,6 +2,7 @@ using System;
 using PixelCrew.Components;
 using PixelCrew.Model.Data.Properties;
 using PixelCrew.Model.Definitions;
+using PixelCrew.Model.Definitions.Repositories;
 using PixelCrew.Utils.Disposables;
 
 namespace PixelCrew.Model.Data
@@ -32,12 +33,8 @@ namespace PixelCrew.Model.Data
 
         public void LevelUp(StatId id)
         {
-            var def = DefsFacade.I.Stats.GetStat(id);
-            var nextLevel = GetCurrentLevel(id) + 1;
-            if (def.Levels.Length <= nextLevel) return;
-            
-            var price = def.Levels[nextLevel].Price;
-            if (!_invComp.InventoryData.IsEnough(price)) return;
+            var price = GetPriceToUpgrade(id, out bool isEnough);
+            if (!isEnough) return;
 
             _invComp.InventoryData.Remove(price.ItemId, price.Count);
             _statsComp.StatsData.LevelUp(id);
@@ -57,6 +54,25 @@ namespace PixelCrew.Model.Data
         public int GetCurrentLevel(StatId id)
         {
             return _statsComp.StatsData.GetLevel(id);
+        }
+
+        public bool CanUpgrade(StatId id)
+        {
+            GetPriceToUpgrade(id, out bool isEnough);
+            return isEnough;
+        }
+
+        private ItemWithCount GetPriceToUpgrade(StatId id, out bool isEnough)
+        {
+            isEnough = false;
+
+            var def = DefsFacade.I.Stats.GetStat(id);
+            var nextLevel = GetCurrentLevel(id) + 1;
+            if (def.Levels.Length <= nextLevel) return default;
+            
+            var price = def.Levels[nextLevel].Price;
+            isEnough = _invComp.InventoryData.IsEnough(price);
+            return price;
         }
 
         public void Dispose()
