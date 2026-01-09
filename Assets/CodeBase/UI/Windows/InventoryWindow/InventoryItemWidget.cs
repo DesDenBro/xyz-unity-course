@@ -31,6 +31,10 @@ namespace PixelCrew.UI.Inventory
 
         public void SetData(InventoryDataItem item, int index)
         {
+            _icon.gameObject.SetActive(true);
+            _value.gameObject.SetActive(true);
+            _selection.gameObject.SetActive(true);
+
             _index = index;
             _itemDef = DefsFacade.I.Items.Get(item.Id);
             _icon.sprite = _itemDef.Icon;

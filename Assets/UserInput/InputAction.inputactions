@@ -58,15 +58,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "SelectItem",
-                    "type": "Button",
-                    "id": "b765976d-d680-46ec-9ff1-e5c31f852794",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -234,17 +225,6 @@
                     "action": "Heal",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "92f419c2-4d88-4d57-a0dc-f2f49c4208be",
-                    "path": "<Keyboard>/i",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SelectItem",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         },
@@ -260,6 +240,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "UI Inventory",
+                    "type": "Button",
+                    "id": "6e65b6d1-6c01-40a8-af79-dfa864130bc8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -271,6 +260,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "UI Close",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7d80ebe5-bec4-4ed8-81a8-4b511cbf4ff2",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UI Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

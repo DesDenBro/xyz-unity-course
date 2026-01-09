@@ -4,6 +4,7 @@ using PixelCrew.Components;
 using PixelCrew.GameObjects.Creatures;
 using PixelCrew.Model.Definitions;
 using PixelCrew.UI.Widgets;
+using PixelCrew.Utils;
 using PixelCrew.Utils.Disposables;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,8 +36,10 @@ namespace PixelCrew.UI.Inventory
             {
                 _invComp = hero.GetComponent<InventoryComponent>();
                 _invComp.InventoryData.onInventoryChanged += OnInventoryChange;
-                Rebuld();
             }
+
+            Rebuld();
+            ActivateMode(InventoryMode.Default);
 
             _trash.Retain( _useBtn.onClick.Subscribe(() => { ActivateMode(InventoryMode.UseItem); }));
             _trash.Retain( _setThrowableBtn.onClick.Subscribe(() => { ActivateMode(InventoryMode.SelectThrowable); }));
@@ -92,18 +95,29 @@ namespace PixelCrew.UI.Inventory
         private void Rebuld()
         {
             _currentItems = Array.Empty<InventoryItemWidget>();
-            
-            var inventory = _invComp?.InventoryData?.GetAll();
-            if (inventory == null) return;
+            UIWindowUtils.ClearContainer(_container.gameObject);
+
+            if (_invComp == null)
+            {
+                Debug.LogWarning("Inventary component is not found");
+                return;
+            }
+
+            var inventory = _invComp.InventoryData?.GetAll();
+            if (inventory == null)
+            {
+                Debug.LogWarning("Inventary data is not found");
+                return;
+            }
 
             var widgets = new List<InventoryItemWidget>(_rowsCount * _itemsInRowCount);
+            var listIndex = 0;
             for (int i = 0; i < _rowsCount; i++)
             {
                 var row = Instantiate(_rowPrefab, _container);
                 for (int j = 0; j < _itemsInRowCount; j++)
                 {
                     var item = Instantiate(_itemPrefab, row.transform);
-                    var listIndex = i * _rowsCount + j;
                     var widget = item.GetComponent<InventoryItemWidget>();
                     if (widget == null) continue;
 
@@ -112,6 +126,8 @@ namespace PixelCrew.UI.Inventory
                     {
                         widget.SetData(inventory[listIndex], listIndex);
                     }
+                    
+                    listIndex++;
                 }
             }
 

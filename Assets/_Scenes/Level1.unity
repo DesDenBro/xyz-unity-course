@@ -752,7 +752,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7042611, y: -24.57366, z: -9.2}
+  m_LocalPosition: {x: -1.6826751, y: -24.57366, z: -9.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 760853357}
@@ -1820,12 +1820,37 @@ PrefabInstance:
     - target: {fileID: 6039322781069366146, guid: b0531eaa052180846a4ee53147f2ad13,
         type: 3}
       propertyPath: _playerData.Inventory._inventory.Array.size
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6039322781069366146, guid: b0531eaa052180846a4ee53147f2ad13,
         type: 3}
       propertyPath: _playerData.Inventory._inventory.Array.data[1].Id
       value: Money
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039322781069366146, guid: b0531eaa052180846a4ee53147f2ad13,
+        type: 3}
+      propertyPath: _playerData.Inventory._inventory.Array.data[2].Id
+      value: Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039322781069366146, guid: b0531eaa052180846a4ee53147f2ad13,
+        type: 3}
+      propertyPath: _playerData.Inventory._inventory.Array.data[3].Id
+      value: SwordThrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039322781069366146, guid: b0531eaa052180846a4ee53147f2ad13,
+        type: 3}
+      propertyPath: _playerData.Inventory._inventory.Array.data[4].Id
+      value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039322781069366146, guid: b0531eaa052180846a4ee53147f2ad13,
+        type: 3}
+      propertyPath: _playerData.Inventory._inventory.Array.data[5].Id
+      value: PotionHealth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039322781069366146, guid: b0531eaa052180846a4ee53147f2ad13,
+        type: 3}
+      propertyPath: _playerData.Inventory._inventory.Array.data[6].Id
+      value: SmallPotionHealth
       objectReference: {fileID: 0}
     - target: {fileID: 6039322781069366146, guid: b0531eaa052180846a4ee53147f2ad13,
         type: 3}
@@ -1835,7 +1860,32 @@ PrefabInstance:
     - target: {fileID: 6039322781069366146, guid: b0531eaa052180846a4ee53147f2ad13,
         type: 3}
       propertyPath: _playerData.Inventory._inventory.Array.data[1].Value
-      value: 0
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039322781069366146, guid: b0531eaa052180846a4ee53147f2ad13,
+        type: 3}
+      propertyPath: _playerData.Inventory._inventory.Array.data[2].Value
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039322781069366146, guid: b0531eaa052180846a4ee53147f2ad13,
+        type: 3}
+      propertyPath: _playerData.Inventory._inventory.Array.data[3].Value
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039322781069366146, guid: b0531eaa052180846a4ee53147f2ad13,
+        type: 3}
+      propertyPath: _playerData.Inventory._inventory.Array.data[4].Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039322781069366146, guid: b0531eaa052180846a4ee53147f2ad13,
+        type: 3}
+      propertyPath: _playerData.Inventory._inventory.Array.data[5].Value
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039322781069366146, guid: b0531eaa052180846a4ee53147f2ad13,
+        type: 3}
+      propertyPath: _playerData.Inventory._inventory.Array.data[6].Value
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6039322781069366147, guid: b0531eaa052180846a4ee53147f2ad13,
         type: 3}

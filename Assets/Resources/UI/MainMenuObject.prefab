@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 43318475622314659}
   - component: {fileID: 6788086882150561477}
   - component: {fileID: 4353744777552023050}
+  - component: {fileID: 791379267047862471}
   m_Layer: 5
   m_Name: MainMenuObject
   m_TagString: Untagged
@@ -47,7 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a82fe1179beb54b55b5034caafc05a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _callMenuController: {fileID: 0}
+  _callMenuController: {fileID: 4353744777552023050}
+  _callInventoryController: {fileID: 791379267047862471}
 --- !u!114 &6788086882150561477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,9 +102,9 @@ MonoBehaviour:
     m_ActionName: Hero/Heal[/Keyboard/h]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4353744777552023050}
-        m_MethodName: CallMenu
-        m_Mode: 1
+      - m_Target: {fileID: 43318475622314659}
+        m_MethodName: PressCallMenu
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -114,9 +116,20 @@ MonoBehaviour:
     m_ActionId: 84107a23-ebc4-4c2b-889a-73a2437f6233
     m_ActionName: Menu/New action[/Keyboard/escape]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b765976d-d680-46ec-9ff1-e5c31f852794
-    m_ActionName: Hero/SelectItem[/Keyboard/i]
+      m_Calls:
+      - m_Target: {fileID: 43318475622314659}
+        m_MethodName: PressCallInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6e65b6d1-6c01-40a8-af79-dfa864130bc8
+    m_ActionName: Menu/UI Inventory[/Keyboard/i]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Menu
@@ -132,6 +145,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 810bfe2ab938cff4d90018950886fc47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &791379267047862471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3086994680569408752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1f4529c0ed043c69ac41acc49ea4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7012542498234339863
