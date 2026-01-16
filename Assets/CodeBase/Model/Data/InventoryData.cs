@@ -1,4 +1,5 @@
-﻿using PixelCrew.Model.Definitions;
+﻿using PixelCrew.Model.Data.Properties;
+using PixelCrew.Model.Definitions;
 using PixelCrew.Model.Definitions.Repositories;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,12 @@ namespace PixelCrew.Model
     public class InventoryData
     {
         [SerializeField] private List<InventoryDataItem> _inventory = new List<InventoryDataItem>();
+        [SerializeField] private StringProperty _selectedThrowId;
 
         public delegate void OnInventoryChanged(string id, int value);
         public OnInventoryChanged onInventoryChanged;
+
+        public StringProperty SelectedThrowId => _selectedThrowId;
 
         public void Add(string id, int value)
         {
@@ -127,6 +131,14 @@ namespace PixelCrew.Model
             }
 
             return true;
+        }
+
+        public void ChangeThrowable(string itemId)
+        {
+            ThrowableDef itemDef = DefsFacade.I.ThrowableItems.Get(itemId);
+            if (itemDef.IsVoid) return;
+
+            _selectedThrowId.Value = itemDef.Id;
         }
 
         public InventoryData Clone()

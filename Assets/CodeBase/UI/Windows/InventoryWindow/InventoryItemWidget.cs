@@ -1,7 +1,6 @@
 ﻿using PixelCrew.Model;
 using PixelCrew.Model.Definitions;
 using PixelCrew.Utils.Disposables;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,10 +17,12 @@ namespace PixelCrew.UI.Inventory
         private int _index;
         private ItemDef _itemDef;
 
+        public string ItemId => _itemDef.Id;
+
         private void Start()
         {
-            var session = GameSessionSearch.Get(FindObjectsOfType<GameSession>);
-            _trash.Retain(session.QuickInventory.SelectedIndex.SubscribeAndInvoke(OnIndexChanged));
+            //var session = GameSessionSearch.Get(FindObjectsOfType<GameSession>);
+            //_trash.Retain(session.QuickInventory.SelectedIndex.SubscribeAndInvoke(OnIndexChanged));
         }
 
         private void OnIndexChanged(int newValue, int oldValue)
@@ -33,7 +34,7 @@ namespace PixelCrew.UI.Inventory
         {
             _icon.gameObject.SetActive(true);
             _value.gameObject.SetActive(true);
-            _selection.gameObject.SetActive(true);
+            SetSelection(false);
 
             _index = index;
             _itemDef = DefsFacade.I.Items.Get(item.Id);
@@ -44,6 +45,11 @@ namespace PixelCrew.UI.Inventory
         public bool IsInTag(ItemTag tag)
         {
             return !_itemDef.IsVoid && _itemDef.HasTag(tag);
+        }
+
+        public void SetSelection(bool state)
+        {
+            _selection.gameObject.SetActive(state);
         }
 
         public void SetLockState(bool state)

@@ -21,11 +21,18 @@ namespace PixelCrew.UI.Widgets
             if (_invComp != null)
             {
                 _invComp.InventoryData.onInventoryChanged += OnChangedInventory;
-                var item = _invComp.InventoryData.GetItem(_inventoryItemId);
-                var def = DefsFacade.I.Items.Get(_inventoryItemId);
-                _icon.sprite = def.Icon;
-                OnChangedInventory(_inventoryItemId, item?.Value ?? 0);
-            } 
+                SetItem(_inventoryItemId);
+            }
+        }
+
+        public void SetItem(string inventoryItemId)
+        {
+            _inventoryItemId = inventoryItemId;
+
+            var item = _invComp.InventoryData.GetItem(_inventoryItemId);
+            var def = DefsFacade.I.Items.Get(_inventoryItemId);
+            _icon.sprite = def.Icon;
+            OnChangedInventory(_inventoryItemId, item?.Value ?? 0);
         }
  
         private void OnChangedInventory(string id, int value)
@@ -38,6 +45,11 @@ namespace PixelCrew.UI.Widgets
         private void OnDisable()
         {
             if (_invComp != null) _invComp.InventoryData.onInventoryChanged -= OnChangedInventory;
+        }
+
+        private void OnDestroy()
+        {
+            OnDisable();
         }
     }
 }

@@ -19,22 +19,26 @@ MonoBehaviour:
     _prefab: {fileID: 0}
     _icon: {fileID: -2322180950842035098, guid: 00b0839ac02cece4f83cd274d2e0e2db,
       type: 3}
+    _descriptionLocaleKey: items_descr_money
   - _id: Key
     _stackLimitSize: 99
     _tags: 00000000
     _prefab: {fileID: 0}
     _icon: {fileID: 21300000, guid: 93b9d09aa61ca4b429b2463e96546bd4, type: 3}
+    _descriptionLocaleKey: items_descr_key
   - _id: SwordThrow
     _stackLimitSize: 99
-    _tags: 000000000200000001000000
+    _tags: 0000000002000000
     _prefab: {fileID: 0}
     _icon: {fileID: 21300000, guid: d140cbf500621344eae27785db030620, type: 3}
+    _descriptionLocaleKey: items_descr_swordThrow
   - _id: Sword
     _stackLimitSize: 1
     _tags: 00000000
     _prefab: {fileID: 959510849168114158, guid: 33dd0073f6bc82f4eb4df534186ac893,
       type: 3}
     _icon: {fileID: 21300000, guid: 816dd23a3b19a01479458eeee6362fe3, type: 3}
+    _descriptionLocaleKey: items_descr_sword
   - _id: PotionHealth
     _stackLimitSize: 99
     _tags: 000000000100000003000000
@@ -42,14 +46,17 @@ MonoBehaviour:
       type: 3}
     _icon: {fileID: -8438763151253471919, guid: 8216d46ceb4276c4985f1ff3373c53c9,
       type: 3}
+    _descriptionLocaleKey: items_descr_potionHealth
   - _id: SmallPotionHealth
     _stackLimitSize: 99
     _tags: 000000000100000003000000
     _prefab: {fileID: 5917678488986685111, guid: 43efda168b61144408cf0501d71a3249,
       type: 3}
     _icon: {fileID: 3714227102187029162, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+    _descriptionLocaleKey: items_descr_potionHealth
   - _id: PearlThrow
     _stackLimitSize: 99
-    _tags: 000000000100000002000000
+    _tags: 0000000002000000
     _prefab: {fileID: 0}
     _icon: {fileID: 21300000, guid: 0e6dfd1db82e442b292fe749ae4464d7, type: 3}
+    _descriptionLocaleKey: items_descr_pearlThrow

@@ -13,9 +13,11 @@ namespace PixelCrew.UI.Hud
 
         [SerializeField] private ProgressBarWidget _progressBarWidget;
         [SerializeField] private ActivePerkWidget _activePerkWidget;
+        [SerializeField] private ActualItemInfoWidget _activeThrowableWidget;
         
         private HealthComponent _health;
         private PerksComponent _perks;
+        private InventoryComponent _inv;
 
         private void Start()
         {
@@ -24,6 +26,7 @@ namespace PixelCrew.UI.Hud
             {
                 _health = hero.GetComponent<HealthComponent>();
                 _perks = hero.GetComponent<PerksComponent>();
+                _inv = hero.GetComponent<InventoryComponent>();
             }
 
             if (_health != null)
@@ -37,6 +40,18 @@ namespace PixelCrew.UI.Hud
                 _trash.Retain(_perks.PerksData.Used.Subscribe((x, y) => OnPerkChanged()));
                 OnPerkChanged();        
             }
+
+            if (_inv != null)
+            {
+                _trash.Retain(_inv.InventoryData.SelectedThrowId.Subscribe((x, y) => OnSelectedThrowChanged()));
+                OnSelectedThrowChanged();
+            }
+        }
+
+        private void OnSelectedThrowChanged()
+        {
+            if (_activeThrowableWidget == null) return;
+            _activeThrowableWidget.SetItem(_inv.InventoryData.SelectedThrowId.Value);
         }
 
         private void OnHealhChanged(int newValue, int oldValue)

@@ -221,7 +221,7 @@ namespace PixelCrew.GameObjects.Creatures
 
         public override void OnHeal()
         {
-            var selectedHeal = _session.QuickInventory?.SelectedItem?.Id;
+            var selectedHeal = InventoryItemName.PotionHealth;
             var healPotion = _inventory.GetItem(selectedHeal);
             if (healPotion == null || healPotion.Prefab == null || _inventory.Count(selectedHeal) == 0) return;
 
@@ -268,7 +268,7 @@ namespace PixelCrew.GameObjects.Creatures
             selectedThrow = null;
             if (throwType == ThrowType.Multi && !_session.PerksModel.IsSuperThrowUnlocked) return false;
 
-            var throwableId = _session.QuickInventory?.SelectedItem?.Id;
+            var throwableId = _inventory.InventoryData.SelectedThrowId.Value;
             var throwableDef = DefsFacade.I.ThrowableItems.Get(throwableId);
 
             switch (throwableDef.Id)
@@ -293,11 +293,12 @@ namespace PixelCrew.GameObjects.Creatures
             return false;
         }
 
-
+        /*
         public void InitNextItem()
         {
             _session.QuickInventory.SetNextItem();
         }
+        */
 
 
         private void HigthlightInteractble() => _possibleInteractionCheck.Check();

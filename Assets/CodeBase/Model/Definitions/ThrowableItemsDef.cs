@@ -25,5 +25,7 @@ namespace PixelCrew.Model.Definitions
         public string Id => _id;
         public GameObject Projectile => _projectile;
         public string ActionName => _actionName;
+
+        public bool IsVoid => string.IsNullOrWhiteSpace(_id);
     }
 }

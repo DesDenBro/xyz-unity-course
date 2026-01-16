@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using PixelCrew.Components;
 using PixelCrew.GameObjects.Creatures;
 using PixelCrew.Model.Definitions;
-using PixelCrew.UI.Widgets;
+using PixelCrew.Model.Definitions.Localization;
 using PixelCrew.Utils;
 using PixelCrew.Utils.Disposables;
 using UnityEngine;
@@ -13,6 +13,10 @@ namespace PixelCrew.UI.Inventory
 {
     public class InventoryWindow : AnimatedWindow
     {
+        private const string __throwSelectionDescrKey = "inventory_btn_throwabledescr";
+        private const string __useSelectionDescrKey = "inventory_btn_usedescr";
+        private const string __seeItemDecrHintKey = "inventory_btn_seeitemdescrhint";
+
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 
         [SerializeField] private InventoryMode _currentMode = InventoryMode.Default;
@@ -25,7 +29,7 @@ namespace PixelCrew.UI.Inventory
         [SerializeField] private Button _setThrowableBtn;
         [SerializeField] private Button _useBtn;
 
-        private GameObject selectedItem;
+        private InventoryItemWidget _selectedItem;
         private InventoryComponent _invComp;
         private IReadOnlyCollection<InventoryItemWidget> _currentItems;
 
@@ -47,6 +51,8 @@ namespace PixelCrew.UI.Inventory
 
         private void ActivateMode(InventoryMode mode)
         {
+            if (_selectedItem != null) _selectedItem.SetSelection(false);
+
             if (_currentMode == InventoryMode.Default && mode != InventoryMode.Default)
             {
                 _currentMode = mode;
@@ -55,10 +61,12 @@ namespace PixelCrew.UI.Inventory
                     case InventoryMode.SelectThrowable: 
                         _useBtn.interactable = false;
                         FilterItemByTag(ItemTag.Throwable);
+                        SetDescription(__throwSelectionDescrKey, true);
                         break;
                     case InventoryMode.UseItem:
                         _setThrowableBtn.interactable = false;
                         FilterItemByTag(ItemTag.Usable);
+                        SetDescription(__useSelectionDescrKey, true);
                         break;
                     default: 
                         Debug.LogWarning("No mode processing for inventory window found!");
@@ -69,6 +77,7 @@ namespace PixelCrew.UI.Inventory
             else
             {
                 _currentMode = InventoryMode.Default;
+                SetDescription(__seeItemDecrHintKey, true);
                 _setThrowableBtn.interactable = true;
                 _useBtn.interactable = true;
                 FilterItemByTag(null);
@@ -85,6 +94,32 @@ namespace PixelCrew.UI.Inventory
                 if (tag == null) { widget.SetLockState(false); continue; }
                 widget.SetLockState(!widget.IsInTag(tag.Value));
             }
+        }
+
+        public void SelectItem(InventoryItemWidget itemW)
+        {
+            var itemId = itemW.ItemId;
+            var itemDef = DefsFacade.I.Items.Get(itemId);
+            if (itemDef.IsVoid) return;
+
+            if (_selectedItem != null) _selectedItem.SetSelection(false);
+
+            switch (_currentMode)
+            {
+                case InventoryMode.SelectThrowable:
+                    _invComp.InventoryData.ChangeThrowable(itemDef.Id);
+                    break;
+                case InventoryMode.UseItem:
+
+                    break;
+                case InventoryMode.Default:
+                    _selectedItem = itemW;
+                    _selectedItem.SetSelection(true);
+                    SetDescription(itemDef.DescriptionLocaleKey);
+                    return;
+            }
+
+            ActivateMode(InventoryMode.Default);
         }
 
         private void OnInventoryChange(string id, int val)
@@ -132,6 +167,12 @@ namespace PixelCrew.UI.Inventory
             }
 
             _currentItems = widgets;
+        }
+
+        private void SetDescription(string key, bool isTech = false)
+        {
+            _description.text = LocalizationManager.I.Localize(key);
+            _description.color = new Color(_description.color.r, _description.color.g, _description.color.b, isTech ? 0.5f : 1f);
         }
 
         void OnDestroy()

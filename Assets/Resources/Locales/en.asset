@@ -68,6 +68,12 @@ MonoBehaviour:
     Value: Set throwable
   - Key: inventory_btn_use
     Value: Use
+  - Key: inventory_btn_throwabledescr
+    Value: Select available item for throw
+  - Key: inventory_btn_usedescr
+    Value: Select available item for use
+  - Key: inventory_btn_seeitemdescrhint
+    Value: Select item to see it description
   - Key: items_descr_money
     Value: Money, money, coins. That's why we do our pirating business
   - Key: items_descr_key

@@ -71,6 +71,7 @@ namespace PixelCrew.GameObjects
             }
         }
 
+        /*
         public void PressNextItem(InputAction.CallbackContext context)
         {
             if (context.performed)
@@ -78,6 +79,7 @@ namespace PixelCrew.GameObjects
                 _hero.InitNextItem();
             }
         }
+        */
 
         /*
         private void Awake()

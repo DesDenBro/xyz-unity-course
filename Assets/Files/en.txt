@@ -31,6 +31,9 @@ perks_superThrow_info;Hold throw button for throw several items
 
 inventory_btn_setthrowable;Set throwable
 inventory_btn_use;Use
+inventory_btn_throwabledescr;Select available item for throw
+inventory_btn_usedescr;Select available item for use
+inventory_btn_seeitemdescrhint;Select item to see it description
 
 items_descr_money;Money, money, coins. That's why we do our pirating business
 items_descr_key;Vinnie "Old Eye" taught me how to turn every key into a universal one. It's a pity that he didn't tell me how to do the same thing with water when I need rum
