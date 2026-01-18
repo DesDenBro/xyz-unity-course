@@ -58,7 +58,12 @@ namespace PixelCrew.Components
             obj.transform.position += new Vector3(
                 sasTransform.localPosition.x * sasTransform.parent.lossyScale.x,
                 sasTransform.localPosition.y * sasTransform.parent.lossyScale.y,
-                sasTransform.localPosition.z * sasTransform.parent.lossyScale.z
+                sasTransform.localPosition.z * sasTransform.parent.lossyScale.z 
+            );
+            obj.transform.localScale = new Vector3(
+                sasTransform.parent.lossyScale.x * sasTransform.localScale.x,
+                sasTransform.parent.lossyScale.y * sasTransform.localScale.y,
+                sasTransform.parent.lossyScale.z * sasTransform.localScale.z
             );
         }
     }

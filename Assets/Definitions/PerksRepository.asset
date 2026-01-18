@@ -23,7 +23,7 @@ MonoBehaviour:
       _count: 5
   - _id: super-throw
     _icon: {fileID: 21300000, guid: e4f25c0414bdb465c8e062abbe1128d1, type: 3}
-    _isPassive: 0
+    _isPassive: 1
     _isCooldownExist: 1
     _info: perks_superThrow_info
     _price:

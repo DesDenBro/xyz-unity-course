@@ -27,7 +27,7 @@ stats_type_damage;Урон
 stats_type_rangedamage;Дальность
 
 perks_doubleJump_info;Двойной прыжок
-perks_superThrow_info;Бросок до трех предметов одновременно
+perks_superThrow_info;Бросок до трех предметов одновременно при зажатии клавиши броска
 perks_stun_info;Оглушает врагов на некоторое время
 
 inventory_btn_setthrowable;Выбрать кидаемый

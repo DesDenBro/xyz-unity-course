@@ -36,7 +36,7 @@ namespace PixelCrew.UI.Perks
                 {
                     _isLocked.SetActive(true);
                     _timeToEnd.gameObject.SetActive(true);
-                    _timeToEnd.text = timeToEnd.ToString("F2");
+                    _timeToEnd.text = timeToEnd.ToString("F0");
                 }
                 else
                 {
@@ -50,7 +50,7 @@ namespace PixelCrew.UI.Perks
         {
             gameObject.SetActive(false);
             var def = GetCurrentPerkDef();
-            if (def.IsVoid) return;
+            if (def.IsVoid || def.IsPassive) return;
             
             gameObject.SetActive(true);
             _isLocked.SetActive(false);

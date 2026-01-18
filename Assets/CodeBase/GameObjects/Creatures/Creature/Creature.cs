@@ -226,7 +226,6 @@ namespace PixelCrew.GameObjects.Creatures
         {
             switch (perk)
             {
-                case "super-throw": return _throwCooldown.TimeToEnd;
                 case "stun": return _stunCooldown.TimeToEnd;
             }
             return -1;

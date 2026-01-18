@@ -34,5 +34,22 @@ namespace PixelCrew.Utils
                 Destroy(child.gameObject);
             }
         }
+
+        public static Color GetColor(ColorPalette color, float alpha = 1f)
+        {
+            switch (color)
+            {
+                case ColorPalette.PassivePerkUse: return new Color(0.4901961f, 0.4901961f, 0.4901961f, alpha); // серый
+                case ColorPalette.ActivePerkUse: return new Color(0, 0.5176471f, 0.003921569f, alpha); // темно-зеленый
+            }
+
+            return new Color(0, 0, 0, alpha);
+        }
+
+        public enum ColorPalette
+        { 
+            PassivePerkUse,
+            ActivePerkUse
+        }
     }
 }

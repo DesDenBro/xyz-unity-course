@@ -1,6 +1,7 @@
 using PixelCrew.Model;
 using PixelCrew.Model.Definitions.Repositories;
 using PixelCrew.UI.Widgets;
+using PixelCrew.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,9 +37,18 @@ namespace PixelCrew.UI.Perks
         public void UpdateView()
         {
             _icon.sprite = _data.Icon;
-            _isUsed.SetActive(_session.PerksModel.IsUsed(_data.Id));
+            var isUsedActive = _session.PerksModel.IsUsed(_data.Id);
+            _isUsed.SetActive(isUsedActive);
+            if (isUsedActive)
+            {
+                _isUsed.GetComponent<Image>().color = UIWindowUtils.GetColor(_session.PerksModel.IsPassive(_data.Id)
+                    ? UIWindowUtils.ColorPalette.PassivePerkUse
+                    : UIWindowUtils.ColorPalette.ActivePerkUse
+                );
+            }
             _isSelected.SetActive(_session.PerksModel.InterfaceSelection.Value == _data.Id);
             _isLocked.SetActive(!_session.PerksModel.IsUnlocked(_data.Id));
+
         }
     }
 }

@@ -244,11 +244,11 @@ namespace PixelCrew.GameObjects.Creatures
             var perk = _perks.PerksData.Used.Value;
             if (string.IsNullOrWhiteSpace(perk)) return false;
 
+            var def = DefsFacade.I.Perks.Get(perk);
+            if (def.IsVoid || def.IsPassive) return false;
+
             switch (perk)
             {
-                case "super-throw":
-                    InitThrow(ThrowType.Multi);
-                    break;
                 case "stun":
                     InitStopm();
                     break;
@@ -260,7 +260,7 @@ namespace PixelCrew.GameObjects.Creatures
 
         public void InitStopm()
         {
-            if (!_stunCooldown.IsReady) return;
+            if (!_stunCooldown.IsReady || !_isGrounded) return;
             _stunCooldown.Reset();
 
             SpawnAction("stopm");

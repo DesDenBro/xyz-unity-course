@@ -53,6 +53,9 @@ namespace PixelCrew.Model.Data
 
         public void Use(string id)
         {
+            var def = DefsFacade.I.Perks.Get(id);
+            if (def.IsVoid || def.IsPassive) return;
+
             _perksComp.PerksData.Used.Value = id;
         }
 

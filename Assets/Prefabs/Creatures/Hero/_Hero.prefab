@@ -5579,6 +5579,21 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 6e65b6d1-6c01-40a8-af79-dfa864130bc8
     m_ActionName: Menu/UI Inventory[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5784780335098992498}
+        m_MethodName: PressThrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0be67afe-cf48-452a-a017-95d58e278563
+    m_ActionName: Hero/Throw[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero

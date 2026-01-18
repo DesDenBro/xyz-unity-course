@@ -52,10 +52,11 @@ namespace PixelCrew.Common.Tech
             _spriteRenderer.flipX = _currentState.FlipX;
             if (_currentState.IsFixedFlip)
             {
-                transform.localScale = new Vector3(
-                    transform.localScale.x > 0 ? transform.localScale.x : -transform.localScale.x, 
-                    transform.localScale.y > 0 ? transform.localScale.y : -transform.localScale.y,
-                    transform.localScale.z > 0 ? transform.localScale.z : -transform.localScale.z
+                var tr = _currentState.transform;
+                tr.localScale = new Vector3(
+                    tr.localScale.x > 0 ? tr.localScale.x : -tr.localScale.x, 
+                    tr.localScale.y > 0 ? tr.localScale.y : -tr.localScale.y,
+                    tr.localScale.z > 0 ? tr.localScale.z : -tr.localScale.z
                 );
             }
             _currentState.TogglePlay(true);

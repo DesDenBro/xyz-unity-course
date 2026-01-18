@@ -15,98 +15,98 @@ MonoBehaviour:
   _fileName: en_loc
   _localeItems:
   - Key: menu_title
-    Value: Main menu
+    Value: "Main menu\r"
   - Key: btn_start
-    Value: start
+    Value: "start\r"
   - Key: btn_restart
-    Value: restart
+    Value: "restart\r"
   - Key: btn_options
-    Value: options
+    Value: "options\r"
   - Key: btn_exit
-    Value: exit
+    Value: "exit\r"
   - Key: btn_languages
     Value: languages
   - Key: btn_ok
-    Value: ok
+    Value: "ok\r"
   - Key: menu_locale_title
-    Value: Language
+    Value: "Language\r"
   - Key: menu_settings_title
-    Value: Settings
+    Value: "Settings\r"
   - Key: settings_music_volume
-    Value: Music volume
+    Value: "Music volume\r"
   - Key: settings_sfx_volume
-    Value: SFX volume
+    Value: "SFX volume\r"
   - Key: hud_dialogbox_continue
-    Value: Continue...
+    Value: "Continue...\r"
   - Key: padlock_closed_door
-    Value: I need a key...
+    Value: "I need a key...\r"
   - Key: perksstore_btn_buy
-    Value: Buy
+    Value: "Buy\r"
   - Key: perksstore_btn_use
-    Value: Use
+    Value: "Use\r"
   - Key: perksstore_price_title
-    Value: Price
+    Value: "Price\r"
   - Key: stats_btn_upgrade
-    Value: Upgrade
+    Value: "Upgrade\r"
   - Key: stats_price_title
-    Value: Price
+    Value: "Price\r"
   - Key: stats_maximum_title
-    Value: Maximum level!
+    Value: "Maximum level!\r"
   - Key: stats_type_health
-    Value: Health
+    Value: "Health\r"
   - Key: stats_type_speed
-    Value: Speed
+    Value: "Speed\r"
   - Key: stats_type_damage
-    Value: Damage
+    Value: "Damage\r"
   - Key: stats_type_rangedamage
-    Value: RangeDamage
+    Value: "RangeDamage\r"
   - Key: perks_doubleJump_info
-    Value: Double jump
+    Value: "Double jump\r"
   - Key: perks_superThrow_info
-    Value: Throws up to three objects
+    Value: "Throws up to three objects when hold the throw key\r"
   - Key: perks_stun_info
-    Value: Stun enemies for a several time
+    Value: "Stun enemies for a several time\r"
   - Key: inventory_btn_setthrowable
-    Value: Set throwable
+    Value: "Set throwable\r"
   - Key: inventory_btn_use
-    Value: Use
+    Value: "Use\r"
   - Key: inventory_btn_throwabledescr
-    Value: Select available item for throw
+    Value: "Select available item for throw\r"
   - Key: inventory_btn_usedescr
-    Value: Select available item for use
+    Value: "Select available item for use\r"
   - Key: inventory_btn_seeitemdescrhint
-    Value: Select item to see it description
+    Value: "Select item to see it description\r"
   - Key: items_descr_money
-    Value: Money, money, coins. That's why we do our pirating business
+    Value: "Money, money, coins. That's why we do our pirating business\r"
   - Key: items_descr_key
-    Value: Vinnie "Old Eye" taught me how to turn every key into a universal one.
+    Value: "Vinnie \"Old Eye\" taught me how to turn every key into a universal one.
       It's a pity that he didn't tell me how to do the same thing with water when
-      I need rum
+      I need rum\r"
   - Key: items_descr_swordThrow
-    Value: The ability to use pieces of his sword as throwing objects has been useful
-      to me more than once. It's a pity it's a pain to assemble it later
+    Value: "The ability to use pieces of his sword as throwing objects has been useful
+      to me more than once. It's a pity it's a pain to assemble it later\r"
   - Key: items_descr_sword
-    Value: An ordinary sword, of which there are many, but this sword is mine
+    Value: "An ordinary sword, of which there are many, but this sword is mine\r"
   - Key: items_descr_potionHealth
-    Value: Once you try it, you think that it could make a great business out of
-      it. I would like to remove another side effect in the form of a hangover...
+    Value: "Once you try it, you think that it could make a great business out of
+      it. I would like to remove another side effect in the form of a hangover...\r"
   - Key: items_descr_pearlThrow
-    Value: When a pirate is bored, he does two things - drinks rum or opens shells.
-      Since I have pearls in my pockets, I ran out of rum a long time ago
+    Value: "When a pirate is bored, he does two things - drinks rum or opens shells.
+      Since I have pearls in my pockets, I ran out of rum a long time ago\r"
   - Key: level1_dialog_door
-    Value: Looks like its door to out...
+    Value: "Looks like its door to out...\r"
   - Key: level2_dialog_crabby_1
     Value: "Beyond this door lies danger, but you\u2019re strong if you\u2019ve made
-      it this far"
+      it this far\r"
   - Key: level2_dialog_crabby_2
-    Value: Be careful
+    Value: "Be careful\r"
   - Key: level3_dialog_crabby_failDialog1
-    Value: Only my hand can open this door
+    Value: "Only my hand can open this door\r"
   - Key: level3_dialog_crabby_failDialog2
-    Value: But without key i cant...
+    Value: "But without key i cant...\r"
   - Key: level3_dialog_crabby_successDialog1
-    Value: Oh, this good key!
+    Value: "Oh, this good key!\r"
   - Key: level3_dialog_crabby_successDialog2
-    Value: Give me a second...
+    Value: "Give me a second...\r"
   - Key: level3_dialog_crabby_byeDialog1
     Value: See later!

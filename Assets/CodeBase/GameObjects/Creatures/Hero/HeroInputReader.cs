@@ -52,17 +52,25 @@ namespace PixelCrew.GameObjects
         {
             if (context.performed)
             {
+                _hero.InitPerk();
+            }
+        }
+
+        public void PressThrow(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
                 if (context.interaction is HoldInteraction)
                 {
-                    _hero.InitPerk();
+                    _hero.InitThrow(ThrowType.Multi);
                 }
                 else
                 {
                     _hero.InitThrow(ThrowType.Once);
                 }
-            }   
+            }
         }
-        
+
         public void PressHeal(InputAction.CallbackContext context)
         {
             if (context.performed)
