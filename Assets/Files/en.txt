@@ -27,7 +27,8 @@ stats_type_damage;Damage
 stats_type_rangedamage;RangeDamage
 
 perks_doubleJump_info;Double jump
-perks_superThrow_info;Hold throw button for throw several items
+perks_superThrow_info;Throws up to three objects
+perks_stun_info;Stun enemies for a several time
 
 inventory_btn_setthrowable;Set throwable
 inventory_btn_use;Use

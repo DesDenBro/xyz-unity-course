@@ -40,13 +40,14 @@ namespace PixelCrew.UI.Perks
             _perksDataGroup.SetData(DefsFacade.I.Perks.All);
 
             var selected = _session.PerksModel.InterfaceSelection.Value;
-            _useButton.gameObject.SetActive(_session.PerksModel.IsUnlocked(selected));
+            var def = DefsFacade.I.Perks.Get(selected);
+            
+            _useButton.gameObject.SetActive(_session.PerksModel.IsUnlocked(selected) && !_session.PerksModel.IsPassive(selected));
             _useButton.interactable = _session.PerksModel.Used != selected;
 
             _buyButton.gameObject.SetActive(!_session.PerksModel.IsUnlocked(selected));
             _buyButton.interactable = _session.PerksModel.CanBuy(selected);
 
-            var def = DefsFacade.I.Perks.Get(selected);
             _price.SetData(def.Price);
 
             _info.text = LocalizationManager.I.Localize(def.Info);

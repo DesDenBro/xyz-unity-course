@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Throw",
+                    "name": "Perk",
                     "type": "Button",
                     "id": "5efb0a92-6a64-4b21-86b8-cb37ed23a205",
                     "expectedControlType": "Button",
@@ -211,7 +211,7 @@
                     "interactions": "Tap,Hold",
                     "processors": "",
                     "groups": "",
-                    "action": "Throw",
+                    "action": "Perk",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

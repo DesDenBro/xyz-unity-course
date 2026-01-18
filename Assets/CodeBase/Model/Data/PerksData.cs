@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using PixelCrew.Model.Data.Properties;
+using PixelCrew.Model.Definitions;
 using UnityEngine;
 
 namespace PixelCrew.Model.Data
@@ -30,8 +31,16 @@ namespace PixelCrew.Model.Data
                 
         public bool IsUsed(string id)
         {
-            if (string.IsNullOrWhiteSpace(id)) return false;
-            return IsUnlocked(id) && _used.Value == id;
+            if (string.IsNullOrWhiteSpace(id) || !IsUnlocked(id)) return false;
+            if (IsPassive(id)) return true;
+            
+            return _used.Value == id;
+        }
+
+        internal bool IsPassive(string id)
+        {
+            var perk = DefsFacade.I.Perks.Get(id);
+            return perk.IsPassive;
         }
 
         public PerksData Clone()

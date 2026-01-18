@@ -7,6 +7,7 @@ using PixelCrew.Common.Tech;
 using PixelCrew.Components;
 using PixelCrew.Model;
 using PixelCrew.Model.Definitions;
+using System;
 
 namespace PixelCrew.GameObjects.Creatures
 {
@@ -26,7 +27,6 @@ namespace PixelCrew.GameObjects.Creatures
         [Header("Hero animators")]
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
-
 
         private bool _isDoubleJumpActive;
         private bool _forceDoubleJumpActive;
@@ -235,6 +235,43 @@ namespace PixelCrew.GameObjects.Creatures
 
             _inventory.ChangeInventoryItemCount(selectedHeal, -1);
         }
+
+
+        public override bool InitPerk()
+        {
+            if (!base.InitPerk()) return false;
+
+            var perk = _perks.PerksData.Used.Value;
+            if (string.IsNullOrWhiteSpace(perk)) return false;
+
+            switch (perk)
+            {
+                case "super-throw":
+                    InitThrow(ThrowType.Multi);
+                    break;
+                case "stun":
+                    InitStopm();
+                    break;
+            }
+
+            return true;
+        }
+
+
+        public void InitStopm()
+        {
+            if (!_stunCooldown.IsReady) return;
+            _stunCooldown.Reset();
+
+            SpawnAction("stopm");
+            _playSounds.Play("Stopm");
+            _stunCheck.Check();
+        }
+        public void OnStopm(GameObject go)
+        {
+            Debug.Log(go.name);
+        }
+
 
         public override void InitThrow(ThrowType type = ThrowType.Once)
         {

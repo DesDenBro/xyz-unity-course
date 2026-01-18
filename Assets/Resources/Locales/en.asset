@@ -63,7 +63,9 @@ MonoBehaviour:
   - Key: perks_doubleJump_info
     Value: Double jump
   - Key: perks_superThrow_info
-    Value: Hold throw button for throw several items
+    Value: Throws up to three objects
+  - Key: perks_stun_info
+    Value: Stun enemies for a several time
   - Key: inventory_btn_setthrowable
     Value: Set throwable
   - Key: inventory_btn_use

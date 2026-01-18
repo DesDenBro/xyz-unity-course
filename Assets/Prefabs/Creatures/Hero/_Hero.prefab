@@ -4812,6 +4812,90 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1 &670365789094879594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6233422789276547003}
+  - component: {fileID: 321485130626417035}
+  - component: {fileID: 6594990609742469317}
+  m_Layer: 16
+  m_Name: StompStunCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &6233422789276547003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670365789094879594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.321, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5784780335098992501}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &321485130626417035
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670365789094879594}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.5, y: 0}
+  - {x: 1.5, y: 0}
+--- !u!114 &6594990609742469317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670365789094879594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15dbd3f84308c33489048dfec4fad8c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 8192
+  tags:
+  - Enemy
+  onOverlap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5784780335098992499}
+        m_MethodName: OnStopm
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  checkOnlyForward: 0
+  _toLeftLength: 1.5
+  _toLeftRight: 1.5
 --- !u!1 &1213411265540737379
 GameObject:
   m_ObjectHideFlags: 0
@@ -5260,6 +5344,7 @@ Transform:
   - {fileID: 5921559453270244895}
   - {fileID: 4627714006679604376}
   - {fileID: 7597641014839724719}
+  - {fileID: 6233422789276547003}
   - {fileID: 2472958772482285950}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -5459,7 +5544,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5784780335098992498}
-        m_MethodName: PressThrow
+        m_MethodName: PressPerk
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5491,20 +5576,9 @@ MonoBehaviour:
     m_ActionId: 84107a23-ebc4-4c2b-889a-73a2437f6233
     m_ActionName: Menu/New action[/Keyboard/escape]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5784780335098992498}
-        m_MethodName: PressNextItem
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: b765976d-d680-46ec-9ff1-e5c31f852794
-    m_ActionName: Hero/SelectItem[/Keyboard/i]
+      m_Calls: []
+    m_ActionId: 6e65b6d1-6c01-40a8-af79-dfa864130bc8
+    m_ActionName: Menu/UI Inventory[/Keyboard/i]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -5602,6 +5676,9 @@ MonoBehaviour:
     _value: 0.5
   _groundCheck: {fileID: 5784780334059268827}
   _attackRange: {fileID: 4681518861892597388}
+  _stunCooldown:
+    _value: 20
+  _stunCheck: {fileID: 6594990609742469317}
   _possibleInteractionCheck: {fileID: 9174449383125741794}
   _doInteractionCheck: {fileID: 3926177964129831508}
   _weapon: {fileID: 0}
@@ -5638,6 +5715,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventoryData:
     _inventory: []
+    _selectedThrowId:
+      _value: 
 --- !u!114 &4661917564970688684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5780,7 +5859,7 @@ Transform:
   - {fileID: 1437493576494031522}
   - {fileID: 4926923243129580030}
   m_Father: {fileID: 5784780335098992501}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7021210158689233226
 PrefabInstance:
@@ -5849,6 +5928,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7561898198143443468, guid: fc6eaf0246e97a746bc7d9ac9e604a08,
+        type: 3}
+      propertyPath: _sounds.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561898198143443468, guid: fc6eaf0246e97a746bc7d9ac9e604a08,
+        type: 3}
+      propertyPath: _sounds.Array.data[9]._id
+      value: Stopm
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561898198143443468, guid: fc6eaf0246e97a746bc7d9ac9e604a08,
+        type: 3}
+      propertyPath: _sounds.Array.data[9]._clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561898198143443468, guid: fc6eaf0246e97a746bc7d9ac9e604a08,
+        type: 3}
+      propertyPath: _sounds.Array.data[9]._clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f4ef795b30f4c4b87b6153bd5ab35eb3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc6eaf0246e97a746bc7d9ac9e604a08, type: 3}
 --- !u!4 &4926923243129580030 stripped

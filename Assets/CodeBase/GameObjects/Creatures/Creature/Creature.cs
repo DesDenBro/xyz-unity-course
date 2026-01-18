@@ -25,6 +25,10 @@ namespace PixelCrew.GameObjects.Creatures
         [Header("Base checks")]
         [SerializeField] private LayerCheck _groundCheck;
         [SerializeField] protected CheckCircleOverlap _attackRange;
+
+        [Header("Creature perks")]
+        [SerializeField] protected Cooldown _stunCooldown = new Cooldown(20f);
+        [SerializeField] protected CheckLineOverlap _stunCheck;
         
         
         private float? _maxYInJump = null;
@@ -223,8 +227,8 @@ namespace PixelCrew.GameObjects.Creatures
             switch (perk)
             {
                 case "super-throw": return _throwCooldown.TimeToEnd;
+                case "stun": return _stunCooldown.TimeToEnd;
             }
-
             return -1;
         }
 
@@ -277,6 +281,12 @@ namespace PixelCrew.GameObjects.Creatures
             SpawnAction("heal-effect");
         }
 
+        public virtual bool InitPerk()
+        {
+            if (!_IsAlive) return false;
+
+            return true;
+        }
 
         public virtual void InitThrow(ThrowType type = ThrowType.Once)
         {

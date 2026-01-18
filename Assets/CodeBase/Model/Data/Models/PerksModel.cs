@@ -19,6 +19,7 @@ namespace PixelCrew.Model.Data
 
         public bool IsDoubleJumpUnlocked => _perksComp.PerksData.IsUsed("double-jump");
         public bool IsSuperThrowUnlocked => _perksComp.PerksData.IsUsed("super-throw");
+        public bool IsStunUnlocked => _perksComp.PerksData.IsUsed("stun");
 
         public PerksModel(PerksComponent pc, InventoryComponent ic)
         {
@@ -62,12 +63,17 @@ namespace PixelCrew.Model.Data
 
         public bool IsUsed(string id)
         {
-            return _perksComp.PerksData.Used.Value == id;
+            return _perksComp.PerksData.IsUsed(id);
         }
 
         public bool IsUnlocked(string id)
         {
             return _perksComp.PerksData.IsUnlocked(id);
+        }
+
+        public bool IsPassive(string id)
+        {
+            return _perksComp.PerksData.IsPassive(id);
         }
 
         internal bool CanBuy(string perkId)

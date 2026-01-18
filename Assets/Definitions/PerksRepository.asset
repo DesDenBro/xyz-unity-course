@@ -15,15 +15,25 @@ MonoBehaviour:
   _collection:
   - _id: double-jump
     _icon: {fileID: 21300000, guid: 46e39d7bb04d84c4d87d395f68296d88, type: 3}
+    _isPassive: 1
+    _isCooldownExist: 0
     _info: perks_doubleJump_info
     _price:
       _itemId: Money
       _count: 5
-    _isCooldownExist: 0
   - _id: super-throw
     _icon: {fileID: 21300000, guid: e4f25c0414bdb465c8e062abbe1128d1, type: 3}
+    _isPassive: 0
+    _isCooldownExist: 1
     _info: perks_superThrow_info
     _price:
       _itemId: Money
       _count: 10
+  - _id: stun
+    _icon: {fileID: 8167133005111728920, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+    _isPassive: 0
     _isCooldownExist: 1
+    _info: perks_stun_info
+    _price:
+      _itemId: Money
+      _count: 10
