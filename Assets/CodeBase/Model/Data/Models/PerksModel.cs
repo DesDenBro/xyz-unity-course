@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using PixelCrew.Components;
 using PixelCrew.Model.Data.Properties;
 using PixelCrew.Model.Definitions;
@@ -16,6 +18,8 @@ namespace PixelCrew.Model.Data
         public event Action OnChanged;
         public readonly StringProperty InterfaceSelection = new StringProperty();
         public string Used => _perksComp.PerksData.Used.Value;
+        public string ActivePassives => _perksComp.PerksData.ActivePassives.Value;
+        public IList<string> ActivePassivesList => _perksComp.PerksData.ActivePassivesList;
 
         public bool IsDoubleJumpUnlocked => _perksComp.PerksData.IsUsed("double-jump");
         public bool IsSuperThrowUnlocked => _perksComp.PerksData.IsUsed("super-throw");

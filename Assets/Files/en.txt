@@ -17,6 +17,7 @@ padlock_closed_door;I need a key...
 perksstore_btn_buy;Buy
 perksstore_btn_use;Use
 perksstore_price_title;Price
+perksstore_mechinfo_title;Type:
 
 stats_btn_upgrade;Upgrade
 stats_price_title;Price
@@ -26,6 +27,8 @@ stats_type_speed;Speed
 stats_type_damage;Damage
 stats_type_rangedamage;RangeDamage
 
+perks_type_passive;passive
+perks_type_active;active
 perks_doubleJump_info;Double jump
 perks_superThrow_info;Throws up to three objects when hold the throw key
 perks_stun_info;Stun enemies for a several time

@@ -8,6 +8,7 @@ using PixelCrew.Components;
 using PixelCrew.Model;
 using PixelCrew.Model.Definitions;
 using System;
+using System.Data.Common;
 
 namespace PixelCrew.GameObjects.Creatures
 {
@@ -269,7 +270,16 @@ namespace PixelCrew.GameObjects.Creatures
         }
         public void OnStopm(GameObject go)
         {
-            Debug.Log(go.name);
+            if (go == null) return;
+
+            var bmai = go.GetComponent<BaseMobAI>();
+            if (bmai == null)
+            {
+                Debug.Log("bmai is null, its sucks");
+                return;
+            }
+
+            bmai.Stun();
         }
 
 

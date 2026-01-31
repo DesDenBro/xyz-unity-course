@@ -36,7 +36,7 @@ namespace PixelCrew.UI.Perks
                 {
                     _isLocked.SetActive(true);
                     _timeToEnd.gameObject.SetActive(true);
-                    _timeToEnd.text = timeToEnd.ToString("F0");
+                    _timeToEnd.text = timeToEnd.ToString("F1");
                 }
                 else
                 {

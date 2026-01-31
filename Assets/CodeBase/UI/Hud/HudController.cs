@@ -14,6 +14,7 @@ namespace PixelCrew.UI.Hud
         [SerializeField] private ProgressBarWidget _progressBarWidget;
         [SerializeField] private ActivePerkWidget _activePerkWidget;
         [SerializeField] private ActualItemInfoWidget _activeThrowableWidget;
+        [SerializeField] private ActivePassivesWidget _activePassivesWidget;
         
         private HealthComponent _health;
         private PerksComponent _perks;
@@ -38,6 +39,7 @@ namespace PixelCrew.UI.Hud
             if (_perks != null)
             {
                 _trash.Retain(_perks.PerksData.Used.Subscribe((x, y) => OnPerkChanged()));
+                _trash.Retain(_perks.PerksData.ActivePassives.Subscribe((x, y) => OnPerkChanged()));
                 OnPerkChanged();        
             }
 
@@ -62,8 +64,8 @@ namespace PixelCrew.UI.Hud
         
         private void OnPerkChanged()
         {
-            if (_activePerkWidget == null) return;
-            _activePerkWidget.UpdateView();
+            if (_activePerkWidget != null) _activePerkWidget.UpdateView();
+            if (_activePassivesWidget != null) _activePassivesWidget.UpdateView();
         }
 
 

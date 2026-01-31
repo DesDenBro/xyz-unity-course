@@ -1,10 +1,11 @@
 ﻿using PixelCrew.Common;
+using PixelCrew.Components;
 using System.Collections;
 using UnityEngine;
 
 namespace PixelCrew.GameObjects.Creatures
 {
-    public class MobAI : MonoBehaviour
+    public class MobAI : BaseMobAI
     {
         [SerializeField] private LayerCheck _vision;
         [SerializeField] private LayerCheck _canAttack;
@@ -13,6 +14,7 @@ namespace PixelCrew.GameObjects.Creatures
         [SerializeField] private float _alarmDelay = 2f;
         [SerializeField] private float _attackCooldown = 1f;
         [SerializeField] private float _confuseCooldown = 3f;
+        [SerializeField] private Cooldown _stunCooldown = new Cooldown(3);
 
         private bool _isDead = false;
         private Coroutine _current;
@@ -100,6 +102,11 @@ namespace PixelCrew.GameObjects.Creatures
         private void SetDirectionToTarget()
         {
             _creature.SetDirection(MobAIUtils.CalcDirectionX(transform, _target.transform));
+        }
+
+        public override void Stun()
+        {
+            Debug.Log("creature stun");
         }
     }
 

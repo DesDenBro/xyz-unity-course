@@ -17,6 +17,7 @@ padlock_closed_door;Мне нужен ключ...
 perksstore_btn_buy;Купить
 perksstore_btn_use;Применить
 perksstore_price_title;Цена
+perksstore_mechinfo_title;Тип:
 
 stats_btn_upgrade;Прокачать
 stats_price_title;Цена
@@ -26,6 +27,8 @@ stats_type_speed;Скорость
 stats_type_damage;Урон
 stats_type_rangedamage;Дальность
 
+perks_type_passive;пассивный
+perks_type_active;активный
 perks_doubleJump_info;Двойной прыжок
 perks_superThrow_info;Бросок до трех предметов одновременно при зажатии клавиши броска
 perks_stun_info;Оглушает врагов на некоторое время

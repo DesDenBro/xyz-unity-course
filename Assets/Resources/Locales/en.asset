@@ -15,98 +15,104 @@ MonoBehaviour:
   _fileName: en_loc
   _localeItems:
   - Key: menu_title
-    Value: "Main menu\r"
+    Value: Main menu
   - Key: btn_start
-    Value: "start\r"
+    Value: start
   - Key: btn_restart
-    Value: "restart\r"
+    Value: restart
   - Key: btn_options
-    Value: "options\r"
+    Value: options
   - Key: btn_exit
-    Value: "exit\r"
+    Value: exit
   - Key: btn_languages
     Value: languages
   - Key: btn_ok
-    Value: "ok\r"
+    Value: ok
   - Key: menu_locale_title
-    Value: "Language\r"
+    Value: Language
   - Key: menu_settings_title
-    Value: "Settings\r"
+    Value: Settings
   - Key: settings_music_volume
-    Value: "Music volume\r"
+    Value: Music volume
   - Key: settings_sfx_volume
-    Value: "SFX volume\r"
+    Value: SFX volume
   - Key: hud_dialogbox_continue
-    Value: "Continue...\r"
+    Value: Continue...
   - Key: padlock_closed_door
-    Value: "I need a key...\r"
+    Value: I need a key...
   - Key: perksstore_btn_buy
-    Value: "Buy\r"
+    Value: Buy
   - Key: perksstore_btn_use
-    Value: "Use\r"
+    Value: Use
   - Key: perksstore_price_title
-    Value: "Price\r"
+    Value: Price
+  - Key: perksstore_mechinfo_title
+    Value: 'Type:'
   - Key: stats_btn_upgrade
-    Value: "Upgrade\r"
+    Value: Upgrade
   - Key: stats_price_title
-    Value: "Price\r"
+    Value: Price
   - Key: stats_maximum_title
-    Value: "Maximum level!\r"
+    Value: Maximum level!
   - Key: stats_type_health
-    Value: "Health\r"
+    Value: Health
   - Key: stats_type_speed
-    Value: "Speed\r"
+    Value: Speed
   - Key: stats_type_damage
-    Value: "Damage\r"
+    Value: Damage
   - Key: stats_type_rangedamage
-    Value: "RangeDamage\r"
+    Value: RangeDamage
+  - Key: perks_type_passive
+    Value: passive
+  - Key: perks_type_active
+    Value: active
   - Key: perks_doubleJump_info
-    Value: "Double jump\r"
+    Value: Double jump
   - Key: perks_superThrow_info
-    Value: "Throws up to three objects when hold the throw key\r"
+    Value: Throws up to three objects when hold the throw key
   - Key: perks_stun_info
-    Value: "Stun enemies for a several time\r"
+    Value: Stun enemies for a several time
   - Key: inventory_btn_setthrowable
-    Value: "Set throwable\r"
+    Value: Set throwable
   - Key: inventory_btn_use
-    Value: "Use\r"
+    Value: Use
   - Key: inventory_btn_throwabledescr
-    Value: "Select available item for throw\r"
+    Value: Select available item for throw
   - Key: inventory_btn_usedescr
-    Value: "Select available item for use\r"
+    Value: Select available item for use
   - Key: inventory_btn_seeitemdescrhint
-    Value: "Select item to see it description\r"
+    Value: Select item to see it description
   - Key: items_descr_money
-    Value: "Money, money, coins. That's why we do our pirating business\r"
+    Value: Money, money, coins. That's why we do our pirating business
   - Key: items_descr_key
-    Value: "Vinnie \"Old Eye\" taught me how to turn every key into a universal one.
+    Value: Vinnie "Old Eye" taught me how to turn every key into a universal one.
       It's a pity that he didn't tell me how to do the same thing with water when
-      I need rum\r"
+      I need rum
   - Key: items_descr_swordThrow
-    Value: "The ability to use pieces of his sword as throwing objects has been useful
-      to me more than once. It's a pity it's a pain to assemble it later\r"
+    Value: The ability to use pieces of his sword as throwing objects has been useful
+      to me more than once. It's a pity it's a pain to assemble it later
   - Key: items_descr_sword
-    Value: "An ordinary sword, of which there are many, but this sword is mine\r"
+    Value: An ordinary sword, of which there are many, but this sword is mine
   - Key: items_descr_potionHealth
-    Value: "Once you try it, you think that it could make a great business out of
-      it. I would like to remove another side effect in the form of a hangover...\r"
+    Value: Once you try it, you think that it could make a great business out of
+      it. I would like to remove another side effect in the form of a hangover...
   - Key: items_descr_pearlThrow
-    Value: "When a pirate is bored, he does two things - drinks rum or opens shells.
-      Since I have pearls in my pockets, I ran out of rum a long time ago\r"
+    Value: When a pirate is bored, he does two things - drinks rum or opens shells.
+      Since I have pearls in my pockets, I ran out of rum a long time ago
   - Key: level1_dialog_door
-    Value: "Looks like its door to out...\r"
+    Value: Looks like its door to out...
   - Key: level2_dialog_crabby_1
     Value: "Beyond this door lies danger, but you\u2019re strong if you\u2019ve made
-      it this far\r"
+      it this far"
   - Key: level2_dialog_crabby_2
-    Value: "Be careful\r"
+    Value: Be careful
   - Key: level3_dialog_crabby_failDialog1
-    Value: "Only my hand can open this door\r"
+    Value: Only my hand can open this door
   - Key: level3_dialog_crabby_failDialog2
-    Value: "But without key i cant...\r"
+    Value: But without key i cant...
   - Key: level3_dialog_crabby_successDialog1
-    Value: "Oh, this good key!\r"
+    Value: Oh, this good key!
   - Key: level3_dialog_crabby_successDialog2
-    Value: "Give me a second...\r"
+    Value: Give me a second...
   - Key: level3_dialog_crabby_byeDialog1
     Value: See later!

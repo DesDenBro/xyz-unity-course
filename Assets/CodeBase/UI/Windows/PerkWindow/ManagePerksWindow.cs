@@ -11,10 +11,14 @@ namespace PixelCrew.UI.Perks
 {
     public class ManagePerksWindow : AnimatedWindow
     {
+        private const string __passiveTypeKey = "perks_type_passive";
+        private const string __activeTypeKey = "perks_type_active";
+
         [SerializeField] private Button _buyButton;
         [SerializeField] private Button _useButton;
         [SerializeField] private RequiredItemWidget _price;
         [SerializeField] private Text _info;
+        [SerializeField] private Text _type;
         [SerializeField] private Transform _container;
 
         private PedefinedDataGroup<PerkDef, PerkWidget> _perksDataGroup;
@@ -51,6 +55,7 @@ namespace PixelCrew.UI.Perks
             _price.SetData(def.Price);
 
             _info.text = LocalizationManager.I.Localize(def.Info);
+            _type.text = LocalizationManager.I.Localize(def.IsPassive ? __passiveTypeKey : __activeTypeKey);
         }
 
         public void OnBuy()

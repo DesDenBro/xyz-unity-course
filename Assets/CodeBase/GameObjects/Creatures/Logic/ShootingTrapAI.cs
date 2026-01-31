@@ -6,8 +6,11 @@ using UnityEngine;
 
 namespace PixelCrew.GameObjects.Creatures
 { 
-    public class ShootingTrapAI : MonoBehaviour
+    public class ShootingTrapAI : BaseMobAI
     {
+        [Header("Params")]
+        [SerializeField] private Cooldown _stunCooldown = new Cooldown(3);
+
         [Header("Melee")]
         [SerializeField] private Cooldown _meleeCooldown;
         [SerializeField] private LayerCheck _meleeCanAttack;
@@ -107,6 +110,11 @@ namespace PixelCrew.GameObjects.Creatures
             _isRangeDoneCooldown.Reset();
 
             _sac.SpawnAction("throw");
+        }
+
+        public override void Stun()
+        {
+            Debug.Log("trap stun");
         }
     }
 }
