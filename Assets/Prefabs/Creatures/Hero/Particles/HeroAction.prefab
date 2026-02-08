@@ -838,7 +838,7 @@ Transform:
   m_GameObject: {fileID: 8515384336005141226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8497151579401214312}
   m_RootOrder: 5
@@ -857,11 +857,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: stopm
   _sprites:
-  - {fileID: 21300000, guid: 2556de0322c16b548872657edf995644, type: 3}
-  - {fileID: 21300000, guid: 8aedaa9511ff65a4cac2991cd94f0611, type: 3}
-  - {fileID: 21300000, guid: 6173024186e8c184faf0d766e87bf714, type: 3}
-  - {fileID: 21300000, guid: a08d6033aeb9b3245bed0c9c0bcc9f69, type: 3}
-  - {fileID: 21300000, guid: c883f189065241046b92364627114819, type: 3}
+  - {fileID: 21300000, guid: 28dd71b7cb0c90445ae9fcfb19afeb53, type: 3}
+  - {fileID: 21300000, guid: 8789c918f1729834a8752643c2009d44, type: 3}
+  - {fileID: 21300000, guid: 33f4f511b42e8d74bb0734c98ec274e5, type: 3}
+  - {fileID: 21300000, guid: c6d6145a5d2eab14bb3895e16a0847e9, type: 3}
+  - {fileID: 21300000, guid: 95a56cbf9e1b23f439030d2f176db8b9, type: 3}
   _flipX: 0
   _isFixedFlip: 0
   _isLoop: 0

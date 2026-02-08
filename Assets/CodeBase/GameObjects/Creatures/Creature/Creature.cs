@@ -27,8 +27,8 @@ namespace PixelCrew.GameObjects.Creatures
         [SerializeField] protected CheckCircleOverlap _attackRange;
 
         [Header("Creature perks")]
-        [SerializeField] protected Cooldown _stunCooldown = new Cooldown(20f);
-        [SerializeField] protected CheckLineOverlap _stunCheck;
+        [SerializeField] protected Cooldown _stompCooldown = new Cooldown(20f);
+        [SerializeField] protected CheckLineOverlap _stompCheck;
         
         
         private float? _maxYInJump = null;
@@ -226,7 +226,7 @@ namespace PixelCrew.GameObjects.Creatures
         {
             switch (perk)
             {
-                case "stun": return _stunCooldown.TimeToEnd;
+                case "stun": return _stompCooldown.TimeToEnd;
             }
             return -1;
         }

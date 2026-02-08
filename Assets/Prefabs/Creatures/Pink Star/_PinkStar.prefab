@@ -78,7 +78,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  checkOnlyForward: 0
+  checkOnlyForward: 1
   _radius: 0.4
 --- !u!58 &4265668652626836630
 CircleCollider2D:
@@ -714,6 +714,9 @@ MonoBehaviour:
     _value: 0.5
   _groundCheck: {fileID: 5784780334059268827}
   _attackRange: {fileID: 4681518861892597388}
+  _stompCooldown:
+    _value: 20
+  _stompCheck: {fileID: 0}
 --- !u!114 &7868960150264152829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,6 +745,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventoryData:
     _inventory: []
+    _selectedThrowId:
+      _value: 
 --- !u!114 &717764824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,6 +858,8 @@ MonoBehaviour:
   _alarmDelay: 0.2
   _attackCooldown: 1
   _confuseCooldown: 0.5
+  _stunCooldown:
+    _value: 3
 --- !u!114 &1907194009
 MonoBehaviour:
   m_ObjectHideFlags: 0

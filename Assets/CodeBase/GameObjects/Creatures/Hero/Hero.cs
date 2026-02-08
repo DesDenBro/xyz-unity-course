@@ -1,14 +1,13 @@
-﻿using System.Collections;
-using System.Linq;
-using UnityEditor.Animations;
-using UnityEngine;
-using PixelCrew.Common;
+﻿using PixelCrew.Common;
 using PixelCrew.Common.Tech;
 using PixelCrew.Components;
 using PixelCrew.Model;
 using PixelCrew.Model.Definitions;
-using System;
-using System.Data.Common;
+using PixelCrew.Utils;
+using System.Collections;
+using System.Linq;
+using UnityEditor.Animations;
+using UnityEngine;
 
 namespace PixelCrew.GameObjects.Creatures
 {
@@ -258,24 +257,27 @@ namespace PixelCrew.GameObjects.Creatures
             return true;
         }
 
-
         public void InitStopm()
         {
-            if (!_stunCooldown.IsReady || !_isGrounded) return;
-            _stunCooldown.Reset();
+            if (!_stompCooldown.IsReady || !_isGrounded) return;
+            _stompCooldown.Reset();
 
+            _animator.SetKeyVal(AnimationKeys.Creature.TriggerStomp);
+        }
+        public void OnStopm()
+        {
             SpawnAction("stopm");
             _playSounds.Play("Stopm");
-            _stunCheck.Check();
+            _stompCheck.Check();
         }
-        public void OnStopm(GameObject go)
+        public void CastStopm(GameObject go)
         {
             if (go == null) return;
 
             var bmai = go.GetComponent<BaseMobAI>();
             if (bmai == null)
             {
-                Debug.Log("bmai is null, its sucks");
+                Debug.Log("bmai is null");
                 return;
             }
 

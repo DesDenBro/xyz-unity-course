@@ -17,6 +17,7 @@ namespace PixelCrew.GameObjects
             public static readonly TriggerAnimationKey TriggerHealing = new TriggerAnimationKey("trigger-healing");
             public static readonly TriggerAnimationKey TriggerAttack = new TriggerAnimationKey("trigger-attack");
             public static readonly TriggerAnimationKey TriggerThrow = new TriggerAnimationKey("trigger-throw");
+            public static readonly TriggerAnimationKey TriggerStomp = new TriggerAnimationKey("trigger-stomp");
         }
 
         public static class Hero

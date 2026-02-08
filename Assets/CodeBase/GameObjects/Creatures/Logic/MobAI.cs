@@ -14,7 +14,7 @@ namespace PixelCrew.GameObjects.Creatures
         [SerializeField] private float _alarmDelay = 2f;
         [SerializeField] private float _attackCooldown = 1f;
         [SerializeField] private float _confuseCooldown = 3f;
-        [SerializeField] private Cooldown _stunCooldown = new Cooldown(3);
+        [SerializeField] private Cooldown _stunCooldown = new Cooldown(2f);
 
         private bool _isDead = false;
         private Coroutine _current;
@@ -27,6 +27,7 @@ namespace PixelCrew.GameObjects.Creatures
         {
             _creature = GetComponent<Creature>();
             _patrol = GetComponent<BasePatrol>();
+            
         }
         private void Start()
         {
@@ -104,9 +105,21 @@ namespace PixelCrew.GameObjects.Creatures
             _creature.SetDirection(MobAIUtils.CalcDirectionX(transform, _target.transform));
         }
 
+        public IEnumerator StunEffect()
+        {
+            while (!_stunCooldown.IsReady)
+            {
+                _creature.SpawnAction("stun");
+                yield return new WaitForSeconds(0.5f);
+            }
+            StartState(_patrol.DoPatrol());
+        }
         public override void Stun()
         {
-            Debug.Log("creature stun");
+            if (!_stunCooldown.IsReady) return;
+            _stunCooldown.Reset();
+
+            StartState(StunEffect());
         }
     }
 

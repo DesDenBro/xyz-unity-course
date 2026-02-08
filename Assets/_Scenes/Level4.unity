@@ -6857,7 +6857,7 @@ PrefabInstance:
     - target: {fileID: 6039322781069366146, guid: b0531eaa052180846a4ee53147f2ad13,
         type: 3}
       propertyPath: _levelsData._levelDatas.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6039322781069366146, guid: b0531eaa052180846a4ee53147f2ad13,
         type: 3}

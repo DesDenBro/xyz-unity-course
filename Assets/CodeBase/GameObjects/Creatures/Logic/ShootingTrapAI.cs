@@ -9,7 +9,7 @@ namespace PixelCrew.GameObjects.Creatures
     public class ShootingTrapAI : BaseMobAI
     {
         [Header("Params")]
-        [SerializeField] private Cooldown _stunCooldown = new Cooldown(3);
+        [SerializeField] private Cooldown _stunCooldown = new Cooldown(2f);
 
         [Header("Melee")]
         [SerializeField] private Cooldown _meleeCooldown;
@@ -27,6 +27,7 @@ namespace PixelCrew.GameObjects.Creatures
         private bool _attackAfterCallerCooldown = false;
         private Cooldown _isRangeDoneCooldown = new Cooldown(0.2f);
         private Cooldown _rangeCallerCooldown = new Cooldown(0.3f);
+        private Cooldown _stunAnimationCallerCooldown = new Cooldown(0.5f);
         private bool _isRangeDone = false;
 
         public bool InRangeCooldown => !_rangeCooldown.IsReady;
@@ -42,6 +43,17 @@ namespace PixelCrew.GameObjects.Creatures
 
         private void FixedUpdate()
         {
+            if (!_stunCooldown.IsReady)
+            {
+                if (_stunAnimationCallerCooldown.IsReady)
+                {
+                    _stunAnimationCallerCooldown.Reset();
+                    _sac.SpawnAction("stun");
+                }
+
+                return;
+            }
+
             // нужно, чтобы зависимые успели увидеть факт выстрела
             if (_isRangeDoneCooldown.IsReady) _isRangeDone = false;
 
@@ -114,7 +126,7 @@ namespace PixelCrew.GameObjects.Creatures
 
         public override void Stun()
         {
-            Debug.Log("trap stun");
+            _stunCooldown.Reset();
         }
     }
 }

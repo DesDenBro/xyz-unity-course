@@ -4883,7 +4883,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5784780335098992499}
-        m_MethodName: OnStopm
+        m_MethodName: CastStopm
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5691,9 +5691,9 @@ MonoBehaviour:
     _value: 0.5
   _groundCheck: {fileID: 5784780334059268827}
   _attackRange: {fileID: 4681518861892597388}
-  _stunCooldown:
+  _stompCooldown:
     _value: 20
-  _stunCheck: {fileID: 6594990609742469317}
+  _stompCheck: {fileID: 6594990609742469317}
   _possibleInteractionCheck: {fileID: 9174449383125741794}
   _doInteractionCheck: {fileID: 3926177964129831508}
   _weapon: {fileID: 0}
@@ -5746,6 +5746,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _perksData:
     _used:
+      _value: 
+    _activePassives:
       _value: 
     _unlocked: []
 --- !u!114 &717764824
