@@ -158,7 +158,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -980,6 +980,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2059865518560219889, guid: d07784e3e8e9a4931bf31252387cd77c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d07784e3e8e9a4931bf31252387cd77c, type: 3}
+--- !u!224 &582289572656034858 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8118487882751536090, guid: d07784e3e8e9a4931bf31252387cd77c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8700423350501269488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5239051078393854964 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3461796702580548612, guid: d07784e3e8e9a4931bf31252387cd77c,
@@ -998,9 +1004,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa6ece3cc30747609bd9b26c3cb61ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &582289572656034858 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8118487882751536090, guid: d07784e3e8e9a4931bf31252387cd77c,
-    type: 3}
-  m_PrefabInstance: {fileID: 8700423350501269488}
-  m_PrefabAsset: {fileID: 0}
