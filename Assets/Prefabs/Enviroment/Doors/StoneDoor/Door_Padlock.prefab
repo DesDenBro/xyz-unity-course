@@ -7,21 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7684226583770764006}
     m_Modifications:
-    - target: {fileID: 617982798934823263, guid: 4cfca9d81b4d0964583e316b24fac915,
-        type: 3}
-      propertyPath: _onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 617982798934823263, guid: 4cfca9d81b4d0964583e316b24fac915,
-        type: 3}
-      propertyPath: _onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelfDestroy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612441724492914312, guid: 4cfca9d81b4d0964583e316b24fac915,
-        type: 3}
-      propertyPath: _selfDestroyTime._value
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2110097491128376355, guid: 4cfca9d81b4d0964583e316b24fac915,
         type: 3}
       propertyPath: m_Name
@@ -82,11 +67,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3712776095252927725, guid: 4cfca9d81b4d0964583e316b24fac915,
-        type: 3}
-      propertyPath: _keysAmount
-      value: -2
-      objectReference: {fileID: 0}
     - target: {fileID: 5083399383520446237, guid: 4cfca9d81b4d0964583e316b24fac915,
         type: 3}
       propertyPath: _bound._sentences.Array.size
@@ -110,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 6605974918090503679, guid: 4cfca9d81b4d0964583e316b24fac915,
         type: 3}
       propertyPath: _afterActions.Array.data[0].m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6605974918090503679, guid: 4cfca9d81b4d0964583e316b24fac915,
         type: 3}
