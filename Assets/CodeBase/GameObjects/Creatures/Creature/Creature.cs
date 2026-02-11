@@ -259,8 +259,7 @@ namespace PixelCrew.GameObjects.Creatures
         {
             _attackRange.Check();
         }
-
-
+        
         public virtual void InitHeal()
         {
             if (!_IsAlive || !_IsNormalMove || !_healCooldown.IsReady) return;

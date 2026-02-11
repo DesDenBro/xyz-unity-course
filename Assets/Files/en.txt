@@ -45,6 +45,7 @@ items_descr_swordThrow;The ability to use pieces of his sword as throwing object
 items_descr_sword;An ordinary sword, of which there are many, but this sword is mine
 items_descr_potionHealth;Once you try it, you think that it could make a great business out of it. I would like to remove another side effect in the form of a hangover...
 items_descr_pearlThrow;When a pirate is bored, he does two things - drinks rum or opens shells. Since I have pearls in my pockets, I ran out of rum a long time ago
+items_descr_candle;The best helper when you go out at night to get more rum
 
 level1_dialog_door;Looks like its door to out...
 
