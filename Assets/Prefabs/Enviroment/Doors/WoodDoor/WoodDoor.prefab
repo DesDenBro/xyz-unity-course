@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 9132291359665964644}
   - component: {fileID: 6407045309518304212}
   - component: {fileID: 5250778563320450385}
-  - component: {fileID: 3991039096372236920}
   - component: {fileID: 3928921763253391860}
   m_Layer: 0
   m_Name: WoodDoor
@@ -153,7 +152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6690463362691836411}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2986786, y: -18.088743, z: 3.1606445}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7458392087442627857}
@@ -183,7 +182,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6b05aeb9a7d20a549ba67eea938ef48b, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -201,8 +200,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 248237793
-  m_SortingLayer: 7
+  m_SortingLayerID: -1720491503
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 47df120e83381904d8a19243eb9c4c5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -229,21 +228,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: idle
---- !u!114 &3991039096372236920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6690463362691836411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8136a1d6c0c8aac44b97c147af4f1bbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  _outlineWidth: 1
-  _isEnabled: 1
 --- !u!114 &3928921763253391860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,6 +361,11 @@ PrefabInstance:
       propertyPath: _iterations
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2921700087545008389, guid: 109153313607fa1438355867c4f6cd17,
+        type: 3}
+      propertyPath: _renderSource
+      value: 
+      objectReference: {fileID: 6407045309518304212}
     - target: {fileID: 2921700087545008389, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: _actions.Array.size

@@ -409,7 +409,6 @@ namespace PixelCrew.GameObjects.Creatures
             SetHeroStat(StatId.RangeDamage, true);
 
             if (_session.PlayerData.Health > 0) _health.SetHealth(_session.PlayerData.Health);
-            if (_session.PlayerData.IsCandleActive) _candle.TurnOn();
 
             _inventory.SetInventory(_session.PlayerData.Inventory.Clone());
             _perks.SetPerks(_session.PlayerData.Perks.Clone());
@@ -417,6 +416,7 @@ namespace PixelCrew.GameObjects.Creatures
             
             _session.ReloadLinks();
 
+            if (_session.PlayerData.IsCandleActive) InitLight();
             ArmWeapon(_inventory.GetItem(InventoryItemName.Sword)?.Prefab, true);
         }
         public virtual void UpdateSessionData(string checkPointName)

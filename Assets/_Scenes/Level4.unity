@@ -789,6 +789,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chain (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4786301823302152539, guid: 06546e2afa2da2c4c820f4d2ddb24d7b,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.3176098
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786301823302152539, guid: 06546e2afa2da2c4c820f4d2ddb24d7b,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -1.1531248
+      objectReference: {fileID: 0}
     - target: {fileID: 7110920054512685229, guid: 06546e2afa2da2c4c820f4d2ddb24d7b,
         type: 3}
       propertyPath: m_Size.y
@@ -10638,6 +10648,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chain
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786301823302152539, guid: 06546e2afa2da2c4c820f4d2ddb24d7b,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 4.2204194
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786301823302152539, guid: 06546e2afa2da2c4c820f4d2ddb24d7b,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -1.6045296
       objectReference: {fileID: 0}
     - target: {fileID: 7110920054512685229, guid: 06546e2afa2da2c4c820f4d2ddb24d7b,
         type: 3}
