@@ -23,7 +23,7 @@ PrefabInstance:
     - target: {fileID: 3672460148222510680, guid: fc7781b2ebf09f34aba9b1e32180be2c,
         type: 3}
       propertyPath: m_Name
-      value: NPC_Crabby
+      value: NPC_Crabby Perks
       objectReference: {fileID: 0}
     - target: {fileID: 3672460148222510681, guid: fc7781b2ebf09f34aba9b1e32180be2c,
         type: 3}

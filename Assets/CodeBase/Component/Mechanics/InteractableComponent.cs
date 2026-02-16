@@ -7,6 +7,8 @@ namespace PixelCrew.Components
 {
     public class InteractableComponent : MonoBehaviour
     {
+        [SerializeField] private SpriteRenderer _renderSource;
+        [SerializeField] private OutlineCollection _outlineCollection;
         [SerializeField] private bool _isActive = true;
         [SerializeField] private bool _checksToActivate;
         [SerializeField] private UnityEventGameObject[] _onChecksFailActions;
@@ -17,35 +19,63 @@ namespace PixelCrew.Components
         [SerializeField] private UnityEventGameObject[] _actions;
         [SerializeField] private UnityEventGameObject[] _afterActions;
 
-        private OutlineSettings outline;
-        private OutlineCollection outlineCollection;
-
+        private OutlineSettings _outline;
         private ThingSpecification _thingSpecification;
         private GameObject _lastActivator;
-
+        private SpriteRenderer _innerSpriteRenderer;
         private bool _interactionDone = false;
         private bool _triggerAfterActions = false;
         private bool _isInHighlight;
 
+
         public bool InteractIsPossible => _iterations == InteractableIteration.Multi || !_interactionDone;
-        private bool _IsOutlineEnabled => outline?.IsEnabled ?? outlineCollection?.IsEnabled ?? false;
+        private bool _IsOutlineEnabled
+        {
+            get 
+            {
+                if (_outlineCollection != null) return _outlineCollection.IsEnabled;
+                if (_outline != null) return _outline.IsEnabled;
+                return false;
+            }
+        }
 
 
-        private void OutlineEnable() { if (outline != null) outline?.Enable(); else if (outlineCollection != null) outlineCollection?.Enable(); }
-        private void OutlineDisable() { if (outline != null) outline?.Disable(); else if (outlineCollection != null) outlineCollection?.Disable(); }
+        private void OutlineEnable() 
+        {
+            if (_outlineCollection != null) _outlineCollection.Enable(); 
+            else if (_outline != null)
+            {
+                _innerSpriteRenderer.sprite = _renderSource.sprite;
+                _outline.Enable(); 
+            } 
+        }
+        private void OutlineDisable() 
+        {
+            if (_outlineCollection != null) _outlineCollection.Disable(); 
+            else if (_outline != null) 
+            {
+                _innerSpriteRenderer.sprite = Sprite.Create(null, new Rect(0, 0, 0, 0), Vector2.zero);
+                _outline.Disable(); 
+            }
+        }
 
 
         private void Start()
         {
+            _innerSpriteRenderer = GetComponent<SpriteRenderer>();
             _thingSpecification = GetComponent<ThingSpecification>();
-            outline = GetComponentInParent<OutlineSettings>();
-            if (outline == null) outlineCollection = GetComponentInParent<OutlineCollection>();
+            _outline = GetComponent<OutlineSettings>();
 
             OutlineDisable();
         }
 
         private void FixedUpdate()
         {
+            if (_isInHighlight && _outlineCollection == null)
+            {
+                _innerSpriteRenderer.sprite = _renderSource.sprite;
+            }
+
             if (!_isInHighlight)
             {
                 if (_IsOutlineEnabled) OutlineDisable();

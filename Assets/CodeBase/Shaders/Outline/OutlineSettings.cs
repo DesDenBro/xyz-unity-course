@@ -44,7 +44,10 @@ namespace PixelCrew.Components
             _spriteRenderer.GetPropertyBlock(_propertyBlock);
             _propertyBlock.SetColor("_OutlineColor", _outlineColor);
             _propertyBlock.SetFloat("_OutlineWidth", outlineWidth);
-            _propertyBlock.SetFloat("_TextureSize", _spriteRenderer.sprite.texture.width);
+            if (_spriteRenderer != null && _spriteRenderer.sprite != null && _spriteRenderer.sprite.texture != null)
+            { 
+                _propertyBlock.SetFloat("_TextureSize", _spriteRenderer.sprite.texture.width);
+            }
             _spriteRenderer.SetPropertyBlock(_propertyBlock);
         }
     }

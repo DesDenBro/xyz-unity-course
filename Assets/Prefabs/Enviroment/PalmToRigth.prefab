@@ -44,12 +44,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: idle
-  _isLoop: 1
   _sprites:
   - {fileID: -6024505487453159095, guid: 53aa8f5927afedf43b2e41fa2e9c6765, type: 3}
   - {fileID: 3531074664856275464, guid: 53aa8f5927afedf43b2e41fa2e9c6765, type: 3}
   - {fileID: 802857254159732353, guid: 53aa8f5927afedf43b2e41fa2e9c6765, type: 3}
   - {fileID: 1278475588773109743, guid: 53aa8f5927afedf43b2e41fa2e9c6765, type: 3}
+  _flipX: 0
+  _isFixedFlip: 0
+  _isLoop: 1
   _allowNext: 0
   _onComplete:
     m_PersistentCalls:
@@ -80,7 +82,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6688352110323677367}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 3.14, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 160493621518555343}
@@ -105,7 +107,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -151,5 +153,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
-  _states:
-  - {fileID: 1810332319900346743}
+  _startSasName: 

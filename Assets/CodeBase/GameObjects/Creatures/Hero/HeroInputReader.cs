@@ -79,6 +79,14 @@ namespace PixelCrew.GameObjects
             }
         }
 
+        public void PressLight(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _hero.InitLight();
+            }
+        }
+
         /*
         public void PressNextItem(InputAction.CallbackContext context)
         {

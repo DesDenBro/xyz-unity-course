@@ -7,6 +7,7 @@ namespace PixelCrew.Model
     public class PlayerData
     {
         public int Health;
+        public bool IsCandleActive;
 
         public InventoryData Inventory;
         public PerksData Perks;

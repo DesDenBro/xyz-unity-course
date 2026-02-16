@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PixelCrew.GameObjects;
+using UnityEngine;
 
 namespace PixelCrew.Components
 {
@@ -14,6 +15,19 @@ namespace PixelCrew.Components
         }
 
         public bool IsEnabled => _isEnabled;
+
+        private void FixedUpdate()
+        {
+            if (!IsEnabled) return;
+
+            foreach(var os in outlines)
+            {
+                var rp = os.GetComponent<SpriteReplacer>();
+                if (rp == null) continue;
+                rp.ReplaceSprite();
+            }
+        }
+
 
         public void Enable()
         {

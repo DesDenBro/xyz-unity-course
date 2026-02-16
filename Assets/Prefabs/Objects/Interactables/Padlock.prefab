@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4960197420403014441}
   - component: {fileID: 5443506424090316}
   - component: {fileID: 1612441724492914312}
-  - component: {fileID: 2845153050303978671}
   m_Layer: 0
   m_Name: Padlock
   m_TagString: Untagged
@@ -30,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110097491128376355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.094, y: -0.33774412, z: 3.1606445}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 121532005129889093}
@@ -71,7 +70,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6b05aeb9a7d20a549ba67eea938ef48b, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -148,21 +147,6 @@ MonoBehaviour:
   _selfDestroyAfterTime: 0
   _selfDestroyTime:
     _value: 10
---- !u!114 &2845153050303978671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110097491128376355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8136a1d6c0c8aac44b97c147af4f1bbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  _outlineWidth: 1
-  _isEnabled: 1
 --- !u!1 &3426044096690486294
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,22 +285,22 @@ PrefabInstance:
     - target: {fileID: 909568508128479482, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 909568508128479482, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 909568508128479482, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.034
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 909568508128479482, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.012
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 909568508128479482, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
@@ -362,12 +346,17 @@ PrefabInstance:
         type: 3}
       propertyPath: outline
       value: 
-      objectReference: {fileID: 2845153050303978671}
+      objectReference: {fileID: 0}
     - target: {fileID: 2921700087545008389, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: _isActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2921700087545008389, guid: 109153313607fa1438355867c4f6cd17,
+        type: 3}
+      propertyPath: _renderSource
+      value: 
+      objectReference: {fileID: 3714592973949855671}
     - target: {fileID: 2921700087545008389, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: _checksToActivate
@@ -541,12 +530,12 @@ PrefabInstance:
     - target: {fileID: 9047536408257778908, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.9180372
+      value: 1.2158631
       objectReference: {fileID: 0}
     - target: {fileID: 9047536408257778908, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.025613904
+      value: -0.042209685
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 109153313607fa1438355867c4f6cd17, type: 3}

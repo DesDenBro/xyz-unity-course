@@ -60,3 +60,9 @@ MonoBehaviour:
     _prefab: {fileID: 0}
     _icon: {fileID: 21300000, guid: 0e6dfd1db82e442b292fe749ae4464d7, type: 3}
     _descriptionLocaleKey: items_descr_pearlThrow
+  - _id: Candle
+    _stackLimitSize: 999
+    _tags: 00000000
+    _prefab: {fileID: 0}
+    _icon: {fileID: 21300000, guid: 07b64af6f51954e23aff2cb7cec5de47, type: 3}
+    _descriptionLocaleKey: items_descr_candle

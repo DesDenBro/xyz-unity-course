@@ -45,9 +45,15 @@ items_descr_swordThrow;The ability to use pieces of his sword as throwing object
 items_descr_sword;An ordinary sword, of which there are many, but this sword is mine
 items_descr_potionHealth;Once you try it, you think that it could make a great business out of it. I would like to remove another side effect in the form of a hangover...
 items_descr_pearlThrow;When a pirate is bored, he does two things - drinks rum or opens shells. Since I have pearls in my pockets, I ran out of rum a long time ago
+items_descr_candle;The best helper when you go out at night to get more rum
 
+level1_dialog_sword;I think I've found something in this darkness...
+level1_dialog_sword2;Press E to interact with the highlighted object
+level1_dialog_candle;Is it my imagination, or is that a candle? I'll light it with the old-fashioned method...
+level1_dialog_candle2;Press L to light the candle and press it again to extinguish it
 level1_dialog_door;Looks like its door to out...
 
+level2_dialog_dark;It's so dark... I should turn on the light
 level2_dialog_crabby_1;Beyond this door lies danger, but you’re strong if you’ve made it this far
 level2_dialog_crabby_2;Be careful
 

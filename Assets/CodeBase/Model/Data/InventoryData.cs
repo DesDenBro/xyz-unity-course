@@ -185,6 +185,7 @@ namespace PixelCrew.Model
         public const string Sword = "Sword";
         public const string PotionHealth = "PotionHealth";
         public const string SmallPotionHealth = "SmallPotionHealth";
+        public const string Candle = "Candle";
 
         public const string SwordThrow = "SwordThrow";
         public const string PearlThrow = "PearlThrow";

@@ -23,6 +23,7 @@ namespace PixelCrew.GameObjects.Creatures
         [SerializeField] private Weapon _weapon;
         [SerializeField] private ParticleSystem _hitParticles;
         [SerializeField] private SpawnComponent _throwSpawn;
+        [SerializeField] private Candle _candle;
 
         [Header("Hero animators")]
         [SerializeField] private AnimatorController _armed;
@@ -257,6 +258,12 @@ namespace PixelCrew.GameObjects.Creatures
             return true;
         }
 
+        public void InitLight()
+        {
+            if (_candle == null) return;
+            _candle.TurnOn();
+        }
+
         public void InitStopm()
         {
             if (!_stompCooldown.IsReady || !_isGrounded) return;
@@ -409,6 +416,7 @@ namespace PixelCrew.GameObjects.Creatures
             
             _session.ReloadLinks();
 
+            if (_session.PlayerData.IsCandleActive) InitLight();
             ArmWeapon(_inventory.GetItem(InventoryItemName.Sword)?.Prefab, true);
         }
         public virtual void UpdateSessionData(string checkPointName)
@@ -419,6 +427,7 @@ namespace PixelCrew.GameObjects.Creatures
             _session.LevelsData.SaveHeroPosition(levelName, checkPointName);
 
             _session.PlayerData.Health = _health.Health;
+            _session.PlayerData.IsCandleActive = _candle.IsActive;
 
             _session.PlayerData.Inventory = _inventory.InventoryData.Clone();
             _session.PlayerData.Perks = _perks.PerksData.Clone();
