@@ -1,6 +1,7 @@
 ﻿using PixelCrew.Common;
 using PixelCrew.Common.Tech;
 using PixelCrew.Components;
+using PixelCrew.Effects;
 using PixelCrew.Model;
 using PixelCrew.Model.Definitions;
 using PixelCrew.Utils;
@@ -29,6 +30,7 @@ namespace PixelCrew.GameObjects.Creatures
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
 
+        private CameraShakeEffect _camShakeEffect;
         private bool _isDoubleJumpActive;
         private bool _forceDoubleJumpActive;
         private ActionInteractComponent _actionInteract;
@@ -49,6 +51,7 @@ namespace PixelCrew.GameObjects.Creatures
         protected override void Awake()
         {
             base.Awake();
+            _camShakeEffect = FindObjectOfType<CameraShakeEffect>();
             _actionInteract = GetComponent<ActionInteractComponent>();
             _inventory = GetComponent<InventoryComponent>();
             _perks = GetComponent<PerksComponent>();
@@ -164,6 +167,7 @@ namespace PixelCrew.GameObjects.Creatures
         {
             base.TakeDamage();
             SpawnCoins();
+            _camShakeEffect.Shake();
         }
         private void SpawnCoins()
         {
