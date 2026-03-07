@@ -22,7 +22,7 @@ namespace PixelCrew.GameObjects
 
         public static class Hero
         {
-
+            public static readonly FloatAnimationKey HPValue = new FloatAnimationKey("hp-value");
         }
 
         public static class ShootingTrap

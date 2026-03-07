@@ -29,14 +29,16 @@ namespace PixelCrew.Effects
 
         private IEnumerator StartAnimation()
         {
-            _camNoise.m_FrequencyGain = _intensity;
+            if (_camNoise != null)
+                _camNoise.m_FrequencyGain = _intensity;
             yield return new WaitForSeconds(_animationTime);
             StopAnimation();
         }
 
         private void StopAnimation()
         {
-            _camNoise.m_FrequencyGain = 0f;
+            if (_camNoise != null)
+                _camNoise.m_FrequencyGain = 0f;
             StopCoroutine(_coroutine);
             _coroutine = null;
         }
