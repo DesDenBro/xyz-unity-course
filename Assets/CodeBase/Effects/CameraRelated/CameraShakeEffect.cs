@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using Cinemachine;
 using UnityEngine;
 
@@ -10,7 +8,8 @@ namespace PixelCrew.Effects
     public class CameraShakeEffect : MonoBehaviour
     {
         [SerializeField] private float _animationTime = 0.3f;
-        [SerializeField] private float _intensity = 3f;
+        [SerializeField] private float _frequency = 3f;
+        [SerializeField] private float _amplitude = 1f;
 
         private CinemachineBasicMultiChannelPerlin _camNoise;
         private Coroutine _coroutine;
@@ -30,7 +29,10 @@ namespace PixelCrew.Effects
         private IEnumerator StartAnimation()
         {
             if (_camNoise != null)
-                _camNoise.m_FrequencyGain = _intensity;
+            {
+                _camNoise.m_FrequencyGain = _frequency;
+                _camNoise.m_AmplitudeGain = _amplitude;
+            }
             yield return new WaitForSeconds(_animationTime);
             StopAnimation();
         }
@@ -38,7 +40,10 @@ namespace PixelCrew.Effects
         private void StopAnimation()
         {
             if (_camNoise != null)
+            {
                 _camNoise.m_FrequencyGain = 0f;
+                _camNoise.m_AmplitudeGain = 0f;
+            }
             StopCoroutine(_coroutine);
             _coroutine = null;
         }

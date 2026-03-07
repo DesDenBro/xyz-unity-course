@@ -1,9 +1,8 @@
 ﻿using PixelCrew.Components;
+using PixelCrew.UI.LevelsLoader;
 using PixelCrew.Utils;
 using System;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace PixelCrew.UI
 {
@@ -19,8 +18,8 @@ namespace PixelCrew.UI
         public void OnStartGame()
         {
             _closeAction = () => 
-            { 
-                SceneManager.LoadScene("Level1"); 
+            {
+                FindObjectOfType<LevelLoader>().Show("Level1");
             };
             Close();
         }

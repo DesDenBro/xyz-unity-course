@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using PixelCrew.UI.LevelsLoader;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace PixelCrew.Components
 {
@@ -11,7 +9,7 @@ namespace PixelCrew.Components
 
         public void Exit()
         {
-            SceneManager.LoadScene(_sceneName);
+            FindObjectOfType<LevelLoader>().Show(_sceneName);
         }
     }
 }

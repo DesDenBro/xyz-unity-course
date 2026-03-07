@@ -1,4 +1,4 @@
-﻿using PixelCrew.Model;
+﻿using PixelCrew.UI.LevelsLoader;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,7 +11,7 @@ namespace PixelCrew.Components
             var scene = SceneManager.GetActiveScene();
             if (scene != null)
             {
-                SceneManager.LoadScene(scene.name);
+                FindObjectOfType<LevelLoader>().Show(scene.name);
             }
             else
             {

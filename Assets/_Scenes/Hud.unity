@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -255,6 +255,93 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &77494743
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1314352952}
+    m_Modifications:
+    - target: {fileID: 4376430442568934732, guid: a2aff6418957a2d4fb694070c78937ff,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376430442568934732, guid: a2aff6418957a2d4fb694070c78937ff,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3963176
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376430442568934732, guid: a2aff6418957a2d4fb694070c78937ff,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -24.031822
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376430442568934732, guid: a2aff6418957a2d4fb694070c78937ff,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.543969
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376430442568934732, guid: a2aff6418957a2d4fb694070c78937ff,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376430442568934732, guid: a2aff6418957a2d4fb694070c78937ff,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376430442568934732, guid: a2aff6418957a2d4fb694070c78937ff,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376430442568934732, guid: a2aff6418957a2d4fb694070c78937ff,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376430442568934732, guid: a2aff6418957a2d4fb694070c78937ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376430442568934732, guid: a2aff6418957a2d4fb694070c78937ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376430442568934732, guid: a2aff6418957a2d4fb694070c78937ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376430442568934734, guid: a2aff6418957a2d4fb694070c78937ff,
+        type: 3}
+      propertyPath: m_Name
+      value: UI_vignette
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a2aff6418957a2d4fb694070c78937ff, type: 3}
+--- !u!4 &77494744 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4376430442568934732, guid: a2aff6418957a2d4fb694070c78937ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 77494743}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &77494745 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9091770814676612926, guid: a2aff6418957a2d4fb694070c78937ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 77494743}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d884fdad437c01c488314602508e2248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &189060743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,6 +1343,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1877604421}
+  - {fileID: 77494744}
   m_Father: {fileID: 266393706}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1279,6 +1367,7 @@ MonoBehaviour:
   _text: {fileID: 1397433209}
   _container: {fileID: 1877604420}
   _animator: {fileID: 1314352954}
+  _vignetteController: {fileID: 77494745}
   _textSpeed: 0.09
   _typing: {fileID: 8300000, guid: b75198421ba33814dade6d12ed2a3db9, type: 3}
   _open: {fileID: 8300000, guid: be2babdccf0ab584aae6bc34716ee7f5, type: 3}

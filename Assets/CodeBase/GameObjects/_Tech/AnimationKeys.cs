@@ -45,6 +45,11 @@ namespace PixelCrew.GameObjects
             {
                 public static readonly BoolAnimationKey IsOpen = new BoolAnimationKey("is-open");
             }
+
+            public static class LevelLoad
+            {
+                public static readonly BoolAnimationKey IsEnabled = new BoolAnimationKey("is-enabled");
+            }
         }
     }
 }

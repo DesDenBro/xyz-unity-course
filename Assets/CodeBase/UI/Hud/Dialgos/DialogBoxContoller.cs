@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using PixelCrew.Model.Definitions.Localization;
+using PixelCrew.UI.Postprocessing;
 
 namespace PixelCrew.UI.Hud
 {
@@ -13,6 +14,7 @@ namespace PixelCrew.UI.Hud
         [SerializeField] private Text _text;
         [SerializeField] private GameObject _container;
         [SerializeField] private Animator _animator;
+        [SerializeField] private VignetteController _vignetteController;
 
         [Space]
         [SerializeField] private float _textSpeed = 0.09f;
@@ -45,6 +47,7 @@ namespace PixelCrew.UI.Hud
             _container.SetActive(true);
             _sfxSource.PlayOneShot(_open);
             _animator.SetKeyVal(AnimationKeys.UI.DialogBox.IsOpen, true);
+            _vignetteController.Show();
         }
 
         public void OnSkip()
@@ -101,6 +104,7 @@ namespace PixelCrew.UI.Hud
         private void HideDialogBox()
         {
             _animator.SetKeyVal(AnimationKeys.UI.DialogBox.IsOpen, false);
+            _vignetteController.Hide();
             _sfxSource.PlayOneShot(_close);
         }
 
