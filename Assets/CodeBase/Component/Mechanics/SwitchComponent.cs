@@ -10,16 +10,11 @@ namespace PixelCrew.Components
 
         public bool State => _state;
 
+        [ContextMenu("Switch")]
         public void Switch()
         {
             _state = !_state;
             _animator.SetBool(_animationKey, _state);
-        }
-
-        [ContextMenu("Switch")]
-        public void SwitchIt()
-        {
-            Switch();
         }
     }
 }

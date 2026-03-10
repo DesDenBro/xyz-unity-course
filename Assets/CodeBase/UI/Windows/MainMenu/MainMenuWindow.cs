@@ -8,6 +8,8 @@ namespace PixelCrew.UI
 {
     public class MainMenuWindow : AnimatedWindow
     {
+        [SerializeField] private string _startLevel = "Level1";
+
         private Action _closeAction;
 
         public void OnShowSettings()
@@ -19,7 +21,7 @@ namespace PixelCrew.UI
         {
             _closeAction = () => 
             {
-                FindObjectOfType<LevelLoader>().Show("Level1");
+                FindObjectOfType<LevelLoader>().Show(_startLevel);
             };
             Close();
         }

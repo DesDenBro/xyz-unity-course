@@ -21,6 +21,7 @@ namespace PixelCrew.GameObjects.Creatures
         [SerializeField] protected int _baseDamage;
         [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private Cooldown _healCooldown = new Cooldown(0.5f);
+        [SerializeField] private Cooldown _jumpCooldown = new Cooldown(0.2f);
 
         [Header("Base checks")]
         [SerializeField] private LayerCheck _groundCheck;
@@ -130,8 +131,10 @@ namespace PixelCrew.GameObjects.Creatures
         protected virtual float CalJumpVelocity(float inputYVel)
         {
             float yVel = inputYVel;
-            if (!_IsFalling && _isGrounded && _IsNormalMove)
+            if (!_IsFalling && _isGrounded && _IsNormalMove && _jumpCooldown.IsReady)
             {
+                _jumpCooldown.Reset();
+
                 yVel = jumpSpeed;
                 _needPlayJumpSas = true;
             }

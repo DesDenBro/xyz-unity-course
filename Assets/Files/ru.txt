@@ -65,3 +65,8 @@ level3_dialog_crabby_successDialog1;О, ключ что надо!
 level3_dialog_crabby_successDialog2;Секундочку...
 level3_dialog_crabby_byeDialog1;Увидимся позже!
 
+level4_dialog_bossPatric_phase1_start_dialog1;Жалкий заключенный!
+level4_dialog_bossPatric_phase1_start_dialog2;Дальше ты не пройдешь!
+level4_dialog_bossPatric_phase1_end_dialog1;Ах ты негодник!!!
+level4_dialog_nextroom1;Тут же ничего нет!
+level4_dialog_nextroom2;Наверное в дипломе будет больше контента, подождем

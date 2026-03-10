@@ -19,6 +19,8 @@ TagManager:
   - StatsWindow
   - InventoryWindow
   - Vignette
+  - CutSceneAnimator
+  - CutSceneCamera
   layers:
   - Default
   - TransparentFX

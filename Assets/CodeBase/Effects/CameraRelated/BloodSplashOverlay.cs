@@ -3,6 +3,7 @@ using PixelCrew.GameObjects;
 using PixelCrew.GameObjects.Creatures;
 using PixelCrew.Utils;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace PixelCrew.Effects
 {
@@ -19,6 +20,9 @@ namespace PixelCrew.Effects
         {
             _animator = GetComponent<Animator>();
             _overScale = _overlay.localScale;
+
+            var frameImage = _overlay.GetComponent<Image>();
+            frameImage.color = new Color(frameImage.color.r, frameImage.color.g, frameImage.color.b, 0.7f);
 
             var hero = FindObjectOfType<Hero>();
             _healthComp = hero.GetComponent<HealthComponent>();

@@ -25,6 +25,12 @@ namespace PixelCrew.GameObjects
             public static readonly FloatAnimationKey HPValue = new FloatAnimationKey("hp-value");
         }
 
+        public static class BossPatric
+        {
+            public static readonly FloatAnimationKey HPValue = new FloatAnimationKey("hp-value");
+            public static readonly TriggerAnimationKey TriggerStart = new TriggerAnimationKey("trigger-start");
+        }
+
         public static class ShootingTrap
         {
             public static readonly TriggerAnimationKey TriggerRange = new TriggerAnimationKey("trigger-range");
@@ -35,6 +41,11 @@ namespace PixelCrew.GameObjects
 
         public static class UI
         {
+            public static class CutScene
+            {
+                public static readonly BoolAnimationKey IsShow = new BoolAnimationKey("is-show");
+            }
+
             public static class MenuWindow
             {
                 public static readonly TriggerAnimationKey TriggerShow = new TriggerAnimationKey("trigger-show");
