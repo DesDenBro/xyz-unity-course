@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI_perks
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 216405c4fe54544dea6d4fa0cd5dc62f, type: 3}
+    - {fileID: 102900000, guid: 400d9fb5df52643499d96e47a2bd2e8f, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 5f70da1287e9944f281358366d380742, type: 3}
+  - {fileID: 21300000, guid: e4f25c0414bdb465c8e062abbe1128d1, type: 3}
+  - {fileID: 21300000, guid: 1603be17385c4413f83a6a60d3948fae, type: 3}
+  - {fileID: 21300000, guid: 67531f490336e4635b966b36c1ec77af, type: 3}
+  - {fileID: 21300000, guid: 46e39d7bb04d84c4d87d395f68296d88, type: 3}
+  - {fileID: 21300000, guid: 14cd9c6c54d6042f18aea44e4f612b95, type: 3}
+  - {fileID: 21300000, guid: 335b8dfcf3b474112bb6723147e84563, type: 3}
+  - {fileID: 21300000, guid: 0866993d5a9f24e8782d2a145617c6a5, type: 3}
+  - {fileID: 21300000, guid: 663c358e4f4e94a719bbeb8de119baab, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - I_Clover
+  - sword-super-throw
+  - S_Holy03
+  - S_Magic08
+  - dowble-jump
+  - I_Clock
+  - S_Buff04
+  - S_Bow13
+  - force-shiled
+  m_Tag: UI_perks
+  m_IsVariant: 0
