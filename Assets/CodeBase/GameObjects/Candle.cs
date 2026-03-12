@@ -6,7 +6,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 namespace PixelCrew.GameObjects
 {
-    public class Candle : MonoBehaviour
+    public class Candle : OnOffObject
     {
         [SerializeField] private GameObject _light;
         
@@ -16,7 +16,7 @@ namespace PixelCrew.GameObjects
         
         public bool IsActive => _isActive;
 
-        public void TurnOn()
+        public override void TurnOn()
         {
             if (IsActive) { TurnOff(); return; }
 
@@ -26,7 +26,7 @@ namespace PixelCrew.GameObjects
             _current = StartCoroutine(Action());
         }
 
-        public void TurnOff()
+        public override void TurnOff()
         {
             if (!IsActive) return;
 

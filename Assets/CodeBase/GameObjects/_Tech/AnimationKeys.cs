@@ -29,6 +29,11 @@ namespace PixelCrew.GameObjects
         {
             public static readonly FloatAnimationKey HPValue = new FloatAnimationKey("hp-value");
             public static readonly TriggerAnimationKey TriggerStart = new TriggerAnimationKey("trigger-start");
+            
+            public static class Water
+            {
+                public static readonly BoolAnimationKey IsFlooding = new BoolAnimationKey("is-flooding");
+            }
         }
 
         public static class ShootingTrap
