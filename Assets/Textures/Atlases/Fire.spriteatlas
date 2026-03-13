@@ -84,5 +84,5 @@ SpriteAtlas:
   - 06
   - 02
   - 01
-  m_Tag: NonInteractables
+  m_Tag: Fire
   m_IsVariant: 0
