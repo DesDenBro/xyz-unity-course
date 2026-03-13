@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Clouds
+  m_Name: Out
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -47,19 +47,46 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 4ced2ad432213244eaa8b27f205467f6, type: 3}
     - {fileID: 2800000, guid: faded4c67b7c8c94c8a124ccfaf03b8f, type: 3}
     - {fileID: 2800000, guid: 715442c05fef54147bf5415cc5ece327, type: 3}
+    - {fileID: 2800000, guid: 29ebbfc3e4a5e2a4699c460795e092cd, type: 3}
+    - {fileID: 2800000, guid: 18a0f2e84cde38746a8da933177e64ab, type: 3}
+    - {fileID: 2800000, guid: aa715f095b9677e41a42621c78f52c52, type: 3}
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 715442c05fef54147bf5415cc5ece327, type: 3}
+  - {fileID: -6505298659582443948, guid: 29ebbfc3e4a5e2a4699c460795e092cd, type: 3}
+  - {fileID: -6018279857378552221, guid: 29ebbfc3e4a5e2a4699c460795e092cd, type: 3}
+  - {fileID: -2749089684739404911, guid: 29ebbfc3e4a5e2a4699c460795e092cd, type: 3}
+  - {fileID: -7718236803453008505, guid: 29ebbfc3e4a5e2a4699c460795e092cd, type: 3}
   - {fileID: 21300000, guid: 4ced2ad432213244eaa8b27f205467f6, type: 3}
   - {fileID: 21300000, guid: faded4c67b7c8c94c8a124ccfaf03b8f, type: 3}
   - {fileID: 21300000, guid: dc2b9467736c52b41864a289a1aa67e4, type: 3}
+  - {fileID: 3538689430123128980, guid: 18a0f2e84cde38746a8da933177e64ab, type: 3}
+  - {fileID: 759440405009013545, guid: 18a0f2e84cde38746a8da933177e64ab, type: 3}
+  - {fileID: 8506211366736525064, guid: 18a0f2e84cde38746a8da933177e64ab, type: 3}
+  - {fileID: -5528557573366522457, guid: 18a0f2e84cde38746a8da933177e64ab, type: 3}
+  - {fileID: -8843944345914528079, guid: aa715f095b9677e41a42621c78f52c52, type: 3}
+  - {fileID: -1898659343009958212, guid: aa715f095b9677e41a42621c78f52c52, type: 3}
+  - {fileID: -5088061633143109107, guid: aa715f095b9677e41a42621c78f52c52, type: 3}
+  - {fileID: -3808486951342339979, guid: aa715f095b9677e41a42621c78f52c52, type: 3}
   - {fileID: 21300000, guid: 949f1e7eaf94e6141ad1a121b2f6b8c3, type: 3}
   m_PackedSpriteNamesToIndex:
   - BG Image
+  - WaterReflectLarge_1
+  - WaterReflectLarge_0
+  - WaterReflectLarge_3
+  - WaterReflectLarge_2
   - Cloud3
   - CloudBig
   - Cloud2
+  - WaterReflectMedium_3
+  - WaterReflectMedium_2
+  - WaterReflectMedium_1
+  - WaterReflectMedium_0
+  - WaterReflectSmall_1
+  - WaterReflectSmall_0
+  - WaterReflectSmall_3
+  - WaterReflectSmall_2
   - Cloud1
-  m_Tag: Clouds
+  m_Tag: Out
   m_IsVariant: 0
