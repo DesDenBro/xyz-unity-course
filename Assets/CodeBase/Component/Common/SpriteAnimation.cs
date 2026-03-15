@@ -9,6 +9,7 @@ namespace PixelCrew.Common.Tech
     {
         [SerializeField] private int _frameRate = 10;
         [SerializeField] private string _startSasName;
+        [SerializeField] private bool autoStart = true;
 
         private SpriteAnimationState[] _states;
         private SpriteRenderer _spriteRenderer;
@@ -17,16 +18,27 @@ namespace PixelCrew.Common.Tech
         private int _currentSpriteIndex;
         private float _nextFrameTime;
 
-        private IReadOnlyDictionary<string, SpriteAnimationState> _statesDict => _states?.ToDictionary(x => x.Name, y => y) ?? new Dictionary<string, SpriteAnimationState>(0);
+        private IReadOnlyDictionary<string, SpriteAnimationState> _statesDict; 
         
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _states = GetComponentsInChildren<SpriteAnimationState>(true);
+            _statesDict = _states?.ToDictionary(x => x.Name, y => y) ?? new Dictionary<string, SpriteAnimationState>(0);
         }
 
-        private void Start()
+        public void Start()
         {
+            if (autoStart) SetupAnimation();
+        }
+
+        public void SetupAnimation(string startSasName = "")
+        {
+            if (!string.IsNullOrWhiteSpace(startSasName))
+            {
+                _startSasName = startSasName;
+            }
+
             if (_statesDict.Count > 0)
             {
                 var sasName = string.IsNullOrWhiteSpace(_startSasName) || !_statesDict.ContainsKey(_startSasName) ? _states[0]?.Name : _startSasName;
@@ -36,13 +48,14 @@ namespace PixelCrew.Common.Tech
 
         public void SetClip(string name)
         {
+            if (!autoStart) _spriteRenderer.sprite = null;
+
             name = name?.Trim();
             if (string.IsNullOrEmpty(name)) return;
-            if (_currentState != null && _currentState.name?.Trim() == name) return;
             if (_statesDict == null || _statesDict.Count == 0 || !_statesDict.TryGetValue(name, out SpriteAnimationState stateVal) || stateVal == null) return;
 
             _currentState?.TogglePlay(false);
-            if (_currentState != null &&  !_currentState.AllowNext) return;
+            if (_currentState != null && !_currentState.AllowNext) return;
 
             _currentSpriteIndex = 0;
             _secondsPerFrame = 1f / _frameRate;
@@ -59,7 +72,13 @@ namespace PixelCrew.Common.Tech
                     tr.localScale.z > 0 ? tr.localScale.z : -tr.localScale.z
                 );
             }
-            _currentState.TogglePlay(true);
+
+            if (autoStart) RunAnimation();
+        }
+
+        public void RunAnimation()
+        {
+            _currentState?.TogglePlay(true);
         }
 
         private void Update()
@@ -76,6 +95,7 @@ namespace PixelCrew.Common.Tech
                 {
                     _currentState?.TogglePlay(false);
                     _currentState?.InvokeComplete();
+                    _currentState.gameObject.SetActive(false);                    
                     return;
                 }
             }
@@ -83,11 +103,6 @@ namespace PixelCrew.Common.Tech
             _spriteRenderer.sprite = _currentState.Sprites[_currentSpriteIndex];
             _nextFrameTime += _secondsPerFrame;
             _currentSpriteIndex++;
-        }
-
-        public void SetStartSasName(string sasName)
-        {
-            _startSasName = sasName;
         }
 
         public SpriteAnimationState GetSas(string sasName)

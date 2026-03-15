@@ -203,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 492327702742443999}
   _prefab: {fileID: 1296803784847218045, guid: 714c487978a8f9d449b8db8efdce977c, type: 3}
+  _usePool: 1
 --- !u!1 &5117519686174351914
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +712,8 @@ MonoBehaviour:
     _value: 1
   _healCooldown:
     _value: 0.5
+  _jumpCooldown:
+    _value: 0.2
   _groundCheck: {fileID: 5784780334059268827}
   _attackRange: {fileID: 4681518861892597388}
   _stompCooldown:
@@ -760,6 +763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 20
   _currentHealth: 20
+  _isImmune: 0
   _damageCooldown:
     _value: 0.2
   _onDamage:

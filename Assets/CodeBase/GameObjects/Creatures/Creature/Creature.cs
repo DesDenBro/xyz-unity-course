@@ -189,9 +189,10 @@ namespace PixelCrew.GameObjects.Creatures
         }
         private void UpdateAnimatorParamsState()
         {
-            _animator.SetKeyVal(AnimationKeys.Creature.VerticalVelocity, _rigidbody.velocity.y);
-            _animator.SetKeyVal(AnimationKeys.Creature.IsRunning, _direction.x != 0);
-            _animator.SetKeyVal(AnimationKeys.Creature.IsGrounded, _isGrounded);
+            // вызов через AnimatorExtensions создавал CGAlloc на 108 байт каждый FixedUpdate
+            AnimationKeys.Creature.VerticalVelocity.SetVal(_animator, _rigidbody.velocity.y);
+            AnimationKeys.Creature.IsRunning.SetVal(_animator, _direction.x != 0);
+            AnimationKeys.Creature.IsGrounded.SetVal(_animator, _isGrounded);
         }
         private void PlayStateAnimationsByState()
         {

@@ -16,6 +16,7 @@ namespace PixelCrew.Components
             RefreshNamesSas();
         }
 
+        private const string _predicatName = "sas-a-";
         private void RefreshNamesSas()
         {
             foreach (var spawner in _spawners)
@@ -23,22 +24,25 @@ namespace PixelCrew.Components
                 var names = spawner.GetPrefabChildrenObjNames<SpriteAnimationState>();
                 foreach (var name in names)
                 {
-                    if (_spawnComponentsByNameSas.ContainsKey(name)) continue;
-                    _spawnComponentsByNameSas.Add(name, spawner);
+                    if (!name.Contains(_predicatName)) continue;
+
+                    var clearedName = name.Trim().Replace(_predicatName, string.Empty);
+                    if (_spawnComponentsByNameSas.ContainsKey(clearedName)) continue;
+
+                    _spawnComponentsByNameSas.Add(clearedName, spawner);
                 }
             }
         }
 
         public void SpawnAction(string sasName)
         {
-            var fullName = "sas-a-" + sasName;
-            if (!_spawnComponentsByNameSas.ContainsKey(fullName)) 
+            if (!_spawnComponentsByNameSas.ContainsKey(sasName)) 
             {
                 RefreshNamesSas();
-                if (!_spawnComponentsByNameSas.ContainsKey(fullName)) return;
+                if (!_spawnComponentsByNameSas.ContainsKey(sasName)) return;
             }
 
-            var spawner = _spawnComponentsByNameSas[fullName];
+            var spawner = _spawnComponentsByNameSas[sasName];
             if (spawner == null) return;
 
             var obj = spawner.Spawn();
@@ -46,14 +50,14 @@ namespace PixelCrew.Components
             var saComp = obj?.GetComponent<SpriteAnimation>();
             if (saComp == null) return;
 
-            obj.name = obj.name + "_spawn_" + sasName;
-            saComp.SetStartSasName(sasName);
+            // жрет память, а по факту бессмысленно
+            // obj.name = gameObject.name + "_spawn_" + sasName;
+            saComp.SetupAnimation(sasName);
 
             // добавляем вектор отклонения относительно нахождения стартовой точки спавна из sas
             var sas = saComp.GetSas(sasName);
             if (sas == null) return;
 
-            sas.gameObject.SetActive(true);
             var sasTransform = sas.transform;
             obj.transform.position += new Vector3(
                 sasTransform.localPosition.x * sasTransform.parent.lossyScale.x,
@@ -65,6 +69,9 @@ namespace PixelCrew.Components
                 sasTransform.parent.lossyScale.y * sasTransform.localScale.y,
                 sasTransform.parent.lossyScale.z * sasTransform.localScale.z
             );
+            sas.gameObject.SetActive(true);
+
+            saComp.RunAnimation();
         }
     }
 }
