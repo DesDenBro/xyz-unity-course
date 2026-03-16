@@ -1,5 +1,4 @@
 ﻿using PixelCrew.Utils;
-using UnityEditor;
 using UnityEngine;
 
 namespace PixelCrew.Common.Tech
@@ -10,11 +9,13 @@ namespace PixelCrew.Common.Tech
 
         public float Radius => _radius;
 
+#if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
-            Handles.color = HandlesUtils.TransparentRed;
-            Handles.DrawSolidDisc(transform.position, Vector3.forward, _radius);
+            UnityEditor.Handles.color = HandlesUtils.TransparentRed;
+            UnityEditor.Handles.DrawSolidDisc(transform.position, Vector3.forward, _radius);
         }
+#endif
 
         public override void Check()
         {

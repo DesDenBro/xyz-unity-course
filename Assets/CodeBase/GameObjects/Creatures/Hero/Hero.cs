@@ -7,8 +7,8 @@ using PixelCrew.Model.Definitions;
 using PixelCrew.Utils;
 using System.Collections;
 using System.Linq;
-using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace PixelCrew.GameObjects.Creatures
 {
@@ -27,8 +27,8 @@ namespace PixelCrew.GameObjects.Creatures
         [SerializeField] private Candle _candle;
 
         [Header("Hero animators")]
-        [SerializeField] private AnimatorController _armed;
-        [SerializeField] private AnimatorController _disarmed;
+        [SerializeField] private RuntimeAnimatorController _armed;
+        [SerializeField] private RuntimeAnimatorController _disarmed;
 
         private CameraShakeEffect _camShakeEffect;
         private bool _isDoubleJumpActive;

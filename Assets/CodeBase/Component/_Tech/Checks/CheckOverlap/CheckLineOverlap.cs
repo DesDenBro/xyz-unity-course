@@ -1,7 +1,5 @@
 ﻿using PixelCrew.Utils;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace PixelCrew.Common.Tech
 {
@@ -10,11 +8,13 @@ namespace PixelCrew.Common.Tech
         [SerializeField] private float _toLeftLength = 1f;
         [SerializeField] private float _toLeftRight = 1f;
 
+#if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
-            Handles.color = HandlesUtils.Green;
-            Handles.DrawLine(CalcVectorToLeft(), CalcVectorToRigth());
+            UnityEditor.Handles.color = HandlesUtils.Green;
+            UnityEditor.Handles.DrawLine(CalcVectorToLeft(), CalcVectorToRigth());
         }
+#endif
 
         public override void Check()
         {

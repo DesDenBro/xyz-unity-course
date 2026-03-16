@@ -101,6 +101,14 @@ MonoBehaviour:
     m_ActionId: deb329c6-6d69-49c2-9c39-a89d5e00b6da
     m_ActionName: Hero/Heal[/Keyboard/h]
   - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0be67afe-cf48-452a-a017-95d58e278563
+    m_ActionName: Hero/Throw[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: de3c8aef-bc3b-42e1-8c53-28685cd55fb4
+    m_ActionName: Hero/Light[/Keyboard/l]
+  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 43318475622314659}
         m_MethodName: PressCallMenu
@@ -113,8 +121,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 84107a23-ebc4-4c2b-889a-73a2437f6233
-    m_ActionName: Menu/New action[/Keyboard/escape]
+    m_ActionId: 1cf84b4f-de35-4205-a2f2-f6e16911763d
+    m_ActionName: Hero/UI_Close[/Keyboard/escape]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 43318475622314659}
@@ -128,11 +136,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 6e65b6d1-6c01-40a8-af79-dfa864130bc8
-    m_ActionName: Menu/UI Inventory[/Keyboard/i]
+    m_ActionId: fcddf24d-c815-464e-ad7f-4850e59b7618
+    m_ActionName: Hero/UI_Inventory[/Keyboard/i]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Menu
+  m_DefaultActionMap: Hero
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &4353744777552023050
