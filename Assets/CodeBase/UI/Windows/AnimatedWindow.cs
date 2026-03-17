@@ -2,6 +2,7 @@
 using PixelCrew.Utils;
 using PixelCrew.UI.Widgets;
 using System.Linq;
+using UnityEngine.Analytics;
 
 namespace PixelCrew.UI
 {
@@ -11,6 +12,8 @@ namespace PixelCrew.UI
 
         protected virtual void Start()
         {
+            //AnalyticsEvent.ScreenVisit(gameObject.name);
+
             _animator = GetComponent<Animator>();
 
             _animator.SetKeyVal(PixelCrew.GameObjects.AnimationKeys.UI.MenuWindow.TriggerShow);
