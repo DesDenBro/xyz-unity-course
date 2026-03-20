@@ -1,12 +1,9 @@
 ﻿using PixelCrew.Components;
 using PixelCrew.GameObjects.Creatures;
 using PixelCrew.Model.Data;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 namespace PixelCrew.Model
@@ -20,7 +17,6 @@ namespace PixelCrew.Model
 
     public class GameSession : MonoBehaviour
     {
-        [SerializeField] private int _levelIndex;
         [SerializeField] private PlayerData _playerData;
         [SerializeField] private LevelsData _levelsData;
 
@@ -45,13 +41,13 @@ namespace PixelCrew.Model
                 _disposed = true;
 
                 var existSession = GameSessionSearch.Get(FindObjectsOfType<GameSession>);
-                if (existSession != null) existSession.DefaultFuncs(_levelIndex);
+                if (existSession != null) existSession.DefaultFuncs();
 
                 return;
             }
             else
             {
-                DefaultFuncs(_levelIndex);
+                DefaultFuncs();
                 DontDestroyOnLoad(this);
             }
 
@@ -80,24 +76,12 @@ namespace PixelCrew.Model
             }
         }
 
-        private void DefaultFuncs(int levelIndex)
+        private void DefaultFuncs()
         {
             if (ActiveLevelData == null) return;
 
-            TrackSessionStart(levelIndex);
-
             Spawn();
             DeleteObjectsById();
-        }
-
-        private void TrackSessionStart(int levelIndex)
-        {
-            /*
-            AnalyticsEvent.Custom("level_start", new Dictionary<string, object>
-            {
-                { "level_index", levelIndex }
-            });
-            */
         }
 
         public void ReloadLinks()

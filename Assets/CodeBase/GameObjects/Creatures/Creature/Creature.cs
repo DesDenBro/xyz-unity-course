@@ -5,6 +5,7 @@ using PixelCrew.Common;
 using PixelCrew.Common.Tech;
 using PixelCrew.Components;
 using PixelCrew.Utils;
+using PixelCrew.Components.Audio;
 
 namespace PixelCrew.GameObjects.Creatures
 {

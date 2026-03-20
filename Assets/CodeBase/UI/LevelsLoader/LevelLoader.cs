@@ -1,9 +1,7 @@
 ﻿using PixelCrew.GameObjects;
 using PixelCrew.Utils;
-using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 namespace PixelCrew.UI.LevelsLoader
@@ -17,7 +15,6 @@ namespace PixelCrew.UI.LevelsLoader
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void OnAfrerSceneLoad()
         {
-            //AnalyticsEvent.debugMode = true;
             InitLoader();
         }
         private static void InitLoader()

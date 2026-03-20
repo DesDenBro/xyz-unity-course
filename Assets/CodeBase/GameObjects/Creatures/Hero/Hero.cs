@@ -1,6 +1,7 @@
 ﻿using PixelCrew.Common;
 using PixelCrew.Common.Tech;
 using PixelCrew.Components;
+using PixelCrew.Components.Audio;
 using PixelCrew.Effects;
 using PixelCrew.Model;
 using PixelCrew.Model.Definitions;
@@ -429,6 +430,9 @@ namespace PixelCrew.GameObjects.Creatures
 
             var levelName = checkPointName.Split('-')[0];
             _session.LevelsData.SaveHeroPosition(levelName, checkPointName);
+
+            var musicGO = FindObjectOfType<AutoContinueMusicComponent>();
+            if (musicGO != null) _session.LevelsData.SaveCurrentMusicTime(musicGO.gameObject.GetComponent<AudioSource>().time);
 
             _session.PlayerData.Health = _health.Health;
             _session.PlayerData.IsCandleActive = _candle.IsActive;
