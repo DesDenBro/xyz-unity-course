@@ -130,4 +130,14 @@ MonoBehaviour:
   - Key: level3_dialog_crabby_successDialog2
     Value: "Give me a second...\r"
   - Key: level3_dialog_crabby_byeDialog1
-    Value: See later!
+    Value: "See later!\r"
+  - Key: level4_dialog_bossPatric_phase1_start_dialog1
+    Value: "A pitiful prisoner!\r"
+  - Key: level4_dialog_bossPatric_phase1_start_dialog2
+    Value: "You can't go any further!\r"
+  - Key: level4_dialog_bossPatric_phase1_end_dialog1
+    Value: "You bastard!!!\r"
+  - Key: level4_dialog_nextroom1
+    Value: "There's nothing here!\r"
+  - Key: level4_dialog_nextroom2
+    Value: There will probably be more content in the diploma, let's wait

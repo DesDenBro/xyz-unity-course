@@ -64,3 +64,9 @@ level3_dialog_crabby_failDialog2;But without key i cant...
 level3_dialog_crabby_successDialog1;Oh, this good key!
 level3_dialog_crabby_successDialog2;Give me a second...
 level3_dialog_crabby_byeDialog1;See later!
+
+level4_dialog_bossPatric_phase1_start_dialog1;A pitiful prisoner!
+level4_dialog_bossPatric_phase1_start_dialog2;You can't go any further!
+level4_dialog_bossPatric_phase1_end_dialog1;You bastard!!!
+level4_dialog_nextroom1;There's nothing here!
+level4_dialog_nextroom2;There will probably be more content in the diploma, let's wait
