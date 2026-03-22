@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Props
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 8320bc5e99aecd148afab631ff8a4bfe, type: 3}
+    - {fileID: 2800000, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+    - {fileID: 2800000, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 3f6e5f000018d094081add453d21b490, type: 3}
+  - {fileID: 21300000, guid: 78a60250639730f4d8313298f7312b08, type: 3}
+  - {fileID: 21300000, guid: a5b078e02a9c812428b5c0acf1973f33, type: 3}
+  - {fileID: 21300000, guid: ec7ca411977f70f4aa6eeceb67f9bfea, type: 3}
+  - {fileID: 21300000, guid: c124bc61951fc5140a9e232a9505ff94, type: 3}
+  - {fileID: 21300000, guid: 5a92cdf207a8de94e9e34fd0c7acb5f4, type: 3}
+  - {fileID: 21300000, guid: 241fe2d77aac68549ab724e3f0a2085a, type: 3}
+  - {fileID: 21300000, guid: 7fe596a91f30167449b39d4f3b0838c8, type: 3}
+  - {fileID: 21300000, guid: f9641cf9325b70d4788f89795e57fc74, type: 3}
+  - {fileID: 21300000, guid: 93b9d09aa61ca4b429b2463e96546bd4, type: 3}
+  - {fileID: -6288512792030432889, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  - {fileID: 7609282858266732271, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  - {fileID: 8793606821965667882, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  - {fileID: 3444832735345940322, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  - {fileID: 6582046967323461550, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  - {fileID: 1942777921290549423, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  - {fileID: -6323751108524238166, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  - {fileID: 2722280177590742205, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  - {fileID: -2322180950842035098, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  - {fileID: -4893972260818282012, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  - {fileID: -4986890610287934012, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  - {fileID: 6143208460787649835, guid: 00b0839ac02cece4f83cd274d2e0e2db, type: 3}
+  - {fileID: -6202940564662568092, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: -8747976068718324687, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 8618505411793156745, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: -1972361127685065434, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: -5226445311955339714, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 3714227102187029162, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 1185527514606905908, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: -1061600653231999548, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: -3065595510956808684, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 6997616985800771554, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 950379908824699032, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: -7587008787810219046, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: -8438763151253471919, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 2011574832808370117, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 1089735312403315716, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: -5249288142952506341, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: -860807820763296739, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 7142050841817600938, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 8167133005111728920, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 2014349484240403859, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: -7481350877133238684, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 8745225756722806956, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 6040734443530017722, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: -512142692958456438, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 6326803469982491369, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+  - {fileID: 21300000, guid: 4fae2abeab24abd42b0abddb5a9f597b, type: 3}
+  - {fileID: 21300000, guid: 756572ef224bbbb48a0205236d6ff434, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 4
+  - 4
+  - 2
+  - 3
+  - 1
+  - 2
+  - 5
+  - 7
+  - 8
+  - 1
+  - Coins_11
+  - Coins_10
+  - Coins_6
+  - Coins_7
+  - Coins_4
+  - Coins_5
+  - Coins_2
+  - Coins_3
+  - Coins_0
+  - Coins_1
+  - Coins_8
+  - Coins_9
+  - Potions_8
+  - Potions_9
+  - Potions_4
+  - Potions_5
+  - Potions_6
+  - Potions_7
+  - Potions_0
+  - Potions_1
+  - Potions_2
+  - Potions_3
+  - Potions_17
+  - Potions_16
+  - Potions_15
+  - Potions_14
+  - Potions_13
+  - Potions_12
+  - Potions_11
+  - Potions_10
+  - Potions_22
+  - Potions_23
+  - Potions_20
+  - Potions_19
+  - Potions_21
+  - Potions_18
+  - Potions_24
+  - 6
+  - 3
+  m_Tag: Props
+  m_IsVariant: 0

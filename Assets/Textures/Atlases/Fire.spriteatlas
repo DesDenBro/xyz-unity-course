@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Fire
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: f44b75ced17d14229a364e18817276f5, type: 3}
+    - {fileID: 102900000, guid: 78161d3cadebddf4eba4ebeb6ef16fed, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 0851a0106646949f4acb7d002e50a669, type: 3}
+  - {fileID: 21300000, guid: 1a99faa08b48a448fb2ee9eee1469b63, type: 3}
+  - {fileID: 21300000, guid: 3fce5001846ba4ca39b4f083c9d6b67f, type: 3}
+  - {fileID: 21300000, guid: 6cae3bb14e606bb47bf9feb9f13c21d7, type: 3}
+  - {fileID: 21300000, guid: 9cdaf9632b7d94d48907b098d09239b2, type: 3}
+  - {fileID: 21300000, guid: 38e58773da414b144be09c5e3353602e, type: 3}
+  - {fileID: 21300000, guid: 35fb1f93ae7cbe943909f42ec59f5b3c, type: 3}
+  - {fileID: 21300000, guid: a7c625b5c06234c829b655b3e181a2c7, type: 3}
+  - {fileID: 21300000, guid: 8fa9a6d60e1c4d841b0808bea92a8fce, type: 3}
+  - {fileID: 21300000, guid: 07b64af6f51954e23aff2cb7cec5de47, type: 3}
+  - {fileID: 21300000, guid: 9691da27693bc364c8c2bcc08de6b44b, type: 3}
+  - {fileID: 21300000, guid: 1cb74887dd8ee914bbbd197dc0c7148e, type: 3}
+  - {fileID: 21300000, guid: 9dc2df4ad9d904f07ad5ea85697aee08, type: 3}
+  - {fileID: 21300000, guid: 1001fc9ad5b73de438738bc9c43ba590, type: 3}
+  - {fileID: 21300000, guid: 70f091ec3b411784aacd63432ac98812, type: 3}
+  - {fileID: 21300000, guid: ce68d34da74fe4318bd6c76097ec0034, type: 3}
+  - {fileID: 21300000, guid: d92c18ee41f7132458520c2716dd6d88, type: 3}
+  - {fileID: 21300000, guid: 62fb5d7fa02be9f46858d2a70ed8d029, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 04
+  - 03
+  - 01
+  - 03
+  - 06
+  - 01
+  - 04
+  - 02
+  - 03
+  - 01
+  - 01
+  - 05
+  - 05
+  - 02
+  - 04
+  - 06
+  - 02
+  - 01
+  m_Tag: Fire
+  m_IsVariant: 0

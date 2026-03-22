@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI_windows
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: f5421b8f385564544a9fb4590e27a7bd, type: 3}
+    - {fileID: 102900000, guid: 34f8794f83669ae41aa71d289108f5d3, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: f7009920fa7eea842912e585b3796b47, type: 3}
+  - {fileID: 21300000, guid: b5098990bd75c744383bc3af1d7d1550, type: 3}
+  - {fileID: 21300000, guid: 31e69e317edfe324b960d0f09b64ec85, type: 3}
+  - {fileID: 21300000, guid: f7e682414bb2ca44f8ee2cd613d8cd72, type: 3}
+  - {fileID: 21300000, guid: 9679cb81b979e394daf4d36e412f53d5, type: 3}
+  - {fileID: 21300000, guid: cf8943428796c904e9d8bb3d50f0999a, type: 3}
+  - {fileID: 21300000, guid: 1f3418433c5e34f8dae6f46e986d796e, type: 3}
+  - {fileID: 21300000, guid: 04948193b10e8fb4db91f2b70436b480, type: 3}
+  - {fileID: 21300000, guid: 143968f3f3d5a2149b37405d9f9a7976, type: 3}
+  - {fileID: 21300000, guid: e84f484608fcd454e8b157f63416db60, type: 3}
+  - {fileID: 21300000, guid: 0eaea157022c0544a85e13d8a8a32ac8, type: 3}
+  - {fileID: 21300000, guid: 00186da774b98c045bad4cf06d307994, type: 3}
+  - {fileID: 21300000, guid: 85fd9ab72beb63d4baf55a59699294c3, type: 3}
+  - {fileID: 21300000, guid: 31a9eed921be9664297408c1bf3ebf3c, type: 3}
+  - {fileID: 21300000, guid: 67702e3b93a0c3340969f85ff8820735, type: 3}
+  - {fileID: 21300000, guid: 45098d2ce0835c049a9d25503b990afe, type: 3}
+  - {fileID: 21300000, guid: 666db6cc48bfac24da1fb25512b8b044, type: 3}
+  - {fileID: 21300000, guid: 8c57c66d9fac048c1a1c81f905994bcf, type: 3}
+  - {fileID: 21300000, guid: d725080e66bb8da4eb9eb41c37af824f, type: 3}
+  - {fileID: 21300000, guid: 912b915e670d6074f96257d2aefc7f92, type: 3}
+  - {fileID: 21300000, guid: de5a9ebe57997f9409bdcefbe7d571bc, type: 3}
+  - {fileID: 21300000, guid: f7157eee8b7d1bf41bfb1b8649b8f38b, type: 3}
+  - {fileID: 21300000, guid: 5cb4ff0f6a461324288532cdac6bff1d, type: 3}
+  - {fileID: 21300000, guid: e9c1eebfd1d705847b98d55c08fd6140, type: 3}
+  - {fileID: 21300000, guid: d616eecfc75548c4fb46c344bb8d4ad3, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - slider-horizontal-handle
+  - yellow-panel
+  - geen-box-small
+  - yellow-box-tall
+  - yellow-box-small
+  - common-button-pressed
+  - item-selection-common
+  - papper
+  - green-box-widel
+  - yellow-box-wide
+  - inventory-large
+  - green-button
+  - inventory-wide
+  - yellow-box-large
+  - inventory-small
+  - common-button-disabled
+  - common-button-selected
+  - Check_Mark
+  - green-box-tall
+  - slider-horizontal
+  - green-box-large
+  - inventory-tall
+  - item-selection
+  - item-small
+  - common-button
+  m_Tag: UI_windows
+  m_IsVariant: 0
