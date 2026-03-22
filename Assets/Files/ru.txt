@@ -34,6 +34,7 @@ perks_type_active;активный
 perks_doubleJump_info;Двойной прыжок
 perks_superThrow_info;Бросок до трех предметов одновременно при зажатии клавиши броска
 perks_stun_info;Оглушает врагов на некоторое время
+perks_bigSword_info;Огромный летающий меч наносит много урона ударом
 
 inventory_btn_setthrowable;Выбрать кидаемый
 inventory_btn_use;Использовать

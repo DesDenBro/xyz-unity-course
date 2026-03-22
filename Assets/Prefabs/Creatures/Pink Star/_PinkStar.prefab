@@ -394,7 +394,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  checkOnlyForward: 0
+  checkOnlyForward: 1
   _toLeftLength: 7
   _toLeftRight: 1
 --- !u!1 &5784780334059268829

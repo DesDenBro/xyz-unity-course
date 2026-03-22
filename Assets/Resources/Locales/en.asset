@@ -74,6 +74,8 @@ MonoBehaviour:
     Value: "Throws up to three objects when hold the throw key\r"
   - Key: perks_stun_info
     Value: "Stun enemies for a several time\r"
+  - Key: perks_bigSword_info
+    Value: "Big flying sword deal big damage\r"
   - Key: inventory_btn_setthrowable
     Value: "Set throwable\r"
   - Key: inventory_btn_use

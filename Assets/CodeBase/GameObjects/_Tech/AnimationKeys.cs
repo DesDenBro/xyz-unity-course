@@ -23,6 +23,11 @@ namespace PixelCrew.GameObjects
         public static class Hero
         {
             public static readonly FloatAnimationKey HPValue = new FloatAnimationKey("hp-value");
+
+            public static class Perks
+            {
+                public static readonly TriggerAnimationKey TriggerBigSwordAttack = new TriggerAnimationKey("trigger-bs-attack");
+            }
         }
 
         public static class BossPatric

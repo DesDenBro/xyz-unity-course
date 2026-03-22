@@ -34,6 +34,7 @@ perks_type_active;active
 perks_doubleJump_info;Double jump
 perks_superThrow_info;Throws up to three objects when hold the throw key
 perks_stun_info;Stun enemies for a several time
+perks_bigSword_info;Big flying sword deal big damage
 
 inventory_btn_setthrowable;Set throwable
 inventory_btn_use;Use

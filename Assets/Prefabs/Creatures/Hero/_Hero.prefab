@@ -5317,6 +5317,196 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2659777467ec8244eb7a3157932221eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4673538493830909408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2991652677635979412}
+  - component: {fileID: 1757466084081762358}
+  - component: {fileID: 293186801499341273}
+  - component: {fileID: 3631794894109466748}
+  - component: {fileID: 6394854769003493632}
+  - component: {fileID: 8618440708182159270}
+  - component: {fileID: 4674039399663310195}
+  m_Layer: 0
+  m_Name: big-sword-perk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2991652677635979412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4673538493830909408}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.07999992, y: 1.6800001, z: -0.7999995}
+  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5784780335098992501}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!212 &1757466084081762358
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4673538493830909408}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 745538161
+  m_SortingLayer: 16
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 816dd23a3b19a01479458eeee6362fe3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.625, y: 0.625}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!95 &293186801499341273
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4673538493830909408}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 380131e922aa7cb4caee54250b199b62, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &3631794894109466748
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4673538493830909408}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.089552775, y: -0.009949699}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.625, y: 0.625}
+    newSize: {x: 0.625, y: 0.625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4060934, y: 0.1424098}
+  m_EdgeRadius: 0
+--- !u!114 &6394854769003493632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4673538493830909408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57470ff69c1fc264a8470778f9d7f3e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+  _damagePoints: 20
+  _healthPoints: 0
+--- !u!114 &8618440708182159270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4673538493830909408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d1e10dd2667e945a2a47f6fefcf0af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: Enemy,Destructable
+  _ignoreTag: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  _actions:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4674039399663310195}
+        m_MethodName: DealDamage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4674039399663310195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4673538493830909408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2261f11e86e7cbf4a89170b424b9ba35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isActive: 0
 --- !u!1 &4767700215320277592
 GameObject:
   m_ObjectHideFlags: 0
@@ -5481,6 +5671,7 @@ Transform:
   - {fileID: 6233422789276547003}
   - {fileID: 4815948394974201846}
   - {fileID: 2472958772482285950}
+  - {fileID: 2991652677635979412}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5707,14 +5898,6 @@ MonoBehaviour:
     m_ActionId: deb329c6-6d69-49c2-9c39-a89d5e00b6da
     m_ActionName: Hero/Heal[/Keyboard/h]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 84107a23-ebc4-4c2b-889a-73a2437f6233
-    m_ActionName: Menu/New action[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6e65b6d1-6c01-40a8-af79-dfa864130bc8
-    m_ActionName: Menu/UI Inventory[/Keyboard/i]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5784780335098992498}
         m_MethodName: PressThrow
@@ -5744,6 +5927,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: de3c8aef-bc3b-42e1-8c53-28685cd55fb4
     m_ActionName: Hero/Light[/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1cf84b4f-de35-4205-a2f2-f6e16911763d
+    m_ActionName: Hero/UI_Close[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fcddf24d-c815-464e-ad7f-4850e59b7618
+    m_ActionName: Hero/UI_Inventory[/Keyboard/i]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -5845,6 +6036,8 @@ MonoBehaviour:
   _attackRange: {fileID: 4681518861892597388}
   _stompCooldown:
     _value: 20
+  _bigswordCooldown:
+    _value: 30
   _stompCheck: {fileID: 6594990609742469317}
   _possibleInteractionCheck: {fileID: 9174449383125741794}
   _doInteractionCheck: {fileID: 3926177964129831508}
@@ -5852,6 +6045,7 @@ MonoBehaviour:
   _hitParticles: {fileID: 791006958}
   _throwSpawn: {fileID: 4146504373416663389}
   _candle: {fileID: 924629711332952071}
+  _bigSword: {fileID: 4674039399663310195}
   _armed: {fileID: 9100000, guid: ba815a7b4b2a06b4984288a5b04ff566, type: 2}
   _disarmed: {fileID: 9100000, guid: 08c3e2f09d4204c41bb02fe456dd4cbb, type: 2}
 --- !u!114 &7191293113834155727
@@ -6146,6 +6340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: idle
+  autoStart: 1
 --- !u!58 &3377068454887357268
 CircleCollider2D:
   m_ObjectHideFlags: 0
