@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/Hud.unity
     guid: f4368fd2651133d42917b1107c3812f2
   - enabled: 1
+    path: Assets/_Scenes/Controls.unity
+    guid: 58f604038630fcc4f8dcce59f2ca5ade
+  - enabled: 1
     path: Assets/_Scenes/LevelLoader.unity
     guid: ecd56c4d8507bc14688f9c6fd5d019cb
   - enabled: 1

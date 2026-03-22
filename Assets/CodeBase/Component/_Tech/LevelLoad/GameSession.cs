@@ -2,6 +2,7 @@
 using PixelCrew.GameObjects.Creatures;
 using PixelCrew.Model.Data;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -33,7 +34,7 @@ namespace PixelCrew.Model
 
         private void Awake()
         {
-            LoadHud();
+            LoadUIs();
 
             if (IsSessionExist())
             {
@@ -87,7 +88,7 @@ namespace PixelCrew.Model
         public void ReloadLinks()
         {
             var hero = FindObjectOfType<Hero>();
-            if (hero == null) { Debug.Log("Hero not found!!!"); return; }
+            if (hero == null) { UnityEngine.Debug.Log("Hero not found!!!"); return; }
 
             var invComp = hero.GetComponent<InventoryComponent>();
             var perksComp = hero.GetComponent<PerksComponent>();
@@ -98,9 +99,16 @@ namespace PixelCrew.Model
             StatsModel = new StatsModel(statsComp, invComp);
         }
 
-        private void LoadHud()
+        private void LoadUIs()
         {
             SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
+            LoadOnScreenControls();
+        }
+
+        [Conditional("USE_ONSCREEN_CONTROLS")]
+        private void LoadOnScreenControls()
+        {
+            SceneManager.LoadScene("Controls", LoadSceneMode.Additive);
         }
 
         private bool IsSessionExist()

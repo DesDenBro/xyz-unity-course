@@ -62,9 +62,12 @@ namespace PixelCrew.Effects
             Instantiate(_container, newPosition, Quaternion.identity, transform);
         }
 
+
+#if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
             GizmosUtils.DrawBounds(_allBounds, Color.magenta);
         }
+#endif
     }
 }
