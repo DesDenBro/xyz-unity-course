@@ -71,3 +71,9 @@ level4_dialog_bossPatric_phase1_start_dialog2;You can't go any further!
 level4_dialog_bossPatric_phase1_end_dialog1;You bastard!!!
 level4_dialog_nextroom1;There's nothing here!
 level4_dialog_nextroom2;There will probably be more content in the diploma, let's wait
+
+level5_dialog_bossCrabby_phase0_start_dialog1;Did you think you escaped from prison? That yes
+level5_dialog_bossCrabby_phase0_start_dialog2;But you definitely won't see your own ship!
+level5_dialog_bossCrabby_phase0_start_dialog3;Caramba!!!
+level5_dialog_bossCrabby_phase4_end_dialog1;But that's not possible...
+level5_dialog_bossCrabby_phase4_end_dialog2;My ship...

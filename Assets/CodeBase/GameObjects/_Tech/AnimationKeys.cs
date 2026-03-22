@@ -30,15 +30,25 @@ namespace PixelCrew.GameObjects
             }
         }
 
-        public static class BossPatric
+        public static class Boss
         {
             public static readonly FloatAnimationKey HPValue = new FloatAnimationKey("hp-value");
-            public static readonly TriggerAnimationKey TriggerStart = new TriggerAnimationKey("trigger-start");
-            
-            public static class Water
+            public static class Patric
             {
-                public static readonly BoolAnimationKey IsFlooding = new BoolAnimationKey("is-flooding");
+                public static readonly TriggerAnimationKey TriggerStart = new TriggerAnimationKey("trigger-start");
+
+                public static class Water
+                {
+                    public static readonly BoolAnimationKey IsFlooding = new BoolAnimationKey("is-flooding");
+                }
             }
+            public static class Crabby
+            {
+                public static readonly TriggerAnimationKey TriggerPhase0Run = new TriggerAnimationKey("trigger-phase0-run");
+                public static readonly TriggerAnimationKey TriggerPhase1 = new TriggerAnimationKey("trigger-phase1");
+
+            }
+
         }
 
         public static class ShootingTrap

@@ -142,4 +142,14 @@ MonoBehaviour:
   - Key: level4_dialog_nextroom1
     Value: "There's nothing here!\r"
   - Key: level4_dialog_nextroom2
-    Value: There will probably be more content in the diploma, let's wait
+    Value: "There will probably be more content in the diploma, let's wait\r"
+  - Key: level5_dialog_bossCrabby_phase0_start_dialog1
+    Value: "Did you think you escaped from prison? That yes\r"
+  - Key: level5_dialog_bossCrabby_phase0_start_dialog2
+    Value: "But you definitely won't see your own ship!\r"
+  - Key: level5_dialog_bossCrabby_phase0_start_dialog3
+    Value: "Caramba!!!\r"
+  - Key: level5_dialog_bossCrabby_phase4_end_dialog1
+    Value: "But that's not possible...\r"
+  - Key: level5_dialog_bossCrabby_phase4_end_dialog2
+    Value: My ship...

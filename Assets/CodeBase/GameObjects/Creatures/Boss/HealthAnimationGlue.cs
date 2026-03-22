@@ -18,7 +18,7 @@ namespace PixelCrew.GameObjects.Creatures.Boss
 
         private void OnHPChanged(int hp, int _)
         {
-            _animator.SetKeyVal(AnimationKeys.BossPatric.HPValue, (float)hp);
+            _animator.SetKeyVal(AnimationKeys.Boss.HPValue, (float)hp);
         }
 
         private void OnDestroy()
