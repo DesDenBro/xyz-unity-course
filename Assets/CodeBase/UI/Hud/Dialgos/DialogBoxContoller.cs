@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System.Collections;
 using PixelCrew.Model.Definitions.Localization;
 using PixelCrew.UI.Postprocessing;
+using PixelCrew.GameObjects.Creatures;
 
 namespace PixelCrew.UI.Hud
 {
@@ -29,15 +30,19 @@ namespace PixelCrew.UI.Hud
         private int _currentSenteceIndex;
         private AudioSource _sfxSource;
         private Coroutine _typingCoroutine;
+        private HeroMovementLock _heroMovementLock;
 
         private void Start()
         {
+            _heroMovementLock = FindObjectOfType<HeroMovementLock>();
             _sfxSource = AudioUtils.FindSfxSource();
         }
 
         public void ShowDialog(DialogData dialog)
         {
             if (_isShowing) return;
+
+            if (_heroMovementLock != null) _heroMovementLock.SetLock(true);
 
             _isShowing = true;
             _dialogData = dialog;
@@ -88,7 +93,10 @@ namespace PixelCrew.UI.Hud
 
         public void OnContinue()
         {
-            StopTypeAnimation();
+            var currentText = _text.text;
+            OnSkip();
+            if (currentText != _text.text) return;
+
             _currentSenteceIndex++;
 
             var isDialogCompleted = _currentSenteceIndex >= _dialogData.Sentences.Length;
@@ -103,6 +111,8 @@ namespace PixelCrew.UI.Hud
         }
         private void HideDialogBox()
         {
+            if (_heroMovementLock != null) _heroMovementLock.SetLock(false);
+
             _animator.SetKeyVal(AnimationKeys.UI.DialogBox.IsOpen, false);
             _vignetteController.Hide();
             _sfxSource.PlayOneShot(_close);

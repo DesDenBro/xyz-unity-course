@@ -1,3 +1,4 @@
+using PixelCrew.GameObjects.Creatures;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,18 +12,23 @@ namespace PixelCrew.Components
         [SerializeField] private UnityEvent _onDelay;
         [SerializeField] private ShowTargetController _controller;
 
+        private HeroMovementLock _heroMovementLock;
         private Coroutine _coroutine;
+
+        private void Awake()
+        {
+            _heroMovementLock = FindObjectOfType<HeroMovementLock>();
+        }
 
         private void OnValidate()
         {
-            if (_controller == null)
-            {
-                _controller = FindObjectOfType<ShowTargetController>();
-            }
+            if (_controller == null) _controller = FindObjectOfType<ShowTargetController>();
         }
 
         public void Play()
         {
+            if (_heroMovementLock != null) _heroMovementLock.SetLock(true);
+
             _controller.SetPosition(_target.position);
             _controller.SetState(true);
 
@@ -33,6 +39,8 @@ namespace PixelCrew.Components
         private IEnumerator WaitAndReturn()
         {
             yield return new WaitForSeconds(_delay);
+
+            if (_heroMovementLock != null) _heroMovementLock.SetLock(false);
             _onDelay?.Invoke();
             _controller.SetState(false);
         }

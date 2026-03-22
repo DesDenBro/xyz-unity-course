@@ -5,6 +5,7 @@ using UnityEngine;
 namespace PixelCrew.Components
 {
     // компонент используется для объектов, изменяющих состояние героя (шипы, тотемы, двери с замками и т.д.)
+    [RequireComponent(typeof(ThingSpecification))]
     public class StatsChangeComponent : MonoBehaviour
     {
         private ThingSpecification _thingSpecification;
@@ -16,9 +17,9 @@ namespace PixelCrew.Components
 
         public void HealthChange(GameObject target)
         {
-            if (_thingSpecification == null) return;
+            if (_thingSpecification == null || target == null) return;
 
-            var healtComponent = target?.GetComponent<HealthComponent>();
+            var healtComponent = target.GetComponent<HealthComponent>();
             if (healtComponent == null) return;
 
             var damagePoints = _thingSpecification.DamagePoints;
@@ -30,7 +31,7 @@ namespace PixelCrew.Components
 
         public void MoneyChange(GameObject target)
         {
-            if (_thingSpecification == null) return;
+            if (_thingSpecification == null || target == null) return;
 
             var inventory = target.GetComponent<InventoryComponent>();
             if (inventory == null) return;
@@ -41,7 +42,7 @@ namespace PixelCrew.Components
 
         public void KeysChange(GameObject target)
         {
-            if (_thingSpecification == null) return;
+            if (_thingSpecification == null || target == null) return;
 
             var inventory = target.GetComponent<InventoryComponent>();
             if (inventory == null) return;

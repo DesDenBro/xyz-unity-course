@@ -5449,6 +5449,7 @@ GameObject:
   - component: {fileID: 3685580019937053046}
   - component: {fileID: 6595804528849134846}
   - component: {fileID: 6509753580829321230}
+  - component: {fileID: 6638987037768786824}
   m_Layer: 12
   m_Name: _Hero
   m_TagString: Player
@@ -5836,6 +5837,8 @@ MonoBehaviour:
     _value: 1
   _healCooldown:
     _value: 0.5
+  _jumpCooldown:
+    _value: 0.2
   _groundCheck: {fileID: 5784780334059268827}
   _attackRange: {fileID: 4681518861892597388}
   _stompCooldown:
@@ -5912,6 +5915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 40
   _currentHealth: 40
+  _isImmune: 0
   _damageCooldown:
     _value: 0.2
   _onDamage:
@@ -5994,6 +5998,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e981ab39ed9dcbe4184462d567e480fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6638987037768786824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5784780335098992503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e678b2cb2148e45bc31dc8634d2d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6961883758744334534
 GameObject:
   m_ObjectHideFlags: 0
@@ -6037,11 +6053,13 @@ GameObject:
   - component: {fileID: 4815948394974201846}
   - component: {fileID: 3465240260594321653}
   - component: {fileID: 5628016523886703129}
+  - component: {fileID: 3377068454887357268}
   - component: {fileID: 2160185198022376512}
+  - component: {fileID: 3275144840330170562}
   - component: {fileID: 924629711332952071}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Candle
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6126,6 +6144,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: idle
+--- !u!58 &3377068454887357268
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7833313542669566256}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.1347928}
+  serializedVersion: 2
+  m_Radius: 0.354424
 --- !u!95 &2160185198022376512
 Animator:
   serializedVersion: 3
@@ -6145,6 +6179,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3275144840330170562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7833313542669566256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d1e10dd2667e945a2a47f6fefcf0af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: Water
+  _ignoreTag: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 16
+  _actions:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 924629711332952071}
+        m_MethodName: TurnOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: nonfire-idle
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &924629711332952071
 MonoBehaviour:
   m_ObjectHideFlags: 0

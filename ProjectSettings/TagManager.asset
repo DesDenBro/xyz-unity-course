@@ -21,6 +21,8 @@ TagManager:
   - Vignette
   - CutSceneAnimator
   - CutSceneCamera
+  - Fire
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -39,7 +41,7 @@ TagManager:
   - Parameters
   - Object
   - Checker
-  - 
+  - Fire
   - 
   - 
   - 
