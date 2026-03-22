@@ -5052,6 +5052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7597641014839724719}
   _prefab: {fileID: 1296803784847218045, guid: c8ee350aafde92c4098981005c5542f9, type: 3}
+  _usePool: 0
 --- !u!1 &2566608930315534641
 GameObject:
   m_ObjectHideFlags: 0
@@ -5361,6 +5362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 492327702742443999}
   _prefab: {fileID: 1296803784847218045, guid: 78372a976fc2d6f41876628147c59b6c, type: 3}
+  _usePool: 1
 --- !u!1 &5784780334059268829
 GameObject:
   m_ObjectHideFlags: 0

@@ -261,6 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 4
   _startSasName: idle
+  autoStart: 1
 --- !u!212 &130928121
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5120,6 +5121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 4
   _startSasName: idle
+  autoStart: 1
 --- !u!212 &628687844
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11332,6 +11334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 4
   _startSasName: idle
+  autoStart: 1
 --- !u!82 &519320011905364331
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11579,6 +11582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: idle
+  autoStart: 1
 --- !u!114 &1148067353820396047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12233,6 +12237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: idle
+  autoStart: 1
 --- !u!4 &5769486971996225706
 Transform:
   m_ObjectHideFlags: 0
@@ -12804,6 +12809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: idle
+  autoStart: 1
 --- !u!212 &8051122751565032290
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13130,6 +13136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: idle
+  autoStart: 1
 --- !u!114 &8100952932352604456
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -27,8 +27,22 @@ namespace PixelCrew.Components
         {
             if (!other.gameObject.IsInLayer(_layer)) return;
             
-            if (_tags.Count > 0 && !_tags.Any(x => other.gameObject.CompareTag(x))) return;
-            if (_ignoreTags.Count > 0 && _ignoreTags.Any(x => other.gameObject.CompareTag(x))) return;
+            if (_tags.Count > 0)
+            {
+                var found = false;
+                foreach (string tag in _tags)
+                {
+                    if (other.gameObject.CompareTag(tag)) found = true;
+                }
+                if (!found) return;
+            }
+            if (_ignoreTags.Count > 0)
+            {
+                foreach (string tag in _ignoreTags)
+                {
+                    if (other.gameObject.CompareTag(tag)) return;
+                }
+            }
 
             foreach (var action in _actions)
             {

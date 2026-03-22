@@ -58,9 +58,11 @@ namespace PixelCrew.Components
 
         public void RecoverHealth(int healthPoints)
         {
-            if (_currentHealth <= 0 || _currentHealth >= _maxHealth) return;
+            if (_currentHealth <= 0) return;
 
             var oldHealth = _currentHealth;
+            _onHealth?.Invoke();
+
             if (_currentHealth + healthPoints >= _maxHealth)
             {
                 _currentHealth = _maxHealth;
@@ -69,11 +71,9 @@ namespace PixelCrew.Components
             else
             {
                 _currentHealth += healthPoints;
-                _onHealth?.Invoke();
                 Debug.Log("recover " + healthPoints + ", health " + _currentHealth);
+                OnHealthChanged?.Invoke(_currentHealth, oldHealth);
             }
-
-            OnHealthChanged?.Invoke(_currentHealth, oldHealth);
         }
 
         [ContextMenu("Health")]

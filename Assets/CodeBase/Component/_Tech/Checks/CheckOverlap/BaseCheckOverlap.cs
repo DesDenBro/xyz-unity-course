@@ -48,10 +48,13 @@ namespace PixelCrew.Common.Tech
         {
             if (overlapRes == null) return;
 
-            var isInTags = tags.Any(tag => overlapRes.CompareTag(tag));
-            if (isInTags)
+            foreach (var tag in tags)
             {
-                onOverlap?.Invoke(overlapRes.gameObject);
+                if (overlapRes.CompareTag(tag))
+                {
+                    onOverlap?.Invoke(overlapRes.gameObject);
+                    break;
+                }
             }
         }
     }

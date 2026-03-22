@@ -1,4 +1,5 @@
-﻿using PixelCrew.Common.Tech;
+﻿using PixelCrew.Utils;
+using PixelCrew.Utils.ObjectPool;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,9 +10,7 @@ namespace PixelCrew.Components
     {
         [SerializeField] private Transform _target;
         [SerializeField] private GameObject _prefab;
-
-        [ContextMenu("Spawn")]
-        public void SpawnIt() => Spawn();
+        [SerializeField] private bool _usePool;
 
         public void SetPrefab(GameObject prefab)
         {
@@ -23,13 +22,21 @@ namespace PixelCrew.Components
             return _prefab.GetComponentsInChildren<T>(true).Select(x => x.name).ToList();
         }
 
+        // используется в вызовах объектов, не удалять!
+        public void SpawnIt() => Spawn();
+
+
         public GameObject Spawn()
         {
-            var instanse = Instantiate(_prefab, _target.position, Quaternion.identity);
-            //Instantiate(_prefab, _target); // создание внутри объекта родителя вызова
-            instanse.transform.localScale = _target.lossyScale; // lossyScale - объект глобально, тут мы поворачиваем спрайт
-            
-            return instanse;
+            //var instanse = Instantiate(_prefab, _target.position, Quaternion.identity);
+            ////Instantiate(_prefab, _target); // создание внутри объекта родителя вызова
+            //instanse.transform.localScale = _target.lossyScale; // lossyScale - объект глобально, тут мы поворачиваем спрайт
+
+            var targetPosition = _target.position;
+            var instance = _usePool ? Pool.Instance.Get(_prefab, targetPosition) : SpawnUtils.Spawn(_prefab, targetPosition);
+            instance.transform.localScale = _target.lossyScale; // lossyScale - объект глобально, тут мы поворачиваем спрайт
+            instance.SetActive(true);
+            return instance;
         }
     }
 }

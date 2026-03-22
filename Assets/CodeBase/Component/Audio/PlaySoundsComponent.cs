@@ -22,10 +22,14 @@ namespace PixelCrew.Components
             if (string.IsNullOrEmpty(id)) return;
             if (_source == null) { Debug.Log("Audio source empty to play sound!"); return; }
 
-            var sound = _sounds?.FirstOrDefault(x => x.Id == id);
-            if (sound == null) return;
-
-            _source.PlayOneShot(sound.Clip);
+            foreach (var sound in _sounds)
+            {
+                if (sound.Id == id)
+                {
+                    _source.PlayOneShot(sound.Clip);
+                    break;
+                }
+            }
         }
     }
 
