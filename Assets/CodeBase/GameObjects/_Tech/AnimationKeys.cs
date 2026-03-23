@@ -46,6 +46,7 @@ namespace PixelCrew.GameObjects
             {
                 public static readonly TriggerAnimationKey TriggerPhase0Run = new TriggerAnimationKey("trigger-phase0-run");
                 public static readonly TriggerAnimationKey TriggerPhase1 = new TriggerAnimationKey("trigger-phase1");
+                public static readonly TriggerAnimationKey TriggerPhase2 = new TriggerAnimationKey("trigger-phase2");
 
             }
 

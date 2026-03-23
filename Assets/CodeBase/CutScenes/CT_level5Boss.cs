@@ -31,6 +31,8 @@ namespace PixelCrew.CutScenes
         [SerializeField] GameObject _p1_triggerJump;
 
         [Header("Phase2")]
+        [SerializeField] ShowDialogComponent _startPhase2Dialogs;
+        [SerializeField] GameObject _p2_jumpDamage;
 
         [Header("Phase3")]
 
@@ -67,13 +69,22 @@ namespace PixelCrew.CutScenes
         public void EndPhase1()
         {
             _p1_triggerJump.SetActive(false);
+
+            _heroActionsComponent.SetImmune(true);
+            _heroActionsComponent.SetInputLock(true);
+
+            _p2_jumpDamage.gameObject.SetActive(true);
+
+            _startPhase2Dialogs.Show();
         }
 
         public void StartPhase2()
         {
-            EndPhase1();
+            _boss.GetComponent<HealthComponent>().SetImmune(false);
+            _heroActionsComponent.SetImmune(false);
+            _heroActionsComponent.SetInputLock(false);
 
-
+            _bossAnimator.SetKeyVal(AnimationKeys.Boss.Crabby.TriggerPhase2);
         }
         public void EndPhase2()
         {

@@ -74,6 +74,8 @@ level4_dialog_nextroom2;There will probably be more content in the diploma, let'
 
 level5_dialog_bossCrabby_phase0_start_dialog1;Did you think you escaped from prison? That yes
 level5_dialog_bossCrabby_phase0_start_dialog2;But you definitely won't see your own ship!
-level5_dialog_bossCrabby_phase0_start_dialog3;Caramba!!!
+level5_dialog_bossCrabby_phase0_start_dialog3;You can't even reach me with your toothpick!
+level5_dialog_bossCrabby_phase2_start_dialog1;Damn!
+level5_dialog_bossCrabby_phase2_start_dialog2;Well, I'll arrange it for you now!
 level5_dialog_bossCrabby_phase4_end_dialog1;But that's not possible...
 level5_dialog_bossCrabby_phase4_end_dialog2;My ship...
