@@ -21,8 +21,8 @@ namespace PixelCrew.UI.Contollers
             else
             {
                 DontDestroyOnLoad(this);
-                if (CallInMainMenu) Call(false);
             }
+            if (CallInMainMenu) Call(false);
         }
 
         public virtual void Call(bool isEscBtn)

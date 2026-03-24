@@ -9,6 +9,7 @@ menu_locale_title;Язык
 menu_settings_title;Настройки
 settings_music_volume;Громкость музыки
 settings_sfx_volume;Громкость SFX
+win_title;Победа!
 
 loading_screen_process;Загрузка...
 
@@ -33,7 +34,7 @@ perks_type_passive;пассивный
 perks_type_active;активный
 perks_doubleJump_info;Двойной прыжок
 perks_superThrow_info;Бросок до трех предметов одновременно при зажатии клавиши броска
-perks_stun_info;Оглушает врагов на некоторое время
+perks_stun_info;Оглушает обычных врагов на некоторое время
 perks_bigSword_info;Огромный летающий меч наносит много урона ударом
 
 inventory_btn_setthrowable;Выбрать кидаемый
@@ -69,12 +70,12 @@ level3_dialog_crabby_byeDialog1;Увидимся позже!
 level4_dialog_bossPatric_phase1_start_dialog1;Жалкий заключенный!
 level4_dialog_bossPatric_phase1_start_dialog2;Дальше ты не пройдешь!
 level4_dialog_bossPatric_phase1_end_dialog1;Ах ты негодник!!!
-level4_dialog_nextroom1;Тут же ничего нет!
-level4_dialog_nextroom2;Наверное в дипломе будет больше контента, подождем
+level4_dialog_nextroom1;Кажется, что это дорога наружу
+level4_dialog_nextroom2;Надо выбираться отсюда и отплывать, корабль должен быть у берега
 
 level5_dialog_bossCrabby_phase0_start_dialog1;Думал сбежал из тюрьмы? Это да
 level5_dialog_bossCrabby_phase0_start_dialog2;Но своего корабля тебе точно не видать!
-level5_dialog_bossCrabby_phase0_start_dialog3;Ты даже достать своей зубочисткой меня не сможешь!
+level5_dialog_bossCrabby_phase0_start_dialog3;Ты даже своей зубочисткой достать меня не сможешь!
 level5_dialog_bossCrabby_phase2_start_dialog1;Ах ты!
 level5_dialog_bossCrabby_phase2_start_dialog2;Ну я тебе сейчас устрою!
 level5_dialog_bossCrabby_phase4_end_dialog1;Но это невозможно...

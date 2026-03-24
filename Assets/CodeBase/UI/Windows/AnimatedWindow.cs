@@ -1,7 +1,8 @@
-﻿using UnityEngine;
-using PixelCrew.Utils;
+﻿using PixelCrew.GameObjects.Creatures;
 using PixelCrew.UI.Widgets;
+using PixelCrew.Utils;
 using System.Linq;
+using UnityEngine;
 
 namespace PixelCrew.UI
 {
@@ -13,6 +14,9 @@ namespace PixelCrew.UI
         {
             _animator = GetComponent<Animator>();
             _animator.SetKeyVal(PixelCrew.GameObjects.AnimationKeys.UI.MenuWindow.TriggerShow);
+
+            var heroMovementLock = FindObjectOfType<HeroMovementLock>();
+            if (heroMovementLock != null) heroMovementLock.SetLock(true);
         }
 
         public void SetButtonsVisible(bool isMainMenu)
@@ -30,6 +34,9 @@ namespace PixelCrew.UI
 
         public void Close()
         {
+            var heroMovementLock = FindObjectOfType<HeroMovementLock>();
+            if (heroMovementLock != null) heroMovementLock.SetLock(false);
+
             _animator.SetKeyVal(PixelCrew.GameObjects.AnimationKeys.UI.MenuWindow.TriggerHide);
         }
 

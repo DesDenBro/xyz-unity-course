@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: 
+  autoStart: 0
 --- !u!50 &4595084897455724781
 Rigidbody2D:
   serializedVersion: 4
@@ -569,6 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 8497151579401214312}
   _prefab: {fileID: 3001892985122815324, guid: 1f60945b9a46d464991ca14ed47e9cac, type: 3}
+  _usePool: 0
 --- !u!1 &8390109719674162085
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,3 +616,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 8497151579401214312}
   _prefab: {fileID: 7556838182135903579, guid: 23d63750c43a8c742af87c7ad0d90a89, type: 3}
+  _usePool: 0

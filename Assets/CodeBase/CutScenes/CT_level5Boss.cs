@@ -19,6 +19,11 @@ namespace PixelCrew.CutScenes
         [SerializeField] PolygonCollider2D _bossConfinerCollider;
         [SerializeField] HeroActionsComponent _heroActionsComponent;
 
+        [Header("Enviroment")]
+        [SerializeField] SwitchComponent _door1;
+        [SerializeField] SwitchComponent _door2;
+        [SerializeField] SwitchComponent _door3;
+
         [Header("Main")]
         [SerializeField] GameObject _boss;
         Animator _bossAnimator;
@@ -35,6 +40,7 @@ namespace PixelCrew.CutScenes
         [SerializeField] GameObject _p2_jumpDamage;
 
         [Header("Phase3")]
+        [SerializeField] GameObject _p3_attack;
 
         [Header("Phase4")]
         [SerializeField] ShowDialogComponent _endDialogs;
@@ -42,6 +48,13 @@ namespace PixelCrew.CutScenes
         private void Awake()
         {
             _bossAnimator = _boss.GetComponent<Animator>();
+        }
+
+        public void Start()
+        {
+            _door1.Switch();
+            _door2.Switch();
+            _door3.Switch();
         }
 
         public void StartScene()
@@ -59,6 +72,10 @@ namespace PixelCrew.CutScenes
 
         public void StartPhase1()
         {
+            _door1.Switch();
+            _door2.Switch();
+            _door3.Switch();
+
             _bossHpWidget.ShowUI();
             _boss.GetComponent<HealthComponent>().SetImmune(false);
             _heroActionsComponent.SetImmune(false);
@@ -88,23 +105,34 @@ namespace PixelCrew.CutScenes
         }
         public void EndPhase2()
         {
-
+            _boss.GetComponent<HealthComponent>().SetImmune(true);
         }
 
         public void StartPhase3()
         {
-            EndPhase2();
-
-
+            _boss.GetComponent<HealthComponent>().SetImmune(false);
+            _p3_attack.SetActive(true);
         }
         public void EndPhase3()
         {
+            _heroActionsComponent.SetImmune(true);
+            _heroActionsComponent.SetInputLock(true);
 
+            _p1_triggerJump.SetActive(false);
+            _p2_jumpDamage.gameObject.SetActive(false);
+            _p3_attack.SetActive(false);
+
+            _door1.Switch();
+            _door2.Switch();
+            _door3.Switch();
+
+            _endDialogs.Show();
         }
 
         public void StartPhase4()
         {
-            EndPhase3();
+            _heroActionsComponent.SetImmune(false);
+            _heroActionsComponent.SetInputLock(false);
 
             _bossHpWidget.HideUI();
 
