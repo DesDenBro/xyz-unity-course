@@ -71,8 +71,10 @@ level4_dialog_bossPatric_phase1_start_dialog1;A pitiful prisoner!
 level4_dialog_bossPatric_phase1_start_dialog2;You can't go any further!
 level4_dialog_bossPatric_phase1_end_dialog1;You bastard!!!
 level4_dialog_nextroom1;It seems that this is the way out
-level4_dialog_nextroom2;I need to get out of here and sail, the ship must be at the shore
+level4_dialog_nextroom2;I need to get out of here
 
+level5_dialog_jumpToBoss_dialog1;It looks like there's an exit to the ship below...
+level5_dialog_jumpToBoss_dialog2;A leap of faith!
 level5_dialog_bossCrabby_phase0_start_dialog1;Did you think you escaped from prison? That yes
 level5_dialog_bossCrabby_phase0_start_dialog2;But you definitely won't see your own ship!
 level5_dialog_bossCrabby_phase0_start_dialog3;You can't even reach me with your toothpick!
