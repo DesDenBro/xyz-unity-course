@@ -1,5 +1,6 @@
 ﻿using PixelCrew.Components;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 namespace PixelCrew.GameObjects.Creatures
 {
@@ -19,6 +20,14 @@ namespace PixelCrew.GameObjects.Creatures
             if (hero == null) return;
 
             hero.GetComponent<HealthComponent>().SetImmune(value);
+        }
+
+        public void SetInnerLightState(bool state)
+        {   
+            var hero = FindObjectOfType<Hero>();
+            if (hero == null) return;
+
+            hero.GetComponentInChildren<Light2D>().enabled = false;
         }
     }
 }

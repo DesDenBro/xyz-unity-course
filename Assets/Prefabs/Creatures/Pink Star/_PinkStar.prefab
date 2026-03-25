@@ -215,7 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2337729346863050730}
   - component: {fileID: 4307262019920588591}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: 100%_smallstar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2237288316084054444}
   - component: {fileID: 9158587953404548781}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: ObjectGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 2698835155250998237}
   - component: {fileID: 8411112891285092264}
   - component: {fileID: 1003350400807443571}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -719,6 +719,8 @@ MonoBehaviour:
   _attackRange: {fileID: 4681518861892597388}
   _stompCooldown:
     _value: 20
+  _bigswordCooldown:
+    _value: 30
   _stompCheck: {fileID: 0}
 --- !u!114 &7868960150264152829
 MonoBehaviour:
@@ -917,7 +919,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2758141098207491071}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Sounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1077,7 +1079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1665874469098798746}
   - component: {fileID: 5353251586842606453}
-  m_Layer: 13
+  m_Layer: 5
   m_Name: Hud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1121,7 +1123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3230959101933517506}
   - component: {fileID: 5660496510875016241}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: 50%_smallstar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1317,6 +1319,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Vfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030119567960786401, guid: fc6eaf0246e97a746bc7d9ac9e604a08,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2679549305833095348, guid: fc6eaf0246e97a746bc7d9ac9e604a08,
         type: 3}

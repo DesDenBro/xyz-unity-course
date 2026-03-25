@@ -134,6 +134,8 @@ namespace PixelCrew.CutScenes
             _heroActionsComponent.SetImmune(false);
             _heroActionsComponent.SetInputLock(false);
 
+            _boss.GetComponent<CircleCollider2D>().isTrigger = true;
+
             _bossHpWidget.HideUI();
 
             _mainTheme.Play();
