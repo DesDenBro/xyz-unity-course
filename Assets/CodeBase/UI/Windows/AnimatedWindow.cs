@@ -2,12 +2,15 @@
 using PixelCrew.UI.Widgets;
 using PixelCrew.Utils;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace PixelCrew.UI
 {
     public class AnimatedWindow : MonoBehaviour
     {
+        [SerializeField] private bool _disableCloseByInput;
+
         private Animator _animator;
 
         protected virtual void Start()
@@ -32,8 +35,10 @@ namespace PixelCrew.UI
             }
         }
 
-        public void Close()
+        public void Close(bool isEscBtn = false)
         {
+            if (_disableCloseByInput && isEscBtn) return;
+
             var heroMovementLock = FindObjectOfType<HeroMovementLock>();
             if (heroMovementLock != null) heroMovementLock.SetLock(false);
 

@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23970d82be6c5164bb9dedd2526d5db5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _disableCloseByInput: 1
   _startLevel: MainMenu
 --- !u!114 &5036962516992577686
 MonoBehaviour:
@@ -464,7 +465,7 @@ PrefabInstance:
     - target: {fileID: 5713612570058515794, guid: 47e8a0a858adf09488492b35ea674c4d,
         type: 3}
       propertyPath: _visibleConstraint
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5713612570058515794, guid: 47e8a0a858adf09488492b35ea674c4d,
         type: 3}

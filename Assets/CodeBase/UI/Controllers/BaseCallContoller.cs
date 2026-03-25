@@ -20,7 +20,7 @@ namespace PixelCrew.UI.Contollers
             }
             else
             {
-                DontDestroyOnLoad(this);
+                DontDestroyOnLoad(target: this);
             }
             if (CallInMainMenu) Call(false);
         }
@@ -37,7 +37,7 @@ namespace PixelCrew.UI.Contollers
                 {
                     if (isEscBtn)
                     {
-                        animWindows.Last().Close();
+                        animWindows.Last().Close(true);
                     }
                     return;
                 }
