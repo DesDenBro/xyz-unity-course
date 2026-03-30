@@ -32,7 +32,7 @@ namespace PixelCrew.Components
                 _propertyBlock = new MaterialPropertyBlock();
                 _spriteRenderer = GetComponent<SpriteRenderer>();
 
-                _isEnabled = true;
+                //_isEnabled = true;
             }
 
             var outlineWidth = _outlineWidth;

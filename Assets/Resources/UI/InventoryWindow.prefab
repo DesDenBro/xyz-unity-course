@@ -567,6 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84134969837b4499cb06324579e81b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _disableCloseByInput: 0
   _currentMode: 0
   _container: {fileID: 8636342654761519473}
   _rowPrefab: {fileID: 8636342656212614822}
@@ -774,7 +775,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8636342655911549735}
         m_MethodName: Close
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

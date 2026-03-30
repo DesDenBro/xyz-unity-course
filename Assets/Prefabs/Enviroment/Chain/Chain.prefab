@@ -364,6 +364,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interactable
       objectReference: {fileID: 0}
+    - target: {fileID: 8081474741162667094, guid: 109153313607fa1438355867c4f6cd17,
+        type: 3}
+      propertyPath: _isEnabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9047536408257778908, guid: 109153313607fa1438355867c4f6cd17,
         type: 3}
       propertyPath: m_Size.x

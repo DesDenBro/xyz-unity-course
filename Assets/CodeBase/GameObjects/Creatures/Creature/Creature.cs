@@ -5,6 +5,7 @@ using PixelCrew.Common;
 using PixelCrew.Common.Tech;
 using PixelCrew.Components;
 using PixelCrew.Utils;
+using PixelCrew.Components.Audio;
 
 namespace PixelCrew.GameObjects.Creatures
 {
@@ -29,6 +30,7 @@ namespace PixelCrew.GameObjects.Creatures
 
         [Header("Creature perks")]
         [SerializeField] protected Cooldown _stompCooldown = new Cooldown(20f);
+        [SerializeField] protected Cooldown _bigswordCooldown = new Cooldown(30f);
         [SerializeField] protected CheckLineOverlap _stompCheck;
         
         
@@ -231,6 +233,7 @@ namespace PixelCrew.GameObjects.Creatures
             switch (perk)
             {
                 case "stun": return _stompCooldown.TimeToEnd;
+                case "big-sword": return _bigswordCooldown.TimeToEnd;
             }
             return -1;
         }

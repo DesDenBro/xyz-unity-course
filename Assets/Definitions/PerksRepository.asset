@@ -30,10 +30,18 @@ MonoBehaviour:
       _itemId: Money
       _count: 10
   - _id: stun
-    _icon: {fileID: 8167133005111728920, guid: 8216d46ceb4276c4985f1ff3373c53c9, type: 3}
+    _icon: {fileID: 21300000, guid: 6202b0351e140dd4a8dc3695367fb6ad, type: 3}
     _isPassive: 0
     _isCooldownExist: 1
     _info: perks_stun_info
+    _price:
+      _itemId: Money
+      _count: 10
+  - _id: big-sword
+    _icon: {fileID: 21300000, guid: 1b45e319775f3e447944a045a8e25879, type: 3}
+    _isPassive: 0
+    _isCooldownExist: 1
+    _info: perks_bigSword_info
     _price:
       _itemId: Money
       _count: 10

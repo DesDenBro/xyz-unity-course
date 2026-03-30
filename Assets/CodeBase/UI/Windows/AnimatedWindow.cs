@@ -1,22 +1,25 @@
-﻿using UnityEngine;
-using PixelCrew.Utils;
+﻿using PixelCrew.GameObjects.Creatures;
 using PixelCrew.UI.Widgets;
+using PixelCrew.Utils;
 using System.Linq;
-using UnityEngine.Analytics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
 
 namespace PixelCrew.UI
 {
     public class AnimatedWindow : MonoBehaviour
     {
+        [SerializeField] private bool _disableCloseByInput;
+
         private Animator _animator;
 
         protected virtual void Start()
         {
-            //AnalyticsEvent.ScreenVisit(gameObject.name);
-
             _animator = GetComponent<Animator>();
-
             _animator.SetKeyVal(PixelCrew.GameObjects.AnimationKeys.UI.MenuWindow.TriggerShow);
+
+            var heroMovementLock = FindObjectOfType<HeroMovementLock>();
+            if (heroMovementLock != null) heroMovementLock.SetLock(true);
         }
 
         public void SetButtonsVisible(bool isMainMenu)
@@ -32,8 +35,13 @@ namespace PixelCrew.UI
             }
         }
 
-        public void Close()
+        public void Close(bool isEscBtn = false)
         {
+            if (_disableCloseByInput && isEscBtn) return;
+
+            var heroMovementLock = FindObjectOfType<HeroMovementLock>();
+            if (heroMovementLock != null) heroMovementLock.SetLock(false);
+
             _animator.SetKeyVal(PixelCrew.GameObjects.AnimationKeys.UI.MenuWindow.TriggerHide);
         }
 

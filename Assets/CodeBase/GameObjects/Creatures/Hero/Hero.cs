@@ -1,10 +1,12 @@
 ﻿using PixelCrew.Common;
 using PixelCrew.Common.Tech;
 using PixelCrew.Components;
+using PixelCrew.Components.Audio;
 using PixelCrew.Effects;
 using PixelCrew.Model;
 using PixelCrew.Model.Definitions;
 using PixelCrew.Utils;
+using System;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
@@ -25,6 +27,7 @@ namespace PixelCrew.GameObjects.Creatures
         [SerializeField] private ParticleSystem _hitParticles;
         [SerializeField] private SpawnComponent _throwSpawn;
         [SerializeField] private Candle _candle;
+        [SerializeField] private BigSword _bigSword;
 
         [Header("Hero animators")]
         [SerializeField] private RuntimeAnimatorController _armed;
@@ -257,14 +260,27 @@ namespace PixelCrew.GameObjects.Creatures
                 case "stun":
                     InitStopm();
                     break;
+                case "big-sword":
+                    InitBigSword();
+                    break;
             }
 
             return true;
         }
 
+        private void InitBigSword()
+        {
+            if (!_bigswordCooldown.IsReady || !_isGrounded) return;
+            _bigswordCooldown.Reset();
+
+            _playSounds.Play("MeleeAttack");
+            _bigSword.InitAttack();
+        }
+
         public void InitLight()
         {
             if (_candle == null) return;
+
             _candle.TurnOn();
         }
 
@@ -429,6 +445,9 @@ namespace PixelCrew.GameObjects.Creatures
 
             var levelName = checkPointName.Split('-')[0];
             _session.LevelsData.SaveHeroPosition(levelName, checkPointName);
+
+            var musicGO = FindObjectOfType<AutoContinueMusicComponent>();
+            if (musicGO != null) _session.LevelsData.SaveCurrentMusicTime(musicGO.gameObject.GetComponent<AudioSource>().time);
 
             _session.PlayerData.Health = _health.Health;
             _session.PlayerData.IsCandleActive = _candle.IsActive;

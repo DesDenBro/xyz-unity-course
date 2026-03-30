@@ -72,8 +72,8 @@ namespace PixelCrew.Components
             {
                 _currentHealth += healthPoints;
                 Debug.Log("recover " + healthPoints + ", health " + _currentHealth);
-                OnHealthChanged?.Invoke(_currentHealth, oldHealth);
             }
+            OnHealthChanged?.Invoke(_currentHealth, oldHealth);
         }
 
         [ContextMenu("Health")]

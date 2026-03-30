@@ -20,9 +20,9 @@ namespace PixelCrew.UI.Contollers
             }
             else
             {
-                DontDestroyOnLoad(this);
-                if (CallInMainMenu) Call(false);
+                DontDestroyOnLoad(target: this);
             }
+            if (CallInMainMenu) Call(false);
         }
 
         public virtual void Call(bool isEscBtn)
@@ -37,7 +37,7 @@ namespace PixelCrew.UI.Contollers
                 {
                     if (isEscBtn)
                     {
-                        animWindows.Last().Close();
+                        animWindows.Last().Close(true);
                     }
                     return;
                 }

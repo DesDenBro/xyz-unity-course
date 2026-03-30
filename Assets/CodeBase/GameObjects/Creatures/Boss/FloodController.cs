@@ -16,9 +16,9 @@ namespace PixelCrew.GameObjects.Creatures.Boss
 
         private IEnumerator Animate()
         {
-            _floodAnimator.SetKeyVal(AnimationKeys.BossPatric.Water.IsFlooding, true);
+            _floodAnimator.SetKeyVal(AnimationKeys.Boss.Patric.Water.IsFlooding, true);
             yield return new WaitForSeconds(_floodTime);
-            _floodAnimator.SetKeyVal(AnimationKeys.BossPatric.Water.IsFlooding, false);
+            _floodAnimator.SetKeyVal(AnimationKeys.Boss.Patric.Water.IsFlooding, false);
         }
     }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using PixelCrew.UI.Contollers;
+using UnityEngine.SceneManagement;
 
 namespace PixelCrew.UI
 {
@@ -8,6 +9,7 @@ namespace PixelCrew.UI
     {
         [SerializeField] private CallMenuController _callMenuController;
         [SerializeField] private CallInventoryController _callInventoryController;
+        protected bool IsMainMenuLevel => SceneManager.GetActiveScene().name == "MainMenu";
 
         public void PressCallMenu(InputAction.CallbackContext context)
         {
@@ -16,6 +18,7 @@ namespace PixelCrew.UI
 
         public void PressCallInventory(InputAction.CallbackContext context)
         {
+            if (IsMainMenuLevel) return;
             _callInventoryController.Call(false);
         }
     }

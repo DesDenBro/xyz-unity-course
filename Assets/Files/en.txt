@@ -9,6 +9,7 @@ menu_locale_title;Language
 menu_settings_title;Settings
 settings_music_volume;Music volume
 settings_sfx_volume;SFX volume
+win_title;You win!
 
 loading_screen_process;Loading...
 
@@ -33,7 +34,8 @@ perks_type_passive;passive
 perks_type_active;active
 perks_doubleJump_info;Double jump
 perks_superThrow_info;Throws up to three objects when hold the throw key
-perks_stun_info;Stun enemies for a several time
+perks_stun_info;Stun common enemies for a several time
+perks_bigSword_info;Big flying sword deal big damage
 
 inventory_btn_setthrowable;Set throwable
 inventory_btn_use;Use
@@ -68,5 +70,15 @@ level3_dialog_crabby_byeDialog1;See later!
 level4_dialog_bossPatric_phase1_start_dialog1;A pitiful prisoner!
 level4_dialog_bossPatric_phase1_start_dialog2;You can't go any further!
 level4_dialog_bossPatric_phase1_end_dialog1;You bastard!!!
-level4_dialog_nextroom1;There's nothing here!
-level4_dialog_nextroom2;There will probably be more content in the diploma, let's wait
+level4_dialog_nextroom1;It seems that this is the way out
+level4_dialog_nextroom2;I need to get out of here
+
+level5_dialog_jumpToBoss_dialog1;It looks like there's an exit to the ship below...
+level5_dialog_jumpToBoss_dialog2;A leap of faith!
+level5_dialog_bossCrabby_phase0_start_dialog1;Did you think you escaped from prison? That yes
+level5_dialog_bossCrabby_phase0_start_dialog2;But you definitely won't see your own ship!
+level5_dialog_bossCrabby_phase0_start_dialog3;You can't even reach me with your toothpick!
+level5_dialog_bossCrabby_phase2_start_dialog1;Damn!
+level5_dialog_bossCrabby_phase2_start_dialog2;Well, I'll arrange it for you now!
+level5_dialog_bossCrabby_phase4_end_dialog1;But that's not possible...
+level5_dialog_bossCrabby_phase4_end_dialog2;My ship...

@@ -9,8 +9,15 @@ namespace PixelCrew.Model.Data
     public class LevelsData
     {
         [SerializeField] private List<LevelData> _levelDatas = new List<LevelData>();
+        [SerializeField] private float _musicPlayStartTime;
 
         public IReadOnlyDictionary<string, LevelData> LevelDatasDict => _levelDatas?.Where(x => x != null && !string.IsNullOrWhiteSpace(x.Name)).ToDictionary(x => x.Name, y => y);
+        public float MusicPlayStartTime => _musicPlayStartTime;
+
+        public void SaveCurrentMusicTime(float time)
+        {
+            _musicPlayStartTime = time;
+        }
 
         public void SaveHeroPosition(string name, string checkPointName)
         {

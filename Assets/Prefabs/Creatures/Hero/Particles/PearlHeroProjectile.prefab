@@ -106,6 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _startSasName: 
+  autoStart: 0
 --- !u!50 &4595084897455724781
 Rigidbody2D:
   serializedVersion: 4
@@ -266,6 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 1
   _currentHealth: 1
+  _isImmune: 0
   _damageCooldown:
     _value: 0
   _onDamage:

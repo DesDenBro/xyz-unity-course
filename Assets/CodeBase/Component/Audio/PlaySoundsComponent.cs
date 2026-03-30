@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Linq;
 using UnityEngine;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.Audio
 {
     public class PlaySoundsComponent : MonoBehaviour
     {
